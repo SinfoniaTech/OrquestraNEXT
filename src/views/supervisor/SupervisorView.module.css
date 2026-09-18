@@ -1,0 +1,1102 @@
+/*
+ * DESIGN SYSTEM DA VIEW "SUPERVISOR" — reconstrução da referência
+ * (painel mobile de chamadas abertas do supervisor).
+ *
+ * Isolamento:
+ * - todos os tokens usam o prefixo --sup-* e são definidos na raiz da view
+ *   (.stage), nunca em :root — nada vaza para o container ou outras views;
+ * - todas as regras vivem neste CSS Module (escopo automático).
+ *
+ * Valores: tokens extraídos do CSS da referência (oklch), com fallback
+ * hexadecimal equivalente para navegadores sem suporte a oklch.
+ * Métricas seguem a escala de 4px da referência (px-4 = 16px etc.).
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+
+/* ---------------------------------------------------------------------------
+ * PALCO: centraliza o "celular" dentro do painel do apresentador.
+ * ------------------------------------------------------------------------- */
+.stage {
+  --sup-navy: #1b0435;
+  --sup-navy-fg: #f9fafc;
+  --sup-background: #f9fafc;
+  --sup-card: #ffffff;
+  --sup-foreground: #19092e;
+  --sup-muted-fg: #697284;
+  --sup-border: #e1e5eb;
+  --sup-critica: #db0003;
+  --sup-critica-soft: #ffe5e1;
+  --sup-alta: #f9700e;
+  --sup-media: #f2c02a;
+  --sup-ring: #7f5bb6;
+  --sup-verde: #16a34a;
+  --sup-radius: 12px; /* --radius: .75rem */
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #e9edf3;
+}
+
+@supports (color: oklch(50% 0.1 250)) {
+  .stage {
+    --sup-navy: oklch(19% 0.09 300);
+    --sup-navy-fg: oklch(98.5% 0.003 250);
+    --sup-background: oklch(98.5% 0.003 260);
+    --sup-foreground: oklch(19% 0.07 300);
+    --sup-muted-fg: oklch(55% 0.03 265);
+    --sup-border: oklch(92% 0.01 265);
+    --sup-critica: oklch(55% 0.24 27);
+    --sup-critica-soft: oklch(95% 0.04 25);
+    --sup-alta: oklch(70% 0.19 47);
+    --sup-media: oklch(83% 0.16 88);
+    --sup-ring: oklch(55% 0.14 300);
+    --sup-verde: oklch(63% 0.17 150);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * SHELL: o "aparelho" — largura de celular (max-w-md = 448px), altura cheia,
+ * rolagem interna. Header sticky, bottom nav e modal ficam contidos aqui.
+ * ------------------------------------------------------------------------- */
+.shell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 448px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--sup-background);
+  color: var(--sup-foreground);
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow:
+    0 0 0 1px rgba(27, 4, 53, 0.06),
+    0 20px 50px -20px rgba(27, 4, 53, 0.35);
+}
+
+/* ---------------------------------------------------------------------------
+ * HEADER (sticky, navy)
+ * ------------------------------------------------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: var(--sup-navy);
+  color: var(--sup-navy-fg);
+}
+
+.iconButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--sup-ring);
+  outline-offset: 2px;
+}
+
+.brandLogo {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.badgeCount {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: grid;
+  place-items: center;
+  height: 20px;
+  min-width: 20px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background-color: var(--sup-critica);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+ * CONTEÚDO PRINCIPAL
+ * ------------------------------------------------------------------------- */
+.main {
+  flex: 1 1 auto;
+  padding-bottom: 96px; /* pb-24: espaço para a bottom nav */
+}
+
+.titleSection {
+  padding: 20px 16px 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--sup-muted-fg);
+}
+
+.sortBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--sup-border);
+  border-radius: calc(var(--sup-radius) - 4px); /* rounded-lg */
+  background-color: var(--sup-card);
+  font-size: 12px;
+  color: var(--sup-muted-fg);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* space-y-2: respiro visível entre os cards, como na referência */
+  padding: 12px 8px 12px;
+}
+
+/* ---------------------------------------------------------------------------
+ * CARD DE CHAMADO
+ * ------------------------------------------------------------------------- */
+.card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding-left: 12px; /* pl-3: espaço da faixa lateral */
+  border-radius: var(--sup-radius);
+  background-color: var(--sup-card);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--sup-ring);
+  outline-offset: 0;
+}
+
+/* shadow-card: sombra suave arroxeada dos cards comuns */
+.cardShadow {
+  box-shadow: 0 6px 20px -8px rgba(29, 6, 56, 0.25);
+}
+
+@supports (color: oklch(50% 0.1 250)) {
+  .cardShadow {
+    box-shadow: 0 6px 20px -8px oklch(20% 0.09 300 / 0.25);
+  }
+}
+
+/* shadow-critical: anel + sombra avermelhada do card crítico e do modal */
+.cardCritical {
+  box-shadow:
+    0 0 0 1px rgba(230, 0, 35, 0.25),
+    0 10px 26px -10px rgba(230, 0, 35, 0.5);
+}
+
+@supports (color: oklch(50% 0.1 250)) {
+  .cardCritical {
+    box-shadow:
+      0 0 0 1px oklch(58% 0.24 25 / 0.25),
+      0 10px 26px -10px oklch(58% 0.24 25 / 0.5);
+  }
+}
+
+/* Faixa vertical colorida à esquerda (w-1 = 4px) */
+.cardBar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+}
+
+.cardBar.critica {
+  background-color: var(--sup-critica);
+}
+
+.cardBar.alta {
+  background-color: var(--sup-alta);
+}
+
+.cardBar.media {
+  background-color: var(--sup-media);
+}
+
+.cardBar.normal {
+  background-color: var(--sup-verde);
+}
+
+.cardBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px; /* py-2 px-2.5 */
+}
+
+.cardInfo {
+  min-width: 0;
+}
+
+.cardTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.cardId {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cardLocal {
+  margin: 2px 0 0;
+  overflow: hidden;
+  font-size: 11px;
+  line-height: 1.25;
+  color: rgba(25, 9, 46, 0.8);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cardDefeito {
+  margin: 0;
+  overflow: hidden;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cardTag {
+  display: inline-block;
+  margin-top: 2px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background-color: var(--sup-critica-soft);
+  color: var(--sup-critica);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* Coluna direita: tempo restante */
+.cardSla {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  text-align: right;
+}
+
+.slaTexto {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.slaTempo {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.cardSla.critica {
+  color: var(--sup-critica);
+}
+
+.cardSla.alta {
+  color: var(--sup-alta);
+}
+
+.cardSla.media {
+  color: var(--sup-media);
+}
+
+.cardSla.normal {
+  color: var(--sup-verde);
+}
+
+/* ---------------------------------------------------------------------------
+ * BADGE DE PRIORIDADE (pill)
+ * ------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.badge.critica {
+  background-color: var(--sup-critica);
+  color: #ffffff;
+}
+
+.badge.alta {
+  background-color: var(--sup-alta);
+  color: #ffffff;
+}
+
+/* Na referência, a pill MÉDIA usa texto navy sobre o amarelo */
+.badge.media {
+  background-color: var(--sup-media);
+  color: var(--sup-navy);
+}
+
+/* NORMAL: prioridade padrão, dentro do SLA — pill verde com texto branco */
+.badge.normal {
+  background-color: var(--sup-verde);
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+ * TELAS DO APP (/mapa, /alertas, /mais) — painéis e blocos de conteúdo.
+ * Mesmos tokens --sup-* dos cards de chamado; nada novo é definido em :root.
+ * ------------------------------------------------------------------------- */
+
+/* Painel genérico: cartão branco, sem a faixa lateral dos cards de chamado. */
+.panel {
+  padding: 14px;
+  border-radius: var(--sup-radius);
+  background-color: var(--sup-card);
+}
+
+/* Rótulo de seção, no mesmo estilo do "AÇÃO RECOMENDADA" do modal. */
+.panelTitle {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--sup-muted-fg);
+}
+
+.panelSubtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--sup-muted-fg);
+}
+
+/* --- Mapa operacional: card de região ---------------------------------- */
+
+.regionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.regionName {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.regionStats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 12px 0 0;
+}
+
+.regionStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  border: 1px solid var(--sup-border);
+  border-radius: calc(var(--sup-radius) - 4px); /* rounded-lg */
+  background-color: var(--sup-background);
+}
+
+.regionStatLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sup-muted-fg);
+}
+
+.regionStatValue {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Contagem de críticos em vermelho quando há críticos na região */
+.regionStatValueCritico {
+  color: var(--sup-critica);
+}
+
+.regionChamados {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.regionChamado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--sup-border);
+  border-radius: calc(var(--sup-radius) - 4px); /* rounded-lg */
+  background-color: var(--sup-background);
+  font-size: 11px;
+}
+
+.regionChamadoTexto {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.regionChamadoId {
+  font-weight: 700;
+}
+
+.regionTempo {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.regionTempo.critica {
+  color: var(--sup-critica);
+}
+
+.regionTempo.alta {
+  color: var(--sup-alta);
+}
+
+.regionTempo.media {
+  color: var(--sup-media);
+}
+
+/* --- Ponto de status (legenda da tela Alertas e da distribuição) ------- */
+
+.statusDot {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.statusDot.verde {
+  background-color: var(--sup-verde);
+}
+
+.statusDot.amarelo {
+  background-color: var(--sup-media);
+}
+
+.statusDot.vermelho {
+  background-color: var(--sup-critica);
+}
+
+.statusDot.critica {
+  background-color: var(--sup-critica);
+}
+
+.statusDot.alta {
+  background-color: var(--sup-alta);
+}
+
+.statusDot.media {
+  background-color: var(--sup-media);
+}
+
+/* --- Legenda de Status (tela Alertas) ----------------------------------- */
+
+.legendaList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+}
+
+.legendaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Gestão e indicadores (tela Mais) ----------------------------------- */
+
+.distBar {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  margin-top: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background-color: var(--sup-border);
+}
+
+.distSeg {
+  height: 100%;
+}
+
+.distSeg.critica {
+  background-color: var(--sup-critica);
+}
+
+.distSeg.alta {
+  background-color: var(--sup-alta);
+}
+
+.distSeg.media {
+  background-color: var(--sup-media);
+}
+
+.distLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+  color: var(--sup-muted-fg);
+}
+
+.distLegendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.kpiCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--sup-border);
+  border-radius: var(--sup-radius);
+  background-color: var(--sup-card);
+}
+
+.kpiLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sup-muted-fg);
+}
+
+.kpiValue {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.padroesList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(25, 9, 46, 0.9);
+}
+
+.cicloFlow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 0;
+}
+
+/* Chip + seta juntos: a seta nunca fica órfã no início de uma linha */
+.cicloFlowItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cicloChip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: rgba(27, 4, 53, 0.08);
+  color: var(--sup-navy);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.cicloSeta {
+  color: var(--sup-muted-fg);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* --- Detalhe do chamado (/chamados/:id) --------------------------------- */
+
+/* Link "← Chamadas" que fecha o detalhe e volta à tela anterior. */
+.voltarLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 12px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--sup-muted-fg);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.voltarLink:hover {
+  color: var(--sup-navy);
+}
+
+.voltarLink:focus-visible {
+  outline: 2px solid var(--sup-ring);
+  outline-offset: 2px;
+}
+
+/* Badge de prioridade + id do chamado (h1 da tela de detalhe). */
+.detalheTituloRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Linha de SLA colorida pela prioridade, como o contador dos cards. */
+.detalheSla {
+  margin: 6px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.detalheSla.critica {
+  color: var(--sup-critica);
+}
+
+.detalheSla.alta {
+  color: var(--sup-alta);
+}
+
+.detalheSla.media {
+  color: var(--sup-media);
+}
+
+.detalheSla.normal {
+  color: var(--sup-verde);
+}
+
+/* Abas Resumo / Linha do Tempo / Histórico (só a Resumo tem conteúdo). */
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.tab {
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sup-muted-fg);
+  cursor: default;
+}
+
+.tabAtiva {
+  color: var(--sup-navy);
+  border-bottom-color: var(--sup-navy);
+}
+
+/* Card EVENTO: defeito em destaque + linhas de contexto */
+.detalheDefeito {
+  margin: 10px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.detalheLinha {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: rgba(25, 9, 46, 0.8);
+}
+
+/* Card IMPACTO TEMPORAL: SLA / TA / TB em três colunas */
+.impactoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 12px 0 0;
+}
+
+.impactoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  border: 1px solid var(--sup-border);
+  border-radius: calc(var(--sup-radius) - 4px); /* rounded-lg */
+  background-color: var(--sup-background);
+}
+
+.impactoLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sup-muted-fg);
+}
+
+.impactoValor {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.impactoValor.critica {
+  color: var(--sup-critica);
+}
+
+.impactoValor.alta {
+  color: var(--sup-alta);
+}
+
+.impactoValor.media {
+  color: var(--sup-media);
+}
+
+/* Blocos de recurso dentro das AÇÕES SUGERIDAS (técnico e peça) */
+.recursoCard {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--sup-border);
+  border-radius: calc(var(--sup-radius) - 4px); /* rounded-lg */
+  background-color: var(--sup-background);
+}
+
+.recursoTitulo {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--sup-muted-fg);
+}
+
+.recursoNome {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.recursoMeta {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: rgba(25, 9, 46, 0.8);
+}
+
+/* Rodapé de ações do detalhe: Ligar técnico / WhatsApp */
+.detalheAcoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0 8px;
+}
+
+/* ---------------------------------------------------------------------------
+ * BOTTOM NAV (contida no shell)
+ * ------------------------------------------------------------------------- */
+.bottomNav {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 8px;
+  border-top: 1px solid var(--sup-border);
+  background-color: var(--sup-card);
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+  border: none;
+  background: none;
+  color: var(--sup-muted-fg);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.navItem:focus-visible {
+  outline: 2px solid var(--sup-ring);
+  outline-offset: 2px;
+}
+
+.navItemActive {
+  color: var(--sup-navy);
+}
+
+.navBadge {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  height: 16px;
+  min-width: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background-color: var(--sup-critica);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+ * MODAL DE ALERTA DE SLA (overlay contido no shell)
+ * ------------------------------------------------------------------------- */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px;
+  background-color: rgba(27, 4, 53, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 448px;
+  max-height: 85%;
+  margin-top: 32px;
+  overflow: hidden;
+  border-radius: calc(var(--sup-radius) + 4px); /* rounded-2xl */
+  background-color: var(--sup-card);
+  box-shadow:
+    0 0 0 1px rgba(230, 0, 35, 0.25),
+    0 10px 26px -10px rgba(230, 0, 35, 0.5);
+}
+
+@supports (color: oklch(50% 0.1 250)) {
+  .modal {
+    box-shadow:
+      0 0 0 1px oklch(58% 0.24 25 / 0.25),
+      0 10px 26px -10px oklch(58% 0.24 25 / 0.5);
+  }
+}
+
+.modalHeader {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 16px;
+  border: none;
+  background-color: var(--sup-critica-soft);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.modalHeader:focus-visible {
+  outline: 2px solid var(--sup-ring);
+  outline-offset: -2px;
+}
+
+.modalIconWrap {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background-color: var(--sup-critica);
+  color: #ffffff;
+}
+
+.modalTitles {
+  min-width: 0;
+}
+
+.modalTitle {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modalText {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: rgba(25, 9, 46, 0.8);
+}
+
+.modalMinutos {
+  color: var(--sup-critica);
+}
+
+.modalCloseIcon {
+  flex-shrink: 0;
+  color: var(--sup-critica);
+}
+
+.modalBody {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.modalSection {
+  padding: 16px;
+  border-bottom: 1px solid var(--sup-border);
+}
+
+.modalSectionTitle {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--sup-muted-fg);
+}
+
+.modalList {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: rgba(25, 9, 46, 0.9);
+}
+
+.modalActions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid var(--sup-border);
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--sup-radius);
+  background-color: var(--sup-navy);
+  color: var(--sup-navy-fg);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.primaryButton:hover {
+  filter: brightness(1.15);
+}
+
+.secondaryButton {
+  padding: 12px 16px;
+  border: 1px solid var(--sup-border);
+  border-radius: var(--sup-radius);
+  background-color: var(--sup-card);
+  color: var(--sup-foreground);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.secondaryButton:hover {
+  background-color: var(--sup-background);
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline: 2px solid var(--sup-ring);
+  outline-offset: 2px;
+}

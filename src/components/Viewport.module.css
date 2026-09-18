@@ -1,0 +1,27 @@
+/*
+ * Área de visualização.
+ *
+ * Cada visualização recebe seu próprio "painel" com altura cheia e rolagem
+ * própria, o que dá liberdade total às páginas internas:
+ * - página longa (documento) → o painel rola naturalmente;
+ * - página com layout fixo → ocupa 100% da altura e gerencia a própria
+ *   rolagem internamente (basta definir height: 100% no elemento raiz).
+ *
+ * Como cada painel é um contêiner de rolagem independente, a posição de
+ * rolagem de cada visualização é preservada ao trocar de abas.
+ */
+.viewport {
+  flex: 1 1 auto;     /* ocupa todo o espaço restante acima da barra de abas */
+  min-height: 0;      /* permite encolher corretamente dentro do flex column */
+  overflow: hidden;
+  background-color: var(--onx-content-bg);
+}
+
+.pane {
+  height: 100%;
+  overflow: auto;     /* rolagem individual por visualização */
+}
+
+.paneHidden {
+  display: none;      /* oculta sem desmontar: preserva estado e scroll */
+}

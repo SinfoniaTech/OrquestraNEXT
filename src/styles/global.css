@@ -1,0 +1,20 @@
+/*
+ * Estilos globais MÍNIMOS e não invasivos.
+ *
+ * REGRA DO PROJETO: nunca estilizar tags genéricas (button, div, input, h1,
+ * etc.) aqui — as futuras páginas internas do apresentador não podem ser
+ * afetadas pelo container. Todo o visual do container vive em CSS Modules
+ * (*.module.css), escopados aos próprios componentes.
+ *
+ * Este arquivo apenas garante que o aplicativo ocupe a janela inteira.
+ */
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}

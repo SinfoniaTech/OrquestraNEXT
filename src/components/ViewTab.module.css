@@ -1,0 +1,56 @@
+/*
+ * Aba individual — visual de aba de documento/planilha:
+ * largura conforme o rótulo, cantos superiores arredondados, presa ao topo
+ * da barra. A aba ativa fica branca (mesma cor da área de conteúdo) com um
+ * filete de destaque no topo, conectando-se visualmente ao conteúdo.
+ *
+ * `flex: 0 0 auto` garante que as abas nunca encolham quando há muitas —
+ * quem cede é a barra, com rolagem horizontal.
+ */
+.tab,
+.tabActive {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 34px;
+  min-width: 96px;
+  padding: 0 18px;
+  border: none;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  font: inherit;
+  font-size: 13.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  /* transição única e rápida: nada de animações excessivas */
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+/* Estado normal */
+.tab {
+  background-color: var(--onx-tab-bg);
+  color: var(--onx-tab-text);
+}
+
+/* Estado hover */
+.tab:hover {
+  background-color: var(--onx-tab-bg-hover);
+  color: var(--onx-tab-text-active);
+}
+
+/* Estado ativa: fundo branco conectado à área de conteúdo + filete de destaque */
+.tabActive {
+  background-color: var(--onx-tab-active-bg);
+  color: var(--onx-tab-text-active);
+  font-weight: 600;
+  box-shadow: inset 0 2.5px 0 0 var(--onx-accent);
+}
+
+/* Foco visível para navegação por teclado (sem interferir no clique) */
+.tab:focus-visible,
+.tabActive:focus-visible {
+  outline: 2px solid var(--onx-accent);
+  outline-offset: -2px;
+}

@@ -1,0 +1,38 @@
+/*
+ * Barra de abas fixa na parte inferior.
+ *
+ * - ocupa toda a largura e nunca é empurrada para fora da tela (o layout
+ *   é uma flex column: a barra tem altura fixa, a área de visualização
+ *   é quem encolhe);
+ * - rolagem horizontal própria quando as abas excedem a largura
+ *   disponível, com uma scrollbar fina e discreta;
+ * - as abas ficam alinhadas ao topo da barra, "conectadas" à área de
+ *   conteúdo acima — como abas de planilha/documento.
+ */
+.tabBar {
+  flex: 0 0 auto;          /* altura própria, nunca comprimida pelo flex */
+  display: flex;
+  align-items: flex-start; /* abas encostadas no topo da barra */
+  gap: 3px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 6px 7px;      /* faixa cinza abaixo das abas, estilo pasta */
+  background-color: var(--onx-bar-bg);
+  overflow-x: auto;        /* rolagem horizontal quando há muitas abas */
+  overflow-y: hidden;
+  scrollbar-width: thin;   /* Firefox */
+}
+
+/* Scrollbar fina e discreta (Chrome / Edge) */
+.tabBar::-webkit-scrollbar {
+  height: 5px;
+}
+
+.tabBar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tabBar::-webkit-scrollbar-thumb {
+  background-color: #aab1bb;
+  border-radius: 999px;
+}

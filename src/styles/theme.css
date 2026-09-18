@@ -1,0 +1,18 @@
+/*
+ * Paleta do container — APENAS variáveis CSS, nenhuma regra de estilo.
+ *
+ * As variáveis usam o prefixo --onx-* (OrquestraNEXT) para evitar colisão
+ * com variáveis definidas por futuras páginas internas. Páginas internas
+ * podem redefini-las dentro do próprio subtree, mas em geral não devem
+ * depender delas.
+ */
+:root {
+  --onx-content-bg: #ffffff;      /* fundo da área de visualização */
+  --onx-bar-bg: #dde1e7;          /* fundo da barra de abas */
+  --onx-tab-bg: #ccd2da;          /* aba inativa */
+  --onx-tab-bg-hover: #d8dde4;    /* aba inativa (hover) */
+  --onx-tab-active-bg: #ffffff;   /* aba ativa (conecta com o conteúdo) */
+  --onx-tab-text: #4a515c;        /* texto da aba inativa */
+  --onx-tab-text-active: #16181c; /* texto da aba ativa */
+  --onx-accent: #2f6fed;          /* cor de destaque da aba ativa */
+}
