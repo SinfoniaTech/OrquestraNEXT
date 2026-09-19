@@ -1,8 +1,6 @@
 import { VisaoGeral } from './mocks/VisaoGeral.jsx';
 import { Dashboard } from './mocks/Dashboard.jsx';
-import { Site01 } from './mocks/Site01.jsx';
-import { Site02 } from './mocks/Site02.jsx';
-import { BackofficeView } from './backoffice/BackofficeView.jsx';
+import BackofficeView from './backoffice/BackofficeView.jsx';
 import SupervisorView from './supervisor/SupervisorView.jsx';
 
 /**
@@ -28,6 +26,4 @@ export const viewRegistry = [
   { id: 'supervisor', label: 'Supervisor', component: SupervisorView },
   { id: 'visao-geral', label: 'Visão Geral', component: VisaoGeral },
   { id: 'dashboard', label: 'Dashboard', component: Dashboard },
-  { id: 'site-01', label: 'Site 01', component: Site01 },
-  { id: 'site-02', label: 'Site 02', component: Site02 },
 ];

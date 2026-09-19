@@ -16,15 +16,16 @@ export default function ChamadosView({ onOpen = null }) {
 
   return (
     <>
-      <section className={styles.titleSection}>
-        <h1 className={styles.title}>
-          Chamados
-          <br />
-          {eventosAtivos} eventos ativos agora.
-        </h1>
-        <div className={styles.sortBar}>
-          Ordenar por: Tempo p/ Estourar SLA
-          <SlidersHorizontalIcon size={14} />
+      <section
+        className={`${styles.titleSection} ${styles.titleSectionCompact}`}
+      >
+        <h1 className={`${styles.title} ${styles.titleCompact}`}>Chamados</h1>
+        <div className={styles.subtitleRow}>
+          <p className={styles.subtitle}>{eventosAtivos} eventos ativos agora.</p>
+          <div className={styles.sortBar}>
+            Ordenar por: Tempo p/ Estourar SLA
+            <SlidersHorizontalIcon size={14} />
+          </div>
         </div>
       </section>
 

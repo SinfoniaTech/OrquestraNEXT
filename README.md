@@ -105,12 +105,13 @@ O container foi construído para **não interferir** nas páginas internas:
     `overflow` no elemento raiz da sua página e gerencie a rolagem interna;
 - prefira cores/estilos próprios; evite depender das variáveis `--onx-*`.
 
-## Mocks atuais
+## Abas sem conteúdo
 
-`Visão Geral`, `Dashboard`, `Site 01` e `Site 02` — placeholders baseados no
-componente `src/views/mocks/MockView.jsx`, apenas para demonstrar a navegação.
-**Serão substituídos** pelas aplicações reais (basta trocar o `component` de
-cada entrada no registry e apagar a pasta `mocks/` quando não for mais usada).
+`Visão Geral` e `Dashboard` — abas mantidas na barra inferior, mas renderizando
+apenas um container vazio (`src/views/mocks/VisaoGeral.jsx` e
+`src/views/mocks/Dashboard.jsx`). **Serão substituídas** pelas aplicações reais
+(basta trocar o `component` de cada entrada no registry e apagar a pasta
+`mocks/` quando não for mais usada).
 
 ## Pontos de expansão futuros (ainda não implementados)
 

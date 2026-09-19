@@ -8,11 +8,13 @@
  */
 :root {
   --onx-content-bg: #ffffff;      /* fundo da área de visualização */
-  --onx-bar-bg: #dde1e7;          /* fundo da barra de abas */
-  --onx-tab-bg: #ccd2da;          /* aba inativa */
-  --onx-tab-bg-hover: #d8dde4;    /* aba inativa (hover) */
-  --onx-tab-active-bg: #ffffff;   /* aba ativa (conecta com o conteúdo) */
-  --onx-tab-text: #4a515c;        /* texto da aba inativa */
-  --onx-tab-text-active: #16181c; /* texto da aba ativa */
-  --onx-accent: #2f6fed;          /* cor de destaque da aba ativa */
+  --onx-bar-bg: #f4f3f7;         /* fundo da barra de abas — fundo do conteúdo do Backoffice (--bk-background) */
+  --onx-tab-bg: transparent;      /* aba inativa — transparente sobre a barra clara */
+  --onx-tab-bg-hover: #eae9f2;    /* aba inativa (hover) — secondary do Backoffice (--bk-secondary) */
+  --onx-tab-active-bg: oklch(17% 0.06 275);  /* aba ativa — roxo escuro da sidebar do Backoffice (--bk-sidebar) */
+  --onx-tab-active-filete: #ffffff; /* filete na base da aba ativa — branco, contraste sobre o roxo escuro */
+  --onx-tab-text: #6f6980;        /* texto da aba inativa — muted-fg do Backoffice (--bk-muted-fg) */
+  --onx-tab-text-hover: #221536;  /* texto da aba inativa no hover — foreground do Backoffice */
+  --onx-tab-text-active: #ffffff; /* texto da aba ativa — branco sobre o roxo escuro */
+  --onx-accent: #443a8c;          /* cor de destaque (foco) — ring/primary do Backoffice (--bk-ring) */
 }

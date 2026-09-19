@@ -3,7 +3,7 @@ import ViewTab from './ViewTab.jsx';
 import styles from './TabBar.module.css';
 
 /**
- * Barra inferior de abas (aparência de abas de documento/planilha).
+ * Barra inferior de abas (aparência de abas de pasta, estilo Google Chrome).
  *
  * Responsabilidades:
  * - listar uma aba por visualização do registro, na ordem declarada;

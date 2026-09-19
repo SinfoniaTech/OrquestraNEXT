@@ -1,29 +1,32 @@
 /*
- * Barra de abas fixa na parte inferior.
+ * Barra inferior de abas — paleta clara do conteúdo do Backoffice
+ * (--bk-background), com abas de pasta invertidas (estilo Google Chrome
+ * espelhado): abas "penduradas" do topo da barra.
  *
  * - ocupa toda a largura e nunca é empurrada para fora da tela (o layout
- *   é uma flex column: a barra tem altura fixa, a área de visualização
+ *   é uma flex column: a barra tem altura própria, a área de visualização
  *   é quem encolhe);
+ * - as abas ficam alinhadas ao topo da barra (flex-start) e sem padding
+ *   vertical: penduradas do topo, rentes ao conteúdo acima;
  * - rolagem horizontal própria quando as abas excedem a largura
- *   disponível, com uma scrollbar fina e discreta;
- * - as abas ficam alinhadas ao topo da barra, "conectadas" à área de
- *   conteúdo acima — como abas de planilha/documento.
+ *   disponível, com uma scrollbar fina e discreta.
  */
 .tabBar {
   flex: 0 0 auto;          /* altura própria, nunca comprimida pelo flex */
   display: flex;
-  align-items: flex-start; /* abas encostadas no topo da barra */
-  gap: 3px;
+  align-items: flex-start;  /* abas penduradas do topo, rentes ao conteúdo */
+  gap: 4px;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 6px 7px;      /* faixa cinza abaixo das abas, estilo pasta */
+  padding: 0 12px;         /* sem respiro vertical: as abas tocam o conteúdo */
   background-color: var(--onx-bar-bg);
   overflow-x: auto;        /* rolagem horizontal quando há muitas abas */
   overflow-y: hidden;
   scrollbar-width: thin;   /* Firefox */
 }
 
-/* Scrollbar fina e discreta (Chrome / Edge) */
+/* Scrollbar fina e discreta (Chrome / Edge) — cinza-lavanda claro,
+ * visível sobre o fundo claro da barra (paleta do Backoffice) */
 .tabBar::-webkit-scrollbar {
   height: 5px;
 }
@@ -33,6 +36,6 @@
 }
 
 .tabBar::-webkit-scrollbar-thumb {
-  background-color: #aab1bb;
+  background-color: #c9c4d8;
   border-radius: 999px;
 }

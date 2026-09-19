@@ -1,0 +1,955 @@
+/*
+ * DESIGN SYSTEM DA VIEW "BACKOFFICE" — reconstrução da referência
+ * exec-tech-nexus.lovable.app (ORQUESTRA | OTIS).
+ *
+ * Isolamento:
+ * - todos os tokens usam o prefixo --bk-* e são definidos na raiz da view
+ *   (.stage), nunca em :root — nada vaza para o container ou outras views;
+ * - todas as regras vivem neste CSS Module (escopo automático).
+ *
+ * Valores: tokens convertidos dos oklch extraídos do :root da referência
+ * (--background 97%/.008/275, --primary 32%/.11/272, --sidebar 17%/.06/275
+ * etc.), com a escala de espaçamento de 4px do Tailwind original.
+ * Tipografia: stack de sistema da referência (--default-font-family).
+ */
+
+.stage {
+  /* tokens da referência (oklch -> hex) */
+  --bk-background: #f4f3f7;      /* oklch(97% .008 275)  */
+  --bk-foreground: #221536;      /* oklch(17% .06 275)   */
+  --bk-card: #ffffff;
+  --bk-primary: #443a8c;         /* oklch(32% .11 272)   */
+  --bk-primary-fg: #fbfbfd;
+  --bk-secondary: #eae9f2;       /* oklch(94% .02 272)   */
+  --bk-muted: #efedf3;           /* oklch(95.5% .012 275) */
+  --bk-muted-fg: #6f6980;        /* oklch(48% .05 272)   */
+  --bk-accent: #e6e4f0;          /* oklch(93% .03 272)   */
+  --bk-border: #e2e0e8;          /* oklch(90% .02 272)   */
+  --bk-input: #dcd9e4;           /* oklch(88% .025 272)  */
+  --bk-ring: #443a8c;
+  --bk-success: #2e9e55;         /* oklch(62% .15 150)   */
+  --bk-warning: #c98a04;         /* oklch(72% .16 62) — texto sobre claro */
+  --bk-critical: #d93a2b;        /* oklch(58% .22 25)    */
+  --bk-info: #3f6fd9;            /* oklch(50% .14 262)   */
+  --bk-chart-1: #443a8c;
+  --bk-chart-2: #3f6fd9;
+  --bk-chart-3: #c98a04;
+  --bk-chart-4: #d93a2b;
+  --bk-chart-5: #4d8fd1;
+  --bk-sidebar: #221536;         /* oklch(17% .06 275)   */
+  --bk-sidebar-fg: #e2e0e8;
+  --bk-sidebar-primary: #575ecf; /* oklch(50% .15 262)   */
+  --bk-sidebar-primary-fg: #fbfbfd;
+  --bk-sidebar-accent: #33234d;  /* oklch(24% .07 272)   */
+  --bk-sidebar-accent-fg: #eceaf2;
+  --bk-sidebar-border: #3a2a55;  /* oklch(30% .07 272)   */
+  --bk-radius: 10px;             /* --radius: .625rem    */
+
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  background-color: var(--bk-background);
+  color: var(--bk-foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', 'Noto Sans', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+@supports (color: oklch(50% 0.1 250)) {
+  .stage {
+    --bk-background: oklch(97% 0.008 275);
+    --bk-foreground: oklch(17% 0.06 275);
+    --bk-primary: oklch(32% 0.11 272);
+    --bk-secondary: oklch(94% 0.02 272);
+    --bk-muted: oklch(95.5% 0.012 275);
+    --bk-muted-fg: oklch(48% 0.05 272);
+    --bk-accent: oklch(93% 0.03 272);
+    --bk-border: oklch(90% 0.02 272);
+    --bk-input: oklch(88% 0.025 272);
+    --bk-ring: oklch(32% 0.11 272);
+    --bk-success: oklch(62% 0.15 150);
+    --bk-warning: oklch(72% 0.16 62);
+    --bk-critical: oklch(58% 0.22 25);
+    --bk-info: oklch(50% 0.14 262);
+    --bk-chart-1: oklch(32% 0.11 272);
+    --bk-chart-2: oklch(55% 0.14 262);
+    --bk-chart-3: oklch(72% 0.16 62);
+    --bk-chart-4: oklch(58% 0.22 25);
+    --bk-chart-5: oklch(68% 0.1 240);
+    --bk-sidebar: oklch(17% 0.06 275);
+    --bk-sidebar-fg: oklch(90% 0.02 272);
+    --bk-sidebar-primary: oklch(50% 0.15 262);
+    --bk-sidebar-accent: oklch(24% 0.07 272);
+    --bk-sidebar-accent-fg: oklch(98% 0.003 272);
+    --bk-sidebar-border: oklch(30% 0.07 272);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * SIDEBAR — w-64 (256px), sticky, h-screen, oculta abaixo de lg (1024px)
+ * ------------------------------------------------------------------------- */
+.sidebar {
+  width: 256px;
+  flex-shrink: 0;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  background-color: var(--bk-sidebar);
+  color: var(--bk-sidebar-fg);
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: flex;
+  }
+}
+
+.sidebarBrand {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+}
+
+/* Wordmark oficial (orquestra-logo13.png): arte branca com fundo
+ * transparente, exibida direto sobre o roxo escuro da sidebar. */
+.sidebarLogo {
+  display: block;
+  width: auto;
+  height: 36px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.sidebarNav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 12px;
+  overflow-y: auto;
+}
+
+.sidebarSectionLabel {
+  padding: 20px 12px 4px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bk-sidebar-fg);
+  opacity: 0.5;
+}
+
+.sidebarList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  color: var(--bk-sidebar-fg);
+  background: transparent;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.sidebarItem:hover {
+  background-color: var(--bk-sidebar-accent);
+  color: var(--bk-sidebar-accent-fg);
+}
+
+.sidebarItemActive,
+.sidebarItemActive:hover {
+  background-color: var(--bk-sidebar-primary);
+  color: var(--bk-sidebar-primary-fg);
+}
+
+/* ---------------------------------------------------------------------------
+ * COLUNA PRINCIPAL + HEADER STICKY
+ * ------------------------------------------------------------------------- */
+.mainColumn {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.topHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--bk-border);
+  background-color: color-mix(in srgb, var(--bk-card) 90%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.searchWrap {
+  position: relative;
+  display: none; /* hidden md:block — só aparece a partir de md (768px) */
+}
+
+@media (min-width: 768px) {
+  .searchWrap {
+    display: block;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--bk-muted-fg);
+  pointer-events: none;
+}
+
+.searchInput {
+  height: 36px;
+  width: 288px;
+  max-width: 100%;
+  border: 1px solid var(--bk-input);
+  border-radius: 6px;
+  background-color: var(--bk-background);
+  padding: 0 12px 0 36px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--bk-foreground);
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--bk-muted-fg);
+}
+
+.searchInput:focus {
+  border-color: var(--bk-ring);
+}
+
+.topHeaderInfo {
+  min-width: 0;
+  flex: 1;
+}
+
+.topHeaderTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topHeaderSubtitle {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: var(--bk-muted-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* seletor de período */
+.periodWrap {
+  position: relative;
+}
+
+.periodButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: var(--bk-primary);
+  color: var(--bk-primary-fg);
+}
+
+.periodMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  z-index: 20;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  min-width: 180px;
+  border: 1px solid var(--bk-border);
+  border-radius: 8px;
+  background-color: var(--bk-card);
+  box-shadow: 0 8px 24px rgba(34, 21, 54, 0.12);
+}
+
+.periodOption {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  color: var(--bk-foreground);
+}
+
+.periodOption:hover {
+  background-color: var(--bk-accent);
+}
+
+.periodOptionActive {
+  background-color: var(--bk-primary);
+  color: var(--bk-primary-fg);
+}
+
+
+/* ---------------------------------------------------------------------------
+ * SUBNAV MOBILE — aparece apenas abaixo de lg, como na referência
+ * ------------------------------------------------------------------------- */
+.mobileNav {
+  display: flex;
+  gap: 8px;
+  padding: 0 24px 12px;
+}
+
+@media (min-width: 1024px) {
+  .mobileNav {
+    display: none;
+  }
+}
+
+.mobileNavItem {
+  border: 1px solid var(--bk-border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  background: transparent;
+  color: var(--bk-foreground);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.mobileNavItemActive,
+.mobileNavItemActive:hover {
+  background-color: var(--bk-primary);
+  border-color: var(--bk-primary);
+  color: var(--bk-primary-fg);
+}
+
+/* ---------------------------------------------------------------------------
+ * CONTEÚDO — p-4 (16px), espaçamento vertical de 12px entre seções
+ * ------------------------------------------------------------------------- */
+.main {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ---------------------------------------------------------------------------
+ * CARDS DE KPI — 2 colunas mobile, 3 em md (768px), 6 em xl (1280px)
+ * ------------------------------------------------------------------------- */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .kpiGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .kpiGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.kpiCard {
+  border: 1px solid var(--bk-border);
+  border-radius: 12px;
+  background-color: var(--bk-card);
+  padding: 14px;
+}
+
+.kpiLabel {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--bk-muted-fg);
+}
+
+.kpiValue {
+  margin: 8px 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--bk-foreground);
+}
+
+.kpiValue-critical {
+  color: var(--bk-critical);
+}
+
+.kpiValue-warning {
+  color: var(--bk-warning);
+}
+
+.kpiValue-success {
+  color: var(--bk-success);
+}
+
+.kpiSub {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--bk-muted-fg);
+}
+
+.kpiSub-success {
+  color: var(--bk-success);
+}
+
+.kpiSub-warning {
+  color: var(--bk-warning);
+}
+
+.kpiSub-critical {
+  color: var(--bk-critical);
+}
+
+/* ---------------------------------------------------------------------------
+ * CARD DE SEÇÃO — container branco com borda, título e subtítulo
+ * ------------------------------------------------------------------------- */
+.sectionCard {
+  border: 1px solid var(--bk-border);
+  border-radius: 12px;
+  background-color: var(--bk-card);
+  padding: 16px;
+}
+
+.sectionHeader {
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sectionHeaderText {
+  min-width: 0;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bk-foreground);
+}
+
+.sectionSubtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--bk-muted-fg);
+}
+
+/* ---------------------------------------------------------------------------
+ * BADGES — pill 11px com fundo translúcido por tom
+ * ------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.badge-critical {
+  background-color: color-mix(in srgb, var(--bk-critical) 10%, transparent);
+  color: var(--bk-critical);
+}
+
+.badge-warning {
+  background-color: color-mix(in srgb, var(--bk-warning) 15%, transparent);
+  color: var(--bk-foreground);
+}
+
+.badge-success {
+  background-color: color-mix(in srgb, var(--bk-success) 10%, transparent);
+  color: var(--bk-success);
+}
+
+.badge-info {
+  background-color: color-mix(in srgb, var(--bk-info) 10%, transparent);
+  color: var(--bk-info);
+}
+
+.badge-muted {
+  background-color: var(--bk-muted);
+  color: var(--bk-muted-fg);
+}
+
+.badge-primary {
+  background-color: color-mix(in srgb, var(--bk-primary) 10%, transparent);
+  color: var(--bk-primary);
+}
+
+/* ---------------------------------------------------------------------------
+ * CHIPS DE FILTRO
+ * ------------------------------------------------------------------------- */
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.filterLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--bk-muted-fg);
+}
+
+.filterChip {
+  border: 1px solid var(--bk-border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  background: transparent;
+  color: var(--bk-foreground);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.filterChip:hover {
+  background-color: var(--bk-accent);
+}
+
+.filterChipActive,
+.filterChipActive:hover {
+  background-color: var(--bk-primary);
+  border-color: var(--bk-primary);
+  color: var(--bk-primary-fg);
+}
+
+
+/* ---------------------------------------------------------------------------
+ * GRIDS DE GRÁFICOS E SEÇÕES EM COLUNAS
+ * ------------------------------------------------------------------------- */
+.chartGrid3 {
+  display: grid;
+  gap: 8px;
+}
+
+@media (min-width: 1280px) {
+  .chartGrid3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.chartGrid2 {
+  display: grid;
+  gap: 8px;
+}
+
+@media (min-width: 1280px) {
+  .chartGrid2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * GRÁFICOS SVG — altura h-56 (224px), ticks e grade no padrão da referência
+ * ------------------------------------------------------------------------- */
+.chart {
+  height: 224px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chartSvg {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.chartGrid {
+  stroke: var(--bk-border);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.chartTick {
+  font-size: 10px;
+  fill: var(--bk-muted-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+.chartLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+
+.chartLegendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--bk-muted-fg);
+}
+
+.chartLegendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+ * TABELAS — header xs uppercase, células px-3 py-3, scroll horizontal
+ * ------------------------------------------------------------------------- */
+.tableScroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 860px;
+  text-align: left;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.tableHeadRow {
+  border-bottom: 1px solid var(--bk-border);
+}
+
+.tableHeadCell {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bk-muted-fg);
+  white-space: nowrap;
+}
+
+.tableRow {
+  border-bottom: 1px solid color-mix(in srgb, var(--bk-border) 60%, transparent);
+}
+
+.tableRow:last-child {
+  border-bottom: 0;
+}
+
+.tableRow:hover {
+  background-color: var(--bk-muted);
+}
+
+.tableCell {
+  padding: 12px;
+  color: var(--bk-foreground);
+  vertical-align: middle;
+}
+
+.tableCellStrong {
+  font-weight: 500;
+}
+
+.tableCellNumeric {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------------------
+ * PERFORMANCE POR ÁREA / SAÚDE DA CARTEIRA — cards internos
+ * ------------------------------------------------------------------------- */
+.areaGrid {
+  display: grid;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .areaGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .areaGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.areaCard {
+  border: 1px solid var(--bk-border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.areaCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.areaName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bk-foreground);
+}
+
+.areaStats {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 8px;
+  font-size: 12px;
+  color: var(--bk-muted-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------------------
+ * COBERTURA DE SKILLS — item + barra de progresso
+ * ------------------------------------------------------------------------- */
+.skillList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skillItem {
+  display: block;
+}
+
+.skillHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.skillName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bk-foreground);
+}
+
+.skillMeta {
+  margin: 4px 0 6px;
+  font-size: 12px;
+  color: var(--bk-muted-fg);
+}
+
+.progressTrack {
+  height: 6px;
+  width: 100%;
+  border-radius: 9999px;
+  background-color: var(--bk-muted);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.progress-primary {
+  background-color: var(--bk-primary);
+}
+
+.progress-warning {
+  background-color: var(--bk-warning);
+}
+
+.progress-critical {
+  background-color: var(--bk-critical);
+}
+
+.progress-success {
+  background-color: var(--bk-success);
+}
+
+
+/* ---------------------------------------------------------------------------
+ * RECOMENDAÇÕES / SINAIS PREDITIVOS — itens com ícone e impacto
+ * ------------------------------------------------------------------------- */
+.recoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid var(--bk-border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.recoIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: var(--bk-accent);
+  color: var(--bk-primary);
+}
+
+.recoBody {
+  min-width: 0;
+  flex: 1;
+}
+
+.recoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.recoTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bk-foreground);
+}
+
+.recoDesc {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--bk-muted-fg);
+}
+
+.recoImpact {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--bk-success);
+}
+
+/* ---------------------------------------------------------------------------
+ * SAÚDE DA CARTEIRA POR SEGMENTO — grid 2x2 de cards internos
+ * ------------------------------------------------------------------------- */
+.segmentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.segmentCard {
+  border: 1px solid var(--bk-border);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.segmentName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bk-foreground);
+}
+
+.segmentContracts {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--bk-foreground);
+}
+
+.segmentStats {
+  margin-top: 6px;
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--bk-muted-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------------------
+ * TELA PLACEHOLDER — módulos do menu sem conteúdo na referência
+ * ------------------------------------------------------------------------- */
+.placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  border: 1px dashed var(--bk-border);
+  border-radius: 12px;
+  background-color: var(--bk-card);
+  text-align: center;
+}
+
+.placeholderIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background-color: var(--bk-accent);
+  color: var(--bk-primary);
+}
+
+.placeholderTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--bk-foreground);
+}
+
+.placeholderText {
+  margin: 0;
+  max-width: 420px;
+  font-size: 14px;
+  color: var(--bk-muted-fg);
+}
+

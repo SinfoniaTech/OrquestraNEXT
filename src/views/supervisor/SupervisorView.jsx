@@ -23,8 +23,10 @@ import MaisView from './screens/MaisView.jsx';
  * Estrutura:
  * - .stage: palco que centraliza o "aparelho" dentro do painel do
  *   apresentador (fundo cinza ao redor);
- * - .shell: o aparelho em si (448px, altura cheia, rolagem própria) —
- *   header sticky, tela ativa, bottom nav e o overlay do modal vivem aqui;
+ * - .shell: o aparelho em si (448px, altura cheia, SEM rolagem — a rolagem
+ *   vive no .main) — header, tela ativa, bottom nav e o overlay do modal
+ *   vivem aqui; como o shell não rola, o overlay do modal cobre sempre a
+ *   área visível, mantendo o blur na tela inteira ao rolar a lista;
  * - telas em ./screens/: qual delas renderizar depende do item ativo da
  *   bottom nav (navAtiva), espelhando as rotas da referência; clicar em um
  *   chamado sobrepõe a tela de detalhe (ChamadoDetalheView, como a rota
@@ -44,7 +46,9 @@ export default function SupervisorView() {
   // rota /chamados/:id da referência; null = nenhum detalhe aberto.
   const [chamadoAberto, setChamadoAberto] = useState(null);
 
-  const shellRef = useRef(null);
+  // Contêiner de rolagem da view: o <main> (o shell é overflow: hidden para
+  // que o overlay do modal cubra sempre a área visível do "celular").
+  const mainRef = useRef(null);
 
   const abrirAlerta = useCallback(() => setAlertaVisivel(true), []);
 
@@ -54,10 +58,11 @@ export default function SupervisorView() {
   }, []);
 
   // Abre o detalhe de um chamado (clique no card da lista ou "Ver detalhes"
-  // do modal). O shell volta ao topo, como uma navegação de rota faria.
+  // do modal). A área de conteúdo volta ao topo, como uma navegação de rota
+  // faria.
   const abrirChamado = useCallback((id) => {
     setChamadoAberto(id);
-    shellRef.current?.scrollTo({ top: 0 });
+    mainRef.current?.scrollTo({ top: 0 });
   }, []);
 
   // "Ver detalhes" do modal: fecha o alerta e abre o detalhe do chamado em
@@ -70,26 +75,26 @@ export default function SupervisorView() {
   // Volta do detalhe para a tela de onde veio (lista de chamados).
   const voltarChamado = useCallback(() => {
     setChamadoAberto(null);
-    shellRef.current?.scrollTo({ top: 0 });
+    mainRef.current?.scrollTo({ top: 0 });
   }, []);
 
-  // Troca de tela pela bottom nav; um detalhe aberto é fechado e o shell
+  // Troca de tela pela bottom nav; um detalhe aberto é fechado e o conteúdo
   // volta ao topo, como uma navegação de rota faria.
   const selecionarNav = useCallback((id) => {
     setChamadoAberto(null);
     setNavAtiva(id);
-    shellRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+    mainRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (
     <div className={styles.stage}>
-      <div className={styles.shell} ref={shellRef}>
+      <div className={styles.shell}>
         <SupervisorHeader
           notificacoes={notificacoes}
           onOpenNotifications={abrirAlerta}
         />
 
-        <main className={styles.main}>
+        <main className={styles.main} ref={mainRef}>
           {chamadoAberto ? (
             <ChamadoDetalheView
               chamadoId={chamadoAberto}

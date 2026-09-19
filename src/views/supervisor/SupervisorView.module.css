@@ -18,7 +18,7 @@
  * PALCO: centraliza o "celular" dentro do painel do apresentador.
  * ------------------------------------------------------------------------- */
 .stage {
-  --sup-navy: #1b0435;
+  --sup-navy: #221536;
   --sup-navy-fg: #f9fafc;
   --sup-background: #f9fafc;
   --sup-card: #ffffff;
@@ -29,7 +29,7 @@
   --sup-critica-soft: #ffe5e1;
   --sup-alta: #f9700e;
   --sup-media: #f2c02a;
-  --sup-ring: #7f5bb6;
+  --sup-ring: #575ecf;
   --sup-verde: #16a34a;
   --sup-radius: 12px; /* --radius: .75rem */
 
@@ -41,7 +41,7 @@
 
 @supports (color: oklch(50% 0.1 250)) {
   .stage {
-    --sup-navy: oklch(19% 0.09 300);
+    --sup-navy: oklch(17% 0.06 275);
     --sup-navy-fg: oklch(98.5% 0.003 250);
     --sup-background: oklch(98.5% 0.003 260);
     --sup-foreground: oklch(19% 0.07 300);
@@ -51,14 +51,16 @@
     --sup-critica-soft: oklch(95% 0.04 25);
     --sup-alta: oklch(70% 0.19 47);
     --sup-media: oklch(83% 0.16 88);
-    --sup-ring: oklch(55% 0.14 300);
+    --sup-ring: oklch(50% 0.15 262);
     --sup-verde: oklch(63% 0.17 150);
   }
 }
 
 /* ---------------------------------------------------------------------------
  * SHELL: o "aparelho" — largura de celular (max-w-md = 448px), altura cheia,
- * rolagem interna. Header sticky, bottom nav e modal ficam contidos aqui.
+ * SEM rolagem própria (a rolagem vive no .main). Header, bottom nav e o
+ * overlay do modal ficam contidos aqui — por isso o overlay absoluto cobre
+ * sempre a área visível, mesmo com o conteúdo rolado.
  * ------------------------------------------------------------------------- */
 .shell {
   position: relative;
@@ -67,15 +69,15 @@
   width: 100%;
   max-width: 448px;
   height: 100%;
-  overflow-y: auto;
+  overflow: hidden;
   background-color: var(--sup-background);
   color: var(--sup-foreground);
   font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   font-size: 14px;
   line-height: 1.5;
   box-shadow:
-    0 0 0 1px rgba(27, 4, 53, 0.06),
-    0 20px 50px -20px rgba(27, 4, 53, 0.35);
+    0 0 0 1px rgba(34, 21, 54, 0.06),
+    0 20px 50px -20px rgba(34, 21, 54, 0.35);
 }
 
 /* ---------------------------------------------------------------------------
@@ -140,14 +142,41 @@
 
 /* ---------------------------------------------------------------------------
  * CONTEÚDO PRINCIPAL
+ *
+ * É aqui que o app rola (min-height: 0 + overflow-y: auto dentro da flex
+ * column do shell) — padrão do Backoffice. A bottom nav é um item do flex em
+ * fluxo, então não precisa do padding-bottom de respiro.
  * ------------------------------------------------------------------------- */
 .main {
   flex: 1 1 auto;
-  padding-bottom: 96px; /* pb-24: espaço para a bottom nav */
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .titleSection {
   padding: 20px 16px 0;
+}
+
+/* Variação compacta (tela de Chamados): menos respiro no topo do bloco de
+ * título, sem mexer no espaçamento das outras telas que usam .titleSection. */
+.titleSectionCompact {
+  padding-top: 12px;
+}
+
+/* Título da tela de Chamados: line-height menor que o .title padrão para
+ * colar a linha do subtítulo logo abaixo da palavra "Chamados". */
+.titleCompact {
+  line-height: 1.1;
+}
+
+/* Linha do subtítulo da tela de Chamados: contagem de eventos à esquerda e
+ * a barra de ordenação à direita, na mesma linha — quase colada ao título. */
+.subtitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 2px;
 }
 
 .title {
@@ -166,10 +195,9 @@
 .sortBar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-shrink: 0;
   gap: 8px;
-  margin-top: 16px;
-  padding: 8px 12px;
+  padding: 4px 12px;
   border: 1px solid var(--sup-border);
   border-radius: calc(var(--sup-radius) - 4px); /* rounded-lg */
   background-color: var(--sup-card);
@@ -674,7 +702,7 @@
 .cicloChip {
   padding: 4px 10px;
   border-radius: 999px;
-  background-color: rgba(27, 4, 53, 0.08);
+  background-color: rgba(34, 21, 54, 0.08);
   color: var(--sup-navy);
   font-size: 11px;
   font-weight: 600;
@@ -923,7 +951,12 @@
 }
 
 /* ---------------------------------------------------------------------------
- * MODAL DE ALERTA DE SLA (overlay contido no shell)
+ * MODAL DE ALERTA DE SLA (overlay cobre a área visível do shell)
+ *
+ * O shell NÃO rola (a rolagem vive no .main), então o overlay absoluto com
+ * inset: 0 cobre exatamente a janela visível do "celular" o tempo todo —
+ * rolar a lista para baixo não move o blur, sem cortes. Clicar fora do cartão
+ * (dentro do frame) fecha o modal e remove o blur normalmente.
  * ------------------------------------------------------------------------- */
 .overlay {
   position: absolute;
@@ -933,7 +966,7 @@
   align-items: flex-start;
   justify-content: center;
   padding: 16px;
-  background-color: rgba(27, 4, 53, 0.45);
+  background-color: rgba(34, 21, 54, 0.45);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
