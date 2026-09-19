@@ -1,0 +1,20 @@
+# Dependências
+node_modules
+
+# Build de produção
+dist
+dist-ssr
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variáveis/arquivos locais
+*.local
+
+# Sistema operacional
+.DS_Store
