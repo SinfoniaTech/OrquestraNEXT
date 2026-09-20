@@ -1,0 +1,1 @@
+import{t as e}from"./index-CG67Gutl.js";var t={scene:`_scene_1wb1m_3`,"b-enter":`_b-enter_1wb1m_1`,title:`_title_1wb1m_33`},n=e();function r({isActive:e=!0,side:r=`full`}){return(0,n.jsx)(`div`,{className:t.scene,children:(0,n.jsx)(`h1`,{className:t.title,children:`Cena B`})})}export{r as default};
