@@ -33,9 +33,8 @@ export const MENU_SECTIONS = [
     id: 'backoffice',
     label: 'Backoffice',
     items: [
-      { id: 'backoffice-home', label: 'Backoffice', icon: 'sliders-horizontal' },
+      { id: 'chamadas', label: 'Chamados', icon: 'phone-call' },
       { id: 'contratos', label: 'Contratos', icon: 'file-text' },
-      { id: 'chamadas', label: 'Chamadas', icon: 'phone-call' },
       { id: 'equipamentos', label: 'Equipamentos', icon: 'building-2' },
       { id: 'clientes', label: 'Clientes', icon: 'users' },
       { id: 'pecas', label: 'Peças', icon: 'package' },

@@ -1,0 +1,165 @@
+/*
+ * Controlador de cenas: palco em tela cheia + controles discretos.
+ *
+ * - O palco ocupa 100% da viewport, sem margens e sem rolagem; cada cena
+ *   fica isolada no próprio painel (overflow hidden).
+ * - Posição com 2 cenas: duas metades de largura igual, separadas por um
+ *   divisor sutil de 1px (border-left do segundo painel).
+ * - Transição entre posições: fade rápido (250ms, só opacity), desativado
+ *   para quem prefere menos movimento (prefers-reduced-motion).
+ */
+
+.controller {
+  position: relative;
+  height: 100%;
+  overflow: hidden; /* nenhum scrollbar na janela */
+  background-color: #101218;
+  color: #f4f3f7;
+  font-family:
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+}
+
+/* Palco: uma linha flex com 1 ou 2 painéis de cena. */
+.stage {
+  display: flex;
+  height: 100%;
+  animation: onx-stage-fade-in 250ms ease-out;
+}
+
+/* Painel que isola cada cena dentro da sua área (metade ou tela cheia). */
+.scenePane {
+  flex: 1 1 0;      /* metades de largura igual (ou 100% quando sozinha) */
+  min-width: 0;     /* deixa encolher mesmo se o conteúdo da cena for largo */
+  height: 100%;
+  overflow: hidden; /* o conteúdo da cena nunca vaza da sua metade */
+  display: grid;    /* a raiz da cena estica para preencher o painel */
+}
+
+/* Divisor sutil de 1px entre as duas metades da tela dividida. */
+.scenePane + .scenePane {
+  border-left: 1px solid #2a2438;
+}
+
+@keyframes onx-stage-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Respeita usuários que preferem menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  .stage {
+    animation: none;
+  }
+}
+
+/* Placeholder enquanto o chunk lazy da cena carrega. */
+.loading {
+  flex: 1;
+}
+
+/* Controles discretos no canto inferior direito (ocultáveis com H). */
+.controls {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  background-color: rgba(16, 18, 24, 0.65);
+  opacity: 0.45;
+  transition: opacity 150ms ease;
+}
+
+.controls:hover,
+.controls:focus-within {
+  opacity: 1;
+}
+
+.indicator {
+  min-width: 56px;
+  text-align: center;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: #f4f3f7;
+  user-select: none;
+}
+
+.button {
+  width: 34px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background-color: transparent;
+  color: #f4f3f7;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.button:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--onx-accent, #443a8c);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Configuração vazia/inválida: mensagem legível em vez de tela branca. */
+.empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px;
+  text-align: center;
+  background-color: #101218;
+  color: #f4f3f7;
+  font-family:
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: 28px;
+}
+
+.emptyText {
+  margin: 0;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #b9b4c6;
+}
+
+.emptyText code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 13px;
+}

@@ -1,0 +1,35 @@
+/* Cena B — fundo azul-petróleo; entra deslizando pela esquerda. */
+.scene {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 48px;
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(160deg, oklch(40% 0.09 215), oklch(24% 0.06 225));
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  animation: b-enter 500ms ease-out both;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(48px, 9vw, 96px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+@keyframes b-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-48px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene {
+    animation: none;
+  }
+}
