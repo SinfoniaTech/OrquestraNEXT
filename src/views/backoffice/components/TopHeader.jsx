@@ -5,9 +5,10 @@ import styles from '../BackofficeView.module.css';
 
 /**
  * Header superior da área de conteúdo — sticky, fundo card com blur,
- * borda inferior. Contém campo de busca (ícone de lupa absoluto),
- * título + subtítulo da tela ativa e seletor de período à direita
- * (botão primário com chevron, como o "Últimos 6 meses" da referência).
+ * borda inferior. Título + subtítulo da tela ativa à esquerda e, à
+ * direita, o campo de busca (ícone de lupa absoluto) seguido do seletor
+ * de período (botão primário com chevron, como o "Últimos 6 meses" da
+ * referência) — a busca fica imediatamente à frente do botão.
  */
 export default function TopHeader({ title, subtitle, periodo, onChangePeriodo }) {
   const [busca, setBusca] = useState('');
@@ -15,6 +16,11 @@ export default function TopHeader({ title, subtitle, periodo, onChangePeriodo })
 
   return (
     <header className={styles.topHeader}>
+      <div className={styles.topHeaderInfo}>
+        <h1 className={styles.topHeaderTitle}>{title}</h1>
+        <p className={styles.topHeaderSubtitle}>{subtitle}</p>
+      </div>
+
       <div className={styles.searchWrap}>
         <Icon name="search" size={16} className={styles.searchIcon} />
         <input
@@ -25,11 +31,6 @@ export default function TopHeader({ title, subtitle, periodo, onChangePeriodo })
           className={styles.searchInput}
           aria-label="Buscar"
         />
-      </div>
-
-      <div className={styles.topHeaderInfo}>
-        <h1 className={styles.topHeaderTitle}>{title}</h1>
-        <p className={styles.topHeaderSubtitle}>{subtitle}</p>
       </div>
 
       <div className={styles.periodWrap}>

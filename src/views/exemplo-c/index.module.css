@@ -1,0 +1,35 @@
+/* Cena C — fundo âmbar, texto escuro; entra deslizando pela direita. */
+.scene {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 48px;
+  text-align: center;
+  color: oklch(28% 0.05 60);
+  background: linear-gradient(160deg, oklch(90% 0.1 88), oklch(76% 0.13 72));
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  animation: c-enter 500ms ease-out both;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(48px, 9vw, 96px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+@keyframes c-enter {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene {
+    animation: none;
+  }
+}

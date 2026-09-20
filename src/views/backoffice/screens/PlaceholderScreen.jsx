@@ -3,7 +3,7 @@ import styles from '../BackofficeView.module.css';
 
 /**
  * Tela placeholder para os módulos do menu que a referência expõe sem
- * conteúdo próprio (Contratos, Chamadas, Equipamentos...). Mantém a
+ * conteúdo próprio (Chamados, Contratos, Equipamentos...). Mantém a
  * navegação viva dentro da View, no visual da referência.
  */
 export default function PlaceholderScreen({ item }) {

@@ -1,0 +1,47 @@
+/*
+ * Cena A — fundo roxo, título grande, animação de entrada (fade + subida).
+ * A animação reinicia a cada visita porque o controlador remonta a cena
+ * (key por posição) sempre que ela entra no palco.
+ */
+.scene {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 48px;
+  text-align: center;
+  color: #ffffff;
+  background: radial-gradient(120% 120% at 20% 0%, oklch(34% 0.12 293), oklch(17% 0.06 275) 70%);
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  animation: a-enter 500ms ease-out both;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(56px, 12vw, 140px);
+  font-weight: 700;
+  line-height: 1;
+  animation: a-rise 500ms 60ms ease-out both;
+}
+
+@keyframes a-enter {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes a-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene,
+  .title {
+    animation: none;
+  }
+}
