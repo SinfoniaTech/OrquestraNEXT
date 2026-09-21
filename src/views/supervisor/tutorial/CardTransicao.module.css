@@ -1,0 +1,45 @@
+/*
+ * Pilha de duas camadas do card em transição. As camadas são absolutas (para
+ * poderem ter alturas diferentes); a altura do contêiner é definida em JS
+ * (CardTransicao.jsx) e animada aqui.
+ */
+.pilha {
+  position: relative;
+  transition: height 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.camada {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+/* Camada de destino: invisível até a transição, depois aparece em fade. */
+.destino {
+  opacity: 0;
+  transition: opacity 650ms ease;
+}
+
+.destino.visivel {
+  opacity: 1;
+}
+
+/* Camada de origem: some de uma vez só DEPOIS que a de destino terminou de
+ * cobrir (delay = duração do fade), para a sombra dela não sujar o brilho da
+ * sombra de destino. */
+.origem {
+  transition: opacity 0s linear 650ms;
+}
+
+.origem.origemOculta {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pilha,
+  .destino,
+  .origem {
+    transition: none;
+  }
+}

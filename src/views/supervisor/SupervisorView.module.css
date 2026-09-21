@@ -37,6 +37,9 @@
   display: flex;
   justify-content: center;
   background-color: #e9edf3;
+  /* Sem isto, dentro do painel-grid do controlador de cenas o "celular" cresce
+   * até o tamanho do conteúdo e o .main nunca rola. Mesmo padrão do Backoffice. */
+  overflow: hidden;
 }
 
 @supports (color: oklch(50% 0.1 250)) {

@@ -38,4 +38,10 @@ export const scenesConfig = [
   { scene: 'supervisor', position: 6 },
   { scene: 'backoffice', position: 7 },
   { scene: 'supervisor', position: 7 },
+  // Tutorial do Supervisor (roteiro em 5 cenas)
+  { scene: 'supervisor-cena-1-tela', position: 8 },
+  { scene: 'supervisor-cena-2-normal-para-media', position: 9 },
+  { scene: 'supervisor-cena-3-media-para-alta', position: 10 },
+  { scene: 'supervisor-cena-4-alta-para-critica', position: 11 },
+  { scene: 'supervisor-cena-5-aviso-critico', position: 12 },
 ];
