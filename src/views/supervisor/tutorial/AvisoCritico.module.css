@@ -1,0 +1,269 @@
+/*
+ * CENA 5 — aviso de chamado crítico (AvisoCritico.jsx)
+ *
+ * Só movimento + o layout do estado expandido. Cores e medidas vêm dos tokens
+ * --sup-* e das classes do Supervisor (overlay, modal, botões...), que o
+ * componente reaproveita. Regras de animação:
+ * - anima só opacity, transform, box-shadow e grid-template-rows;
+ * - fill-mode "backwards" nas entradas (nada fica travado depois do fim);
+ * - prefers-reduced-motion desliga tudo no fim do arquivo;
+ * - seletores por tag/atributo ([role='dialog'], li) porque as classes do
+ *   Supervisor vivem em outro CSS Module.
+ */
+
+/* ---------------------------------------------------------------------------
+ * SUBIDA DO AVISO
+ * ------------------------------------------------------------------------- */
+
+/* Contêiner: cobre o shell exatamente como o overlay original
+ * (position absolute + inset 0 dentro do .shell, que é position relative). */
+.aviso {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+}
+
+/* O filho direto é o .overlay: o véu com blur aparece em fade. */
+.aviso > div {
+  animation: veu-entra 380ms ease-out backwards;
+}
+
+@keyframes veu-entra {
+  from {
+    opacity: 0;
+  }
+}
+
+/* O cartão (role="dialog") sobe de baixo da tela, passa um pouco do ponto e
+ * assenta; depois pulsa um anel vermelho duas vezes chamando a atenção. */
+.aviso [role='dialog'] {
+  animation:
+    aviso-sobe 900ms linear backwards,
+    aviso-pulsa 1500ms ease-out 1000ms 2;
+}
+
+@keyframes aviso-sobe {
+  from {
+    opacity: 0;
+    transform: translateY(70vh);
+    animation-timing-function: cubic-bezier(0.3, 0.6, 0.35, 1);
+  }
+  25% {
+    opacity: 1;
+  }
+  62% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes aviso-pulsa {
+  from {
+    box-shadow:
+      0 0 0 1px rgba(230, 0, 35, 0.25),
+      0 0 0 0 var(--sup-critica);
+  }
+  to {
+    box-shadow:
+      0 0 0 1px rgba(230, 0, 35, 0),
+      0 0 0 26px transparent;
+  }
+}
+
+/* "Ação recomendada": os itens entram um a um, depois do cartão assentar. */
+.aviso li {
+  animation: acao-entra 420ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.aviso li:nth-child(1) {
+  animation-delay: 740ms;
+}
+
+.aviso li:nth-child(2) {
+  animation-delay: 900ms;
+}
+
+.aviso li:nth-child(3) {
+  animation-delay: 1060ms;
+}
+
+.aviso li:nth-child(n + 4) {
+  animation-delay: 1220ms;
+}
+
+@keyframes acao-entra {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * DETALHES: o cartão "cresce" (linha de grid 0fr → 1fr)
+ * ------------------------------------------------------------------------- */
+.detalhes {
+  display: grid;
+  grid-template-rows: 0fr;
+  /* Ease-in-out e duração longa: o cartão atinge o teto de altura (85%) só
+   * perto da metade do tempo, então o "crescer" fica visível em vez de
+   * parecer instantâneo. */
+  transition: grid-template-rows 800ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.detalhesAberto {
+  grid-template-rows: 1fr;
+}
+
+.detalhesInterno {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.detalhesConteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--sup-background);
+}
+
+/* Cascata: cada bloco entra depois do anterior (--k vem do JSX). */
+.detalhesAberto .bloco {
+  animation: bloco-entra 480ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: calc(180ms + var(--k, 0) * 90ms);
+}
+
+@keyframes bloco-entra {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* Seta do botão: vira para cima quando os detalhes estão abertos. */
+.seta {
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.setaAberta {
+  transform: rotate(180deg);
+}
+
+/* ---------------------------------------------------------------------------
+ * DETALHES: layout (como nas referências)
+ * ------------------------------------------------------------------------- */
+
+/* Cards "Status do técnico" e "Peça mais rápida": ícone em círculo + texto.
+ * A sombra vem da classe cardShadow do Supervisor (aplicada no JSX). */
+.recurso {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: calc(var(--sup-radius) + 4px);
+  background-color: var(--sup-card);
+}
+
+.recursoIcone {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background-color: #eceef9;
+  background-color: color-mix(in srgb, var(--sup-ring) 12%, #ffffff);
+  color: var(--sup-navy);
+}
+
+.recursoTexto {
+  min-width: 0;
+}
+
+.recursoTitulo {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.recursoLinha {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: rgba(25, 9, 46, 0.8);
+}
+
+/* Painel IMPACTO TEMPORAL: cartão branco com blocos cinza em duas colunas. */
+.painel {
+  padding: 16px;
+  border-radius: calc(var(--sup-radius) + 4px);
+  background-color: var(--sup-card);
+}
+
+.impacto {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 12px 0 0;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: var(--sup-radius);
+  background-color: #eff1f6;
+  background-color: color-mix(in srgb, var(--sup-navy) 6%, #ffffff);
+}
+
+.tileRotulo {
+  font-size: 12px;
+  color: var(--sup-muted-fg);
+}
+
+.tileValor {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.tileCritico {
+  color: var(--sup-critica);
+}
+
+/* Ligar técnico (navy) e WhatsApp (verde), lado a lado. */
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.botoes .whatsapp {
+  background-color: #15803d;
+  background-color: color-mix(in srgb, var(--sup-verde) 82%, #000000);
+  color: #ffffff;
+}
+
+.abrirCompleto {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+ * Menos movimento: o aviso aparece direto e os detalhes abrem sem animar.
+ * ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .aviso > div,
+  .aviso [role='dialog'],
+  .aviso li,
+  .detalhesAberto .bloco {
+    animation: none;
+  }
+
+  .detalhes,
+  .seta {
+    transition: none;
+  }
+}

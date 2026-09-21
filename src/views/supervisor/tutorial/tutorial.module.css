@@ -1,0 +1,251 @@
+/*
+ * ANIMAÇÕES COMPARTILHADAS DAS CENAS DO TUTORIAL — SUPERVISOR
+ *
+ * Só movimento: nenhuma cor, tipografia ou medida do app é redefinida aqui
+ * (a única exceção é a linha "Sem chamados prioritários", que usa o verde do
+ * próprio app). As cores vêm dos tokens --sup-* (definidos na .stage do
+ * SupervisorView.module.css e herdados por tudo que fica dentro do quadro).
+ *
+ * Regras:
+ * - anima apenas opacity, transform, box-shadow e filter (mais a linha de
+ *   grid da mensagem "Sem chamados prioritários");
+ * - toda animação de entrada usa fill-mode "backwards" (e não "both"): assim
+ *   nenhuma propriedade fica travada depois do fim e as transições de estado
+ *   (esmaecer, etc.) continuam funcionando;
+ * - prefers-reduced-motion desliga tudo no fim do arquivo;
+ * - alguns seletores usam tags/atributos (header, nav, aria-current) porque
+ *   os componentes originais do Supervisor não expõem classes para estes
+ *   elementos e não foram alterados.
+ *
+ * O aviso da Cena 5 tem CSS próprio (AvisoCritico.module.css) e o card em
+ * transição também (CardTransicao.module.css).
+ */
+
+/* ---------------------------------------------------------------------------
+ * CENA 1 — chegada do aparelho na tela do Supervisor
+ * ------------------------------------------------------------------------- */
+
+/* .entrada é colocada na .stage; o único filho direto é o .shell (o "celular"). */
+.entrada > div {
+  animation: quadro-entra 720ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes quadro-entra {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+  }
+}
+
+/* A aba "Chamados" (aria-current="page") "recebe o toque": nasce apagada e
+ * pequena e assume a cor de item ativo com um leve salto. */
+.entrada nav button[aria-current='page'] {
+  animation: aba-toca 520ms cubic-bezier(0.34, 1.56, 0.64, 1) 420ms backwards;
+}
+
+@keyframes aba-toca {
+  from {
+    transform: scale(0.86);
+    color: var(--sup-muted-fg);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * "Sem chamados prioritários" (ListaChamados) — aparece com a lista toda
+ * NORMAL e, quando surge outra criticidade, recolhe (altura + fade) e a lista
+ * sobe. A altura anima pela linha do grid (1fr → 0fr).
+ * ------------------------------------------------------------------------- */
+.semPrioritarios {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition:
+    grid-template-rows 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 320ms ease;
+}
+
+.semPrioritariosOculto {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+
+.semPrioritariosInterno {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Verde de "situação amena", o mesmo do selo NORMAL (um tom mais escuro para
+ * manter o contraste sobre o fundo claro). */
+.semPrioritariosTexto {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #15803d;
+  color: color-mix(in srgb, var(--sup-verde) 80%, #000000);
+}
+
+/* ---------------------------------------------------------------------------
+ * ITENS DA LISTA
+ * ------------------------------------------------------------------------- */
+.item {
+  position: relative;
+  border-radius: var(--sup-radius);
+  transition:
+    opacity 450ms ease,
+    filter 450ms ease;
+}
+
+/* Entrada escalonada (Cena 1): o atraso cresce com a posição (--i vem do ItemLista). */
+.escalonar {
+  animation: item-entra 560ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: calc(380ms + var(--i, 0) * 90ms);
+}
+
+@keyframes item-entra {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* Foco: tudo que não é o item da vez fica em segundo plano. */
+.esmaecido {
+  opacity: 0.4;
+  filter: saturate(0.55);
+}
+
+/* Anel de atenção (azul do app) pulsando em volta do item. */
+.destaque {
+  animation: anel-atencao 1200ms ease-in-out infinite;
+}
+
+@keyframes anel-atencao {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 0 0 0 3px var(--sup-ring);
+  }
+}
+
+/* Onda: o item "estala" (leve escala) e um anel se expande na cor da nova
+ * criticidade (.corMedia / .corAlta / .corCritica escolhem a cor). */
+.onda {
+  --cor-onda: var(--sup-critica);
+  animation: onda 1100ms ease-out;
+}
+
+.corMedia {
+  --cor-onda: var(--sup-media);
+}
+
+.corAlta {
+  --cor-onda: var(--sup-alta);
+}
+
+.corCritica {
+  --cor-onda: var(--sup-critica);
+}
+
+@keyframes onda {
+  0% {
+    box-shadow: 0 0 0 0 var(--cor-onda);
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.025);
+  }
+  100% {
+    box-shadow: 0 0 0 14px transparent;
+    transform: scale(1);
+  }
+}
+
+/* Item em deslocamento (FLIP): passa por cima dos vizinhos. */
+.elevado {
+  z-index: 2;
+}
+
+/* ---------------------------------------------------------------------------
+ * TELA DE DETALHE DO CHAMADO (DetalheDoTutorial) — entra ao clicar no card
+ * ------------------------------------------------------------------------- */
+.detalheEntra {
+  animation: detalhe-entra 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes detalhe-entra {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * CENA 5 — sino e selos de notificação
+ * ------------------------------------------------------------------------- */
+
+/* Sino do header (último botão do <header>) balança; o selo de contagem, que
+ * aparece junto, surge com um pequeno salto. */
+.sinoTocando header > button:last-child svg {
+  transform-origin: 50% 10%;
+  animation: sino-toca 1000ms ease-in-out;
+}
+
+.sinoTocando header > button:last-child > span {
+  animation: selo-surge 460ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+@keyframes sino-toca {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(16deg);
+  }
+  30% {
+    transform: rotate(-14deg);
+  }
+  45% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-7deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Selo da aba "Alertas" (BarraInferior): surge com o mesmo salto do selo do sino. */
+.selo {
+  animation: selo-surge 460ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+@keyframes selo-surge {
+  from {
+    transform: scale(0);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Menos movimento: o conteúdo aparece direto, sem animar.
+ * ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .entrada > div,
+  .entrada nav button[aria-current='page'],
+  .escalonar,
+  .destaque,
+  .onda,
+  .sinoTocando header > button:last-child svg,
+  .sinoTocando header > button:last-child > span,
+  .selo,
+  .detalheEntra {
+    animation: none;
+  }
+
+  .item,
+  .semPrioritarios {
+    transition: none;
+  }
+}

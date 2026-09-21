@@ -30,9 +30,17 @@ const POR_ID = new Map(CHAMADOS.map((chamado) => [chamado.id, chamado]));
  * - rodapé: "Ligar técnico" (primário) e "WhatsApp" (outline) — mocks
  *   visuais, sem ação real.
  */
-export default function ChamadoDetalheView({ chamadoId, onVoltar }) {
-  const chamado = POR_ID.get(chamadoId);
-  const detalhe = DETALHES_CHAMADOS[chamadoId];
+export default function ChamadoDetalheView({
+  chamadoId,
+  onVoltar,
+  chamado: chamadoProp = null,
+  detalhe: detalheProp = null,
+}) {
+  // chamado/detalhe são opcionais: quando não vêm por props, a tela busca
+  // pelo id em data/chamados.js (comportamento original). As cenas do
+  // tutorial os informam para exibir a demanda fictícia, que só existe lá.
+  const chamado = chamadoProp ?? POR_ID.get(chamadoId);
+  const detalhe = detalheProp ?? DETALHES_CHAMADOS[chamadoId];
 
   // Defensivo: id sem chamado/detalhe correspondente (dados desalinhados).
   if (!chamado || !detalhe) {
