@@ -68,6 +68,11 @@ export const TELAS = {
     subtitle: 'Tendências operacionais e impactos sobre qualidade, eficiência e rentabilidade',
     periodo: 'Trimestre atual',
   },
+  'chamadas': {
+    title: 'Chamados',
+    subtitle: 'Acompanhamento de chamados de manutenção em tempo real',
+    periodo: 'Tempo real', // fora da lista PERIODOS: a tela é ao vivo
+  },
 };
 
 export const PERIODOS = ['Últimos 6 meses', 'Trimestre atual', 'Últimos 12 meses'];

@@ -1,10 +1,12 @@
 import { useCallback, useRef, useState } from 'react';
 import styles from './BackofficeView.module.css';
 import { MENU_SECTIONS, TELAS } from './data/backofficeData.js';
+import { STAGES } from './data/chamadosData.js';
 import Sidebar from './components/Sidebar.jsx';
 import TopHeader from './components/TopHeader.jsx';
 import GestaoTecnicaScreen from './screens/GestaoTecnicaScreen.jsx';
 import GestaoExecutivaScreen from './screens/GestaoExecutivaScreen.jsx';
+import ChamadosScreen from './screens/ChamadosScreen.jsx';
 import PlaceholderScreen from './screens/PlaceholderScreen.jsx';
 
 /**
@@ -28,10 +30,26 @@ import PlaceholderScreen from './screens/PlaceholderScreen.jsx';
  * Isolamento: todos os tokens usam o prefixo --bk-* e vivem na raiz da
  * view (.stage) — nada vaza para o container ou outras views.
  */
-export default function BackofficeView() {
-  const [telaAtiva, setTelaAtiva] = useState('gestao-tecnica');
-  const [periodo, setPeriodo] = useState(TELAS['gestao-tecnica'].periodo);
+/**
+ * Extrai um estágio válido da query string (?stage=alerta) — usado apenas
+ * para ensaio, na rota normal de Chamados. Retorna undefined se ausente ou
+ * inválido (a URL de cenas usa hash, então a query sobrevive à navegação).
+ */
+function stageFromQueryString() {
+  const value = new URLSearchParams(window.location.search).get('stage');
+  return STAGES.includes(value) ? value : undefined;
+}
+
+export default function BackofficeView({ telaInicial, stageChamados }) {
+  const [telaAtiva, setTelaAtiva] = useState(telaInicial ?? 'gestao-tecnica');
+  const [periodo, setPeriodo] = useState(TELAS[telaInicial ?? 'gestao-tecnica']?.periodo);
   const mainRef = useRef(null);
+
+  // Estágio de ensaio via ?stage=... — lido uma única vez (não é reativo).
+  const stageEnsaioRef = useRef();
+  if (stageEnsaioRef.current === undefined) {
+    stageEnsaioRef.current = stageChamados ?? (telaInicial == null ? stageFromQueryString() : undefined);
+  }
 
   // Troca de tela pelo menu/subnav e volta o conteúdo ao topo, como uma
   // navegação de rota faria. O período assume o padrão da tela de destino.
@@ -76,6 +94,8 @@ export default function BackofficeView() {
             <GestaoTecnicaScreen />
           ) : telaAtiva === 'gestao-executiva' ? (
             <GestaoExecutivaScreen />
+          ) : telaAtiva === 'chamadas' ? (
+            <ChamadosScreen stage={stageEnsaioRef.current} />
           ) : (
             <PlaceholderScreen item={itemAtivo} />
           )}

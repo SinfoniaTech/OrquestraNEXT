@@ -36,6 +36,10 @@ export const scenesConfig = [
   { scene: 'exemplo-c', position: 4 }, // mesma position => tela dividida com exemplo-b
   { scene: 'backoffice', position: 5 },
   { scene: 'supervisor', position: 6 },
-  { scene: 'backoffice', position: 7 },
-  { scene: 'supervisor', position: 7 },
+  { scene: 'chamados-aberto', position: 7 },
+  { scene: 'chamados-alerta', position: 8 },
+  { scene: 'chamados-concluido', position: 9 },
+  { scene: 'chamados-em-atendimento', position: 10 },
+  { scene: 'chamados-encaminhado', position: 11 },
+
 ];

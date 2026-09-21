@@ -3,9 +3,10 @@ import { lazy } from 'react';
 /**
  * Descoberta automática de cenas.
  *
- * Uma cena é qualquer pasta dentro de src/views/ que exponha um componente
- * React como export default no arquivo index.jsx. O import.meta.glob do
- * Vite varre a pasta views no momento do build — criar uma nova pasta com
+ * Uma cena é qualquer pasta dentro de src/views/ (em qualquer nível, ex.:
+ * src/views/backoffice/chamados-aberto/) que exponha um componente React como
+ * export default no arquivo index.jsx. O import.meta.glob do Vite varre a
+ * pasta views no momento do build — criar uma nova pasta com
  * index.jsx já a torna disponível ao controlador, sem editar nada aqui.
  *
  * O glob é lazy por padrão: cada cena vira um chunk separado, carregado
@@ -15,11 +16,12 @@ import { lazy } from 'react';
  * variáveis. O controlador (SceneController) valida os nomes do
  * scenes.config.js contra este índice.
  */
-const sceneModules = import.meta.glob('../views/*/index.jsx');
+const sceneModules = import.meta.glob('../views/**/index.jsx');
 
-/** Extrai o nome da cena do caminho: "…/views/exemplo-a/index.jsx" → "exemplo-a". */
+/** Extrai o nome da cena do caminho: "…/views/backoffice/chamados-aberto/index.jsx"
+ *  → "chamados-aberto" (sempre a ÚLTIMA pasta antes do index.jsx). */
 function sceneNameFromPath(path) {
-  const match = path.match(/\/views\/([^/]+)\/index\.jsx$/);
+  const match = path.match(/\/([^/]+)\/index\.jsx$/);
   return match ? match[1] : null;
 }
 

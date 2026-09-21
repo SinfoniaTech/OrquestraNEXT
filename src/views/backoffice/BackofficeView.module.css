@@ -29,6 +29,7 @@
   --bk-ring: #443a8c;
   --bk-success: #2e9e55;         /* oklch(62% .15 150)   */
   --bk-warning: #c98a04;         /* oklch(72% .16 62) — texto sobre claro */
+  --bk-orange: #d97706;          /* tom laranja p/ consumo de SLA 70–100%  */
   --bk-critical: #d93a2b;        /* oklch(58% .22 25)    */
   --bk-info: #3f6fd9;            /* oklch(50% .14 262)   */
   --bk-chart-1: #443a8c;
@@ -70,6 +71,7 @@
     --bk-ring: oklch(32% 0.11 272);
     --bk-success: oklch(62% 0.15 150);
     --bk-warning: oklch(72% 0.16 62);
+    --bk-orange: oklch(70% 0.16 55);
     --bk-critical: oklch(58% 0.22 25);
     --bk-info: oklch(50% 0.14 262);
     --bk-chart-1: oklch(32% 0.11 272);
@@ -520,6 +522,11 @@
   color: var(--bk-muted-fg);
 }
 
+.badge-orange {
+  background-color: color-mix(in srgb, var(--bk-orange) 12%, transparent);
+  color: var(--bk-orange);
+}
+
 .badge-primary {
   background-color: color-mix(in srgb, var(--bk-primary) 10%, transparent);
   color: var(--bk-primary);
@@ -796,6 +803,10 @@
 
 .progress-warning {
   background-color: var(--bk-warning);
+}
+
+.progress-orange {
+  background-color: var(--bk-orange);
 }
 
 .progress-critical {

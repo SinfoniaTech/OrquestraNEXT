@@ -153,6 +153,30 @@ export const ICONS = {
       <path d="m6 9 6 6 6-6" />
     </Svg>
   ),
+  'chevron-right': (p) => (
+    <Svg {...p}>
+      <path d="m9 18 6-6-6-6" />
+    </Svg>
+  ),
+  x: (p) => (
+    <Svg {...p}>
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </Svg>
+  ),
+  clock: (p) => (
+    <Svg {...p}>
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </Svg>
+  ),
+  'triangle-alert': (p) => (
+    <Svg {...p}>
+      <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+      <path d="M12 9v4" />
+      <path d="M12 17h.01" />
+    </Svg>
+  ),
   'clipboard-check': (p) => (
     <Svg {...p}>
       <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
