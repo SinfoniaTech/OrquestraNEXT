@@ -1,0 +1,1 @@
+import{t as e}from"./BackofficeView-CN1E35D7.js";export{e as default};
