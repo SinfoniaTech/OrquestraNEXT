@@ -37,6 +37,9 @@ const soltarFoco = (event) => event.currentTarget.blur();
  * cascata. Tudo em AvisoCritico.module.css, sem JS de animação.
  * Para uma demanda já CRÍTICA, o modo `critico` remove qualquer referência a SLA
  * e mostra somente o tempo decorrido e os dados operacionais da demanda.
+ * As cores seguem a criticidade: vermelho no modo `critico`; no modo `risco`
+ * (demanda ALTA) tudo vira o laranja da tag de prioridade ALTA, dos acentos
+ * ao anel pulsante (classe .avisoRisco).
  *
  * Esc, clique fora, cabeçalho e "Fechar" fecham o aviso (como no app). O
  * <div> externo só posiciona o aviso dentro do shell e recebe a animação de
@@ -66,8 +69,17 @@ export default function AvisoCritico({ alerta, detalhe, onClose, onAbrirChamado,
   const { tecnico, peca, impacto } = detalhe;
   const semSla = modo === 'critico' || detalhe?.semSla || alerta?.semSla;
 
+  // No modo "risco" — Alerta de Risco de Estouro de SLA, quando a demanda
+  // está em prioridade ALTA — o aviso troca toda a identidade visual do
+  // vermelho crítico para o laranja da tag de prioridade ALTA (--sup-alta,
+  // #f9700e): anel pulsante, borda e brilho do cartão, fundo do cabeçalho,
+  // ícone de alerta, texto dos minutos, ✕ de fechar e "Tempo restante"
+  // (classe .avisoRisco do AvisoCritico.module.css, que sobrescreve os tokens).
+  const classesAviso =
+    modo === 'risco' ? `${styles.aviso} ${styles.avisoRisco}` : styles.aviso;
+
   return (
-    <div className={styles.aviso}>
+    <div className={classesAviso}>
       <div className={sup.overlay} onClick={onClose}>
         <div
           role="dialog"
@@ -195,7 +207,7 @@ export default function AvisoCritico({ alerta, detalhe, onClose, onAbrirChamado,
                         </div>
                         <div className={styles.tile}>
                           <dt className={styles.tileRotulo}>Tempo restante (TB)</dt>
-                          <dd className={`${styles.tileValor} ${styles.tileCritico}`}>{impacto.tb}</dd>
+                          <dd className={`${styles.tileValor} ${styles.tileAlerta}`}>{impacto.tb}</dd>
                         </div>
                       </dl>
                     </section>

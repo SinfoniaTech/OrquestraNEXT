@@ -8,7 +8,7 @@ import PriorityBadge from './PriorityBadge.jsx';
  * - faixa vertical colorida à esquerda (cor da criticidade);
  * - badge de prioridade + identificador do chamado;
  * - local · equipamento, defeito e chip opcional (ex.: "Passageiro preso");
- * - à direita, tempo restante de SLA (texto + contador hh:mm).
+ * - à direita, tempo restante de SLA (texto + contador 00h00).
  *
  * O card crítico recebe a sombra avermelhada (cardCritical). Ao clicar,
  * onOpen recebe o id do chamado — o SupervisorView abre a tela de detalhe

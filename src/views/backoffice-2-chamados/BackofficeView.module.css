@@ -430,6 +430,10 @@
   color: var(--bk-success);
 }
 
+.kpiValue-orange {
+  color: var(--bk-orange);
+}
+
 .kpiSub {
   margin: 4px 0 0;
   font-size: 12px;
@@ -446,6 +450,10 @@
 
 .kpiSub-critical {
   color: var(--bk-critical);
+}
+
+.kpiSub-orange {
+  color: var(--bk-orange);
 }
 
 /* ---------------------------------------------------------------------------

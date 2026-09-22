@@ -23,7 +23,7 @@ export const PRIORIDADES = {
  * @property {string} defeito       Resumo da falha
  * @property {string|null} tag      Chip extra (ex.: "Passageiro preso")
  * @property {string} slaTexto      Texto humano do tempo restante
- * @property {string} slaTempo      Tempo restante formatado (hh:mm)
+ * @property {string} slaTempo      Tempo restante formatado (00h00)
  */
 
 /** @type {Chamado[]} */
@@ -36,7 +36,7 @@ export const CHAMADOS = [
     defeito: 'Falha de Nivelamento',
     tag: 'Passageiro preso',
     slaTexto: 'Faltam 12 min para SLA',
-    slaTempo: '00:12',
+    slaTempo: '00h12',
   },
   {
     id: 'CH-0008127',
@@ -46,7 +46,7 @@ export const CHAMADOS = [
     defeito: 'Porta não fecha',
     tag: null,
     slaTexto: 'Faltam 25 min para SLA',
-    slaTempo: '00:25',
+    slaTempo: '00h25',
   },
   {
     id: 'CH-0008133',
@@ -56,7 +56,7 @@ export const CHAMADOS = [
     defeito: 'Cabine com ruído excessivo',
     tag: null,
     slaTexto: 'Faltam 65 min para SLA',
-    slaTempo: '01:05',
+    slaTempo: '01h05',
   },
   {
     id: 'CH-0008131',
@@ -66,7 +66,7 @@ export const CHAMADOS = [
     defeito: 'Velocidade irregular',
     tag: null,
     slaTexto: 'Faltam 75 min para SLA',
-    slaTempo: '01:15',
+    slaTempo: '01h15',
   },
   {
     id: 'CH-0008125',
@@ -76,7 +76,7 @@ export const CHAMADOS = [
     defeito: 'Luz queimada',
     tag: null,
     slaTexto: 'Faltam 3h15 para SLA',
-    slaTempo: '03:15',
+    slaTempo: '03h15',
   },
   {
     id: 'CH-0008151',
@@ -86,7 +86,7 @@ export const CHAMADOS = [
     defeito: 'Falha no painel',
     tag: null,
     slaTexto: 'Faltam 3h45 para SLA',
-    slaTempo: '03:45',
+    slaTempo: '03h45',
   },
   {
     id: 'CH-0008155',
@@ -96,7 +96,7 @@ export const CHAMADOS = [
     defeito: 'Botão de chamada intermitente',
     tag: null,
     slaTexto: 'Faltam 4h10 para SLA',
-    slaTempo: '04:10',
+    slaTempo: '04h10',
   },
   {
     id: 'CH-0008160',
@@ -106,7 +106,7 @@ export const CHAMADOS = [
     defeito: 'Sensor de porta com falha esporádica',
     tag: null,
     slaTexto: 'Faltam 4h40 para SLA',
-    slaTempo: '04:40',
+    slaTempo: '04h40',
   },
   {
     id: 'CH-0008159',
@@ -116,7 +116,7 @@ export const CHAMADOS = [
     defeito: 'Iluminação da cabine oscilando',
     tag: null,
     slaTexto: 'Faltam 5h05 para SLA',
-    slaTempo: '05:05',
+    slaTempo: '05h05',
   },
   {
     id: 'CH-0008166',
@@ -126,7 +126,7 @@ export const CHAMADOS = [
     defeito: 'Alarme de cabine acionando sem parar',
     tag: null,
     slaTexto: 'Faltam 5h30 para SLA',
-    slaTempo: '05:30',
+    slaTempo: '05h30',
   },
   {
     id: 'CH-0008168',
@@ -136,7 +136,7 @@ export const CHAMADOS = [
     defeito: 'Freio com ruído intermitente',
     tag: null,
     slaTexto: 'Faltam 5h55 para SLA',
-    slaTempo: '05:55',
+    slaTempo: '05h55',
   },
   {
     id: 'CH-0008170',
@@ -146,7 +146,7 @@ export const CHAMADOS = [
     defeito: 'Display do indicador de piso apagado',
     tag: null,
     slaTexto: 'Faltam 6h20 para SLA',
-    slaTempo: '06:20',
+    slaTempo: '06h20',
   },
   {
     id: 'CH-0008172',
@@ -156,7 +156,7 @@ export const CHAMADOS = [
     defeito: 'Teclado de comando sem resposta parcial',
     tag: null,
     slaTexto: 'Faltam 6h45 para SLA',
-    slaTempo: '06:45',
+    slaTempo: '06h45',
   },
   {
     id: 'CH-0008175',
@@ -166,7 +166,7 @@ export const CHAMADOS = [
     defeito: 'Ventilação da casa de máquinas ruidosa',
     tag: null,
     slaTexto: 'Faltam 7h10 para SLA',
-    slaTempo: '07:10',
+    slaTempo: '07h10',
   },
 ];
 
@@ -190,7 +190,7 @@ export const ALERTA_SLA = {
  * @typedef {Object} RegiaoChamado
  * @property {string} id       Identificador do chamado (chave em CHAMADOS)
  * @property {string} defeito  Resumo da falha exibido na linha
- * @property {string} tempo    Contador de SLA exibido à direita (hh:mm)
+ * @property {string} tempo    Contador de SLA exibido à direita (00h00)
  */
 
 /**
@@ -199,7 +199,7 @@ export const ALERTA_SLA = {
  * @property {number} ativos     Chamados ativos na região
  * @property {number} criticos   Chamados críticos na região
  * @property {number} tecnicos   Técnicos alocados na região
- * @property {string} tbMedio    Tempo médio de solução na região (hh:mm)
+ * @property {string} tbMedio    Tempo médio de solução na região (00h00)
  * @property {RegiaoChamado[]} chamados Chamados abertos na região
  */
 
@@ -210,10 +210,10 @@ export const REGIOES = [
     ativos: 2,
     criticos: 1,
     tecnicos: 4,
-    tbMedio: '01:52',
+    tbMedio: '01h52',
     chamados: [
-      { id: 'CH-0008123', defeito: 'Falha de Nivelamento', tempo: '00:12' },
-      { id: 'CH-0008127', defeito: 'Porta não fecha', tempo: '00:25' },
+      { id: 'CH-0008123', defeito: 'Falha de Nivelamento', tempo: '00h12' },
+      { id: 'CH-0008127', defeito: 'Porta não fecha', tempo: '00h25' },
     ],
   },
   {
@@ -221,18 +221,18 @@ export const REGIOES = [
     ativos: 2,
     criticos: 0,
     tecnicos: 3,
-    tbMedio: '02:10',
+    tbMedio: '02h10',
     chamados: [
       {
         id: 'CH-0008133',
         defeito: 'Cabine com ruído excessivo',
-        tempo: '01:05',
+        tempo: '01h05',
       },
-      { id: 'CH-0008131', defeito: 'Velocidade irregular', tempo: '01:15' },
+      { id: 'CH-0008131', defeito: 'Velocidade irregular', tempo: '01h15' },
       {
         id: 'CH-0008160',
         defeito: 'Sensor de porta com falha esporádica',
-        tempo: '04:40',
+        tempo: '04h40',
       },
     ],
   },
@@ -241,9 +241,9 @@ export const REGIOES = [
     ativos: 2,
     criticos: 0,
     tecnicos: 5,
-    tbMedio: '01:35',
+    tbMedio: '01h35',
     chamados: [
-      { id: 'CH-0008151', defeito: 'Falha no painel', tempo: '03:45' },
+      { id: 'CH-0008151', defeito: 'Falha no painel', tempo: '03h45' },
     ],
   },
   {
@@ -251,9 +251,9 @@ export const REGIOES = [
     ativos: 1,
     criticos: 0,
     tecnicos: 2,
-    tbMedio: '02:40',
+    tbMedio: '02h40',
     chamados: [
-      { id: 'CH-0008125', defeito: 'Luz queimada', tempo: '03:15' },
+      { id: 'CH-0008125', defeito: 'Luz queimada', tempo: '03h15' },
     ],
   },
 ];
@@ -283,8 +283,8 @@ export const DISTRIBUICAO_OS = [
 
 /** Indicadores consolidados do dia (tela Mais). */
 export const KPIS = [
-  { id: 'ta', rotulo: 'TA médio (chegada)', valor: '00:38' },
-  { id: 'tb', rotulo: 'TB médio (solução)', valor: '01:59' },
+  { id: 'ta', rotulo: 'TA médio (chegada)', valor: '00h38' },
+  { id: 'tb', rotulo: 'TB médio (solução)', valor: '01h59' },
   { id: 'sla', rotulo: 'SLA cumprido (30d)', valor: '92%' },
   { id: 'recorrencias', rotulo: 'Recorrências (30d)', valor: '7' },
 ];
@@ -318,7 +318,7 @@ export const CICLO_VALOR = [
  * @property {string} regiao    Região operacional (ex.: SP - Centro)
  * @property {{slaPrevista: string, ta: string, tb: string}} impacto
  *   slaPrevista: horário de solução prevista; ta: tempo decorrido desde a
- *   abertura; tb: tempo restante de SLA (hh:mm)
+ *   abertura; tb: tempo restante de SLA (00h00)
  * @property {{nome: string, status: string, distancia: string, eta: string}} tecnico
  *   distancia em km e eta em minutos até o cliente
  * @property {{local: string, endereco: string, eta: string, itens: string[]}} peca
@@ -332,7 +332,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008123': {
     endereco: 'R. das Indústrias, 120',
     regiao: 'SP - Centro',
-    impacto: { slaPrevista: '09:00', ta: '00:44', tb: '00:12' },
+    impacto: { slaPrevista: '09h00', ta: '00h44', tb: '00h12' },
     tecnico: {
       nome: 'João da Silva',
       status: 'A caminho',
@@ -354,7 +354,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008127': {
     endereco: 'R. das Indústrias, 120',
     regiao: 'SP - Centro',
-    impacto: { slaPrevista: '09:45', ta: '00:35', tb: '00:25' },
+    impacto: { slaPrevista: '09h45', ta: '00h35', tb: '00h25' },
     tecnico: {
       nome: 'Ana Prado',
       status: 'A caminho',
@@ -376,7 +376,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008133': {
     endereco: 'Av. Ibirapuera, 3103',
     regiao: 'SP - Sul',
-    impacto: { slaPrevista: '10:30', ta: '00:22', tb: '01:05' },
+    impacto: { slaPrevista: '10h30', ta: '00h22', tb: '01h05' },
     tecnico: {
       nome: 'Marcos Reis',
       status: 'Em atendimento',
@@ -398,7 +398,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008131': {
     endereco: 'Av. Ibirapuera, 3103',
     regiao: 'SP - Sul',
-    impacto: { slaPrevista: '11:00', ta: '00:18', tb: '01:15' },
+    impacto: { slaPrevista: '11h00', ta: '00h18', tb: '01h15' },
     tecnico: {
       nome: 'Carlos Lima',
       status: 'Disponível',
@@ -420,7 +420,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008125': {
     endereco: 'R. Voluntários da Pátria, 900',
     regiao: 'SP - Norte',
-    impacto: { slaPrevista: '13:30', ta: '00:08', tb: '03:15' },
+    impacto: { slaPrevista: '13h30', ta: '00h08', tb: '03h15' },
     tecnico: {
       nome: 'Bruno Alves',
       status: 'Disponível',
@@ -442,7 +442,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008151': {
     endereco: 'Av. Faria Lima, 2200',
     regiao: 'SP - Oeste',
-    impacto: { slaPrevista: '13:00', ta: '00:10', tb: '03:45' },
+    impacto: { slaPrevista: '13h00', ta: '00h10', tb: '03h45' },
     tecnico: {
       nome: 'Rafael Souza',
       status: 'Disponível',
@@ -464,7 +464,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008155': {
     endereco: 'R. Augusta, 1500',
     regiao: 'SP - Leste',
-    impacto: { slaPrevista: '14:00', ta: '00:05', tb: '04:10' },
+    impacto: { slaPrevista: '14h00', ta: '00h05', tb: '04h10' },
     tecnico: {
       nome: 'Diego Mendes',
       status: 'Disponível',
@@ -486,7 +486,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008160': {
     endereco: 'R. Domingos de Morais, 800',
     regiao: 'SP - Sul',
-    impacto: { slaPrevista: '14:30', ta: '00:03', tb: '04:40' },
+    impacto: { slaPrevista: '14h30', ta: '00h03', tb: '04h40' },
     tecnico: {
       nome: 'Fernanda Costa',
       status: 'Disponível',
@@ -508,7 +508,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008159': {
     endereco: 'Av. Rebouças, 600',
     regiao: 'SP - Oeste',
-    impacto: { slaPrevista: '17:05', ta: '00:15', tb: '05:05' },
+    impacto: { slaPrevista: '17h05', ta: '00h15', tb: '05h05' },
     tecnico: {
       nome: 'Marcos Ribeiro',
       status: 'Em rota',
@@ -530,7 +530,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008166': {
     endereco: 'Av. Ibirapuera, 2307',
     regiao: 'SP - Sul',
-    impacto: { slaPrevista: '17:30', ta: '00:20', tb: '05:30' },
+    impacto: { slaPrevista: '17h30', ta: '00h20', tb: '05h30' },
     tecnico: {
       nome: 'Patrícia Nunes',
       status: 'Disponível',
@@ -552,7 +552,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008168': {
     endereco: 'Av. Paulista, 1578',
     regiao: 'SP - Centro',
-    impacto: { slaPrevista: '17:55', ta: '00:35', tb: '05:55' },
+    impacto: { slaPrevista: '17h55', ta: '00h35', tb: '05h55' },
     tecnico: {
       nome: 'Alan Ferreira',
       status: 'Disponível',
@@ -574,7 +574,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008170': {
     endereco: 'Av. das Nações Unidas, 12901',
     regiao: 'SP - Sul',
-    impacto: { slaPrevista: '18:20', ta: '00:40', tb: '06:20' },
+    impacto: { slaPrevista: '18h20', ta: '00h40', tb: '06h20' },
     tecnico: {
       nome: 'Camila Torres',
       status: 'Disponível',
@@ -596,7 +596,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008172': {
     endereco: 'R. Joaquim Floriano, 820',
     regiao: 'SP - Oeste',
-    impacto: { slaPrevista: '18:45', ta: '00:50', tb: '06:45' },
+    impacto: { slaPrevista: '18h45', ta: '00h50', tb: '06h45' },
     tecnico: {
       nome: 'Rodrigo Pinto',
       status: 'Disponível',
@@ -618,7 +618,7 @@ export const DETALHES_CHAMADOS = {
   'CH-0008175': {
     endereco: 'R. do Carmo, 480',
     regiao: 'SP - Centro',
-    impacto: { slaPrevista: '19:10', ta: '01:05', tb: '07:10' },
+    impacto: { slaPrevista: '19h10', ta: '01h05', tb: '07h10' },
     tecnico: {
       nome: 'Sandra Melo',
       status: 'Em rota',

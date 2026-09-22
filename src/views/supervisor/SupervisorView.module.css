@@ -31,6 +31,14 @@
   --sup-media: #f2c02a;
   --sup-ring: #575ecf;
   --sup-verde: #16a34a;
+
+  /* Acentos do modal de alerta: vermelho crítico por padrão; o tutorial
+   * (AvisoCritico, modo "risco") redireciona para o laranja ALTA quando o
+   * aviso é de risco de estouro de SLA. */
+  --sup-alerta: var(--sup-critica);
+  --sup-alerta-soft: var(--sup-critica-soft);
+  --sup-alerta-anel: rgba(230, 0, 35, 0.25);
+  --sup-alerta-glow: rgba(230, 0, 35, 0.5);
   --sup-radius: 12px; /* --radius: .75rem */
 
   height: 100%;
@@ -56,6 +64,8 @@
     --sup-media: oklch(83% 0.16 88);
     --sup-ring: oklch(50% 0.15 262);
     --sup-verde: oklch(63% 0.17 150);
+    --sup-alerta-anel: oklch(58% 0.24 25 / 0.25);
+    --sup-alerta-glow: oklch(58% 0.24 25 / 0.5);
   }
 }
 
@@ -992,16 +1002,8 @@
   border-radius: calc(var(--sup-radius) + 4px); /* rounded-2xl */
   background-color: var(--sup-card);
   box-shadow:
-    0 0 0 1px rgba(230, 0, 35, 0.25),
-    0 10px 26px -10px rgba(230, 0, 35, 0.5);
-}
-
-@supports (color: oklch(50% 0.1 250)) {
-  .modal {
-    box-shadow:
-      0 0 0 1px oklch(58% 0.24 25 / 0.25),
-      0 10px 26px -10px oklch(58% 0.24 25 / 0.5);
-  }
+    0 0 0 1px var(--sup-alerta-anel),
+    0 10px 26px -10px var(--sup-alerta-glow);
 }
 
 .modalHeader {
@@ -1013,7 +1015,7 @@
   margin: 0;
   padding: 16px;
   border: none;
-  background-color: var(--sup-critica-soft);
+  background-color: var(--sup-alerta-soft);
   color: inherit;
   font: inherit;
   text-align: left;
@@ -1032,7 +1034,7 @@
   height: 36px;
   flex-shrink: 0;
   border-radius: 999px;
-  background-color: var(--sup-critica);
+  background-color: var(--sup-alerta);
   color: #ffffff;
 }
 
@@ -1054,12 +1056,12 @@
 }
 
 .modalMinutos {
-  color: var(--sup-critica);
+  color: var(--sup-alerta);
 }
 
 .modalCloseIcon {
   flex-shrink: 0;
-  color: var(--sup-critica);
+  color: var(--sup-alerta);
 }
 
 .modalBody {

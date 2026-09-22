@@ -34,7 +34,7 @@ export const ETAPAS_ALVO = {
     defeito: 'Botão de emergência com desgaste',
     tag: null,
     slaTexto: 'Faltam 6h40 para SLA',
-    slaTempo: '06:40',
+    slaTempo: '06h40',
   },
   media: {
     ...BASE_ALVO,
@@ -42,7 +42,7 @@ export const ETAPAS_ALVO = {
     defeito: 'Botão de emergência com desgaste',
     tag: null,
     slaTexto: 'Faltam 3h10 para SLA',
-    slaTempo: '03:10',
+    slaTempo: '03h10',
   },
   alta: {
     ...BASE_ALVO,
@@ -50,7 +50,7 @@ export const ETAPAS_ALVO = {
     defeito: 'Botão de emergência com desgaste',
     tag: null,
     slaTexto: 'Faltam 50 min para SLA',
-    slaTempo: '00:50',
+    slaTempo: '00h50',
   },
 };
 
@@ -67,10 +67,10 @@ export const DEMANDA_CRITICA_HOSPITAL = {
   prioridade: 'critica',
   defeito: 'Usuário preso no elevador',
   prioridadeLabel: 'Demanda prioritária',
-  tempoDecorrido: '35 minutos',
+  tempoDecorrido: '00h35',
   slaTexto: 'Tempo decorrido',
   // A demanda nasceu CRÍTICA por classificação do BackOffice; não há SLA associado a esta história.
-  slaTempo: '35:00',
+  slaTempo: '00h35',
   semSla: true,
 };
 
@@ -90,7 +90,9 @@ if (NORMAIS_DE_FUNDO.length !== IDS_NORMAIS_DE_FUNDO.length) {
 
 function emMinutos(slaTempo) {
   const negativo = slaTempo.startsWith('-');
-  const [horas, minutos] = slaTempo.replace('-', '').split(':').map(Number);
+  // O contador usa o padrão "00h35" (h entre horas e minutos): normaliza para
+  // "00:35" antes de quebrar em horas e minutos.
+  const [horas, minutos] = slaTempo.replace('-', '').replace('h', ':').split(':').map(Number);
   const valor = horas * 60 + minutos;
   return negativo ? -valor : valor;
 }
@@ -134,7 +136,7 @@ export const DETALHES_ALVO = {
   normal: {
     endereco: ENDERECO_SMARTFIT,
     regiao: REGIAO_SMARTFIT,
-    impacto: { slaPrevista: '17:25', ta: '00:05', tb: '06:40' },
+    impacto: { slaPrevista: '17h25', ta: '00h05', tb: '06h40' },
     tecnico: { nome: 'Paulo Menezes', status: 'Disponível', distancia: '6 km', eta: '18 min' },
     peca: {
       local: 'Almoxarifado Centro – SP',
@@ -147,7 +149,7 @@ export const DETALHES_ALVO = {
   media: {
     endereco: ENDERECO_SMARTFIT,
     regiao: REGIAO_SMARTFIT,
-    impacto: { slaPrevista: '14:04', ta: '00:14', tb: '03:10' },
+    impacto: { slaPrevista: '14h04', ta: '00h14', tb: '03h10' },
     tecnico: { nome: 'Paulo Menezes', status: 'Disponível', distancia: '6 km', eta: '18 min' },
     peca: {
       local: 'CD Regional – SP',
@@ -160,7 +162,7 @@ export const DETALHES_ALVO = {
   alta: {
     endereco: ENDERECO_SMARTFIT,
     regiao: REGIAO_SMARTFIT,
-    impacto: { slaPrevista: '11:56', ta: '00:26', tb: '00:50' },
+    impacto: { slaPrevista: '11h56', ta: '00h26', tb: '00h50' },
     tecnico: { nome: 'Paulo Menezes', status: 'A caminho', distancia: '6 km', eta: '18 min' },
     peca: {
       local: 'CD Regional – SP',
@@ -180,8 +182,8 @@ export const DETALHE_CRITICO_HOSPITAL = {
   endereco: 'R. Vergueiro, 1800',
   regiao: 'SP - Centro',
   semSla: true,
-  tempoDecorrido: '35 minutos',
-  impacto: { ta: '35 min' },
+  tempoDecorrido: '00h35',
+  impacto: { ta: '00h35' },
   tecnico: { nome: 'João da Silva', status: 'A caminho', distancia: '8 km', eta: '14 min' },
   peca: {
     local: 'CD Regional – SP',

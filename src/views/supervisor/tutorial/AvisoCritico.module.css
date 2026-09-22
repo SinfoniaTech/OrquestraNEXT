@@ -16,11 +16,32 @@
  * ------------------------------------------------------------------------- */
 
 /* Contêiner: cobre o shell exatamente como o overlay original
- * (position absolute + inset 0 dentro do .shell, que é position relative). */
+ * (position absolute + inset 0 dentro do .shell, que é position relative).
+ *
+ * Cores do anel pulsante do cartão (keyframes aviso-pulsa abaixo): vermelho
+ * crítico por padrão; a classe .avisoRisco (aplicada pelo AvisoCritico.jsx
+ * quando o aviso é de risco de estouro de SLA) troca para o laranja da tag
+ * de prioridade ALTA (--sup-alta). */
 .aviso {
+  --aviso-pulso: var(--sup-critica);
+  --aviso-pulso-anel: rgba(230, 0, 35, 0.25);
   position: absolute;
   inset: 0;
   z-index: 50;
+}
+
+/* MODO "risco" — Alerta de Risco de Estouro de SLA, demanda em prioridade
+ * ALTA: toda a identidade visual do aviso sai do vermelho crítico para o
+ * laranja da tag de prioridade ALTA. Sobrescreve os tokens do Supervisor
+ * (--sup-alerta-*: ícone de alerta, texto dos minutos, ✕, fundo do
+ * cabeçalho, borda e brilho do cartão) e o anel pulsante (--aviso-pulso*). */
+.avisoRisco {
+  --aviso-pulso: var(--sup-alta);
+  --aviso-pulso-anel: rgba(249, 112, 14, 0.25);
+  --sup-alerta: var(--sup-alta);
+  --sup-alerta-soft: #fdeeda;
+  --sup-alerta-anel: rgba(249, 112, 14, 0.25);
+  --sup-alerta-glow: rgba(249, 112, 14, 0.5);
 }
 
 /* O filho direto é o .overlay: o véu com blur aparece em fade. */
@@ -35,7 +56,9 @@
 }
 
 /* O cartão (role="dialog") sobe de baixo da tela, passa um pouco do ponto e
- * assenta; depois pulsa um anel vermelho duas vezes chamando a atenção. */
+ * assenta; depois pulsa duas vezes um anel em volta chamando a atenção —
+ * vermelho crítico ou laranja ALTA, conforme as variáveis do pulso (ver
+ * .aviso acima). */
 .aviso [role='dialog'] {
   animation:
     aviso-sobe 900ms linear backwards,
@@ -60,12 +83,12 @@
 @keyframes aviso-pulsa {
   from {
     box-shadow:
-      0 0 0 1px rgba(230, 0, 35, 0.25),
-      0 0 0 0 var(--sup-critica);
+      0 0 0 1px var(--aviso-pulso-anel),
+      0 0 0 0 var(--aviso-pulso);
   }
   to {
     box-shadow:
-      0 0 0 1px rgba(230, 0, 35, 0),
+      0 0 0 1px transparent,
       0 0 0 26px transparent;
   }
 }
@@ -230,8 +253,10 @@
   font-variant-numeric: tabular-nums;
 }
 
-.tileCritico {
-  color: var(--sup-critica);
+/* "Tempo restante" em destaque: acompanha o tema do aviso (vermelho crítico
+ * ou laranja ALTA, conforme --sup-alerta). */
+.tileAlerta {
+  color: var(--sup-alerta);
 }
 
 /* Ligar técnico (navy) e WhatsApp (verde), lado a lado. */

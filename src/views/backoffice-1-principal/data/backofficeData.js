@@ -25,8 +25,8 @@ export const MENU_SECTIONS = [
     id: 'inteligencia',
     label: null, // os dois primeiros itens ficam soltos no topo da navegação
     items: [
-      { id: 'gestao-tecnica', label: 'Gestão Técnica', icon: 'layout-dashboard', route: true },
-      { id: 'gestao-executiva', label: 'Gestão Executiva', icon: 'chart-line', route: true },
+      { id: 'gestao-tecnica', label: 'Painel Operacional', icon: 'layout-dashboard', route: true },
+      { id: 'gestao-executiva', label: 'Painel Executivo', icon: 'chart-line', route: true },
     ],
   },
   {
@@ -59,12 +59,12 @@ export const MENU_SECTIONS = [
  * ------------------------------------------------------------------------- */
 export const TELAS = {
   'gestao-tecnica': {
-    title: 'Gestão Técnica',
+    title: 'Painel Operacional',
     subtitle: 'Padrões, recorrências, TA/TB e oportunidades de melhoria contínua da operação',
     periodo: 'Últimos 6 meses',
   },
   'gestao-executiva': {
-    title: 'Gestão Executiva',
+    title: 'Painel Executivo',
     subtitle: 'Tendências operacionais e impactos sobre qualidade, eficiência e rentabilidade',
     periodo: 'Trimestre atual',
   },
@@ -252,7 +252,7 @@ export const KPIS_EXECUTIVA = [
   { id: 'contratos', label: 'Contratos Ativos', value: '312', sub: '+4 no trimestre', subTone: 'success' },
   { id: 'sla', label: 'Aderência ao SLA', value: '92,4%', sub: '+1,8 p.p. no trimestre', subTone: 'success' },
   { id: 'tco', label: 'TCO Operacional', value: 'R$ 8,9M', sub: '+3,1% vs. plano', subTone: 'warning' },
-  { id: 'margem', label: 'Margem de Contrato', value: '18,6%', sub: '-0,9 p.p.', subTone: 'critical' },
+  { id: 'margem', label: 'Margem de Contrato', value: '18,6%', sub: '-0,9 p.p.', subTone: 'orange' },
   { id: 'risco', label: 'Contratos em Risco', value: '17', sub: '5,4% da carteira', subTone: 'critical' },
   { id: 'nps', label: 'NPS Operacional', value: '61', sub: '+3 pontos', subTone: 'success' },
 ];
