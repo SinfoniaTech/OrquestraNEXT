@@ -109,11 +109,11 @@ export const CHAMADOS = [
     slaTempo: '04:40',
   },
   {
-    id: 'CH-0008163',
+    id: 'CH-0008159',
     prioridade: 'normal',
-    local: 'Academia Smart Fit Vila Olímpia',
-    equipamento: 'Elevador Social - E03',
-    defeito: 'Botão de emergência com desgaste',
+    local: 'Centro de Convenções Rebouças',
+    equipamento: 'Elevador Panorâmico - E01',
+    defeito: 'Iluminação da cabine oscilando',
     tag: null,
     slaTexto: 'Faltam 5h05 para SLA',
     slaTempo: '05:05',
@@ -505,8 +505,8 @@ export const DETALHES_CHAMADOS = {
       'Reservar sensor de reposição',
     ],
   },
-  'CH-0008163': {
-    endereco: 'R. Olimpíadas, 360',
+  'CH-0008159': {
+    endereco: 'Av. Rebouças, 600',
     regiao: 'SP - Oeste',
     impacto: { slaPrevista: '17:05', ta: '00:15', tb: '05:05' },
     tecnico: {
@@ -519,11 +519,11 @@ export const DETALHES_CHAMADOS = {
       local: 'Almoxarifado Oeste – SP',
       endereco: 'R. Turiaçu, 240',
       eta: '35 min',
-      itens: ['Botão de emergência ×1'],
+      itens: ['Módulo de iluminação LED ×1'],
     },
     acoes: [
       'Agendar visita fora do horário de pico',
-      'Levar botão de emergência reserva',
+      'Levar módulo de iluminação reserva',
       'Registrar histórico do quadro',
     ],
   },

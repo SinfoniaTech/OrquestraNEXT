@@ -27,8 +27,8 @@ const POR_ID = new Map(CHAMADOS.map((chamado) => [chamado.id, chamado]));
  *   tempo restante (TB);
  * - AÇÕES SUGERIDAS PELO ORQUESTRA: status do técnico, peça mais rápida
  *   e a lista de ações recomendadas;
- * - rodapé: "Ligar técnico" (primário) e "WhatsApp" (outline) — mocks
- *   visuais, sem ação real.
+ * - rodapé: "Ligar técnico" (primário navy) e "WhatsApp" (verde, como no
+ *   aviso crítico) — mocks visuais, sem ação real.
  */
 export default function ChamadoDetalheView({
   chamadoId,
@@ -177,7 +177,7 @@ export default function ChamadoDetalheView({
           <PhoneIcon size={16} />
           Ligar técnico
         </button>
-        <button type="button" className={styles.secondaryButton}>
+        <button type="button" className={`${styles.primaryButton} ${styles.whatsapp}`}>
           <MessageCircleIcon size={16} />
           WhatsApp
         </button>

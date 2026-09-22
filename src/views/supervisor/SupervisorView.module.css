@@ -894,6 +894,13 @@
   padding: 0 8px;
 }
 
+/* WhatsApp verde, igual ao botão do aviso crítico (AvisoCritico.module.css). */
+.detalheAcoes .whatsapp {
+  background-color: #15803d;
+  background-color: color-mix(in srgb, var(--sup-verde) 82%, #000000);
+  color: #ffffff;
+}
+
 /* ---------------------------------------------------------------------------
  * BOTTOM NAV (contida no shell)
  * ------------------------------------------------------------------------- */

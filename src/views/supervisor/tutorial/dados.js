@@ -6,7 +6,7 @@ import { ALERTA_SLA, CHAMADOS } from '../data/chamados.js';
  * O tutorial agora conta DUAS histórias independentes:
  * 1) CH-0008181 — Smart Fit: a demanda permanece no mesmo contexto e só
  *    muda de criticidade conforme o tempo restante de SLA diminui.
- * 2) CH-0008182 — Hospital: "Paciente preso no elevador" já chega CRÍTICA,
+ * 2) CH-0008182 — Hospital: "Usuário preso no elevador" já chega CRÍTICA,
  *    já chega CRÍTICA, classificada como demanda prioritária antes de chegar ao Supervisor.
  */
 
@@ -65,7 +65,7 @@ export const DEMANDA_CRITICA_HOSPITAL = {
   local: 'Hospital Central Paulista',
   equipamento: 'Elevador de Leitos - E02',
   prioridade: 'critica',
-  defeito: 'Paciente preso no elevador',
+  defeito: 'Usuário preso no elevador',
   prioridadeLabel: 'Demanda prioritária',
   tempoDecorrido: '35 minutos',
   slaTexto: 'Tempo decorrido',
@@ -78,7 +78,7 @@ export const DEMANDA_CRITICA_HOSPITAL = {
  * LISTA DA TELA "CHAMADOS"
  * ------------------------------------------------------------------------- */
 
-const IDS_NORMAIS_DE_FUNDO = ['CH-0008163', 'CH-0008166', 'CH-0008168', 'CH-0008170'];
+const IDS_NORMAIS_DE_FUNDO = ['CH-0008159', 'CH-0008166', 'CH-0008168', 'CH-0008170'];
 
 const NORMAIS_DE_FUNDO = CHAMADOS.filter(
   (c) => IDS_NORMAIS_DE_FUNDO.includes(c.id) && c.prioridade === 'normal',
