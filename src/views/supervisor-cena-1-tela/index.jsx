@@ -18,8 +18,8 @@ const LISTA = listaComAlvoEm('normal');
  * do ListaChamados; a mensagem some assim que surge outra criticidade, o que
  * acontece na Cena 2). A barra inferior aparece sem o item "Mapa".
  *
- * A demanda do tutorial (elevador de leitos do Hospital Central Paulista) já
- * está na lista como NORMAL — é ela que vai evoluir nas Cenas 2 a 4.
+ * A demanda do tutorial (manutenção na Academia Smart Fit Vila Olímpia) já
+ * está na lista como NORMAL — é ela que vai evoluir nas Cenas 2 e 3.
  *
  * Animação (uma única sequência, tocada quando a cena entra):
  *   1. o "celular" chega de baixo com fade;

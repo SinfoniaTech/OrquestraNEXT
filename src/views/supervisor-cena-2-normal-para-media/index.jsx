@@ -6,7 +6,7 @@ import CenaTransicao from '../supervisor/tutorial/CenaTransicao.jsx';
  *
  * Começa igual à Cena 1 (lista toda NORMAL, com "Sem chamados prioritários").
  * Ao virar MÉDIA, a mensagem some e, como o SLA encolhe para 3h10, a demanda
- * sobe ao topo da lista.
+ * permanece na mesma posição nesta cena. A subida ao topo acontece na cena seguinte.
  *
  * Toda a mecânica (fases, animações e tempos) está em
  * supervisor/tutorial/CenaTransicao.jsx; esta cena só escolhe as etapas.
@@ -14,5 +14,5 @@ import CenaTransicao from '../supervisor/tutorial/CenaTransicao.jsx';
  * Props do controlador (README): isActive e side ("full" | "left" | "right").
  */
 export default function SupervisorCena2({ isActive = true, side = 'full' }) {
-  return <CenaTransicao de="normal" para="media" />;
+  return <CenaTransicao de="normal" para="media" movimentar={false} />;
 }

@@ -180,8 +180,21 @@
   }
 }
 
+
+/* CENA 5 — segunda demanda: surge no rodapé e depois sobe ao topo. */
+.criticoSurge {
+  animation: critico-surge 700ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes critico-surge {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
 /* ---------------------------------------------------------------------------
- * CENA 5 — sino e selos de notificação
+ * CENA 6 — sino e selos de notificação
  * ------------------------------------------------------------------------- */
 
 /* Sino do header (último botão do <header>) balança; o selo de contagem, que
@@ -240,7 +253,8 @@
   .sinoTocando header > button:last-child svg,
   .sinoTocando header > button:last-child > span,
   .selo,
-  .detalheEntra {
+  .detalheEntra,
+  .criticoSurge {
     animation: none;
   }
 

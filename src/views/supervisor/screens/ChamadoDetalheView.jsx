@@ -67,7 +67,7 @@ export default function ChamadoDetalheView({
           <span className={styles.cardId}>#{chamado.id}</span>
         </h1>
         <p className={`${styles.detalheSla} ${styles[chamado.prioridade]}`}>
-          {chamado.slaTexto}
+          {chamado.semSla ? `Tempo decorrido: ${chamado.tempoDecorrido}` : chamado.slaTexto}
         </p>
 
         <div className={styles.tabs}>
@@ -100,31 +100,40 @@ export default function ChamadoDetalheView({
 
         <section
           className={`${styles.panel} ${styles.cardShadow}`}
-          aria-label="Impacto temporal"
+          aria-label={chamado.semSla ? 'Tempo decorrido' : 'Impacto temporal'}
         >
-          <h2 className={styles.panelTitle}>IMPACTO TEMPORAL</h2>
-          <dl className={styles.impactoGrid}>
-            <div className={styles.impactoItem}>
-              <dt className={styles.impactoLabel}>Solução prevista (SLA)</dt>
-              <dd className={styles.impactoValor}>
-                {detalhe.impacto.slaPrevista}
-              </dd>
-            </div>
-            <div className={styles.impactoItem}>
-              <dt className={styles.impactoLabel}>Tempo decorrido (TA)</dt>
-              <dd className={styles.impactoValor}>{detalhe.impacto.ta}</dd>
-            </div>
-            <div className={styles.impactoItem}>
-              <dt className={styles.impactoLabel}>Tempo restante (TB)</dt>
-              <dd
-                className={`${styles.impactoValor} ${
-                  styles[chamado.prioridade]
-                }`}
-              >
-                {detalhe.impacto.tb}
-              </dd>
-            </div>
-          </dl>
+          <h2 className={styles.panelTitle}>{chamado.semSla ? 'TEMPO DECORRIDO' : 'IMPACTO TEMPORAL'}</h2>
+          {chamado.semSla ? (
+            <dl className={styles.impactoGrid}>
+              <div className={styles.impactoItem}>
+                <dt className={styles.impactoLabel}>Tempo decorrido</dt>
+                <dd className={styles.impactoValor}>{chamado.tempoDecorrido}</dd>
+              </div>
+            </dl>
+          ) : (
+            <dl className={styles.impactoGrid}>
+              <div className={styles.impactoItem}>
+                <dt className={styles.impactoLabel}>Solução prevista (SLA)</dt>
+                <dd className={styles.impactoValor}>
+                  {detalhe.impacto.slaPrevista}
+                </dd>
+              </div>
+              <div className={styles.impactoItem}>
+                <dt className={styles.impactoLabel}>Tempo decorrido (TA)</dt>
+                <dd className={styles.impactoValor}>{detalhe.impacto.ta}</dd>
+              </div>
+              <div className={styles.impactoItem}>
+                <dt className={styles.impactoLabel}>Tempo restante (TB)</dt>
+                <dd
+                  className={`${styles.impactoValor} ${
+                    styles[chamado.prioridade]
+                  }`}
+                >
+                  {detalhe.impacto.tb}
+                </dd>
+              </div>
+            </dl>
+          )}
         </section>
 
         <section

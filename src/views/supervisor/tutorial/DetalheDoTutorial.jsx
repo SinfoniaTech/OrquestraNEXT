@@ -1,6 +1,6 @@
 import ChamadoDetalheView from '../screens/ChamadoDetalheView.jsx';
 import styles from './tutorial.module.css';
-import { DETALHES_ALVO, ETAPAS_ALVO, ID_ALVO } from './dados.js';
+import { DEMANDA_CRITICA_HOSPITAL, DETALHE_CRITICO_HOSPITAL, DETALHES_ALVO, ETAPAS_ALVO, ID_ALVO, ID_CRITICO_HOSPITAL } from './dados.js';
 
 /**
  * Depois de clicar num botão da tela de detalhe (Ligar técnico, WhatsApp,
@@ -25,14 +25,16 @@ function soltarFocoDoBotao(event) {
  */
 export default function DetalheDoTutorial({ chamadoId, etapaAlvo, onVoltar }) {
   const ehAlvo = chamadoId === ID_ALVO;
+  const ehCriticoHospital = chamadoId === ID_CRITICO_HOSPITAL;
+  const etapaResolvida = ehAlvo ? (etapaAlvo in ETAPAS_ALVO ? etapaAlvo : 'alta') : etapaAlvo;
 
   return (
     <div className={styles.detalheEntra} onClick={soltarFocoDoBotao}>
       <ChamadoDetalheView
         chamadoId={chamadoId}
         onVoltar={onVoltar}
-        chamado={ehAlvo ? ETAPAS_ALVO[etapaAlvo] : null}
-        detalhe={ehAlvo ? DETALHES_ALVO[etapaAlvo] : null}
+        chamado={ehAlvo ? ETAPAS_ALVO[etapaResolvida] : ehCriticoHospital ? DEMANDA_CRITICA_HOSPITAL : null}
+        detalhe={ehAlvo ? DETALHES_ALVO[etapaResolvida] : ehCriticoHospital ? DETALHE_CRITICO_HOSPITAL : null}
       />
     </div>
   );
