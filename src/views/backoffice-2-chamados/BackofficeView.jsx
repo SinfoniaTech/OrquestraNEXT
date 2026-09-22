@@ -23,6 +23,7 @@ import PlaceholderScreen from './screens/PlaceholderScreen.jsx';
  *   rolagem própria);
  * - a navegação interna é por estado (telaAtiva), espelhando as rotas
  *   "/" e "/gestao-executiva" da referência — sem sair da View;
+ *   nesta cena, a tela inicial padrão é "Chamados" (id 'chamadas');
  * - itens do menu sem rota na referência abrem a PlaceholderScreen;
  * - abaixo de lg (1024px) a sidebar é ocultada e aparece a subnav
  *   horizontal com as duas telas principais, como na referência.
@@ -41,8 +42,8 @@ function stageFromQueryString() {
 }
 
 export default function BackofficeView({ telaInicial, stageChamados }) {
-  const [telaAtiva, setTelaAtiva] = useState(telaInicial ?? 'gestao-tecnica');
-  const [periodo, setPeriodo] = useState(TELAS[telaInicial ?? 'gestao-tecnica']?.periodo);
+  const [telaAtiva, setTelaAtiva] = useState(telaInicial ?? 'chamadas');
+  const [periodo, setPeriodo] = useState(TELAS[telaInicial ?? 'chamadas']?.periodo);
   const mainRef = useRef(null);
 
   // Estágio de ensaio via ?stage=... — lido uma única vez (não é reativo).
