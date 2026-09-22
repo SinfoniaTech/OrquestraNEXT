@@ -136,6 +136,52 @@
 }
 
 /* ---------------------------------------------------------------------------
+ * BADGE DE PRIORIDADE — pill no padrão da tela Chamados do supervisor:
+ * fundo SÓLIDO, ícone de alerta e texto em caixa alta. Cores idênticas às da
+ * referência (tokens hex do PriorityBadge do supervisor, aqui literais,
+ * pois os tokens --bk-* da view têm outros valores).
+ * ------------------------------------------------------------------------- */
+.prioBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* CRÍTICA: vermelho com texto branco e ícone shield-alert */
+.prioCritica {
+  background-color: #db0003;
+  color: #ffffff;
+}
+
+/* ALTA: laranja com texto branco */
+.prioAlta {
+  background-color: #f9700e;
+  color: #ffffff;
+}
+
+/* MÉDIA: amarelo com texto navy, como na referência do supervisor */
+.prioMedia {
+  background-color: #f2c02a;
+  color: #221536;
+}
+
+/* NORMAL: verde com texto branco (prioridade padrão, dentro do SLA) */
+.prioNormal {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+ * FILA — linhas clicáveis, protagonista destacado, chegadas animadas
+ * ------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------
  * FILA — linhas clicáveis, protagonista destacado, chegadas animadas
  * ------------------------------------------------------------------------- */
 .filaRow {

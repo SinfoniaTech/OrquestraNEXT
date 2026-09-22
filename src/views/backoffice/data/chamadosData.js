@@ -97,10 +97,10 @@ export const STATUS_ETAPA = {
 };
 
 export const PRIORIDADES = {
-  critica: { label: 'Crítica', tone: 'critical' }, // vermelho
-  alta: { label: 'Alta', tone: 'warning' },        // laranja
-  media: { label: 'Média', tone: 'info' },         // azul
-  baixa: { label: 'Baixa', tone: 'muted' },        // cinza
+  critica: { label: 'Crítica', tone: 'critical', icone: 'shield-alert' }, // vermelho
+  alta: { label: 'Alta', tone: 'warning', icone: 'triangle-alert' },       // laranja
+  media: { label: 'Média', tone: 'info', icone: 'triangle-alert' },       // amarelo, texto navy
+  normal: { label: 'Normal', tone: 'success', icone: 'triangle-alert' },  // verde (antes "Baixa")
   analise: { label: 'Em análise', tone: 'info' },   // protagonista ao entrar
 };
 
@@ -268,7 +268,7 @@ export const INITIAL_QUEUE = comTimeline([
   }),
   chamado({
     id: 8151, local: 'Residencial Aurora', equipamento: 'Elevador Social - E02',
-    ocorrencia: 'Botão de chamada intermitente', prioridade: 'baixa', regiao: 'Zona Leste',
+    ocorrencia: 'Botão de chamada intermitente', prioridade: 'normal', regiao: 'Zona Leste',
     status: 'encaminhado', slaPct: 24, slaRestante: '3h', responsavel: 'Superv. Douglas Lima',
     chegada: '13:36', contrato: 'CT-2025-00131',
   }),
@@ -280,7 +280,7 @@ export const INITIAL_QUEUE = comTimeline([
   }),
   chamado({
     id: 8149, local: 'Hospital São Paulo', equipamento: 'Elevador de Serviço - E07',
-    ocorrencia: 'Luz queimada na casa de máquinas', prioridade: 'baixa', regiao: 'Zona Sul',
+    ocorrencia: 'Luz queimada na casa de máquinas', prioridade: 'normal', regiao: 'Zona Sul',
     status: 'encaminhado', slaPct: 30, slaRestante: '2h 50min', responsavel: 'Superv. Renata Alves',
     chegada: '13:25', contrato: 'CT-2025-00124',
   }),
@@ -298,7 +298,7 @@ export const INITIAL_QUEUE = comTimeline([
   }),
   chamado({
     id: 8146, local: 'Residencial Perdizes', equipamento: 'Elevador Social - E12',
-    ocorrencia: 'Exaustor com ruído alto', prioridade: 'baixa', regiao: 'Zona Oeste',
+    ocorrencia: 'Exaustor com ruído alto', prioridade: 'normal', regiao: 'Zona Oeste',
     status: 'aberto', slaPct: 5, slaRestante: '3h 40min', responsavel: null,
     chegada: '13:15', contrato: 'CT-2025-00134',
   }),
@@ -351,7 +351,7 @@ export const BACKGROUND_ARRIVALS = comTimeline([
   }),
   chamado({
     id: 8162, local: 'Residencial Perdizes', equipamento: 'Elevador Social - E14',
-    ocorrencia: 'Luz queimada na cabine', prioridade: 'baixa', regiao: 'Zona Oeste',
+    ocorrencia: 'Luz queimada na cabine', prioridade: 'normal', regiao: 'Zona Oeste',
     status: 'atendimento', slaPct: 2, slaRestante: '3h 50min', responsavel: 'Téc. Juliana Paiva',
     chegada: '14:02', contrato: 'CT-2025-00134',
   }),

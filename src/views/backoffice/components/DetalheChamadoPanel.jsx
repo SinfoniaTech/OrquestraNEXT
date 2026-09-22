@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import Badge from './Badge.jsx';
 import Icon from './icons.jsx';
+import PrioridadeBadge from './PrioridadeBadge.jsx';
 import SlaBar from './SlaBar.jsx';
-import { ORIGEM_TONE, ORIGENS, PRIORIDADES, STATUS_LABEL, STATUS_TONE } from '../data/chamadosData.js';
+import { ORIGEM_TONE, ORIGENS, STATUS_LABEL, STATUS_TONE } from '../data/chamadosData.js';
 import styles from '../chamados.module.css';
 
 /**
@@ -48,10 +49,7 @@ export default function DetalheChamadoPanel({ chamado, onClose }) {
             <h3 className={styles.panelCodigo}>{chamado.codigo}</h3>
             <div className={styles.panelBadges}>
               <Badge text={STATUS_LABEL[chamado.status]} tone={STATUS_TONE[chamado.status]} />
-              <Badge
-                text={PRIORIDADES[chamado.prioridade].label}
-                tone={PRIORIDADES[chamado.prioridade].tone}
-              />
+              <PrioridadeBadge prioridade={chamado.prioridade} />
             </div>
           </div>
           <button type="button" className={styles.panelClose} onClick={onClose} aria-label="Fechar detalhes">

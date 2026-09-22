@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Badge from './Badge.jsx';
 import Icon from './icons.jsx';
+import PrioridadeBadge from './PrioridadeBadge.jsx';
 import SlaBar from './SlaBar.jsx';
 import { PRIORIDADES, STATUS_LABEL, STATUS_TONE } from '../data/chamadosData.js';
 import bk from '../BackofficeView.module.css';
@@ -55,7 +56,7 @@ export default function FilaChamados({ rows, totalN, protPrev = null, arrivalKin
         />
         <FiltroChips
           label="Prioridade"
-          options={['Todas', 'Crítica', 'Alta', 'Média', 'Baixa']}
+          options={['Todas', 'Crítica', 'Alta', 'Média', 'Normal']}
           active={filtros.prioridade}
           onChange={(v) => setFiltro('prioridade', v)}
         />
@@ -99,7 +100,7 @@ export default function FilaChamados({ rows, totalN, protPrev = null, arrivalKin
                 <td className={bk.tableCell}>{r.localEquipamento}</td>
                 <td className={bk.tableCell}>{r.ocorrencia}</td>
                 <td className={bk.tableCell}>
-                  <Badge text={PRIORIDADES[r.prioridade].label} tone={PRIORIDADES[r.prioridade].tone} />
+                  <PrioridadeBadge prioridade={r.prioridade} />
                 </td>
                 <td className={bk.tableCell}>{r.regiao ?? '—'}</td>
                 <td className={bk.tableCell}>
