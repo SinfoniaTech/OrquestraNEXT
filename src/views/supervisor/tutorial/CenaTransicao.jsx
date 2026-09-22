@@ -47,7 +47,7 @@ const COR_DA_ONDA = {
  * segue rodando por trás do detalhe: ao voltar, a lista aparece no estado em
  * que a cena estiver.
  */
-export default function CenaTransicao({ de, para }) {
+export default function CenaTransicao({ de, para, movimentar = true }) {
   // Listas calculadas uma vez: a cena remonta a cada visita.
   const [{ inicial, final }] = useState(() => ({
     inicial: listaComAlvoEm(de),
@@ -68,7 +68,7 @@ export default function CenaTransicao({ de, para }) {
     [900, () => setFase('destaque')],
     [2300, () => setFase('escalado')],
   ];
-  if (mudaDeLugar) {
+  if (mudaDeLugar && movimentar) {
     passos.push(
       [
         3900,

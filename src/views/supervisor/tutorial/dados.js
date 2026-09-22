@@ -3,39 +3,35 @@ import { ALERTA_SLA, CHAMADOS } from '../data/chamados.js';
 /**
  * DADOS DAS CENAS DO TUTORIAL — SUPERVISOR
  *
- * A lista de "fundo" (4 chamados NORMAIS) vem dos dados mock que o app do
- * Supervisor já usa (data/chamados.js). Já a demanda que atravessa todas as
- * criticidades é NOVA e existe só aqui — nada é alterado em data/chamados.js.
+ * O tutorial agora conta DUAS histórias independentes:
+ * 1) CH-0008181 — Smart Fit: a demanda permanece no mesmo contexto e só
+ *    muda de criticidade conforme o tempo restante de SLA diminui.
+ * 2) CH-0008182 — Hospital: "Paciente preso no elevador" já chega CRÍTICA,
+ *    já chega CRÍTICA, classificada como demanda prioritária antes de chegar ao Supervisor.
  */
 
 /* ---------------------------------------------------------------------------
- * A DEMANDA DO TUTORIAL — um elevador de leitos num hospital de São Paulo.
- *
- * O problema relatado EVOLUI junto com a criticidade (cada etapa descreve um
- * agravamento do anterior), e o tempo restante de SLA encolhe a cada etapa:
- *
- *   NORMAL   um ruído leve na porta, sem impacto na operação;
- *   MÉDIA    o ruído virou recorrente e a porta já demora a fechar;
- *   ALTA     a cabine para desnivelada no andar da UTI, o que atrapalha o
- *            transporte de leitos e macas;
- *   CRÍTICA  a cabine parou entre andares com um paciente dentro.
+ * HISTÓRIA 1 — SMART FIT
  * ------------------------------------------------------------------------- */
 
-/** Id da demanda do tutorial (não existe em data/chamados.js). */
 export const ID_ALVO = 'CH-0008181';
 
 const BASE_ALVO = {
   id: ID_ALVO,
-  local: 'Hospital Central Paulista',
-  equipamento: 'Elevador de Leitos - E02',
+  local: 'Academia Smart Fit Vila Olímpia',
+  equipamento: 'Elevador Social - E03',
 };
 
-/** A demanda em cada etapa de criticidade. */
+/**
+ * O contexto NÃO muda entre as cenas. O que muda é somente a criticidade e o
+ * tempo restante para o SLA. Isso deixa claro que o agravamento é temporal,
+ * não uma mudança artificial no defeito.
+ */
 export const ETAPAS_ALVO = {
   normal: {
     ...BASE_ALVO,
     prioridade: 'normal',
-    defeito: 'Ruído leve na porta do 3º andar',
+    defeito: 'Botão de emergência com desgaste',
     tag: null,
     slaTexto: 'Faltam 6h40 para SLA',
     slaTempo: '06:40',
@@ -43,7 +39,7 @@ export const ETAPAS_ALVO = {
   media: {
     ...BASE_ALVO,
     prioridade: 'media',
-    defeito: 'Porta lenta e ruído recorrente',
+    defeito: 'Botão de emergência com desgaste',
     tag: null,
     slaTexto: 'Faltam 3h10 para SLA',
     slaTempo: '03:10',
@@ -51,26 +47,37 @@ export const ETAPAS_ALVO = {
   alta: {
     ...BASE_ALVO,
     prioridade: 'alta',
-    defeito: 'Desnível na parada da UTI',
+    defeito: 'Botão de emergência com desgaste',
     tag: null,
     slaTexto: 'Faltam 50 min para SLA',
     slaTempo: '00:50',
   },
-  critica: {
-    ...BASE_ALVO,
-    prioridade: 'critica',
-    defeito: 'Cabine parada entre andares',
-    tag: 'Paciente preso',
-    slaTexto: 'Faltam 12 min para SLA',
-    slaTempo: '00:12',
-  },
+};
+
+/* ---------------------------------------------------------------------------
+ * HISTÓRIA 2 — HOSPITAL / SLA ESTOURADO
+ * ------------------------------------------------------------------------- */
+
+export const ID_CRITICO_HOSPITAL = 'CH-0008182';
+
+export const DEMANDA_CRITICA_HOSPITAL = {
+  id: ID_CRITICO_HOSPITAL,
+  local: 'Hospital Central Paulista',
+  equipamento: 'Elevador de Leitos - E02',
+  prioridade: 'critica',
+  defeito: 'Paciente preso no elevador',
+  prioridadeLabel: 'Demanda prioritária',
+  tempoDecorrido: '35 minutos',
+  slaTexto: 'Tempo decorrido',
+  // A demanda nasceu CRÍTICA por classificação do BackOffice; não há SLA associado a esta história.
+  slaTempo: '35:00',
+  semSla: true,
 };
 
 /* ---------------------------------------------------------------------------
  * LISTA DA TELA "CHAMADOS"
  * ------------------------------------------------------------------------- */
 
-/** Os demais chamados da tela: todos NORMAIS (situação amena da operação). */
 const IDS_NORMAIS_DE_FUNDO = ['CH-0008163', 'CH-0008166', 'CH-0008168', 'CH-0008170'];
 
 const NORMAIS_DE_FUNDO = CHAMADOS.filter(
@@ -81,133 +88,131 @@ if (NORMAIS_DE_FUNDO.length !== IDS_NORMAIS_DE_FUNDO.length) {
   throw new Error('[tutorial] Algum chamado NORMAL de fundo não existe em data/chamados.js.');
 }
 
-/** "hh:mm" → minutos (para ordenar pelo tempo restante de SLA). */
 function emMinutos(slaTempo) {
-  const [horas, minutos] = slaTempo.split(':').map(Number);
-  return horas * 60 + minutos;
+  const negativo = slaTempo.startsWith('-');
+  const [horas, minutos] = slaTempo.replace('-', '').split(':').map(Number);
+  const valor = horas * 60 + minutos;
+  return negativo ? -valor : valor;
 }
 
-/** Mesma ordenação do app: menor tempo restante para estourar o SLA primeiro. */
+/** Menor tempo para estourar o SLA aparece primeiro. */
 export function ordenarPorSla(chamados) {
   return [...chamados].sort((a, b) => emMinutos(a.slaTempo) - emMinutos(b.slaTempo));
 }
 
-/**
- * A tela com a demanda do tutorial na etapa pedida ('normal' | 'media' |
- * 'alta' | 'critica'), já ordenada por SLA. Sempre 5 chamados.
- */
 export function listaComAlvoEm(etapa) {
   return ordenarPorSla([...NORMAIS_DE_FUNDO, ETAPAS_ALVO[etapa]]);
 }
 
+/** Lista com a criticidade da etapa informada, mas mantendo a posição física
+ * da demanda onde ela estava antes da reordenação. Usada para separar em
+ * cenas distintas a mudança de criticidade e a subida ao topo. */
+export function listaComAlvoNaPosicaoBase(etapa) {
+  return [...NORMAIS_DE_FUNDO, ETAPAS_ALVO[etapa]];
+}
+
+/** Lista usada quando a segunda história começa: o chamado crítico ainda
+ * aparece no fim antes da animação de subida. */
+export function listaHospitalCriticoAntesDaSubida() {
+  return [ETAPAS_ALVO.alta, ...NORMAIS_DE_FUNDO, DEMANDA_CRITICA_HOSPITAL];
+}
+
+export function listaHospitalCriticoFinal() {
+  // A demanda CRÍTICA não participa de ordenação por SLA: ela é prioritária
+  // por classificação do BackOffice e deve assumir o topo ao avançar a cena.
+  return [DEMANDA_CRITICA_HOSPITAL, ETAPAS_ALVO.alta, ...NORMAIS_DE_FUNDO];
+}
+
 /* ---------------------------------------------------------------------------
- * DETALHES DA DEMANDA (tela que abre ao clicar no card + pop-up da Cena 5)
- *
- * Mesmo formato de DETALHES_CHAMADOS do app (data/chamados.js), um por etapa
- * de criticidade. Os números são coerentes entre si: a demanda foi aberta às
- * 10:40 e a cada etapa o SLA é recalculado para a nova criticidade, então
- * "solução prevista" = agora + tempo restante (TB) e o TA só cresce:
- *
- *   etapa     agora   TA     TB     solução prevista
- *   NORMAL    10:45   00:05  06:40  17:25
- *   MÉDIA     10:54   00:14  03:10  14:04
- *   ALTA      11:06   00:26  00:50  11:56
- *   CRÍTICA   11:18   00:38  00:12  11:30
- *
- * O TB é sempre igual ao tempo do card (slaTempo da etapa). Técnico, peça e
- * ações acompanham o agravamento: de "só agendar" até "acionar a emergência
- * do hospital".
+ * DETALHES DA HISTÓRIA 1 — SMART FIT
  * ------------------------------------------------------------------------- */
 
-const ENDERECO_ALVO = 'R. Vergueiro, 1800';
-const REGIAO_ALVO = 'SP - Sul';
+const ENDERECO_SMARTFIT = 'Av. dos Bandeirantes, 3900';
+const REGIAO_SMARTFIT = 'SP - Sul';
 
-/** Ações da etapa crítica: as mesmas do aviso (Cena 5) e do detalhe. */
-const ACOES_CRITICA = [
-  'Verificar status do técnico',
-  'Confirmar disponibilidade de peça',
-  'Acionar a equipe de emergência do hospital',
-];
-
-/** Detalhes da demanda em cada etapa de criticidade. */
 export const DETALHES_ALVO = {
   normal: {
-    endereco: ENDERECO_ALVO,
-    regiao: REGIAO_ALVO,
+    endereco: ENDERECO_SMARTFIT,
+    regiao: REGIAO_SMARTFIT,
     impacto: { slaPrevista: '17:25', ta: '00:05', tb: '06:40' },
-    tecnico: { nome: 'Paulo Menezes', status: 'Disponível', distancia: '12 km', eta: '30 min' },
+    tecnico: { nome: 'Paulo Menezes', status: 'Disponível', distancia: '6 km', eta: '18 min' },
     peca: {
       local: 'Almoxarifado Centro – SP',
       endereco: 'R. das Indústrias, 120',
       eta: '20 min',
-      itens: ['Kit de lubrificação de porta ×1'],
+      itens: ['Botão de emergência ×1'],
     },
-    acoes: [
-      'Agendar visita na próxima janela',
-      'Registrar o ruído para acompanhamento',
-      'Manter prioridade padrão',
-    ],
+    acoes: ['Agendar visita na próxima janela', 'Confirmar disponibilidade de peça', 'Manter prioridade padrão'],
   },
   media: {
-    endereco: ENDERECO_ALVO,
-    regiao: REGIAO_ALVO,
+    endereco: ENDERECO_SMARTFIT,
+    regiao: REGIAO_SMARTFIT,
     impacto: { slaPrevista: '14:04', ta: '00:14', tb: '03:10' },
-    tecnico: { nome: 'Paulo Menezes', status: 'Disponível', distancia: '12 km', eta: '30 min' },
-    peca: {
-      local: 'CD Regional – SP',
-      endereco: 'Av. Martistrias, 3000',
-      eta: '55 min',
-      itens: ['Rolamento de guia da porta ×2'],
-    },
-    acoes: [
-      'Antecipar a visita do técnico',
-      'Confirmar disponibilidade de peça',
-      'Acompanhar tendência de SLA',
-    ],
-  },
-  alta: {
-    endereco: ENDERECO_ALVO,
-    regiao: REGIAO_ALVO,
-    impacto: { slaPrevista: '11:56', ta: '00:26', tb: '00:50' },
-    tecnico: { nome: 'Paulo Menezes', status: 'A caminho', distancia: '11 km', eta: '20 min' },
-    peca: {
-      local: 'CD Regional – SP',
-      endereco: 'Av. Martistrias, 3000',
-      eta: '45 min',
-      itens: ['Sensor de nivelamento ×1'],
-    },
-    acoes: [
-      'Despachar técnico para o hospital',
-      'Avisar a coordenação da UTI sobre o desnível',
-      'Avaliar parada preventiva do equipamento',
-    ],
-  },
-  critica: {
-    endereco: ENDERECO_ALVO,
-    regiao: REGIAO_ALVO,
-    impacto: { slaPrevista: '11:30', ta: '00:38', tb: '00:12' },
-    tecnico: { nome: 'Paulo Menezes', status: 'A caminho', distancia: '8 km', eta: '14 min' },
+    tecnico: { nome: 'Paulo Menezes', status: 'Disponível', distancia: '6 km', eta: '18 min' },
     peca: {
       local: 'CD Regional – SP',
       endereco: 'Av. Martistrias, 3000',
       eta: '35 min',
-      itens: ['Placa de comando de porta ×1', 'Sensor de nivelamento ×1'],
+      itens: ['Botão de emergência ×1'],
     },
-    acoes: ACOES_CRITICA,
+    acoes: ['Antecipar a visita do técnico', 'Confirmar disponibilidade de peça', 'Acompanhar tendência de SLA'],
+  },
+  alta: {
+    endereco: ENDERECO_SMARTFIT,
+    regiao: REGIAO_SMARTFIT,
+    impacto: { slaPrevista: '11:56', ta: '00:26', tb: '00:50' },
+    tecnico: { nome: 'Paulo Menezes', status: 'A caminho', distancia: '6 km', eta: '18 min' },
+    peca: {
+      local: 'CD Regional – SP',
+      endereco: 'Av. Martistrias, 3000',
+      eta: '30 min',
+      itens: ['Botão de emergência ×1'],
+    },
+    acoes: ['Despachar técnico para a unidade', 'Confirmar chegada do técnico', 'Priorizar atendimento antes do estouro do SLA'],
   },
 };
 
 /* ---------------------------------------------------------------------------
- * CENA 5 — o aviso da demanda crítica
+ * DETALHES DA HISTÓRIA 2 — HOSPITAL
  * ------------------------------------------------------------------------- */
 
-/** Conteúdo do pop-up: mesmo formato do alerta do app, apontando para o chamado crítico. */
-export const ALERTA_CRITICO = {
-  ...ALERTA_SLA,
-  chamadoId: ID_ALVO,
-  minutos: 12,
-  acoes: ACOES_CRITICA,
+export const DETALHE_CRITICO_HOSPITAL = {
+  endereco: 'R. Vergueiro, 1800',
+  regiao: 'SP - Centro',
+  semSla: true,
+  tempoDecorrido: '35 minutos',
+  impacto: { ta: '35 min' },
+  tecnico: { nome: 'João da Silva', status: 'A caminho', distancia: '8 km', eta: '14 min' },
+  peca: {
+    local: 'CD Regional – SP',
+    endereco: 'Av. Martistrias, 3000',
+    eta: '25 min',
+    itens: ['Sensor de nível ×1', 'Placa de comando ×1'],
+  },
+  acoes: [
+    'Acionar imediatamente o técnico',
+    'Confirmar suporte de emergência',
+    'Priorizar imediatamente a resolução da demanda crítica',
+  ],
 };
 
-/** Detalhes exibidos quando o pop-up "cresce" (botão "Ver detalhes"): a etapa crítica. */
-export const DETALHE_ALVO = DETALHES_ALVO.critica;
+/* ---------------------------------------------------------------------------
+ * ALERTAS
+ * ------------------------------------------------------------------------- */
+
+export const ALERTA_ALTA = {
+  ...ALERTA_SLA,
+  titulo: 'Alerta – Risco de Estouro de SLA',
+  chamadoId: ID_ALVO,
+  minutos: 50,
+  acoes: DETALHES_ALVO.alta.acoes,
+};
+
+export const ALERTA_CRITICO = {
+  titulo: 'Alerta – Demanda Prioritária',
+  chamadoId: ID_CRITICO_HOSPITAL,
+  minutos: 35,
+  acoes: DETALHE_CRITICO_HOSPITAL.acoes,
+};
+
+export const DETALHE_ALVO = DETALHES_ALVO.alta;

@@ -295,7 +295,7 @@
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 8px;
-  padding: 8px 10px; /* py-2 px-2.5 */
+  padding: 9px 10px; /* py-2 px-2.5 */
 }
 
 .cardInfo {
@@ -1135,4 +1135,26 @@
 .secondaryButton:focus-visible {
   outline: 2px solid var(--sup-ring);
   outline-offset: 2px;
+}
+
+/* Metadados especiais da demanda crítica que já chega classificada como prioritária. */
+.cardPriorityMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-top: 7px;
+}
+
+.cardPriorityLabel {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 7px;
+  padding: 4px 9px;
+  border-radius: 7px;
+  background-color: var(--sup-critica-soft);
+  color: var(--sup-critica);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.1;
 }

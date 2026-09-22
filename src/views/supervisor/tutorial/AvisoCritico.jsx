@@ -35,12 +35,14 @@ const soltarFoco = (event) => event.currentTarget.blur();
  * vai de 0fr a 1fr; o cartão (altura automática, com teto de 85%) acompanha
  * e, passando do teto, o corpo passa a rolar por dentro. Os blocos entram em
  * cascata. Tudo em AvisoCritico.module.css, sem JS de animação.
+ * Para uma demanda já CRÍTICA, o modo `critico` remove qualquer referência a SLA
+ * e mostra somente o tempo decorrido e os dados operacionais da demanda.
  *
  * Esc, clique fora, cabeçalho e "Fechar" fecham o aviso (como no app). O
  * <div> externo só posiciona o aviso dentro do shell e recebe a animação de
  * subida.
  */
-export default function AvisoCritico({ alerta, detalhe, onClose, onAbrirChamado }) {
+export default function AvisoCritico({ alerta, detalhe, onClose, onAbrirChamado, modo = 'risco' }) {
   const [expandido, setExpandido] = useState(false);
 
   useEffect(() => {
@@ -62,6 +64,7 @@ export default function AvisoCritico({ alerta, detalhe, onClose, onAbrirChamado 
   };
 
   const { tecnico, peca, impacto } = detalhe;
+  const semSla = modo === 'critico' || detalhe?.semSla || alerta?.semSla;
 
   return (
     <div className={styles.aviso}>
@@ -69,7 +72,7 @@ export default function AvisoCritico({ alerta, detalhe, onClose, onAbrirChamado 
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Alerta de risco de estouro de SLA"
+          aria-label={semSla ? "Alerta de demanda prioritária" : "Alerta de risco de estouro de SLA"}
           className={sup.modal}
           onClick={(event) => event.stopPropagation()}
         >
@@ -85,8 +88,21 @@ export default function AvisoCritico({ alerta, detalhe, onClose, onAbrirChamado 
             <span className={sup.modalTitles}>
               <span className={sup.modalTitle}>{alerta.titulo}</span>
               <span className={sup.modalText}>
-                O chamado <strong>#{alerta.chamadoId}</strong> está com risco de estourar o SLA em{' '}
-                <strong className={sup.modalMinutos}>{alerta.minutos} minutos</strong>.
+                {semSla ? (
+                  <>
+                    O chamado <strong>#{alerta.chamadoId}</strong> foi classificado como <strong>demanda crítica</strong> e deve ser priorizado imediatamente.
+                  </>
+                ) : modo === 'estourado' ? (
+                  <>
+                    O chamado <strong>#{alerta.chamadoId}</strong> está com o <strong>SLA estourado</strong> há{' '}
+                    <strong className={sup.modalMinutos}>{alerta.minutos} minutos</strong> e deve ser priorizado imediatamente.
+                  </>
+                ) : (
+                  <>
+                    O chamado <strong>#{alerta.chamadoId}</strong> está com risco de estourar o SLA em{' '}
+                    <strong className={sup.modalMinutos}>{alerta.minutos} minutos</strong>.
+                  </>
+                )}
               </span>
             </span>
             <XIcon size={20} className={sup.modalCloseIcon} />
@@ -94,7 +110,7 @@ export default function AvisoCritico({ alerta, detalhe, onClose, onAbrirChamado 
 
           <div className={sup.modalBody}>
             <div className={sup.modalSection}>
-              <p className={sup.modalSectionTitle}>AÇÃO RECOMENDADA</p>
+              <p className={sup.modalSectionTitle}>{semSla || modo === 'estourado' ? 'PRIORIDADE IMEDIATA' : 'AÇÃO RECOMENDADA'}</p>
               <ul className={sup.modalList}>
                 {alerta.acoes.map((acao) => (
                   <li key={acao}>• {acao}</li>
@@ -147,27 +163,43 @@ export default function AvisoCritico({ alerta, detalhe, onClose, onAbrirChamado 
                     </div>
                   </section>
 
-                  <section
-                    className={`${styles.painel} ${sup.cardShadow} ${styles.bloco}`}
-                    style={{ '--k': 1 }}
-                    aria-label="Impacto temporal"
-                  >
-                    <p className={sup.modalSectionTitle}>IMPACTO TEMPORAL</p>
-                    <dl className={styles.impacto}>
-                      <div className={styles.tile}>
-                        <dt className={styles.tileRotulo}>Solução prevista (SLA)</dt>
-                        <dd className={styles.tileValor}>{impacto.slaPrevista}</dd>
-                      </div>
-                      <div className={styles.tile}>
-                        <dt className={styles.tileRotulo}>Tempo decorrido (TA)</dt>
-                        <dd className={styles.tileValor}>{impacto.ta}</dd>
-                      </div>
-                      <div className={styles.tile}>
-                        <dt className={styles.tileRotulo}>Tempo restante (TB)</dt>
-                        <dd className={`${styles.tileValor} ${styles.tileCritico}`}>{impacto.tb}</dd>
-                      </div>
-                    </dl>
-                  </section>
+                  {semSla ? (
+                    <section
+                      className={`${styles.painel} ${sup.cardShadow} ${styles.bloco}`}
+                      style={{ '--k': 1 }}
+                      aria-label="Tempo decorrido"
+                    >
+                      <p className={sup.modalSectionTitle}>TEMPO DECORRIDO</p>
+                      <dl className={styles.impacto}>
+                        <div className={styles.tile}>
+                          <dt className={styles.tileRotulo}>Tempo decorrido</dt>
+                          <dd className={styles.tileValor}>{detalhe.tempoDecorrido || alerta.minutos + ' minutos'}</dd>
+                        </div>
+                      </dl>
+                    </section>
+                  ) : (
+                    <section
+                      className={`${styles.painel} ${sup.cardShadow} ${styles.bloco}`}
+                      style={{ '--k': 1 }}
+                      aria-label="Impacto temporal"
+                    >
+                      <p className={sup.modalSectionTitle}>IMPACTO TEMPORAL</p>
+                      <dl className={styles.impacto}>
+                        <div className={styles.tile}>
+                          <dt className={styles.tileRotulo}>Solução prevista (SLA)</dt>
+                          <dd className={styles.tileValor}>{impacto.slaPrevista}</dd>
+                        </div>
+                        <div className={styles.tile}>
+                          <dt className={styles.tileRotulo}>Tempo decorrido (TA)</dt>
+                          <dd className={styles.tileValor}>{impacto.ta}</dd>
+                        </div>
+                        <div className={styles.tile}>
+                          <dt className={styles.tileRotulo}>Tempo restante (TB)</dt>
+                          <dd className={`${styles.tileValor} ${styles.tileCritico}`}>{impacto.tb}</dd>
+                        </div>
+                      </dl>
+                    </section>
+                  )}
 
                   <div className={`${styles.botoes} ${styles.bloco}`} style={{ '--k': 2 }}>
                     <button type="button" className={sup.primaryButton} onClick={soltarFoco}>
