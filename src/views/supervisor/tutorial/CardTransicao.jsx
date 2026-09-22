@@ -12,7 +12,7 @@ import styles from './CardTransicao.module.css';
  * sombra) faz a transição de verdade — sem tocar no ChamadoCard.
  *
  * As duas versões podem ter alturas diferentes (a CRÍTICA tem o chip
- * "Paciente preso"): a altura do contêiner é medida e animada de uma para a
+ * "Usuário preso"): a altura do contêiner é medida e animada de uma para a
  * outra, e os cards abaixo acompanham a mudança em vez de "pular".
  *
  * Só uma camada é interativa/lida por leitor de tela por vez (inert +
