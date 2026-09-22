@@ -46,13 +46,24 @@ export default function ChamadoCard({ chamado, onOpen = null }) {
             {chamado.local} · {chamado.equipamento}
           </p>
           <p className={styles.cardDefeito}>{chamado.defeito}</p>
-          {chamado.tag ? (
+          {chamado.prioridadeLabel ? (
+            <span className={styles.cardPriorityLabel}>{chamado.prioridadeLabel}</span>
+          ) : chamado.tag ? (
             <span className={styles.cardTag}>{chamado.tag}</span>
           ) : null}
         </div>
         <div className={`${styles.cardSla} ${styles[chamado.prioridade]}`}>
-          <span className={styles.slaTexto}>{chamado.slaTexto}</span>
-          <span className={styles.slaTempo}>{chamado.slaTempo}</span>
+          {chamado.semSla ? (
+            <>
+              <span className={styles.slaTexto}>Tempo decorrido</span>
+              <span className={styles.slaTempo}>{chamado.tempoDecorrido}</span>
+            </>
+          ) : (
+            <>
+              <span className={styles.slaTexto}>{chamado.slaTexto}</span>
+              <span className={styles.slaTempo}>{chamado.tempoDecorrido ?? chamado.slaTempo}</span>
+            </>
+          )}
         </div>
       </div>
     </a>
