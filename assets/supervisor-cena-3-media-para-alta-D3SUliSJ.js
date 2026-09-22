@@ -1,1 +1,0 @@
-import{t as e}from"./index-C4mFhwt8.js";import{t}from"./CenaTransicao-DH2Ez5uL.js";var n=e();function r({isActive:e=!0,side:r=`full`}){return(0,n.jsx)(t,{de:`media`,para:`alta`})}export{r as default};

@@ -1,0 +1,1 @@
+import{t as e}from"./index-kHtHHZAU.js";import{t}from"./BackofficeView-Drkzuzrr.js";var n=e();function r(){return(0,n.jsx)(t,{telaInicial:`chamadas`,stageChamados:`priorizado`})}export{r as default};
