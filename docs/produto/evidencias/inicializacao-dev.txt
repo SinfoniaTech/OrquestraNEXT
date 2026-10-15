@@ -1,0 +1,15 @@
+✔ inicialização dev: módulo servido exporta estado inicial, reducer e seletor (110.266207ms)
+✔ inicialização dev: todas importações nomeadas do serviço têm export correspondente (35.447289ms)
+✔ inicialização dev: #/visao-geral carrega diretamente e após refresh (642.994467ms)
+✔ inicialização dev: #/chamados carrega diretamente e após refresh (947.368666ms)
+✔ inicialização dev: #/tecnicos carrega diretamente e após refresh (487.532035ms)
+✔ inicialização dev: #/pecas carrega diretamente e após refresh (914.982701ms)
+✔ inicialização dev: nenhuma falha ESM, erro JS ou erro de console nas quatro rotas (0.327014ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3646.276583

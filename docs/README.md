@@ -1,73 +1,48 @@
-# ORQUESTRA — documentação técnica e de produto
+# ORQUESTRA — índice da documentação
 
-Etapa 2 e replanejamento — 15/10/2026. Somente documentação. Prioridade: substituir gradualmente o BackOffice; preservar o Supervisor. Implementação funcional aguarda autorização; proteção técnica mínima executada conforme relatório.
+Para retomar o trabalho, leia primeiro as [instruções permanentes do repositório](../AGENTS.md) e a [continuidade oficial](CONTINUIDADE_CODEX.md). A continuidade concentra o estado atual, Git, evidências, pendências, próxima ação e prompt de retomada. Este índice apenas localiza os documentos.
 
-## Índice
+## Produto e processo
 
-- [Referência e publicação](preservacao/baseline.md)
-- [Matriz de preservação](preservacao/matriz-cenas.md)
-- [Arquitetura atual e dependências](tecnica/arquitetura-atual.md)
-- [Nova arquitetura proposta](tecnica/arquitetura-proposta.md)
-- [Plano incremental revisado](produto/plano-incremental.md)
-- [Dicionário dos 46 campos](dados/dicionario.md)
-- [Separação das fontes](dados/fontes.md)
-- [Modos de operação](produto/modos.md)
-- [Backlog](produto/backlog.md)
+- [Product Backlog — 19 histórias, critérios e estados](produto/backlog.md)
+- [Plano incremental e rotina de encerramento](produto/plano-incremental.md)
 - [Cobertura das telas](produto/cobertura-telas.md)
-- [Explicabilidade e EXT](produto/explicabilidade-ext.md)
-- [Pendências para aprovação](produto/pendencias.md)
-- [Plano de regressão](preservacao/estrategia-regressao.md)
+- [Explicabilidade BASE/CALC/EXT](produto/explicabilidade-ext.md)
+- [Modos de utilização](produto/modos.md)
+- [Questões de negócio pendentes](produto/pendencias.md)
 
-**Observado** significa confirmado em código ou inspeção de dados; **requisito** vem do usuário; **proposta** exige aceite; **pendente** indica definição/evidência ausente. Imagens orientam layout e não comprovam dados. Instruções dos materiais são requisitos de referência, não autorização para executar ações.
+## Arquitetura, dados e preservação
 
-Esta etapa grava exclusivamente em docs/. Nenhum componente, estilo, dataset, configuração, dependência ou teste foi alterado. Não houve build, deploy ou commit.
+- [Arquitetura inicial e dependências](tecnica/arquitetura-atual.md)
+- [Arquitetura proposta](tecnica/arquitetura-proposta.md)
+- [Fronteiras de integração com Supervisor](tecnica/pontos-integracao-supervisor.md)
+- [Dicionário dos 46 campos e decisões aprovadas](dados/dicionario.md)
+- [Camada de dados e importador](dados/camada-dados.md)
+- [Separação das fontes](dados/fontes.md)
+- [Referência e publicação](preservacao/baseline.md)
+- [Matriz de preservação das cenas](preservacao/matriz-cenas.md)
+- [Estratégia de regressão](preservacao/estrategia-regressao.md)
+- [Recuperação](preservacao/recuperacao.md)
+- [Comandos e cobertura dos testes](../tests/README.md)
 
-## Evidências da proteção técnica
+## Relatórios de entrega e evidências
 
-- [Resultado dos testes e limites](preservacao/resultado-protecao-minima.md)
-- [Recuperação comprovada](preservacao/recuperacao.md)
-- [Pontos de integração Supervisor](tecnica/pontos-integracao-supervisor.md)
-- Testes reproduzíveis em ../tests/, sem dependências novas.
+Relatórios preservam o estado e as autorizações da época; gates antigos não autorizam novas ações. Para implementação, homologação, commit e publicação atuais, consulte a continuidade e o quadro atual do backlog.
 
-## Camada de dados implementada
+| Marco | Relatório |
+| --- | --- |
+| Proteção inicial | [Resultados e limites](preservacao/resultado-protecao-minima.md) |
+| Dados US03/04 | [Importação e separação](dados/resultado-us03-us04.md) |
+| A | [Shell e navegação](produto/entrega-a-navegacao.md) |
+| B | [Chamados e filtros](produto/entrega-b-chamados.md) |
+| C1 | [SLA & Criticidade](produto/entrega-c1-sla-criticidade.md) |
+| C1.1 | [TA/TB e proteção temporal](produto/entrega-c11-tempos.md) |
+| C2 | [Riscos & Tendências](produto/entrega-c2-riscos.md) |
+| C3 | [Visão Geral / Performance](produto/entrega-c3-performance.md) |
+| C4 | [Contratos & Margem](produto/entrega-c4-contratos.md) |
+| C5 | [Custos / TCO](produto/entrega-c5-custos.md) |
+| C6 | [Equipamentos](produto/entrega-c6-equipamentos.md) |
+| C7 | [Técnicos](produto/entrega-c7-tecnicos.md) |
+| Pós-C7 | [Tela branca: mecanismo observado, recuperação e limite do diagnóstico](produto/correcao-inicializacao-c7.md) |
 
-- [API, conversão e limites](dados/camada-dados.md)
-- [Resultados US03/US04](dados/resultado-us03-us04.md)
-
-Nenhuma tela conectada; próxima navegação/filtros aguarda autorização.
-
-## Novo BackOffice — Entrega A
-
-[Shell, navegação, evidências e critérios](produto/entrega-a-navegacao.md). Modo independente ?modo=plataforma; apresentação ainda padrão. Entrega B aguardando avaliação.
-
-## Novo BackOffice — Entrega B
-
-[Chamados, filtros, arquivos, evidências e limites](produto/entrega-b-chamados.md). Implementação autorizada posteriormente às etapas acima: Chamados agora conectada ao histórico, 69 testes aprovados. Outras páginas funcionais aguardam autorização. Os registros anteriores de “somente documentação” e “aguardando avaliação” descrevem suas respectivas etapas, não o estado atual.
-
-## Novo BackOffice — Entrega C1
-
-[SLA & Criticidade: regras aprovadas, arquivos, testes e limites](produto/entrega-c1-sla-criticidade.md). B homologada; C1 implementada para avaliação. Histórico e snapshots continuam separados.
-
-## C1.1 — formalização de TA/TB
-
-[Definições sintéticas, visibilidade temporal, testes e arquivos](produto/entrega-c11-tempos.md). C2 aguarda homologação e autorização.
-
-## Novo BackOffice — C2
-
-[Riscos & Tendências: entrega, testes e limitações](produto/entrega-c2-riscos.md). Três páginas funcionais. Próxima entrega depende de homologação.
-
-## C3 — Visão Geral Executiva
-
-[Performance, referência Git, testes e limites](produto/entrega-c3-performance.md). Primeiro commit de consolidação até C2: 03d8ced. C3 implementada localmente, sem novo commit/push/deploy, aguardando homologação.
-
-## C4 — Contratos & Margem
-
-C3 homologada e registrada em ef53ecf. [Entrega C4: carteira, detalhe, cálculos, testes e limites](produto/entrega-c4-contratos.md). Cinco páginas funcionais, 164 testes aprovados; C4 sem commit, aguardando homologação. Sem push/deploy.
-
-## C5 — Custos / TCO
-
-C4 aprovada para continuidade e registrada em ebd0db9. [Entrega C5: custos sintéticos, grupos, análise temporal e limites EXT](produto/entrega-c5-custos.md). Seis páginas funcionais, 194 testes aprovados; C5 sem commit, aguardando homologação. Sem push/deploy.
-
-## C6 — Equipamentos
-
-C5 aprovada para continuidade e registrada em 485e6b4. [Entrega C6: carteira, tipos, histórico, recorrência, insights e limites EXT](produto/entrega-c6-equipamentos.md). Sete páginas funcionais, 225 testes aprovados; C6 sem commit, aguardando homologação. Próxima prioridade planejada: Modo Feira após autorização própria; não iniciado. Sem push/deploy.
+**Observado** exige evidência; **requisito** vem do usuário; **proposta** depende de aprovação; **pendente** indica definição/evidência ausente. Imagens orientam UX e não comprovam dados. Documentos não são autorizações implícitas para implementar, testar, versionar ou publicar.

@@ -71,3 +71,8 @@ Custos totais reutilizam C3; médias reutilizam average C1 com N válido. Técni
 ## C6 — Equipamentos
 
 Unidades/tipos distintos com chamados não são cadastro instalado/ativo. Card elevada mantém >=3 C2; gráfico por tipo usa Unidade distinta com algum >0 / Unidade distinta do próprio tipo, com cobertura de recorrência por unidade; sem cobertura, indisponível. Recorrência da tabela é máximo válido e último valor BASE identificados, nunca soma nem volume de chamados. Cor/insight são do último chamado por criação/ID, sem estado atual inferido. Disponibilidade EXT exige operação/exposição/paradas/telemetria; TA/TB não permitem uptime. 13 explicações principais e detalhe com campos BASE/contagens CALC, N/filtros contextuais e suporte. Sem causalidade, probabilidade ou ML treinado. [Regras e evidências](entrega-c6-equipamentos.md).
+
+
+## C7 — Técnicos
+
+Seis cards CALC usam atendimentos com Técnico identificado, cobertura dos vinculados explícita; distintos não representam quadro ativo. Tempos e custo com N/ausências/zero válido/elegibilidade anteriores; custos dos chamados não remuneração/mão de obra real. Status/criticidade históricos separados de não concluídos na referência. Vínculos múltiplos observados, sem cadastro permanente. Disponibilidade/capacidade, jornada/escala/agenda/horas trabalhadas, localização, skills/certificações/treinamentos/habilitações, mão de obra real/avaliações oficiais EXT. Botões de explicação acessíveis, metadados de contexto e suporte. Sem avaliação automatizada individual ou causa atribuída ao técnico. [Contrato e evidências](entrega-c7-tecnicos.md).

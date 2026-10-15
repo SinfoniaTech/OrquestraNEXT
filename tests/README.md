@@ -80,3 +80,17 @@ Build: `npm run build -- --outDir /tmp/orquestra-c5-final/dist`. Regressão: `OR
 Build: `npm run build -- --outDir /tmp/orquestra-c6/dist`. Regressão: `ORQUESTRA_TEST_DIST=/tmp/orquestra-c6/dist node --test tests/*.test.mjs`, mais os 9 Python e importador --check no runtime documentado. Preview C6 porta 5203, evidências /tmp/orquestra-c6/evidence; servidores locais/Chrome precisam de permissão apropriada no sandbox.
 
 21 serviço +10 navegador novos; total 216 Node/browser +9 Python =225 distintos (194 anteriores incluídos). Sete páginas funcionais/cinco pendentes, 12 menus. Teste B agora verifica Equipamentos funcional/281 chamados filtrados e mantém comparação integral de ordem/página/retorno. Suíte completa reexecutada após adaptar a expectativa antiga de placeholder, sem falhas. [Cobertura e evidências C6](../docs/produto/entrega-c6-equipamentos.md). Nenhuma dependência instalada.
+
+
+## C7 — Técnicos
+
+Build: `npm run build -- --outDir /tmp/orquestra-c7/dist`. Regressão: `ORQUESTRA_TEST_DIST=/tmp/orquestra-c7/dist /home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node --test tests/*.test.mjs`, mais 9 Python e importador --check. Usar Node do runtime documentado para contagem distinta dos testes aninhados; o Node24 do shell apresenta o arquivo como um único teste. Preview C7 porta 5205; evidências /tmp/orquestra-c7/evidence, copiadas para docs/produto/evidencias. Portas/Chrome precisam de permissão apropriada no sandbox.
+
+21 serviço +9 navegador novos; total 246 Node/browser + 9 Python =255 distintos. C6 revalidada 225/build e commitada 05ec7d5. Shell verifica Técnicos como oitava página funcional, quatro placeholders e 12 menus; sem enfraquecer as verificações anteriores. [Cobertura e evidências](../docs/produto/entrega-c7-tecnicos.md). Sem dependências novas. C7 sem commit e aguardando homologação.
+
+
+## Regressão de inicialização após C7
+
+`platform-dev.test.mjs` acrescenta 7 testes de módulos ESM efetivamente servidos pelo Vite e das quatro rotas Visão Geral/Chamados/Técnicos/Peças, com URL direta/refresh e verificação de erros. Por padrão inicia/encerra Vite próprio 5209 com cacheDir temporário isolado; `ORQUESTRA_DEV_URL=http://127.0.0.1:5173/OrquestraNEXT/` valida servidor existente sem encerrá-lo. `ORQUESTRA_DEV_EVIDENCE` define destino de capturas/cache. Usar Node do runtime e permissão apropriada para previews/Chrome. Não instalar dependências.
+
+Total atual 262 testes distintos =253 Node/browser + 9 Python (255 anteriores + 7 novos). Tela branca foi causada por módulo vazio no estado do Vite antigo 5173; export DEFAULT_STATE em disco/HEAD estava correto. Reinício do processo restaurou a plataforma, sem mudar produto. [Causa, evidências e limites](../docs/produto/correcao-inicializacao-c7.md).

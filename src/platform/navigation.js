@@ -8,7 +8,7 @@ export const MENU_GROUPS = [
  {label:'OPERAÇÃO',items:[
   {id:'chamados',label:'Chamados',icon:'phone',description:'Consulta do histórico de ocorrências e detalhamento dos atendimentos.'},
   {id:'sla-criticidade',label:'SLA & Criticidade',icon:'chart',description:'Pressão temporal e contexto humano para apoiar a priorização.'},
-  {id:'tecnicos',label:'Técnicos',icon:'users',description:'Histórico de atendimentos e visão da equipe por área.'},
+  {id:'tecnicos',label:'Técnicos',icon:'users',description:'Capacidade e Performance Operacional · atendimentos, vínculos e contexto histórico.'},
   {id:'equipamentos',label:'Equipamentos',icon:'equipment',description:'Histórico dos ativos, componentes e ocorrências relacionadas.'},
   {id:'pecas',label:'Peças',icon:'box',description:'Contexto de componentes e futuras informações de disponibilidade.'}
  ]},

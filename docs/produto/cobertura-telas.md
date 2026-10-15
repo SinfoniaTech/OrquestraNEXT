@@ -56,3 +56,8 @@ Cinco cards sustentados, TCO e composição financeira EXT, evolução diária, 
 ## C6 — T09 Equipamentos
 
 Carteira de 54 unidades no histórico completo, quatro tipos existentes (social/serviço/hospitalar/escada rolante), recorrência elevada C2, volume/máximo/último valor separados, identificação/histórico técnico/desempenho e insights com suporte. Quatro gráficos por componente, tipo (>0 por unidade), dia e cores; disponibilidade EXT sem percentual inventado. Sete páginas funcionais/cinco destinos pendentes. [Entrega C6](entrega-c6-equipamentos.md). Aguardando homologação; Feira planejada como próxima prioridade, sem implementação.
+
+
+## C7 — T08 Técnicos
+
+16 técnicos observados/736 vinculados/724 concluídos, TA35,4/N728, TB49,2/N724 e custo associado R$696.734,60/N736 no histórico completo. Carteira, múltiplos vínculos, status/criticidade, área/rota/supervisor, custos/recorrência/SLA e detalhe até equipamento/histórico/insight. Fontes reais de força de trabalho EXT. Oito páginas funcionais/quatro pendentes. [Relatório](entrega-c7-tecnicos.md). C6 aprovada para continuidade e commitada 05ec7d5; C7 aguarda homologação. Próxima prioridade C8 — Peças e Componentes, seguida da Feira, não iniciadas.

@@ -24,10 +24,11 @@ function display(row,field){
  if(field==='Criticidade_ORQUESTRA')return <CriticalityBadge value={value}/>;
  return String(value);
 }
-export default function ChamadoDetail({row,onClose}){
+export default function ChamadoDetail({row,onClose,onEquipment}){
  return <Dialog wide title={'Chamado '+row.ID_Chamado} onClose={onClose}>
   <div className={styles.detailBadges}><StatusBadge value={row.Status}/><CriticalityBadge value={row.Criticidade_ORQUESTRA}/><span className={styles.classification}>BASE</span></div>
   <p className={styles.detailNote}>Registro histórico na referência de {dateLabel(HISTORY.metadata.reference)}. Não representa acompanhamento em tempo real.</p>
+  {onEquipment&&row.Unidade&&<button className={styles.rowAction} onClick={()=>onEquipment(row)}>Equipamento e histórico · {row.Unidade}</button>}
   {GROUPS.map(group=><section className={styles.detailSection} key={group.title}><h3>{group.title}</h3><dl className={styles.detailGrid}>
    {group.fields.map(field=><div key={field} className={['Descrição do Problema','Insight_ORQUESTRA','Motivo_Criticidade'].includes(field)?styles.fullField:undefined}><dt>{LABELS[field]??field}</dt><dd>{display(row,field)}</dd></div>)}
   </dl></section>)}
