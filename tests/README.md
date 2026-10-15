@@ -62,3 +62,9 @@ ORQUESTRA_TEST_DIST=/tmp/orquestra-c3/dist node --test tests/*.test.mjs
 ```
 
 Novos: 14 testes de serviço +8 de navegador, preview 5197, evidências /tmp/orquestra-c3/evidence. Suíte completa: 130 Node/browser +9 Python =139 distintos (inclui 117 anteriores). Pré-commit até C2: build e 108 Node/browser +9 Python aprovados; logs copiados para evidências C3. Teste do shell mantém 12 menus, agora quatro páginas funcionais/oito pendentes, e verifica título Performance na rota Visão Geral. Ferramentas existentes, nenhuma instalação. Não fazer commit adicional sem autorização.
+
+## C4 — Contratos
+
+Build final: `npm run build -- --outDir /tmp/orquestra-c4-final/dist`. Regressão: `ORQUESTRA_TEST_DIST=/tmp/orquestra-c4-final/dist node --test tests/*.test.mjs`; complementar com os 9 Python e `scripts/import_orquestra.py --check`, usando o runtime documentado. Preview C4 na porta 5199; capturas em /tmp/orquestra-c4/evidence. Servidores locais/Chrome precisam de permissão apropriada no sandbox.
+
+16 testes de serviço +9 navegador novos; total 155 Node/browser +9 Python =164 distintos. Inclui os 139 anteriores. Após ajuste visual/contextual, os 25 C4 foram reexecutados no build final. Shell verifica cinco páginas funcionais/sete pendentes e todos os 12 menus. [Evidências e critérios C4](../docs/produto/entrega-c4-contratos.md). Nenhum pacote instalado.

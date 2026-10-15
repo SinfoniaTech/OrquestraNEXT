@@ -147,3 +147,7 @@ A correlação observada de Percentual_SLA com TA/TB não se torna fórmula cont
 ## Agregação de custo C3
 
 Custo_Estimado_R$ mantém valor BASE por chamado. Soma CALC usa valores finitos não negativos no recorte explícito, incluindo todos os status, e expõe N válido/total; zero informado permanece válido. Sem valor elegível, indisponível, não zero. Exibição em R$ com duas casas, sem arredondar materializados. Gráfico usa coorte de criação do chamado, não data de despesa/competência. Receita, margem e TCO contábil continuam sem fonte (EXT). [Resultado C3](../produto/entrega-c3-performance.md).
+
+## Proporção de recorrência autorizada na C4
+
+Recorrencia_30d BASE permanece intacta. CALC aprovado pelo usuário: contar chamados cujo valor finito não negativo é >0 e dividir por todos os chamados do recorte/contexto, não somar o campo como eventos únicos. Cobertura = valores finitos não negativos / total; ausentes/invalidos não satisfazem >0 e permanecem no denominador total. Sem população ou qualquer valor válido, indisponível; zeros informados válidos produzem 0%. Histórico completo: 412/736 =56,0%, cobertura 736/736. Aplica-se a contrato/categoria/componente/equipamento; não altera a regra C2 de recorrência elevada >=3. [Contrato C4](../produto/entrega-c4-contratos.md).

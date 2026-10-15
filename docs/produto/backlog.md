@@ -89,3 +89,13 @@ US11 entregue também para Riscos & Tendências: Vermelhos/Laranjas históricos,
 Commit de referência até C2 autorizado e criado: 03d8cedb20cc0754cbe07c01c08e0e62c688a428. Antes do commit: revisão de 116 arquivos, staged/check, 117 testes e build aprovados. Sem push. C3 autorizada em seguida e mantida sem novo commit.
 
 US10 parcialmente entregue: Visão Geral/Performance funcional; Padrões & Insights continua pendente. US05: seis cards CALC, três fontes financeiras EXT e cinco explicações de painéis (14 ao todo). US07: quatro páginas funcionais, oito destinos pendentes. US08/09 reutilizadas; US01/15/16 revalidadas. US13 recebe componente EXT e agregação de custo como infraestrutura, não página Contratos & Margem ou TCO implementada. 139 testes distintos aprovados (117 anteriores +22 novos). [Entrega, arquivos e critérios](entrega-c3-performance.md). Aguardar homologação; nenhuma próxima página autorizada por este registro.
+
+## C4 — Contratos & Margem — 15/10/2026
+
+C3 homologada expressamente; commit local autorizado ef53ecf497a0968480880fddd496faa677da50aa, após 139 testes/build/staging revisados; sem push/deploy.
+
+US13 parcialmente entregue: carteira completa por contrato, custo estimado, SLA, pressão por Alto e proporção recorrente; identificação e análise técnica, equipamentos/chamados/insights; finanças e vigência EXT. US05: cards, colunas, gráficos e detalhe com fonte/fórmula/população/N/nulos/período/unidade e suporte. US07: cinco páginas funcionais/sete pendentes. US08/09 reutilizadas com contexto da carteira em memória; US01/15/16 revalidadas. US12 não concluída: agrupamentos no contrato não equivalem às páginas Técnicos/Equipamentos.
+
+Critérios verificados: quatro cards conciliados, busca cliente/contrato, ordem antes da página, filtros AND/OR compartilhados, suporte por métrica, equipamento→chamado/retorno, seis gráficos sincronizados, explicações acessíveis/EXT, vazio, 1366×768 e móvel sem overflow. 164 testes distintos aprovados (139 anteriores +25 novos), build/importação aprovados. Componentes: ContratosPage, contratos.js e GroupChart novos; shell, ConsultationContext e teste de menus adaptados. Custo/SLA/pressão reutilizam C3/C1/C2. Recorrência >0 / total tem cobertura explícita; não soma eventos.
+
+[Relatório completo, arquivos, evidências e limitações](entrega-c4-contratos.md). Pendências: receita/margem/rentabilidade/TCO/vigência/cobertura reais; páginas financeiras restantes; regras geradoras e contrato oficial. C4 sem commit, aguardando homologação. Próxima recomendação: Custos / TCO após aprovação específica. Nenhuma nova entrega iniciada.

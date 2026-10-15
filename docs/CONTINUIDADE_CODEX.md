@@ -1,3 +1,18 @@
+# Estado atual — C4 — 15/10/2026
+
+Esta atualização prevalece sobre os estados históricos da passagem C3 abaixo.
+
+- C3 homologada expressamente pelo usuário nesta sessão. Commit local autorizado e executado após revisão de 30 arquivos, staging/check, 139 testes e build: `ef53ecf497a0968480880fddd496faa677da50aa`, `feat: implementa visao geral executiva C3`. Sem push/deploy.
+- Branch `feature/next-evolucao`; HEAD ef53ecf. C4 autorizada e implementada localmente, sem commit, aguardando homologação. Não iniciar próxima página.
+- C4: `/OrquestraNEXT/?modo=plataforma#/contratos-margem`, carteira/detalhe operacional e econômico; quatro cards, quatro fontes financeiras EXT, tabela com busca/ordem/página, seis gráficos, identificação/técnica/equipamentos/chamados/insights. Cinco páginas funcionais, sete destinos pendentes.
+- 164 testes distintos aprovados (155 Node/browser +9 Python), build/importação --check aprovados. Após ajuste visual/contextual, os 25 C4 passaram novamente no build final. [Relatório e evidências](produto/entrega-c4-contratos.md).
+- Custo/SLA/pressão reutilizam C3/C1/C2. Recorrência aprovada >0 / todos os chamados do recorte; N positivo/total, cobertura válida explícita; sem qualquer valor válido, indisponível. Sem soma como eventos. Pressão binária: algum Alto, sem novas faixas/pesos.
+- ConsultationProvider mantém também ordem/página/tamanho da carteira em memória. Filtros/busca permanecem compartilhados; limpar/logout reseta a carteira. Detalhe local à página, fecha ao navegar.
+- Supervisor/dez cenas/fixtures/tempos/dados/dependências preservados; apresentação original continua padrão. Mesmo SHA256 da planilha. Não instalar pacotes nem fazer commit C4/push/deploy sem autorização.
+- Próxima sugestão: Custos / TCO, exclusivamente depois de homologação C4 e autorização de escopo. Fontes financeiras reais permanecem EXT.
+
+## Passagem anterior preservada como registro histórico (C3)
+
 # ORQUESTRA — Continuidade para uma nova sessão do Codex
 
 Atualizado em 15/10/2026, America/Sao_Paulo. Documento de passagem; não autoriza nova funcionalidade, commit ou publicação. Deve permitir continuidade sem acesso à conversa anterior.

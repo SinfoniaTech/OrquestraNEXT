@@ -30,3 +30,7 @@ US15/16 são transversais, não correção tardia. Ponte pode ocorrer antes de R
 6. Próxima entrega recomendada, aguardando aprovação.
 
 Aceite técnico não autoriza deploy/commit. Alterações futuras precisam de escopo explícito; não implementar vários módulos de uma vez por terem dependências comuns.
+
+## Atualização autorizada C4 — 15/10/2026
+
+O usuário homologou C3 e autorizou seu commit local (ef53ecf), testes e implementação exclusiva de Contratos & Margem. C4 implementada com 164 testes/build aprovados; avança parcialmente R6/US13, sem executar outras páginas. [Resultado e limites](entrega-c4-contratos.md). Aguardar homologação C4 antes de propor/autorizar Custos / TCO ou outra prioridade. Nenhum commit C4/push/deploy autorizado. Registros de “somente docs” no início descrevem o planejamento original, superado apenas pelo escopo aprovado.

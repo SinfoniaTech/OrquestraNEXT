@@ -43,6 +43,9 @@ try{
    if(item.id==='visao-geral'){
     await page.getByTestId('performance-total').waitFor();
     assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);
+   }else if(item.id==='contratos-margem'){
+    await page.getByRole('table',{name:'Tabela de contratos'}).waitFor();
+    assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);
    }else if(item.id==='chamados'){
     await page.getByRole('table',{name:'Tabela de chamados'}).waitFor();
     assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);

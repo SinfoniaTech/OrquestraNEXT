@@ -1,0 +1,63 @@
+
+> orquestra-next@0.1.0 build
+> vite build --outDir /tmp/orquestra-c4-baseline/dist
+
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 164 modules transformed.
+
+(!) outDir /tmp/orquestra-c4-baseline/dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../../../tmp/orquestra-c4-baseline/dist/index.html                                                     0.45 kB │ gzip:   0.29 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/orquestra-logo13-BBrr8rpF.png                         106.07 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/CenaTransicao-DWsH3paR.css                              0.45 kB │ gzip:   0.25 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/index-DK9ErD-r.css                                      2.29 kB │ gzip:   0.97 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/hooks-BhxumCk7.css                                      3.11 kB │ gzip:   1.03 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/AvisoCritico-B2FR-neO.css                               3.67 kB │ gzip:   1.27 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/ChamadoDetalheView-Cq9XzaPt.css                        16.63 kB │ gzip:   3.64 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/BackofficeView-BrCGtxS2.css                            24.10 kB │ gzip:   5.13 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/BackofficePlatform-Csjcpn_q.css                        36.51 kB │ gzip:   8.07 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/backoffice-1-principal-FB33TkkG.js                      0.07 kB │ gzip:   0.08 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/backoffice-2-chamados-BfSAt9G4.js                       0.07 kB │ gzip:   0.08 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/orquestra-logo13-BL5170sf.js                            0.07 kB │ gzip:   0.08 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-aberto-BVrZ0tZ1.js                             0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-aberto-Ccx6qaLV.js                             0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-alerta-CvCn1CVH.js                             0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-alerta-Dody_Zde.js                             0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-repouso-13sCHvh1.js                            0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-repouso-B-TId-OS.js                            0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-concluido-CrNkRPsz.js                          0.19 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-concluido-DhBofgVe.js                          0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-priorizado-CrA9lvhk.js                         0.19 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-priorizado-__gp8Gr9.js                         0.19 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-encaminhado-CEfr-fDL.js                        0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-encaminhado-DWK4hGMl.js                        0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/supervisor-cena-3-media-para-alta-D49Fr6-x.js           0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-em-atendimento-BnI0bC-q.js                     0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/chamados-em-atendimento-Gu6_P4Hy.js                     0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/supervisor-cena-2-normal-para-media-DI446Tn1.js         0.21 kB │ gzip:   0.19 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/supervisor-cena-1-tela-B8lDHoTl.js                      0.65 kB │ gzip:   0.44 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/supervisor-cena-5-demanda-critica-CTBohv4L.js           0.76 kB │ gzip:   0.49 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/supervisor-cena-2-media-sobe-DItBaPJC.js                0.83 kB │ gzip:   0.52 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/supervisor-cena-6-demanda-critica-sobe-CmC-CNi-.js      0.86 kB │ gzip:   0.55 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/supervisor-cena-4-aviso-alta-CGVlQn9c.js                1.17 kB │ gzip:   0.68 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/supervisor-cena-7-aviso-estourado-DnvsJJNq.js           1.19 kB │ gzip:   0.69 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/CenaTransicao-BLD5yrPI.js                               2.14 kB │ gzip:   1.05 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/AvisoCritico-wObYZn44.js                                7.73 kB │ gzip:   2.37 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/hooks-BRT2BjD7.js                                       8.20 kB │ gzip:   3.26 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/supervisor-DIZKiP3o.js                                  9.06 kB │ gzip:   2.58 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/ChamadoDetalheView-BlLEgG8u.js                         24.63 kB │ gzip:   7.05 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/BackofficeView-CMTaeN8n.js                             62.21 kB │ gzip:  17.71 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/BackofficeView-CugyAcm6.js                             62.22 kB │ gzip:  17.70 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/index-D2LTd4K9.js                                     231.32 kB │ gzip:  72.34 kB
+../../../../../../tmp/orquestra-c4-baseline/dist/assets/BackofficePlatform-UhRE7xpX.js                      1,208.17 kB │ gzip: 100.52 kB
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 272ms

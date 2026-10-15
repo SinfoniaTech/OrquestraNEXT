@@ -59,3 +59,7 @@ Nenhuma tela conectada; próxima navegação/filtros aguarda autorização.
 ## C3 — Visão Geral Executiva
 
 [Performance, referência Git, testes e limites](produto/entrega-c3-performance.md). Primeiro commit de consolidação até C2: 03d8ced. C3 implementada localmente, sem novo commit/push/deploy, aguardando homologação.
+
+## C4 — Contratos & Margem
+
+C3 homologada e registrada em ef53ecf. [Entrega C4: carteira, detalhe, cálculos, testes e limites](produto/entrega-c4-contratos.md). Cinco páginas funcionais, 164 testes aprovados; C4 sem commit, aguardando homologação. Sem push/deploy.

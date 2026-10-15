@@ -44,3 +44,7 @@ Página funcional com cinco cards, cores, evolução diária de até 60 dias, á
 ## C3 — T02 Visão Geral
 
 Performance Operacional & Financeira na rota /visao-geral, primeira página após acesso demo. Seis cards, tabela até cinco contratos com lista completa, três gráficos diários, EXT financeiro e observações explicáveis. Não usa valores, metas, variações ou seis meses ilustrativos da referência. Menu permanece Visão Geral. Entrada padrão da aplicação segue apresentação original. Quatro páginas funcionais, oito destinos pendentes. [Relatório C3](entrega-c3-performance.md).
+
+## C4 — T03 Contratos & Margem
+
+Carteira operacional/econômica com quatro cards sustentados, quatro fontes financeiras EXT, tabela ordenável/paginada, detalhes por contrato/equipamento/chamado, seis gráficos e insights com suporte. Cinco páginas funcionais, sete destinos pendentes; nenhuma página de Equipamentos ou Contratos — BackOffice criada. [Relatório C4](entrega-c4-contratos.md). Referência T03 utilizada para hierarquia visual, sem números financeiros ou trimestre inventados. Aguardando homologação.
