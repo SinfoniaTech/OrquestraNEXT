@@ -1,0 +1,1 @@
+import{t as e}from"./index-C9K_TnEg.js";import{t}from"./BackofficeView-gWRUhJq5.js";var n=e();function r(){return(0,n.jsx)(t,{telaInicial:`chamadas`,stageChamados:`em-atendimento`})}export{r as default};

@@ -1,0 +1,1 @@
+import{t as e}from"./index-C9K_TnEg.js";import{t}from"./CenaTransicao-Cca9tp1k.js";var n=e();function r({isActive:e=!0,side:r=`full`}){return(0,n.jsx)(t,{de:`media`,para:`alta`})}export{r as default};

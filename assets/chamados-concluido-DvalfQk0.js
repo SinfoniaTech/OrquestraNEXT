@@ -1,0 +1,1 @@
+import{t as e}from"./index-C9K_TnEg.js";import{t}from"./BackofficeView-B9_QjtAF.js";var n=e();function r(){return(0,n.jsx)(t,{telaInicial:`chamadas`,stageChamados:`concluido`})}export{r as default};
