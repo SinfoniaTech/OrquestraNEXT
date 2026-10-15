@@ -4,13 +4,15 @@ Ponto único de retomada. Regras permanentes: [AGENTS.md](../AGENTS.md). Leia as
 
 ## A. Identificação
 
-- **Atualização:** 15/10/2026, 13h03, America/Sao_Paulo (UTC−03:00); horário de atualização; revalidação para versionamento/publicação controlada.
+- **Atualização:** 15/10/2026, 13h15, America/Sao_Paulo (UTC−03:00); horário de atualização; revalidação para versionamento/publicação controlada.
 - **Raiz efetiva:** `/home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT`. O diretório pai tem outro contexto Git; não usar a pasta antiga com espaços por suposição.
 - **Branch verificada:** `feature/next-evolucao`.
-- **HEAD verificado:** `a5aea32e828d0258a9700c6eef0c4682a05ffe12` — `feat: implementa gestao analitica de tecnicos C7`.
-- **Git nesta preparação, antes do commit C8:** conjunto C8/documentação/evidências revisado para versionar; nada descartado. Commit e push somente de feature/next-evolucao autorizados. Depois do commit, atualizar HEAD e confirmação remota; essa documentação final poderá precisar de commit complementar com autorização própria.
-- **Remoto confirmado:** origin=https://github.com/SinfoniaTech/OrquestraNEXT.git. Antes do push, feature/next-evolucao ausente no remoto; main em a350cd0 e gh-pages em429d377. Nenhum merge/rebase/troca de branch.
-- [Inventário e relatório C8](produto/entrega-c8-pecas.md); [preparação Pages e evidências da nova validação](produto/publicacao-controlada-c8.md).
+- **Commit funcional de referência (C8):** `81340597740f461dbb401c81314397b802354e0d` — `feat: implementa inteligencia de pecas e componentes C8`.
+- **Commit C8 criado:** `81340597740f461dbb401c81314397b802354e0d`, 44 arquivos C8/documentação/evidências revisados; cached stat/check aprovados. Árvore limpa imediatamente depois do commit e do push.
+- **Remoto confirmado após envio da implementação, antes do commit documental:** origin=https://github.com/SinfoniaTech/OrquestraNEXT.git; local e origin/feature/next-evolucao no mesmo SHA acima, divergência 0/0; upstream configurado. URL do origin permaneceu HTTPS. Push HTTPS inicialmente não encontrou credenciais; SSH preexistente autenticou e foi usado por reescrita temporária apenas no comando, sem alterar o remoto persistente.
+- **Publicação autorizada e concluída:** https://sinfoniatech.github.io/OrquestraNEXT/; gh-pages `547db4d8124160521ae9dd1aa00f5a1157929bac`, pai `429d377d13e9bdf29a7e44c5ade937a4d5fdd83a`, sem force. Workflow [38767107398](https://github.com/SinfoniaTech/OrquestraNEXT/actions/runs/38767107398) completed/success. main permanece `a350cd0a494fac9dc092233d79cfc3f0fa8db42d`.
+- **Registro documental complementar:** usuário autorizou commit e push somente deste documento e de `docs/produto/backlog.md`. O commit complementar sucede 8134059 sem alterar o produto; seu SHA deve ser obtido com `git log -1` e confrontado com `git ls-remote origin refs/heads/feature/next-evolucao` na retomada, evitando autorreferência de hash neste arquivo.
+- [Relatório C8](produto/entrega-c8-pecas.md); [preparação Pages e evidências](produto/publicacao-controlada-c8.md). Esses relatórios preservam o estado da preparação; a publicação confirmada está registrada aqui.
 
 Reconfirme o inventário com `git status --short --branch --untracked-files=all` em cada retomada. Não limpar/stashar/resetar/trocar branch/descartar para obter árvore limpa. [Recuperação](preservacao/recuperacao.md).
 
@@ -18,9 +20,9 @@ Reconfirme o inventário com `git status --short --branch --untracked-files=all`
 
 ORQUESTRA é um demonstrador acadêmico FIAP Challenge/NEXT: BackOffice funcional, indicadores explicáveis e dados rastreáveis, preservando apresentação original e Supervisor.
 
-**Entrega atual:** C8 — Peças / Inteligência de Componentes e Ocorrências homologada visualmente para continuidade. Nove páginas funcionais/três pendentes. C7 e rotina homologadas e em a5aea32.
+**Entrega atual:** C8 — Peças / Inteligência de Componentes e Ocorrências homologada visualmente para continuidade. Nove páginas funcionais/três pendentes. C7 e rotina homologadas e em a5aea32; C8 homologada, versionada e enviada em 8134059.
 
-**Escopo desta sessão:** revisar/revalidar C8, criar commit local autorizado, enviar apenas feature/next-evolucao ao origin e preparar publicação. Não alterar versão pública sem confirmação explícita do destino. Não modificar produto/dataset/Supervisor/cenas ou iniciar Feira. Commit documental complementar posterior depende de autorização própria.
+**Escopo desta sessão:** C8 revalidada, commit/push concluídos; publicação Pages e commit/push documental complementar expressamente autorizados pelo usuário após apresentação do destino. Publicação concluída e validada. Não modificar produto/dataset/Supervisor/cenas ou iniciar Feira.
 
 **Próxima etapa de desenvolvimento:** Modo Feira/US14, ainda não autorizado. Evolução temporal de dados operacionais com pausa/retomada/reinício; não autoplay de cenas.
 
@@ -37,13 +39,13 @@ Totais de testes são marcos cumulativos, não devem ser somados entre linhas. H
 | C4 | Contratos & Margem | 164 | Avaliada e aprovada para continuidade | `ebd0db9` | Não verificada |
 | C5 | Custos / TCO | 194 | Avaliada e aprovada para continuidade | `485e6b4` | Não verificada |
 | C6 | Equipamentos | 225 | Avaliada visualmente e aprovada para continuidade | `05ec7d5` | Não verificada |
-| C7 | Técnicos | 255 no marco C7; 262 após correção e revalidação antes do commit | Homologada visualmente para continuidade após inicialização | `a5aea32` (HEAD) | Não verificada |
+| C7 | Técnicos | 255 no marco C7; 262 após correção e revalidação antes do commit | Homologada visualmente para continuidade após inicialização | `a5aea32` | Não verificada |
 | Correção pós-C7 | Reinício do Vite antigo; teste de desenvolvimento | 262; revalidados antes do commit C7 | C7 homologada depois da recuperação; gatilho original indeterminado | Relatório/teste/evidências em `a5aea32` | Não se aplica à intervenção local |
 | Rotina de continuidade | AGENTS e continuidade A–I | Revisão documental e incluída na revisão/versionamento C7 | Homologada pelo usuário | `a5aea32` | Não se aplica |
-| C8 | Peças / análise de componentes |292 novamente aprovados nesta sessão | Homologada visualmente para continuidade | Commit e push autorizados; registrar SHA após execução | Pendente de confirmação do destino |
+| C8 | Peças / análise de componentes | 292 novamente aprovados nesta sessão | Homologada visualmente para continuidade | `8134059` (implementação) | gh-pages `547db4d`, workflow success; rotas públicas verificadas |
 | Feira | Não iniciada | Sem validação de implementação | Escopo ainda não autorizado | Não | Não |
 
-Relatórios atuais: [C8](produto/entrega-c8-pecas.md), [C6](produto/entrega-c6-equipamentos.md), [C7](produto/entrega-c7-tecnicos.md), [inicialização pós-C7](produto/correcao-inicializacao-c7.md). Os anteriores estão no [índice](README.md). HEAD local e existência de gh-pages não comprovam artefato publicado; envio da feature autorizado nesta sessão, mas publicação pública ainda não executada. Confirmar estado remoto após o push.
+Relatórios atuais: [C8](produto/entrega-c8-pecas.md), [C6](produto/entrega-c6-equipamentos.md), [C7](produto/entrega-c7-tecnicos.md), [inicialização pós-C7](produto/correcao-inicializacao-c7.md). Os anteriores estão no [índice](README.md). Publicação C8 comprovada pelo workflow success, HTML público idêntico ao artefato validado e navegação pública. main preservada.
 
 ## D. Arquitetura
 
@@ -90,24 +92,26 @@ ORQUESTRA_DEV_URL=http://127.0.0.1:5173/OrquestraNEXT/ ORQUESTRA_TEST_DIST=/tmp/
 
 Evidências atuais: [283 Node/browser](produto/evidencias/versionamento-c8-regression.txt), [9 Python](produto/evidencias/versionamento-c8-python.txt), [build](produto/evidencias/versionamento-c8-build.txt), [importador](produto/evidencias/versionamento-c8-import.txt), [rotas/produção](produto/evidencias/versionamento-c8-smoke.txt). [Relatório e destino Pages](produto/publicacao-controlada-c8.md); marcos de implementação anteriores permanecem no relatório C8.
 
+**Validação após publicação:** workflow Pages completed/success; HTML público idêntico ao build C8. Em 1366×768, Visão Geral, Chamados, Técnicos e Peças passaram acesso direto/refresh sem overflow; todas as dez cenas, incluindo Supervisor, passaram acesso direto/refresh. Nenhum erro JavaScript ou HTTP de assets. A primeira tentativa durante propagação ainda recebeu a versão antiga; repetição após conclusão passou. Evidência adicional local em `/tmp/orquestra-publicacao-c8/public-smoke.txt` (temporária, não é backup).
+
 Limites: notebook 1366×768/móvel 390×844 e regressões aprovados não são auditoria integral de acessibilidade/cross-browser. Build/preview não comprova estado de um Vite antigo; o teste dev cobre ESM e quatro rotas diretas/refresh. Testes não comprovam homologação do usuário ou publicação. Não presumir servidor ativo numa próxima sessão.
 
 ## G. Pendências e riscos relevantes
 
-- C8 homologada; commit/push autorizados nesta sessão. Publicação pública depende da confirmação do destino; registrar SHA/remoto depois do envio. Documentação final poderá ficar local aguardando autorização de commit complementar.
+- C8 homologada, commit 8134059 enviado; publicação concluída em gh-pages 547db4d. Commit/push complementar destes dois documentos autorizado; confirmar HEAD documental e sincronização pelo Git na retomada.
 - Tela branca: o Vite antigo servia `chamados.js` vazio embora DEFAULT_STATE estivesse exportado em disco/HEAD. Reinício restaurou as quatro rotas e refresh, sem alterar produto. **Mecanismo observado, mas gatilho original indeterminado; causa-raiz completa não estabelecida.** Nova regressão cobre desenvolvimento/ESM. Se reaparecer, comparar resposta servida/arquivo/processo antes de inventar exportações ou limpar caches. [Relatório](produto/correcao-inicializacao-c7.md).
 - Três páginas pendentes; Feira não iniciada. Antes de Feira, definir fontes, completude/merge, clock/velocidade/loop, pausa/retorno, filtros e fronteira Supervisor; não antecipar futuro nem inferir evolução contínua.
 - Regras oficiais OTIS, SLA restante/pausas/metas e regras geradoras de cor/recorrência não fornecidas. Não reabrir conceitos sintéticos já aprovados sem necessidade.
 - Receita/margem/TCO completo/composição contábil, estoque/consumo/logística, cadastro mestre/vigência/parque instalado, uptime, pessoal/skills/escala/localização/capacidade reais são dependências externas. Componente associado não é peça consumida.
-- Demo sem autenticação corporativa; filtros em memória; offline apenas após carga, sem service worker. Bundle grande continua com aviso; otimização depende de escopo próprio. Versão pública observada corresponde a gh-pages 429d377, anterior ao novo BackOffice; não substituída nesta preparação.
+- Demo sem autenticação corporativa; filtros em memória; offline apenas após carga, sem service worker. Bundle grande continua com aviso; otimização depende de escopo próprio. Versão pública C8 confirmada em gh-pages 547db4d, com apresentação original como entrada padrão e plataforma via ?modo=plataforma.
 
 ## H. Próxima ação
 
-**Decisão de liberação:** após concluir commit/push da C8, aguardar confirmação do destino Pages e autorização para eventual commit documental complementar. Não publicar antecipadamente nem iniciar Feira.
+**Próxima ação:** aguardar orientação e autorização do escopo Modo Feira/US14. C8 homologada, versionada, enviada e publicada. Não iniciar novas funcionalidades automaticamente.
 
 Prompt padrão para uma nova conversa:
 
-> Retome o ORQUESTRA em `/home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT`. Consulte os AGENTS.md aplicáveis e `docs/CONTINUIDADE_CODEX.md`; confira branch, HEAD e Git completo, preservando alterações locais. Identifique divergências e consulte apenas as especificações pertinentes à próxima tarefa. Apresente um resumo do estado e das pendências; aguarde minha autorização antes de implementar. Se faltar evidência, amplie a investigação sem alterar arquivos funcionais. Não presuma servidor ativo, homologação, autorização de commit ou publicação.
+> Retome o ORQUESTRA em `/home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT`. Leia AGENTS.md e docs/CONTINUIDADE_CODEX.md; confira feature/next-evolucao, HEAD documental e sincronização com origin, preservando alterações locais. C8 homologada em 8134059 e publicada em gh-pages 547db4d; 292 testes, build, importador e validação pública aprovados. Supervisor, dez cenas e datasets preservados. Próxima prioridade: Modo Feira com evolução temporal dos dados, pausa, retomada e reinício; aguarde minha autorização de escopo antes de implementar. Não presuma servidor ativo nem descarte alterações.
 
 ## I. Ambiente e comandos de referência
 
@@ -125,6 +129,6 @@ URL de referência: `http://127.0.0.1:5173/OrquestraNEXT/?modo=plataforma#/visao
 - Suítes usam portas próprias 5187–5205, 5209 (dev) e 5211 (C8); não executar duas instâncias da mesma suíte/porta. Teste dev usa cacheDir temporário separado e pode receber `ORQUESTRA_DEV_URL` para testar servidor existente. Portas/Chrome podem exigir permissão do ambiente; EPERM de sandbox não prova falha funcional.
 - Vite/GitHub Pages usa base `/OrquestraNEXT`. Validar assets/rotas/refresh sob esse subdiretório em mudança pertinente. `npm run deploy` também executa predeploy/build e requer autorização explícita de publicação. Não inferir SHA/estado remoto pelo Git local.
 
-### Publicação proposta — confirmação obrigatória
+### Publicação concluída — autorização explícita recebida
 
-Destino https://sinfoniatech.github.io/OrquestraNEXT/, branch de artefatos gh-pages na raiz. O HTML público atual coincide com origin/gh-pages 429d377 e o último workflow Pages bem-sucedido aponta para esse SHA. Proposta substituir o bundle público pelos artefatos C8 validados, preservando apresentação como padrão e acrescentando plataforma via ?modo=plataforma. Fonte feature/next-evolucao permanecerá separada de main. API administrativa Pages anônima retornou 404; associação observada confirmada por HTML/ref/workflow, sem alterar configurações. Ver relatório de preparação.
+Destino https://sinfoniatech.github.io/OrquestraNEXT/, branch gh-pages na raiz, commit 547db4d. Substituiu 429d377 com histórico preservado e sem alteração de configuração. Artefato publicado diretamente do build C8 validado, sem novo build ou mudanças de produto. Apresentação original permanece padrão; BackOffice em https://sinfoniatech.github.io/OrquestraNEXT/?modo=plataforma#/visao-geral. Workflow e validação pública aprovados. Feature é enviada separadamente; main não foi alterada. A autorização desta publicação não autoriza novos deploys ou desenvolvimento Feira.

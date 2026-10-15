@@ -1,6 +1,6 @@
 # Product Backlog — estado efetivo após C8
 
-Atualizado em 15/10/2026, America/Sao_Paulo. Nove páginas funcionais/três destinos pendentes. C7 e rotina homologadas e registradas em a5aea32, após nova revalidação 262 testes/build. C8 — Peças / Inteligência de Componentes e Ocorrências homologada visualmente para continuidade; 292 testes novamente aprovados, build/importador --check aprovados. Commit e push da feature autorizados; publicação pública condicionada à confirmação de destino. Próxima prioridade planejada: Modo Feira/US14, ainda não autorizado. P0 fundamento/liberação, P1 MVP, P2 expansão. Supervisor protegido; testes não substituem homologação e documentos não autorizam novas ações.
+Atualizado em 15/10/2026, America/Sao_Paulo. Nove páginas funcionais/três destinos pendentes. C7 e rotina homologadas e registradas em a5aea32, após nova revalidação 262 testes/build. C8 — Peças / Inteligência de Componentes e Ocorrências homologada visualmente para continuidade; 292 testes novamente aprovados, build/importador --check aprovados. Commit 8134059 criado e enviado; feature local/remota sincronizadas 0/0. Publicação C8 autorizada e concluída em gh-pages 547db4d; workflow success e navegação pública aprovados. Próxima prioridade planejada: Modo Feira/US14, ainda não autorizado. P0 fundamento/liberação, P1 MVP, P2 expansão. Supervisor protegido; testes não substituem homologação e documentos não autorizam novas ações.
 
 IDs US01–18 mantidos com escopo revisado; US19 acrescentada para ponte explícita. US07 deixa de exigir consolidação das duas cópias; US06 expande entrada/login; US18 separa shell EXT obrigatório (A) de integração real (B).
 
@@ -14,7 +14,7 @@ Este quadro prevalece sobre os estados históricos das entregas abaixo. US18-A/B
 
 | US | Estado efetivo | Implementação e evidências atuais | Aceite / pendência efetiva |
 | --- | --- | --- | --- |
-| US01 | Implementada no escopo de proteção; contínua | Supervisor/dez cenas preservados, comparações Git e regressões até C8; referências locais até C7 | Obrigação em toda entrega; não auditoria visual integral. C7 em a5aea32; C8 local sem commit |
+| US01 | Implementada no escopo de proteção; contínua | Supervisor/dez cenas preservados, comparações Git e regressões até C8; referências locais até C8 | Obrigação em toda entrega; não auditoria visual integral. C8 em 8134059 local/remoto; documentação final com commit/push complementar autorizado |
 | US02 | Mapeada e validada; preservada | Dez entradas/hash/refresh válidos; colisões de nomes auxiliares documentadas, sem refatoração | Mudança de índice exige análise; não corrigir legado incidentalmente |
 | US03 | Concluída tecnicamente e aprovada | Histórico rastreável 736 registros/46 campos, importador, origem/hash, JSON imutável | Manter integridade; sem fórmula geradora inferida |
 | US04 | Implementada para separação/consulta/projeção | HIST e T0/T1/T2 (10/16/24) separados das fixtures; proteção temporal C1.1 | Merge/completude/fontes e motor Feira pendentes; não somar snapshots |
@@ -27,9 +27,9 @@ Este quadro prevalece sobre os estados históricos das entregas abaixo. US18-A/B
 | US11 | Entregue no escopo sintético aprovado | SLA C1/C1.1 e Riscos C2, regras explicadas e suporte | C1 aceito para continuidade, C1.1 regras aprovadas, C2 homologação preliminar. Regras oficiais/recálculos/pausas/SLA restante pendentes |
 | US12 | Implementada e C7 homologada no escopo histórico | Equipamentos C6 e Técnicos C7: carteiras, vínculos múltiplos, histórico/tempos/SLA/custos/recorrência/insights; fontes reais EXT | C6 aprovada para continuidade; C7 homologada para continuidade. Disponibilidade real e fontes de pessoal EXT |
 | US13 | Parcial | Contratos & Margem C4 e Custos / TCO C5 funcionais, custos estimados e lacunas financeiras explícitas | C4/C5 aprovadas para continuidade e commitadas; Contratos — BackOffice e finanças reais pendentes; sem CRUD presumido |
-| US14 | Planejada; após C8 | Contrato e projeção temporal C1.1 preparados/testados; nenhum motor/controlador Feira implementado | Aguardar homologação C8 e autorização de escopo próprio; clock/fontes/merge/completude/loop/velocidade/pausa/retorno precisam de definição |
-| US15 | Parcial e contínua | Notebook 1366×768, móvel 390×844, teclado/foco/explicações, movimento reduzido e regressões | Não auditoria integral de acessibilidade/cross-browser; C8 homologada para continuidade do usuário |
-| US16 | Validação/versionamento local parciais | Testes/build/docs/recuperação e commits até C7; rotina homologada; C8 292 testes aprovados | Versionamento C8 autorizado nesta sessão; estado final de commit/remoto na continuidade. Publicação depende de confirmação do destino. Sem commit/push/deploy implícitos |
+| US14 | Planejada; após C8 | Contrato e projeção temporal C1.1 preparados/testados; nenhum motor/controlador Feira implementado | C8 homologada; aguardar autorização de escopo próprio; clock/fontes/merge/completude/loop/velocidade/pausa/retorno precisam de definição |
+| US15 | Parcial e contínua | Notebook 1366×768, móvel 390×844, teclado/foco/explicações, movimento reduzido e regressões | Não auditoria integral de acessibilidade/cross-browser; C8 homologada para continuidade pelo usuário |
+| US16 | Validação/versionamento local parciais | Testes/build/docs/recuperação e commits até C8; rotina homologada; 292 testes revalidados | C8 versionada/enviada em 8134059, sincronização 0/0; dois documentos finais com commit/push complementar autorizado. Pages publicada em 547db4d. Sem commit/push/deploy implícitos |
 | US17 | Pendente | Exportação não implementada | Escopo futuro: todo recorte com origem/regras/EXT; não só página |
 | US18 | Parcial em A; B pendente | A: C8 Peças com análise de componentes/ocorrências e logística EXT; Integrações ainda placeholder. B: nenhuma integração real | C8 homologada para continuidade; catálogo/estoque/consumo/logística reais indisponíveis; B depende de fontes/contratos autorizados |
 | US19 | Planejada, não implementada | Fronteiras Supervisor documentadas; link à apresentação original disponível | Link não é ponte contextual. Aviso, preservação de filtros/pausa Feira/retorno explícito e ponto de entrada dependem de escopo |
@@ -47,12 +47,16 @@ Implementação/homologação/versionamento por entrega:
 | C4 | Contratos & Margem, 164 | Avaliada e aprovada para continuidade antes da C5 | ebd0db9 |
 | C5 | Custos / TCO, 194 | Avaliada e aprovada para continuidade antes da C6 | 485e6b4 |
 | C6 | Equipamentos, 225 | Avaliada e aprovada para continuidade | 05ec7d5 |
-| C7 | Técnicos, 255; correção/revalidação 262 | Homologada visualmente para continuidade; rotina também homologada | a5aea32 (HEAD) |
-| C8 | Peças / Componentes, 292 revalidados | Homologada visualmente para continuidade | Commit/push autorizados; SHA final na continuidade |
+| C7 | Técnicos, 255; correção/revalidação 262 | Homologada visualmente para continuidade; rotina também homologada | a5aea32 |
+| C8 | Peças / Componentes, 292 revalidados | Homologada visualmente para continuidade | 8134059 (implementação C8) |
 
-Os marcos de testes são cumulativos; último resultado executado nesta sessão: 292 distintos (283 Node/browser +9 Python), build/importador --check aprovados. [Evidências C8](entrega-c8-pecas.md). C7 revalidada com 262 antes do commit a5aea32; branch feature/next-evolucao. C8 local, sem staging/commit; um checkout limpo do HEAD não a contém. [Inventário oficial](../CONTINUIDADE_CODEX.md).
+Os marcos de testes são cumulativos. Revalidação desta sessão de versionamento: 292 distintos (283 Node/browser +9 Python), build/importador --check aprovados. Um início de Vite novo encontrou EMFILE; suíte integral repetida usando instância 5173 existente passou sem mudar código. Rotas diretas/refresh sob a base de produção e 1366×768 aprovados. [Evidências e preparação de publicação](publicacao-controlada-c8.md).
 
-Próxima decisão: confirmar destino antes da publicação pública no Pages. Versionamento/push apenas de feature/next-evolucao autorizados nesta sessão. Modo Feira/US14 é a próxima etapa de desenvolvimento, mas permanece não autorizado; não há merge em main nem deploy antecipado.
+C8 funcional em `81340597740f461dbb401c81314397b802354e0d`, enviada ao origin/feature/next-evolucao com divergência 0/0 antes do registro documental complementar. Usuário autorizou commit/push complementar somente de continuidade e backlog; HEAD documental sucede C8, sem alteração funcional, e deve ser confirmado no Git. main a350cd0 preservada.
+
+Publicação explicitamente confirmada pelo usuário e concluída: https://sinfoniatech.github.io/OrquestraNEXT/, gh-pages `547db4d8124160521ae9dd1aa00f5a1157929bac`, pai 429d377, sem force. [Workflow Pages](https://github.com/SinfoniaTech/OrquestraNEXT/actions/runs/38767107398) completed/success. HTML público igual ao build validado; quatro rotas de plataforma e dez cenas passaram acesso direto/refresh em 1366×768, sem erros JavaScript/HTTP. Apresentação original padrão; BackOffice por ?modo=plataforma. Não houve modificação de datasets, Supervisor ou cenas.
+
+Próxima etapa de desenvolvimento: Modo Feira/US14, ainda não iniciado e sem escopo autorizado. Aguardar orientação do usuário. Publicação não autoriza implementar novas funcionalidades.
 
 Rotina documental US16 homologada pelo usuário e registrada com C7; orientação permanente em [AGENTS](../../AGENTS.md). US16 segue transversal; não concluída integralmente por existir documentação.
 
