@@ -168,3 +168,8 @@ Tabela por unidade: máximo finito não negativo e último valor materializado s
 ## Agregações autorizadas C7
 
 Técnico identificado = texto não nulo/vazio/apenas espaços. Distintos =16; vinculados736/736, concluídos724. Tempos e custos analisam os vinculados, com N728 TA/N724 TB/N736 custo; sem técnico não conta como entidade nem vinculado, permanece na cobertura total. Área/Supervisor/Rota observados preservam todos os vínculos (7/7/16 grupos completos), sem quadro/cadastro permanente. Criticidade elevada =Laranja/Vermelho históricos138, dos quais1 não concluído na referência; não classificação do profissional. Custos associados são dos chamados, não remuneração/custo real de mão de obra. Disponibilidade/capacidade/qualificações/escala/localização/avaliações EXT. [Relatório C7](../produto/entrega-c7-tecnicos.md).
+
+
+## Agregações autorizadas C8
+
+Componente Principal identificado não nulo/vazio/apenas espaços: 10 distintos/736 associados; 11 Subcomponentes observados. Sem componente não conta como entidade/associado, com cobertura no total explícita. Categoria/Defeito/Falha/Subcomponente/Fechamento são BASE agrupados por texto completo (contagem CALC); não causa comprovada nem peça consumida/SKU/compatibilidade. Unidade/Contrato distintos por componente não são somados como entidades globais. Recorrência C4/C2, custo C3, TA/TB/SLA anteriores mantidos. Estoque/depósito/consumo/preço/ETA logístico EXT; ETA_min é chegada do técnico. [Regras e evidências](../produto/entrega-c8-pecas.md).

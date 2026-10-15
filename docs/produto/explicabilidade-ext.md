@@ -76,3 +76,8 @@ Unidades/tipos distintos com chamados não são cadastro instalado/ativo. Card e
 ## C7 — Técnicos
 
 Seis cards CALC usam atendimentos com Técnico identificado, cobertura dos vinculados explícita; distintos não representam quadro ativo. Tempos e custo com N/ausências/zero válido/elegibilidade anteriores; custos dos chamados não remuneração/mão de obra real. Status/criticidade históricos separados de não concluídos na referência. Vínculos múltiplos observados, sem cadastro permanente. Disponibilidade/capacidade, jornada/escala/agenda/horas trabalhadas, localização, skills/certificações/treinamentos/habilitações, mão de obra real/avaliações oficiais EXT. Botões de explicação acessíveis, metadados de contexto e suporte. Sem avaliação automatizada individual ou causa atribuída ao técnico. [Contrato e evidências](entrega-c7-tecnicos.md).
+
+
+## C8 — Componentes e ocorrências
+
+Cinco cards CALC: componentes distintos, ocorrências com componente/cobertura, unidades>=3 C2, Vermelhos históricos e custo dos atendimentos associados (não preço de peça). Carteira e detalhe preservam N, nulos, fórmula/população/período/fonte e suporte, recorrência positiva/total/cobertura e SLA cumprem/elegíveis separados. Contexto técnico BASE não prova causalidade/consumo/substituição. Histórico por unidade restrito ao componente/filtros. Depósito/estoque, catálogo/compatibilidade, preço/consumo e ETA logístico/distância EXT sem número ou conexão simulada. [Contrato e evidências](entrega-c8-pecas.md).

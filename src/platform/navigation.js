@@ -10,7 +10,7 @@ export const MENU_GROUPS = [
   {id:'sla-criticidade',label:'SLA & Criticidade',icon:'chart',description:'Pressão temporal e contexto humano para apoiar a priorização.'},
   {id:'tecnicos',label:'Técnicos',icon:'users',description:'Capacidade e Performance Operacional · atendimentos, vínculos e contexto histórico.'},
   {id:'equipamentos',label:'Equipamentos',icon:'equipment',description:'Histórico dos ativos, componentes e ocorrências relacionadas.'},
-  {id:'pecas',label:'Peças',icon:'box',description:'Contexto de componentes e futuras informações de disponibilidade.'}
+  {id:'pecas',label:'Peças',icon:'box',description:'Inteligência de Componentes e Ocorrências · contexto técnico e operacional.'}
  ]},
  {label:'INTELIGÊNCIA',items:[
   {id:'padroes-insights',label:'Padrões & Insights',icon:'spark',description:'Padrões observados e recomendações com evidência rastreável.'}

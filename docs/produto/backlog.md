@@ -1,6 +1,6 @@
-# Product Backlog — estado efetivo após C7
+# Product Backlog — estado efetivo após C8
 
-Atualizado em 15/10/2026, America/Sao_Paulo. Estado atual: oito páginas funcionais/quatro destinos pendentes; C6 aprovada para continuidade e registrada em 05ec7d5. C7 — Técnicos implementada com marco de 255 testes, aguardando homologação visual. A correção pós-C7 registra a última validação de 262 testes aprovados; não reexecutados nesta revisão documental. Próxima prioridade planejada pelo usuário: C8 — Peças e Componentes/US18-A, seguida do Modo Feira/US14, não iniciados. P0 fundamento/liberação, P1 MVP, P2 expansão. Supervisor protegido. Este quadro distingue entrega técnica, aceite e versionamento; testes não substituem homologação. Nenhuma implementação, commit ou publicação está autorizada por este documento.
+Atualizado em 15/10/2026, America/Sao_Paulo. Nove páginas funcionais/três destinos pendentes. C7 e rotina homologadas e registradas em a5aea32, após nova revalidação 262 testes/build. C8 — Peças / Inteligência de Componentes e Ocorrências homologada visualmente para continuidade; 292 testes novamente aprovados, build/importador --check aprovados. Commit e push da feature autorizados; publicação pública condicionada à confirmação de destino. Próxima prioridade planejada: Modo Feira/US14, ainda não autorizado. P0 fundamento/liberação, P1 MVP, P2 expansão. Supervisor protegido; testes não substituem homologação e documentos não autorizam novas ações.
 
 IDs US01–18 mantidos com escopo revisado; US19 acrescentada para ponte explícita. US07 deixa de exigir consolidação das duas cópias; US06 expande entrada/login; US18 separa shell EXT obrigatório (A) de integração real (B).
 
@@ -14,24 +14,24 @@ Este quadro prevalece sobre os estados históricos das entregas abaixo. US18-A/B
 
 | US | Estado efetivo | Implementação e evidências atuais | Aceite / pendência efetiva |
 | --- | --- | --- | --- |
-| US01 | Implementada no escopo de proteção; contínua | Supervisor/dez cenas preservados, comparações Git e regressões até C7; referências locais até C6 | Obrigação em toda entrega; não auditoria visual integral. C6 em 05ec7d5; C7 local sem commit |
+| US01 | Implementada no escopo de proteção; contínua | Supervisor/dez cenas preservados, comparações Git e regressões até C8; referências locais até C7 | Obrigação em toda entrega; não auditoria visual integral. C7 em a5aea32; C8 local sem commit |
 | US02 | Mapeada e validada; preservada | Dez entradas/hash/refresh válidos; colisões de nomes auxiliares documentadas, sem refatoração | Mudança de índice exige análise; não corrigir legado incidentalmente |
 | US03 | Concluída tecnicamente e aprovada | Histórico rastreável 736 registros/46 campos, importador, origem/hash, JSON imutável | Manter integridade; sem fórmula geradora inferida |
 | US04 | Implementada para separação/consulta/projeção | HIST e T0/T1/T2 (10/16/24) separados das fixtures; proteção temporal C1.1 | Merge/completude/fontes e motor Feira pendentes; não somar snapshots |
-| US05 | Implementada nas oito páginas; transversal | BASE/CALC/EXT, explicações por botão, fórmula/N/nulos/período/fonte e suporte | Aplicar também às páginas/modos futuros; C7 aguarda visual |
+| US05 | Implementada nas nove páginas; transversal | BASE/CALC/EXT, explicações por botão, fórmula/N/nulos/período/fonte e suporte | Aplicar também às páginas/modos futuros; C8 homologada para continuidade |
 | US06 | Parcial | Login demo e plataforma opt-in; apresentação original padrão sem conflito de hash/teclado | Modos próprios Apresentação/Feira pendentes; demo não é autenticação corporativa |
-| US07 | Parcial | Shell/12 destinos; Visão Geral, Contratos & Margem, Custos / TCO, Riscos, Chamados, SLA, Equipamentos e Técnicos funcionais | Peças, Padrões & Insights, Contratos — BackOffice e Integrações pendentes |
-| US08 | Implementada e ampliada até C7 | 13 filtros compartilhados, AND/OR/busca/chips/limpar/vazio, populações antes da paginação e contexto em memória | B homologada; C6 Unidade/Componente aprovadas para continuidade; C7 Técnico/Supervisor/Rota testadas, aguardam homologação visual; refresh reseta |
-| US09 | Implementada e homologada | Chamados B: busca/ordem/página/detalhe e retorno; suporte reutilizado até C7 | Preservar contexto e integridade nas próximas entregas |
+| US07 | Parcial | Shell/12 destinos; Visão Geral, Contratos & Margem, Custos / TCO, Riscos, Chamados, SLA, Equipamentos, Técnicos e Peças funcionais | Padrões & Insights, Contratos — BackOffice e Integrações pendentes |
+| US08 | Implementada e ampliada até C7 | 13 filtros compartilhados, AND/OR/busca/chips/limpar/vazio, populações antes da paginação e contexto em memória | B homologada; C6 Unidade/Componente aprovadas para continuidade; C7 Técnico/Supervisor/Rota homologadas; C8 reutiliza consulta e foi homologada para continuidade; refresh reseta |
+| US09 | Implementada e homologada | Chamados B: busca/ordem/página/detalhe e retorno; suporte reutilizado até C8 | Preservar contexto e integridade nas próximas entregas |
 | US10 | Parcial | Visão Geral C3 implementada e expressamente homologada | Página Padrões & Insights pendente; textos em outras páginas não a concluem |
 | US11 | Entregue no escopo sintético aprovado | SLA C1/C1.1 e Riscos C2, regras explicadas e suporte | C1 aceito para continuidade, C1.1 regras aprovadas, C2 homologação preliminar. Regras oficiais/recálculos/pausas/SLA restante pendentes |
-| US12 | Implementada no escopo histórico; C7 aguarda aceite | Equipamentos C6 e Técnicos C7: carteiras, vínculos múltiplos, histórico/tempos/SLA/custos/recorrência/insights; fontes reais EXT | C6 aprovada para continuidade; C7 aguarda homologação visual. Disponibilidade real e fontes de pessoal EXT |
+| US12 | Implementada e C7 homologada no escopo histórico | Equipamentos C6 e Técnicos C7: carteiras, vínculos múltiplos, histórico/tempos/SLA/custos/recorrência/insights; fontes reais EXT | C6 aprovada para continuidade; C7 homologada para continuidade. Disponibilidade real e fontes de pessoal EXT |
 | US13 | Parcial | Contratos & Margem C4 e Custos / TCO C5 funcionais, custos estimados e lacunas financeiras explícitas | C4/C5 aprovadas para continuidade e commitadas; Contratos — BackOffice e finanças reais pendentes; sem CRUD presumido |
-| US14 | Planejada; após C8 | Contrato e projeção temporal C1.1 preparados/testados; nenhum motor/controlador Feira implementado | Aguardar C7/C8 e autorização de escopo próprio; clock/fontes/merge/completude/loop/velocidade/pausa/retorno precisam de definição |
-| US15 | Parcial e contínua | Notebook 1366×768, móvel 390×844, teclado/foco/explicações, movimento reduzido e regressões | Não auditoria integral de acessibilidade/cross-browser; C7 aguarda visual do usuário |
-| US16 | Validação/versionamento local parciais | Testes/build/docs/recuperação e commits até C6; C7 255 testes, ampliados para 262 na correção de inicialização | C7 sem commit/nada staged; publicação/artefato publicado/retorno de deploy não certificados. Sem commit/push/deploy implícitos |
+| US14 | Planejada; após C8 | Contrato e projeção temporal C1.1 preparados/testados; nenhum motor/controlador Feira implementado | Aguardar homologação C8 e autorização de escopo próprio; clock/fontes/merge/completude/loop/velocidade/pausa/retorno precisam de definição |
+| US15 | Parcial e contínua | Notebook 1366×768, móvel 390×844, teclado/foco/explicações, movimento reduzido e regressões | Não auditoria integral de acessibilidade/cross-browser; C8 homologada para continuidade do usuário |
+| US16 | Validação/versionamento local parciais | Testes/build/docs/recuperação e commits até C7; rotina homologada; C8 292 testes aprovados | Versionamento C8 autorizado nesta sessão; estado final de commit/remoto na continuidade. Publicação depende de confirmação do destino. Sem commit/push/deploy implícitos |
 | US17 | Pendente | Exportação não implementada | Escopo futuro: todo recorte com origem/regras/EXT; não só página |
-| US18 | Pendente nas duas partes | A: Peças/Integrações são placeholders; indicadores EXT reutilizáveis existentes. B: nenhuma integração real | A precisa de páginas com limites/fontes; B depende de contratos/dados externos autorizados; sem conexão/estoque fictícios |
+| US18 | Parcial em A; B pendente | A: C8 Peças com análise de componentes/ocorrências e logística EXT; Integrações ainda placeholder. B: nenhuma integração real | C8 homologada para continuidade; catálogo/estoque/consumo/logística reais indisponíveis; B depende de fontes/contratos autorizados |
 | US19 | Planejada, não implementada | Fronteiras Supervisor documentadas; link à apresentação original disponível | Link não é ponte contextual. Aviso, preservação de filtros/pausa Feira/retorno explícito e ponto de entrada dependem de escopo |
 
 Implementação/homologação/versionamento por entrega:
@@ -46,16 +46,15 @@ Implementação/homologação/versionamento por entrega:
 | C3 | Visão Geral, 139 | Homologada expressamente antes da C4 | ef53ecf |
 | C4 | Contratos & Margem, 164 | Avaliada e aprovada para continuidade antes da C5 | ebd0db9 |
 | C5 | Custos / TCO, 194 | Avaliada e aprovada para continuidade antes da C6 | 485e6b4 |
-| C6 | Equipamentos, 225 | Avaliada e aprovada para continuidade | 05ec7d5 (HEAD) |
-| C7 | Técnicos, 255 | Aguardando homologação visual | Local, sem commit próprio |
+| C6 | Equipamentos, 225 | Avaliada e aprovada para continuidade | 05ec7d5 |
+| C7 | Técnicos, 255; correção/revalidação 262 | Homologada visualmente para continuidade; rotina também homologada | a5aea32 (HEAD) |
+| C8 | Peças / Componentes, 292 revalidados | Homologada visualmente para continuidade | Commit/push autorizados; SHA final na continuidade |
 
-Os totais de testes são cumulativos, não somar marcos. Última validação registrada: 262 distintos (253 Node/browser +9 Python), build aprovado na correção de inicialização em 15/10/2026. Nesta tarefa de continuidade não foram executados testes/build. [Evidências e limite do diagnóstico](correcao-inicializacao-c7.md).
+Os marcos de testes são cumulativos; último resultado executado nesta sessão: 292 distintos (283 Node/browser +9 Python), build/importador --check aprovados. [Evidências C8](entrega-c8-pecas.md). C7 revalidada com 262 antes do commit a5aea32; branch feature/next-evolucao. C8 local, sem staging/commit; um checkout limpo do HEAD não a contém. [Inventário oficial](../CONTINUIDADE_CODEX.md).
 
-Branch e HEAD verificados: `feature/next-evolucao`, `05ec7d57697418c2d06970b26ca515aab73b8a63`, até C6. C7/correção/documentação permanecem locais, sem commit ou staging. Um checkout limpo não contém C7. [Inventário atual e ponto único de retomada](../CONTINUIDADE_CODEX.md); instruções permanentes em [AGENTS.md](../../AGENTS.md).
+Próxima decisão: confirmar destino antes da publicação pública no Pages. Versionamento/push apenas de feature/next-evolucao autorizados nesta sessão. Modo Feira/US14 é a próxima etapa de desenvolvimento, mas permanece não autorizado; não há merge em main nem deploy antecipado.
 
-Decisão imediata: aguardar homologação da rotina documental desta sessão. C7 ainda aguarda homologação visual final. C8 — Peças e Componentes é o próximo marco planejado de desenvolvimento, seguido por Feira; nenhum escopo futuro está autorizado. Feira significa evolução temporal dos dados com pausa/retomada/reinício, preservando apresentação manual e Supervisor; autoplay de cenas não atende US14.
-
-A implantação da rotina de continuidade atende ao processo transversal de US16, sem criar história duplicada ou funcionalidade. Foram organizados AGENTS, continuidade A–I, índice e referências de processo; revisão documental de links/Git/coerência, sem testes/build. Homologação da rotina pendente. Critérios de US16 permanecem contínuos; não se considera a história inteira concluída por esta documentação.
+Rotina documental US16 homologada pelo usuário e registrada com C7; orientação permanente em [AGENTS](../../AGENTS.md). US16 segue transversal; não concluída integralmente por existir documentação.
 
 ## Critérios e dependências por história
 
@@ -78,7 +77,7 @@ A implantação da rotina de continuidade atende ao processo transversal de US16
 | US15 Como usuário, quero UX acessível em notebook | P0 transversal | US07, acompanha demais | Todos novos componentes e fronteiras | 1366×768 principal; teclado/foco; ações visíveis; explicação e EXT acessíveis; Supervisor intacto | Viewports/zoom/teclado/movimento reduzido |
 | US16 Como responsável, quero entregas reversíveis e verificadas | P0 transversal | US01 e histórias liberadas | Build/rotas/assets/testes/doc futura | Pipeline de aprovação; Git escopo correto; Pages/recuperação; sem deploy/commit implícito | Build autorizado, subdiretório/refresh, regressão, diff |
 | US17 Como analista, quero exportar o recorte | P2 | US08/09 | Exportador proposto | Todo resultado, fonte/período/unidade/nulos e EXT; não só página | Conteúdo, quantidade e filtros |
-| US18-A Como usuário, quero Peças/Integrações com limites claros | P1 | US05/07; visual T13 | T10/T13, selo/estado EXT | Páginas navegáveis; dependências visíveis; não afirmar estoque ou conexão | EXT/vazio, menu/explicação, fonte |
+| US18-A Como usuário, quero análise de componentes/ocorrências em Peças e integrações com limites claros | P1 | US05/07; visual T13 | T10/T13, selo/estado EXT | Peças analítica: componentes/falhas/recorrência/criticidade/clientes/contratos/custos e suporte até equipamento/histórico/insight; filtros compartilhados. Integrações navegáveis com limites; não afirmar consumo/estoque/preço/logística ou conexão sem fonte | EXT/vazio, menu/explicação, fonte |
 | US18-B Como gestor, quero integrações reais futuras | P2 | US18-A e contratos/fontes | Adapters externos futuros | Só dados disponibilizados/autorizados; contrato e atualização verificáveis | Integração/erros/proveniência, sem mocks como reais |
 | US19 Como operador, quero acessar Supervisor e voltar | P1 | US01/06/09 | Ponte/aviso/retorno, sem editar Supervisor | Aviso de demo independente/timers; retorno mantém filtros; pausa Feira; sem sincronização fictícia | Transição/cancelar/voltar, relógio, regressão Supervisor |
 
@@ -175,10 +174,14 @@ Critérios verificados: 54 unidades/19 elevadas/736 ocorrências/4 tipos; dispon
 
 Limitações: massa sintética, sem cadastro mestre/uptime/parque ativo; recorrência materializada não soma eventos, último campo não indica estado atual; sem causalidade/ML validado. C6 sem commit, aguardando homologação. Próxima prioridade planejada pelo usuário: Modo Feira/US14, somente após homologação e autorização de escopo. Nenhum motor Feira ou outra página iniciado.
 
-## C7 — Técnicos — estado atual
+## C7 — Técnicos — registro anterior à homologação
 
 C6 aprovada para continuidade e registrada em 05ec7d5 após nova validação 225 testes/build e staging dos 34 arquivos. C7 implementada na US12 existente, sem história duplicada: carteira por técnico, todos vínculos Área/Supervisor/Rota observados, atendimentos/concluídos, TA/TB/SLA/custos estimados, recorrência/criticidade, suporte e equipamentos/histórico/insight. Disponibilidade/skills/escala/localização/custo real/avaliações EXT. Análise da operação sem avaliação automatizada individual.
 
 US05 explicações/N/BASE/CALC/EXT; US08 13 filtros compartilhados e busca de Rota; US09 detalhes reutilizados; US07 oito páginas funcionais/quatro pendentes; US01/15/16 regressão e evidências. 21 serviço +9 navegador novos; total 246 Node/browser +9 Python =255 testes distintos aprovados, build/importador --check aprovados. [Arquivos, critérios, evidências e limites](entrega-c7-tecnicos.md).
 
 C7 sem commit e aguardando homologação visual. Próxima entrega planejada: C8 — Peças e Componentes (US18-A), seguida por Modo Feira (US14). Nenhuma implementação futura ou commit C7 autorizado; sem push/deploy. Registros incrementais anteriores preservam o estado da época; este quadro e a continuidade refletem o estado atual.
+
+## C8 — Peças e Componentes — 15/10/2026
+
+C7 e rotina homologadas e registradas em a5aea32 após nova validação 262/build e staging de 48 arquivos. US18-A ampliada na história existente, sem duplicação: análise técnica por componente/ocorrência, carteira/detalhe/unidade/histórico/insight, categorias/falhas/clientes/contratos/custos, logística EXT. Sem estoque/compra/reserva/despacho. US05/07/08/09/15/16 e preservação US01 revalidadas. Total 19 histórias; nove páginas funcionais/três pendentes. 30 testes novos (21 serviço +9 navegador), total 292=283 Node/browser +9 Python, build/importador aprovados. [Critérios, arquivos, regras, evidências e limites](entrega-c8-pecas.md). Registro histórico do encerramento técnico: depois homologada para continuidade pelo usuário; ver quadro atual/continuidade para versionamento e preparação Pages. Nenhuma Feira iniciada.

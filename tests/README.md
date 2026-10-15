@@ -94,3 +94,10 @@ Build: `npm run build -- --outDir /tmp/orquestra-c7/dist`. Regressão: `ORQUESTR
 `platform-dev.test.mjs` acrescenta 7 testes de módulos ESM efetivamente servidos pelo Vite e das quatro rotas Visão Geral/Chamados/Técnicos/Peças, com URL direta/refresh e verificação de erros. Por padrão inicia/encerra Vite próprio 5209 com cacheDir temporário isolado; `ORQUESTRA_DEV_URL=http://127.0.0.1:5173/OrquestraNEXT/` valida servidor existente sem encerrá-lo. `ORQUESTRA_DEV_EVIDENCE` define destino de capturas/cache. Usar Node do runtime e permissão apropriada para previews/Chrome. Não instalar dependências.
 
 Total atual 262 testes distintos =253 Node/browser + 9 Python (255 anteriores + 7 novos). Tela branca foi causada por módulo vazio no estado do Vite antigo 5173; export DEFAULT_STATE em disco/HEAD estava correto. Reinício do processo restaurou a plataforma, sem mudar produto. [Causa, evidências e limites](../docs/produto/correcao-inicializacao-c7.md).
+
+
+## C8 — Peças e Componentes
+
+Build: npm run build -- --outDir /tmp/orquestra-c8/dist. Regressão: ORQUESTRA_TEST_DIST=/tmp/orquestra-c8/dist node-do-runtime --test tests/*.test.mjs, mais 9 Python/importador --check. Comando completo/runtime na continuidade. Preview C8 porta 5211; evidências /tmp/orquestra-c8/evidence copiadas para docs/produto/evidencias. Portas/Chrome exigem permissão apropriada, sem novas dependências.
+
+21 serviço +9 navegador novos, total 283 Node/browser +9 Python =292 distintos, incluindo 262 anteriores. Shell e dev agora verificam Peças funcional, conservando demais verificações ESM/rotas/erros/menus; expectativa de placeholder foi superada pela implementação autorizada. Testes dev também passaram na instância 5173 sem export ausente. [Cobertura e evidências](../docs/produto/entrega-c8-pecas.md). C7 revalidada 262/build e commitada a5aea32; C8 sem commit/aguarda homologação.

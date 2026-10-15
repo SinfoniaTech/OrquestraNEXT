@@ -1,6 +1,6 @@
 # C7 — Técnicos — Capacidade e Performance Operacional
 
-15/10/2026 · America/Sao_Paulo. C6 avaliada visualmente pelo usuário e aprovada para continuidade. C7 implementada exclusivamente; aguarda homologação visual. Sem commit C7, push ou deploy. Próxima entrega planejada: C8 — Peças e Componentes, seguida pelo Modo Feira, ambas dependentes de escopo e autorização próprios.
+Atualização de aceite em 15/10/2026: C7 testada visualmente pelo usuário após recuperação da inicialização e homologada para continuidade; rotina de continuidade também homologada. Revalidação 262 testes/build e revisão dos48 arquivos aprovadas. Commit local autorizado a5aea32e828d0258a9700c6eef0c4682a05ffe12 — feat: implementa gestao analitica de tecnicos C7, incluindo correção e rotina homologadas. Sem push/deploy. C8 implementada depois desse marco, aguardando homologação; [estado atual](../CONTINUIDADE_CODEX.md). O restante do relatório preserva os critérios/evidências do encerramento técnico C7.
 
 ## Referência Git e homologação C6
 

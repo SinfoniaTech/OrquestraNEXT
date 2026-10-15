@@ -1,0 +1,19 @@
+{
+  "destination": "https://sinfoniatech.github.io/OrquestraNEXT/",
+  "origin": "https://github.com/SinfoniaTech/OrquestraNEXT.git",
+  "proposed_publication_branch": "gh-pages",
+  "observed_public_sha": "429d377d13e9bdf29a7e44c5ade937a4d5fdd83a",
+  "public_index_equals_origin_gh_pages": true,
+  "public_index_sha256": "c8f736add3560b7737d73e7642ae117a5fd8f674808942c6e58235dfe7da3dfe",
+  "last_run": {
+    "head_branch": "gh-pages",
+    "head_sha": "429d377d13e9bdf29a7e44c5ade937a4d5fdd83a",
+    "event": "dynamic",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/SinfoniaTech/OrquestraNEXT/actions/runs/35795295142"
+  },
+  "pages_api_unauthenticated_status": 404,
+  "public_site_status": 200,
+  "publication_executed": false
+}

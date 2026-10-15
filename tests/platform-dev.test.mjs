@@ -52,7 +52,7 @@ try{
   const absent=await page.evaluate(async names=>{const m=await import('./src/platform/services/chamados.js');return names.filter(name=>!(name in m));},names);
   assert.deepEqual(absent,[]);
  });
- for(const [route,heading,id] of [['visao-geral','Performance Operacional & Financeira','performance-total'],['chamados','Chamados',null],['tecnicos','Técnicos','technicians-total'],['pecas','Peças',null]]){
+ for(const [route,heading,id] of [['visao-geral','Performance Operacional & Financeira','performance-total'],['chamados','Chamados',null],['tecnicos','Técnicos','technicians-total'],['pecas','Peças','components-total']]){
   await test('inicialização dev: #/'+route+' carrega diretamente e após refresh',async()=>{
    await page.goto(base+'?modo=plataforma#/'+route);
    for(let attempt=0;attempt<2;attempt++){
@@ -60,7 +60,7 @@ try{
     await page.getByRole('heading',{name:heading,exact:true,level:1}).waitFor();
     if(id){await page.getByTestId(id).waitFor();assert.equal(Number(await page.getByTestId(id).innerText()),736);}
     if(route==='chamados')await page.getByRole('table',{name:'Tabela de chamados'}).waitFor();
-    if(route==='pecas'){await page.getByText('Desenvolvimento pendente',{exact:true}).waitFor();assert.equal(await page.getByTestId(/^kpi-/).count(),0);}
+    if(route==='pecas'){await page.getByRole('table',{name:'Tabela de componentes'}).waitFor();assert.equal(await page.getByTestId(/^kpi-/).count(),5);}
    }
    await page.screenshot({path:join(evidence,route+'.png')});
   });

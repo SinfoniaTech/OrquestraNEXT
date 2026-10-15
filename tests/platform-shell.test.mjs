@@ -43,6 +43,9 @@ try{
    if(item.id==='visao-geral'){
     await page.getByTestId('performance-total').waitFor();
     assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);
+   }else if(item.id==='pecas'){
+    await page.getByTestId('components-total').waitFor();
+    assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);
    }else if(item.id==='tecnicos'){
     await page.getByTestId('technicians-total').waitFor();
     assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);

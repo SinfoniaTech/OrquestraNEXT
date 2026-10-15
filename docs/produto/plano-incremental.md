@@ -2,7 +2,7 @@
 
 Processo de referência. O quadro abaixo organiza etapas e critérios; não autoriza sua execução. Estado atual e próxima ação ficam na [continuidade oficial](../CONTINUIDADE_CODEX.md); orientações permanentes em [AGENTS.md](../../AGENTS.md). Relatórios e atualizações incrementais abaixo preservam decisões da época, sem reabrir gates já superados.
 
-Nesta sessão está autorizada somente a organização documental da rotina de continuidade. Não executar testes/build automaticamente. C6 está em 05ec7d5; C7 e correção de inicialização locais, homologação visual C7 pendente. Aguardar homologação desta rotina; C8/Feira não autorizadas.
+C7 e rotina documental homologadas pelo usuário; commit local C7 a5aea32 após revalidação 262 testes/build. Escopo atual C8 exclusivamente analítico, implementado com292 testes/build/importador aprovados, aguarda homologação visual e não possui commit. Modo Feira planejado em seguida, ainda não autorizado. Sem push/deploy.
 
 Fluxo obrigatório por entrega: ANÁLISE → PLANEJAMENTO → APROVAÇÃO → IMPLEMENTAÇÃO → TESTES → VALIDAÇÃO → ATUALIZAÇÃO DO BACKLOG. Nenhuma etapa implica aprovação da seguinte.
 
@@ -62,3 +62,7 @@ C5 aprovada para continuidade e registrada em 485e6b4, após 194 testes/build e 
 ## Atualização autorizada C7 — 15/10/2026
 
 C6 aprovada para continuidade, commit local autorizado 05ec7d5 após revalidação dos 225 testes/build e revisão dos 34 arquivos. C7 Técnicos implementada na US12, oito páginas funcionais/quatro pendentes, 255 testes/build aprovados. [Relatório](entrega-c7-tecnicos.md). C7 aguarda homologação visual e não possui commit. Próxima sequência planejada atual: C8 — Peças e Componentes/US18-A, depois Modo Feira/US14; substitui a prioridade imediata Feira registrada no encerramento C6. Não iniciar nenhuma sem autorização específica. Sem push/deploy. Gates históricos acima não autorizam trabalho novo.
+
+## Atualização autorizada C8 — 15/10/2026
+
+C7 homologada após correção de inicialização e rotina homologada; commit C7 a5aea32 autorizado e executado. C8 Peças analítica implementada na US18-A, nove páginas funcionais/três pendentes,30 testes novos/292 totais aprovados e build/importador. [Relatório](entrega-c8-pecas.md). Aguardar homologação visual C8; não iniciar Feira nem criar commit C8 sem autorização própria. Logística real EXT; sem operações de estoque/compra/reserva/despacho.

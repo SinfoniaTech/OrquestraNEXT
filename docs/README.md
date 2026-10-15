@@ -43,6 +43,8 @@ Relatórios preservam o estado e as autorizações da época; gates antigos não
 | C5 | [Custos / TCO](produto/entrega-c5-custos.md) |
 | C6 | [Equipamentos](produto/entrega-c6-equipamentos.md) |
 | C7 | [Técnicos](produto/entrega-c7-tecnicos.md) |
+| C8 | [Peças / Inteligência de Componentes e Ocorrências](produto/entrega-c8-pecas.md) |
+| Controle C8 | [Homologação, versionamento e destino proposto do Pages](produto/publicacao-controlada-c8.md) |
 | Pós-C7 | [Tela branca: mecanismo observado, recuperação e limite do diagnóstico](produto/correcao-inicializacao-c7.md) |
 
 **Observado** exige evidência; **requisito** vem do usuário; **proposta** depende de aprovação; **pendente** indica definição/evidência ausente. Imagens orientam UX e não comprovam dados. Documentos não são autorizações implícitas para implementar, testar, versionar ou publicar.
