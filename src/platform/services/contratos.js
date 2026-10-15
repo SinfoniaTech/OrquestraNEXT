@@ -24,7 +24,7 @@ export function technicalGroups(rows,field){return groupRecords(rows,field).map(
 export function contractPage(groups,{search='',sort='count',direction='desc',page=1,size=10}={}){
  const words=fold(search).trim().split(/\s+/).filter(Boolean);
  const selected=groups.filter(g=>words.every(w=>fold(g.label+' '+g.clients.join(' ')).includes(w)));
- const get=(g)=>({contract:g.label,client:g.clients.join(' '),count:g.count,cost:g.cost.value,sla:g.adherence.value,high:g.risk.pressure.length,recurrence:g.recurrence.value,pressure:g.risk.pressure.length>0?1:0})[sort];
+ const get=(g)=>({contract:g.label,client:g.clients.join(' '),count:g.count,cost:g.cost.value,mean:g.mean?.value,sla:g.adherence.value,high:g.risk.pressure.length,recurrence:g.recurrence.value,pressure:g.risk.pressure.length>0?1:0})[sort];
  const ordered=[...selected].sort((a,b)=>{
   const x=get(a),y=get(b);if(x==null||y==null)return x===y?a.label.localeCompare(b.label):x==null?1:-1;
   const n=typeof x==='number'?x-y:x.localeCompare(y,'pt-BR');return n*(direction==='asc'?1:-1)||a.label.localeCompare(b.label,'pt-BR');

@@ -68,3 +68,9 @@ Novos: 14 testes de serviço +8 de navegador, preview 5197, evidências /tmp/orq
 Build final: `npm run build -- --outDir /tmp/orquestra-c4-final/dist`. Regressão: `ORQUESTRA_TEST_DIST=/tmp/orquestra-c4-final/dist node --test tests/*.test.mjs`; complementar com os 9 Python e `scripts/import_orquestra.py --check`, usando o runtime documentado. Preview C4 na porta 5199; capturas em /tmp/orquestra-c4/evidence. Servidores locais/Chrome precisam de permissão apropriada no sandbox.
 
 16 testes de serviço +9 navegador novos; total 155 Node/browser +9 Python =164 distintos. Inclui os 139 anteriores. Após ajuste visual/contextual, os 25 C4 foram reexecutados no build final. Shell verifica cinco páginas funcionais/sete pendentes e todos os 12 menus. [Evidências e critérios C4](../docs/produto/entrega-c4-contratos.md). Nenhum pacote instalado.
+
+## C5 — Custos / TCO
+
+Build: `npm run build -- --outDir /tmp/orquestra-c5-final/dist`. Regressão: `ORQUESTRA_TEST_DIST=/tmp/orquestra-c5-final/dist node --test tests/*.test.mjs`; complementar com 9 Python e importador --check no runtime documentado. Preview C5 porta 5201, evidências /tmp/orquestra-c5/evidence. Servidores locais/Chrome precisam de permissão apropriada no sandbox.
+
+20 testes de serviço +10 navegador C5; total 185 Node/browser +9 Python =194 distintos (164 anteriores incluídos). Após ação direta de custo→desvios, os 30 C5 passaram novamente no build final. Menus: seis páginas funcionais/seis pendentes, 12 destinos. [Cobertura e evidências](../docs/produto/entrega-c5-custos.md). Nenhuma dependência instalada.

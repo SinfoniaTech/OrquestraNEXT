@@ -63,3 +63,7 @@ Custos estimados: soma de Custo_Estimado_R$ finito não negativo, N válido/tota
 ## C4 — Contratos & Margem
 
 22 explicações na página principal, mais indicadores e painéis no detalhe com população e filtros contextuais de contrato/equipamento. Pressão binária reaproveita presença de Alto; cobertura ausente/parcial explícita, sem novos limiares. Proporção recorrente = chamados com Recorrencia_30d finita >0 / todos os chamados do contexto; ausentes/invalidos não contam no numerador e têm cobertura separada. Sem qualquer valor válido ou sem população: indisponível. Custos, SLA e médias reutilizam regras aprovadas. Receita contratada/margem/rentabilidade/TCO completo e vigência/valor/cobertura contratuais EXT, sem valores. BASE sintética identificada, sugestões com suporte e sem causalidade. [Regras, N, testes e aceite C4](entrega-c4-contratos.md).
+
+## C5 — Custos / TCO
+
+Custos totais reutilizam C3; médias reutilizam average C1 com N válido. Técnico informado é atribuição do chamado, não remuneração/mão de obra. Custo recorrente usa chamados >0 da C4, sem multiplicar eventos; grupos positivos/zero/desconhecidos são disjuntos. Participação monetária exige total válido >0. TA/TB×custo exigem ambos válidos e N pareado; grupos SLA reutilizam C1 com N independentes e sem causalidade. Desvio é somente de SLA simulado aprovado, sem juízo financeiro. TCO e composição financeira são EXT, sem rateio artificial. 19 explicações na página, cobertura de custo e filtros contextuais no detalhe. [Regras, N e testes](entrega-c5-custos.md).

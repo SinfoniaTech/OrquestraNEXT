@@ -48,3 +48,7 @@ Performance Operacional & Financeira na rota /visao-geral, primeira página apó
 ## C4 — T03 Contratos & Margem
 
 Carteira operacional/econômica com quatro cards sustentados, quatro fontes financeiras EXT, tabela ordenável/paginada, detalhes por contrato/equipamento/chamado, seis gráficos e insights com suporte. Cinco páginas funcionais, sete destinos pendentes; nenhuma página de Equipamentos ou Contratos — BackOffice criada. [Relatório C4](entrega-c4-contratos.md). Referência T03 utilizada para hierarquia visual, sem números financeiros ou trimestre inventados. Aguardando homologação.
+
+## C5 — T04 Custos / TCO
+
+Cinco cards sustentados, TCO e composição financeira EXT, evolução diária, recorrentes/zero/desconhecidos, distribuição por contrato/área/técnico/equipamento/categoria/componente e demais campos disponíveis. Tabela carteira/chamados, pares custo×TA/TB, grupos SLA e aprofundamento com insights. Sem valores financeiros ilustrativos, 12 meses, trimestre ou causalidade inferidos. Seis páginas funcionais/seis destinos pendentes. [Entrega e evidências](entrega-c5-custos.md). Aguardando homologação C5.

@@ -99,3 +99,13 @@ US13 parcialmente entregue: carteira completa por contrato, custo estimado, SLA,
 Critérios verificados: quatro cards conciliados, busca cliente/contrato, ordem antes da página, filtros AND/OR compartilhados, suporte por métrica, equipamento→chamado/retorno, seis gráficos sincronizados, explicações acessíveis/EXT, vazio, 1366×768 e móvel sem overflow. 164 testes distintos aprovados (139 anteriores +25 novos), build/importação aprovados. Componentes: ContratosPage, contratos.js e GroupChart novos; shell, ConsultationContext e teste de menus adaptados. Custo/SLA/pressão reutilizam C3/C1/C2. Recorrência >0 / total tem cobertura explícita; não soma eventos.
 
 [Relatório completo, arquivos, evidências e limitações](entrega-c4-contratos.md). Pendências: receita/margem/rentabilidade/TCO/vigência/cobertura reais; páginas financeiras restantes; regras geradoras e contrato oficial. C4 sem commit, aguardando homologação. Próxima recomendação: Custos / TCO após aprovação específica. Nenhuma nova entrega iniciada.
+
+## C5 — Custos / TCO — 15/10/2026
+
+C4 avaliada e aprovada pelo usuário para continuidade. Commit local autorizado e executado: ebd0db93a06ec78f11c7dfbe55298a6c043b17a4, após revisão de 30 arquivos, staging/check, 164 testes e build; sem push/deploy.
+
+US13 avança: Custos / TCO funcional com custo total/médio, atribuição a técnicos, recorrentes, pressão C2, grupos por nove dimensões, série diária, carteira/chamados caros, pares custo×TA/TB e desempenho por SLA. TCO/composição financeira EXT, sem rateio. Contratos — BackOffice segue pendente. US05: 19 explicações na página e metadados/contexto no aprofundamento. US07: seis páginas funcionais/seis destinos pendentes. US08/09 reutilizadas; US01/15/16 revalidadas. US12 não concluída por existirem agrupamentos locais.
+
+Critérios verificados: custos e médias conciliados, recorrentes/zero/desconhecidos disjuntos, N/cobertura/ausências, pares válidos TA/TB, SLA aprovado sem recálculo, tabela contratos/chamados com busca/ordem/paginação, filtros e retorno preservados, custo→desvio SLA→contrato→equipamento→chamado→insight, EXT sem valor fictício e notebook/móvel sem overflow. 194 testes distintos aprovados (164 anteriores +30 novos), build e importação --check aprovados. Arquivos: custos.js, CustosPage/estilos e testes novos; shell, ConsultationContext, chave mean em contratos.js e teste de menus adaptados. [Relatório completo e evidências](entrega-c5-custos.md).
+
+Pendências: dados financeiros realizados, composição/TCO, metas/orçamento, regras oficiais e páginas restantes. C5 sem commit, aguardando homologação. Próxima recomendação: Equipamentos (US12), somente após escopo autorizado; nenhuma nova página iniciada.

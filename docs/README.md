@@ -63,3 +63,7 @@ Nenhuma tela conectada; próxima navegação/filtros aguarda autorização.
 ## C4 — Contratos & Margem
 
 C3 homologada e registrada em ef53ecf. [Entrega C4: carteira, detalhe, cálculos, testes e limites](produto/entrega-c4-contratos.md). Cinco páginas funcionais, 164 testes aprovados; C4 sem commit, aguardando homologação. Sem push/deploy.
+
+## C5 — Custos / TCO
+
+C4 aprovada para continuidade e registrada em ebd0db9. [Entrega C5: custos sintéticos, grupos, análise temporal e limites EXT](produto/entrega-c5-custos.md). Seis páginas funcionais, 194 testes aprovados; C5 sem commit, aguardando homologação. Sem push/deploy.

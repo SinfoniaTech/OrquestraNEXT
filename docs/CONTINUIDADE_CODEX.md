@@ -1,3 +1,18 @@
+# Estado atual — C5 — 15/10/2026
+
+Esta atualização prevalece sobre as passagens históricas C4/C3 abaixo.
+
+- C4 avaliada e aprovada pelo usuário para continuidade. Após revisão de 30 arquivos/staging/check, 164 testes e build, criado commit local autorizado `ebd0db93a06ec78f11c7dfbe55298a6c043b17a4`, `feat: implementa contratos e margem C4`. Sem push/deploy.
+- Branch `feature/next-evolucao`, HEAD ebd0db9. C5 autorizada/implementada localmente, sem commit, aguardando homologação. Nenhuma próxima página autorizada.
+- C5: `/OrquestraNEXT/?modo=plataforma#/custos-tco`. Cinco cards sustentados, TCO/composição EXT, evolução diária, custo por nove dimensões, recorrentes/zero/desconhecidos, tabela carteira/chamados, pares TA/TB×custo e grupos SLA. Fluxo do custo aos desvios de SLA, contrato, equipamento, chamado e insight.
+- Seis páginas funcionais/seis destinos pendentes. Supervisor, cenas, dados, animações, temporizadores, importador e dependências preservados. Apresentação original continua padrão.
+- 194 testes distintos aprovados =185 Node/browser +9 Python; build e importador --check aprovados. Os 30 C5 passaram novamente após ajuste final de navegação. [Relatório, arquivos, evidências e limites](produto/entrega-c5-custos.md).
+- Regras reutilizadas de C1/C2/C3/C4. Custo médio por N válido, técnico significa atribuição (não remuneração), custo recorrente >0 sem multiplicar eventos. Recorrência ausente separada de zero. Participação em custo exige total >0. Pares TA/TB exigem custo e tempo válidos. Desvio de SLA não implica desvio financeiro. Sem composição contábil ou causalidade inferida.
+- ConsultationProvider também mantém tipo/ordem/página/tamanho da tabela C5 em memória. Filtros/busca compartilhados; limpar/logout reseta C4/C5. Refresh restaura padrões. Detalhes e agrupamento são locais à página.
+- C5 sem commit e nada staged. Não instalar dependências, fazer commit C5, push ou deploy sem autorização. Próxima recomendação: Equipamentos/US12 somente após homologação C5 e escopo explícito.
+
+## Passagem anterior preservada como registro histórico (C4)
+
 # Estado atual — C4 — 15/10/2026
 
 Esta atualização prevalece sobre os estados históricos da passagem C3 abaixo.

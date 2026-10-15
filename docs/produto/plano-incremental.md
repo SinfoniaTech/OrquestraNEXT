@@ -34,3 +34,7 @@ Aceite técnico não autoriza deploy/commit. Alterações futuras precisam de es
 ## Atualização autorizada C4 — 15/10/2026
 
 O usuário homologou C3 e autorizou seu commit local (ef53ecf), testes e implementação exclusiva de Contratos & Margem. C4 implementada com 164 testes/build aprovados; avança parcialmente R6/US13, sem executar outras páginas. [Resultado e limites](entrega-c4-contratos.md). Aguardar homologação C4 antes de propor/autorizar Custos / TCO ou outra prioridade. Nenhum commit C4/push/deploy autorizado. Registros de “somente docs” no início descrevem o planejamento original, superado apenas pelo escopo aprovado.
+
+## Atualização autorizada C5 — 15/10/2026
+
+Usuário aprovou C4 para continuidade e autorizou commit local (ebd0db9) e implementação exclusiva de Custos / TCO. C5 implementada e validada com 194 testes/build; avança parcialmente R6/US13, sem TCO real/composição contábil inventados. [Relatório C5](entrega-c5-custos.md). Aguardar homologação; próxima sugestão Equipamentos/US12 depende de novo escopo. Nenhum commit C5/push/deploy autorizado.

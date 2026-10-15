@@ -151,3 +151,9 @@ Custo_Estimado_R$ mantém valor BASE por chamado. Soma CALC usa valores finitos 
 ## Proporção de recorrência autorizada na C4
 
 Recorrencia_30d BASE permanece intacta. CALC aprovado pelo usuário: contar chamados cujo valor finito não negativo é >0 e dividir por todos os chamados do recorte/contexto, não somar o campo como eventos únicos. Cobertura = valores finitos não negativos / total; ausentes/invalidos não satisfazem >0 e permanecem no denominador total. Sem população ou qualquer valor válido, indisponível; zeros informados válidos produzem 0%. Histórico completo: 412/736 =56,0%, cobertura 736/736. Aplica-se a contrato/categoria/componente/equipamento; não altera a regra C2 de recorrência elevada >=3. [Contrato C4](../produto/entrega-c4-contratos.md).
+
+## Agregações de custo autorizadas na C5
+
+Custo médio = média de Custo_Estimado_R$ finito não negativo (N próprio, zero válido, ausentes não viram zero); total completo R$ 696.734,60, média R$ 946,65/N736. Custo associado a técnicos = custo dos chamados com Técnico informado, nunca remuneração. Custo recorrente = soma dos custos válidos nos chamados Recorrencia_30d >0, R$ 401.718,00/N412; participação 57,7% do custo válido total, calculável somente se total >0. Recorrentes/zero/desconhecidos separados, sem custo adicional inventado.
+
+Pares custo×TA e custo×TB requerem ambos válidos, N728/N724 no histórico; médias temporais em minutos conforme C1.1. Agrupamentos SLA reutilizam a elegibilidade C1. Não inferir causalidade, composição contábil ou custo realizado OTIS. [Relatório C5](../produto/entrega-c5-custos.md).
