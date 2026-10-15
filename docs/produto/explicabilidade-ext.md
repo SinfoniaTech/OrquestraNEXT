@@ -55,3 +55,7 @@ Substituída a pendência de unidade/conceito apenas para a massa: TA — Tempo 
 ## C2 — risco histórico e operação na referência
 
 Cards contam: Vermelho, Laranja, Unidade distinta nos registros com Recorrencia_30d >=3, Contrato distinto nos registros de impacto Alto e não concluídos Laranja/Vermelho. Doze explicações CALC incluem os sete painéis de análise. Motivos compostos agrupados inteiros; evolução por data de criação e cor histórica, não transição de estados. Sugestões demonstrativas têm predicado, lista de suporte e exemplo BASE identificado. Sem modelo de ML, causalidade, margem negativa presumida ou número EXT inventado. [Contrato e evidências](entrega-c2-riscos.md).
+
+## C3 — Síntese executiva
+
+Custos estimados: soma de Custo_Estimado_R$ finito não negativo, N válido/total explícito; nulos não viram zero e sem elegíveis resulta indisponível. Nenhum arredondamento de origem; apresentação em reais com duas casas. Receita/margem/TCO contábil são EXT, com fonte necessária, não conectada, sem última sincronização/valor. Contratos com chamados não significa vigência. Contratos sob pressão selecionados por algum impacto Alto, mas custo/SLA/total/cor usam todos os registros filtrados do contrato; N Alto e motivos somente os eventos Alto. Gráficos diários por criação, não competência contábil ou dia de resolução; SLA sem elegíveis tem lacuna. [Contrato C3](entrega-c3-performance.md).

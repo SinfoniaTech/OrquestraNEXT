@@ -83,3 +83,9 @@ US05/11: rótulos e explicações padronizados em minutos, com definições sint
 ## Entrega C2 — Riscos & Tendências
 
 US11 entregue também para Riscos & Tendências: Vermelhos/Laranjas históricos, unidades distintas com Recorrencia_30d >=3, contratos distintos com Impacto_Contrato Alto e ativos não concluídos Laranja/Vermelho. US05: doze explicações CALC e evidências BASE. US08/09 reutilizadas: filtros, busca, ordenação, paginação e detalhe. US07: três páginas funcionais, nove destinos pendentes. US01/15/16: regressão e notebook/móvel revalidados no escopo dos testes. US10/12 e demais páginas não iniciadas. Q09 resolvida apenas para este proxy de pressão operacional; não margem nem cálculo financeiro. Regras geradoras de criticidade/recorrência e contrato real continuam pendentes. [Resultado, testes e limites](entrega-c2-riscos.md). Aguardar homologação; não avançar outra funcionalidade.
+
+## C3 — Visão Geral Executiva
+
+Commit de referência até C2 autorizado e criado: 03d8cedb20cc0754cbe07c01c08e0e62c688a428. Antes do commit: revisão de 116 arquivos, staged/check, 117 testes e build aprovados. Sem push. C3 autorizada em seguida e mantida sem novo commit.
+
+US10 parcialmente entregue: Visão Geral/Performance funcional; Padrões & Insights continua pendente. US05: seis cards CALC, três fontes financeiras EXT e cinco explicações de painéis (14 ao todo). US07: quatro páginas funcionais, oito destinos pendentes. US08/09 reutilizadas; US01/15/16 revalidadas. US13 recebe componente EXT e agregação de custo como infraestrutura, não página Contratos & Margem ou TCO implementada. 139 testes distintos aprovados (117 anteriores +22 novos). [Entrega, arquivos e critérios](entrega-c3-performance.md). Aguardar homologação; nenhuma próxima página autorizada por este registro.

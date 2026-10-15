@@ -1,6 +1,6 @@
 export const MENU_GROUPS = [
  {label:'VISÃO EXECUTIVA',items:[
-  {id:'visao-geral',label:'Visão Geral',icon:'home',description:'Uma visão integrada da operação, dos riscos e dos principais sinais da carteira.'},
+  {id:'visao-geral',label:'Visão Geral',title:'Performance Operacional & Financeira',icon:'home',description:'Uma visão integrada da operação, dos riscos e dos principais sinais da carteira.'},
   {id:'contratos-margem',label:'Contratos & Margem',icon:'file',description:'Análise por contrato, com origem e limites de cada indicador.'},
   {id:'custos-tco',label:'Custos / TCO',icon:'database',description:'Custos operacionais estimados e dependências da visão financeira.'},
   {id:'riscos-tendencias',label:'Riscos & Tendências',icon:'alert',description:'Contexto operacional, recorrências e oportunidades de intervenção.'}

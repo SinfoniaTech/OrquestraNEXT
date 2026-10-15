@@ -24,3 +24,7 @@ Não executar reset --hard, limpar arquivos do usuário ou substituir deploy com
 ## Retenção
 
 /tmp é temporário e pode ser limpo; o bundle não é backup permanente fora da máquina. O commit permanece recuperável enquanto seu objeto Git estiver disponível. Antes de substituir/remover referências legadas, aprovar armazenamento durável do bundle ou referência remota. Documentos/testes não commitados não fazem parte do archive/bundle e precisam de preservação separada quando autorizada. Nenhum push/commit realizado aqui.
+
+## Referência permanente até C2 — autorização de 15/10/2026
+
+Commit local 03d8cedb20cc0754cbe07c01c08e0e62c688a428, branch feature/next-evolucao, mensagem: feat: consolida novo BackOffice até C2 e testes de regressão. Inclui 116 arquivos revisados; 117 testes e build aprovados antes do commit. Planilha/referências e Supervisor/cenas sem alterações. Sem push/deploy. Essa referência preserva as entregas até C2 independentemente de /tmp. C3 permanece em alterações locais e não faz parte desse commit. Recuperação sugerida: checkout isolado desse SHA, preservando alterações atuais; não usar reset destrutivo. SHA publicado continua dependendo de homologação de publicação, não inferir que este commit local foi publicado.

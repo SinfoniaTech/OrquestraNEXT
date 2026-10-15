@@ -53,3 +53,12 @@ node --test tests/riscos-service.test.mjs tests/riscos-browser.test.mjs
 ```
 
 Novos: 13 testes de serviço + 7 de navegador. Browser inicia preview próprio 5195, usa Playwright/Chrome existentes e salva capturas em /tmp/orquestra-c2/evidence. Regressão: executar todas as suítes anteriores com ORQUESTRA_TEST_DIST=/tmp/orquestra-c2/dist, incluindo temporal-consistency e as 9 verificações Python. Teste do shell adaptado para três páginas funcionais e nove pendentes, mantendo a verificação dos 12 menus.
+
+## C3 — Performance
+
+```sh
+npm run build -- --outDir /tmp/orquestra-c3/dist
+ORQUESTRA_TEST_DIST=/tmp/orquestra-c3/dist node --test tests/*.test.mjs
+```
+
+Novos: 14 testes de serviço +8 de navegador, preview 5197, evidências /tmp/orquestra-c3/evidence. Suíte completa: 130 Node/browser +9 Python =139 distintos (inclui 117 anteriores). Pré-commit até C2: build e 108 Node/browser +9 Python aprovados; logs copiados para evidências C3. Teste do shell mantém 12 menus, agora quatro páginas funcionais/oito pendentes, e verifica título Performance na rota Visão Geral. Ferramentas existentes, nenhuma instalação. Não fazer commit adicional sem autorização.

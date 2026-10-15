@@ -143,3 +143,7 @@ Histórico: TA N=728 (8 ausentes), TB N=724 (12 ausentes); médias 35,385989 e 4
 A correlação observada de Percentual_SLA com TA/TB não se torna fórmula contratual nem autorização de recálculo. SLA é resultado demonstrativo, sem validade oficial OTIS. Supervisor usa siglas com outros sentidos em alguns contextos; permanece separado e intacto.
 
 [Contrato de visibilidade, testes e entrega](../produto/entrega-c11-tempos.md).
+
+## Agregação de custo C3
+
+Custo_Estimado_R$ mantém valor BASE por chamado. Soma CALC usa valores finitos não negativos no recorte explícito, incluindo todos os status, e expõe N válido/total; zero informado permanece válido. Sem valor elegível, indisponível, não zero. Exibição em R$ com duas casas, sem arredondar materializados. Gráfico usa coorte de criação do chamado, não data de despesa/competência. Receita, margem e TCO contábil continuam sem fonte (EXT). [Resultado C3](../produto/entrega-c3-performance.md).

@@ -3,6 +3,7 @@ import logo from '../assets/orquestra-logo13.png';
 import {MENU_GROUPS,PAGES,pageFromHash} from './navigation.js';
 import styles from './BackofficePlatform.module.css';
 import {ConsultationProvider,useConsultation} from './filters/ConsultationContext.jsx';
+import PerformancePage from './pages/PerformancePage.jsx';
 import RiscosPage from './pages/RiscosPage.jsx';
 import ChamadosPage from './pages/ChamadosPage.jsx';
 import SlaCriticidadePage from './pages/SlaCriticidadePage.jsx';
@@ -79,7 +80,7 @@ function PlatformShell(){
  const login=!active || route==='login';
  const page=PAGES.find(p=>p.id===route);
  useEffect(()=>{
-  document.title=login?'ORQUESTRA · Acesso demonstrativo': 'ORQUESTRA · '+(page?.label??'Página não encontrada');
+  document.title=login?'ORQUESTRA · Acesso demonstrativo': 'ORQUESTRA · '+(page?.title??page?.label??'Página não encontrada');
   if(!login)heading.current?.focus();
  },[login,route,page]);
  useEffect(()=>{
@@ -126,12 +127,12 @@ function PlatformShell(){
      <div className={styles.headerActions}><span className={styles.environment}>DEMO · Dados sintéticos</span><span className={styles.avatar} aria-hidden="true">D</span><button className={styles.exitButton} onClick={exit}>Sair da demonstração</button></div>
     </header>
     <main id="platform-content" className={styles.content} tabIndex={-1}>
-     <div className={styles.breadcrumb}>BACKOFFICE <span>/</span> {page?.label??'Página não encontrada'}</div>
+     <div className={styles.breadcrumb}>BACKOFFICE <span>/</span> {page?.title??page?.label??'Página não encontrada'}</div>
      <div className={styles.pageHeading}>
-      <div><span className={styles.headingLine}/><h1 ref={heading} tabIndex={-1}>{page?.label??'Página não encontrada'}</h1><p>{page?.description??'Este endereço não corresponde a uma página da plataforma.'}</p></div>
-      <span className={styles.phaseBadge}>{['chamados','sla-criticidade','riscos-tendencias'].includes(route)?'Histórico consultável':'Estrutura inicial'}</span>
+      <div><span className={styles.headingLine}/><h1 ref={heading} tabIndex={-1}>{page?.title??page?.label??'Página não encontrada'}</h1><p>{page?.description??'Este endereço não corresponde a uma página da plataforma.'}</p></div>
+      <span className={styles.phaseBadge}>{['visao-geral','chamados','sla-criticidade','riscos-tendencias'].includes(route)?'Histórico consultável':'Estrutura inicial'}</span>
      </div>
-     {route==='chamados'?<ChamadosPage/>:route==='sla-criticidade'?<SlaCriticidadePage/>:route==='riscos-tendencias'?<RiscosPage/>:page?<section className={styles.pendingCard} aria-label="Estado da página">
+     {route==='visao-geral'?<PerformancePage/>:route==='chamados'?<ChamadosPage/>:route==='sla-criticidade'?<SlaCriticidadePage/>:route==='riscos-tendencias'?<RiscosPage/>:page?<section className={styles.pendingCard} aria-label="Estado da página">
       <div className={styles.pendingGraphic}><Icon name={page.icon} size={36}/><span className={styles.graphicLine}/><span className={styles.graphicDot}/></div>
       <span className={styles.sectionEyebrow}>CONSTRUINDO O NOVO BACKOFFICE</span>
       <h2>{page.id==='visao-geral'?'Um novo olhar sobre a operação.':'Espaço preparado para '+page.label.toLocaleLowerCase('pt-BR')+'.'}</h2>
@@ -139,7 +140,7 @@ function PlatformShell(){
       <span className={styles.pendingStatus}><span/>Desenvolvimento pendente</span>
       {page.id==='visao-geral'&&<a className={styles.secondaryButton} href="#/chamados">Conhecer a área de Chamados <Icon name="arrow" size={17}/></a>}
      </section>:<section className={styles.pendingCard}><h2>Vamos voltar ao início?</h2><a className={styles.secondaryButton} href="#/visao-geral">Ir para Visão Geral</a></section>}
-     {!['chamados','sla-criticidade','riscos-tendencias'].includes(route)&&<div className={styles.contextStrip}><Icon name="shield" size={18}/><p><strong>Uma evolução por etapas.</strong> A consulta histórica está disponível em Chamados, SLA & Criticidade e Riscos & Tendências. As demais páginas continuam em desenvolvimento.</p></div>}
+     {!['visao-geral','chamados','sla-criticidade','riscos-tendencias'].includes(route)&&<div className={styles.contextStrip}><Icon name="shield" size={18}/><p><strong>Uma evolução por etapas.</strong> A consulta histórica está disponível em Chamados, SLA & Criticidade e Riscos & Tendências. As demais páginas continuam em desenvolvimento.</p></div>}
      <footer className={styles.footer}><span>ORQUESTRA · NEXT FIAP</span><a href={legacyUrl}>Apresentação original <span aria-hidden="true">↗</span></a></footer>
     </main>
    </div>

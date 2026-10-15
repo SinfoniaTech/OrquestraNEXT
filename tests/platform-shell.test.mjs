@@ -20,7 +20,7 @@ try{
  const page=await browser.newPage({viewport:{width:1366,height:768}});
  page.on('pageerror',e=>errors.push(e.message));
  page.on('response',r=>{if(r.status()>=400 && new URL(r.url()).pathname!='/favicon.ico')errors.push(r.status()+' '+r.url());});
- const heading=text=>page.getByRole('heading',{name:text,exact:true,level:1});
+ const heading=text=>page.getByRole('heading',{name:text==='Visão Geral'?'Performance Operacional & Financeira':text,exact:true,level:1});
  await test('acesso independente é demonstrativo, sem credenciais corporativas',async()=>{
   await page.goto(base+'?modo=plataforma#/login');
   await page.getByRole('heading',{name:'Acesse o Orquestra'}).waitFor();
@@ -40,7 +40,10 @@ try{
    await nav.getByRole('link',{name:item.label,exact:true}).click();
    await heading(item.label).waitFor();
    assert.equal(await nav.getByRole('link',{name:item.label,exact:true}).getAttribute('aria-current'),'page');
-   if(item.id==='chamados'){
+   if(item.id==='visao-geral'){
+    await page.getByTestId('performance-total').waitFor();
+    assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);
+   }else if(item.id==='chamados'){
     await page.getByRole('table',{name:'Tabela de chamados'}).waitFor();
     assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);
    }else if(item.id==='riscos-tendencias'){

@@ -55,3 +55,7 @@ Nenhuma tela conectada; próxima navegação/filtros aguarda autorização.
 ## Novo BackOffice — C2
 
 [Riscos & Tendências: entrega, testes e limitações](produto/entrega-c2-riscos.md). Três páginas funcionais. Próxima entrega depende de homologação.
+
+## C3 — Visão Geral Executiva
+
+[Performance, referência Git, testes e limites](produto/entrega-c3-performance.md). Primeiro commit de consolidação até C2: 03d8ced. C3 implementada localmente, sem novo commit/push/deploy, aguardando homologação.

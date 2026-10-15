@@ -40,3 +40,7 @@ T07 SLA & Criticidade funcional com valores da base (sem copiar métricas da ima
 ## C2 — T05 Riscos & Tendências
 
 Página funcional com cinco cards, cores, evolução diária de até 60 dias, área, recorrência por unidade/componente/categoria, contratos com impacto Alto, motivos completos, sugestões demonstrativas e registros ordenáveis. Reutiliza filtros e detalhe. Não reproduz seis meses ou variações ilustrativas da imagem. Três páginas funcionais; nove destinos pendentes. [Entrega C2](entrega-c2-riscos.md).
+
+## C3 — T02 Visão Geral
+
+Performance Operacional & Financeira na rota /visao-geral, primeira página após acesso demo. Seis cards, tabela até cinco contratos com lista completa, três gráficos diários, EXT financeiro e observações explicáveis. Não usa valores, metas, variações ou seis meses ilustrativos da referência. Menu permanece Visão Geral. Entrada padrão da aplicação segue apresentação original. Quatro páginas funcionais, oito destinos pendentes. [Relatório C3](entrega-c3-performance.md).
