@@ -1,0 +1,63 @@
+
+> orquestra-next@0.1.0 build
+> vite build --outDir /tmp/orquestra-entrega-b/dist
+
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 149 modules transformed.
+
+(!) outDir /tmp/orquestra-entrega-b/dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../../../tmp/orquestra-entrega-b/dist/index.html                                                     0.45 kB │ gzip:  0.29 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/orquestra-logo13-BBrr8rpF.png                         106.07 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/CenaTransicao-DWsH3paR.css                              0.45 kB │ gzip:  0.25 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/index-DK9ErD-r.css                                      2.29 kB │ gzip:  0.97 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/hooks-BhxumCk7.css                                      3.11 kB │ gzip:  1.03 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/AvisoCritico-B2FR-neO.css                               3.67 kB │ gzip:  1.27 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/ChamadoDetalheView-Cq9XzaPt.css                        16.63 kB │ gzip:  3.64 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/BackofficeView-BrCGtxS2.css                            24.10 kB │ gzip:  5.13 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/BackofficePlatform-0Gk5wmeg.css                        26.51 kB │ gzip:  6.46 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/backoffice-1-principal-CEVdUVxl.js                      0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/backoffice-2-chamados-C7FjIoUP.js                       0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/orquestra-logo13-BL5170sf.js                            0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-aberto-BtujU9U6.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-aberto-CExA-UUo.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-alerta-C1FOl0gr.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-alerta-n1lCYMv0.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-repouso-CtkIaCNt.js                            0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-repouso-DPffCAVw.js                            0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-concluido-C05FP1iA.js                          0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-concluido-CAuVaXbT.js                          0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-priorizado-BHyUAIRl.js                         0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-priorizado-DsG9jIDs.js                         0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-encaminhado-KLe0uFvG.js                        0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-encaminhado-atf877vh.js                        0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/supervisor-cena-3-media-para-alta-DqC8eDRM.js           0.20 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-em-atendimento-Dxelh6s_.js                     0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/chamados-em-atendimento-R7-WAId6.js                     0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/supervisor-cena-2-normal-para-media-CIMgo6Y0.js         0.21 kB │ gzip:  0.19 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/supervisor-cena-1-tela-DFfEy_W2.js                      0.65 kB │ gzip:  0.43 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/supervisor-cena-5-demanda-critica-nwjn8Czy.js           0.76 kB │ gzip:  0.48 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/supervisor-cena-2-media-sobe-KnL2CGh6.js                0.83 kB │ gzip:  0.52 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/supervisor-cena-6-demanda-critica-sobe-ToLjqGom.js      0.86 kB │ gzip:  0.55 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/supervisor-cena-4-aviso-alta-CQmlyOh1.js                1.17 kB │ gzip:  0.68 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/supervisor-cena-7-aviso-estourado-CTG8BAtX.js           1.19 kB │ gzip:  0.69 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/CenaTransicao-uIh7gvdn.js                               2.14 kB │ gzip:  1.05 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/AvisoCritico-KDhd9wa-.js                                7.73 kB │ gzip:  2.37 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/hooks-Cjvcs1hh.js                                       8.20 kB │ gzip:  3.26 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/supervisor-DJipdrY2.js                                  9.06 kB │ gzip:  2.58 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/ChamadoDetalheView-CrmqFzEH.js                         24.63 kB │ gzip:  7.05 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/BackofficeView-D-_hiVLI.js                             62.21 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/BackofficeView-BCu64w02.js                             62.22 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/index-C4_fRqrc.js                                     231.32 kB │ gzip: 72.33 kB
+../../../../../../tmp/orquestra-entrega-b/dist/assets/BackofficePlatform-CQ1i9ZtQ.js                      1,153.94 kB │ gzip: 87.12 kB
+
+✓ built in 241ms
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

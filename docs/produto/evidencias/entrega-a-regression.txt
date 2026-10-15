@@ -1,0 +1,33 @@
+✔ Vite empacota JSONs locais; consulta funciona com navegador offline (555.996192ms)
+✔ 736 registros, 46 campos, IDs únicos e metadados offline (2.911833ms)
+✔ reconciliação independente de status e criticidade históricos (3.182592ms)
+✔ snapshots separados com relógios e contagens próprios (0.426883ms)
+✔ nulos preservados, TA/TB/percentual não recalculados (0.803665ms)
+✔ consultas básicas cumulativas, busca por ID e proveniência BASE (1.364429ms)
+✔ 60 dias civis inclusivos, Criado em e limites do dia local (3.381511ms)
+✔ datas ambíguas, inválidas e intervalo invertido falham explicitamente (0.184578ms)
+✔ mesmo resultado independentemente do timezone do processo (0.071898ms)
+✔ distribuição CALC explica fonte, população e filtros sem mutá-los (1.266666ms)
+✔ dez posições ordenadas, únicas e com uma entrada principal cada (1.573943ms)
+✔ chegadas e contagens da página conciliam a linha de base (0.230033ms)
+✔ Smart Fit mantém identidade/defeito e evolui Normal, Média, Alta (0.691837ms)
+✔ hospital prioritário por contexto, não por SLA; subida separada (0.132335ms)
+✔ ordenação de SLA é numérica e não modifica entrada (0.115153ms)
+✔ dez hashes diretos carregam e mantêm posição após refresh (7102.225242ms)
+✔ teclado, extremos, H, foco editável, hash inválido (602.457083ms)
+✔ posição 2: três chegadas, contagem final e detalhe (12168.816432ms)
+✔ normal→média sem subida; detalhe segue etapa durante roteiro (2697.673462ms)
+✔ média sobe com Web Animation; alta mantém topo (4220.945064ms)
+✔ hospital entra no fim, sobe e exibe tempo decorrido sem SLA (2868.377516ms)
+✔ alertas alta/crítico, notificações, expandir, fechar, reabrir e detalhe (8453.112867ms)
+✔ saída antes dos timers e revisita reinicia sem modal residual (1844.71492ms)
+✔ movimento reduzido mantém conteúdo e evolução; sem FLIP (1263.455113ms)
+✔ nenhum erro JS/console/chunk observado (1.104476ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 41764.871175

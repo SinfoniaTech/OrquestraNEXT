@@ -1,0 +1,28 @@
+✔ cards reconciliam histórico, distintos e prioridade ativa (102.463808ms)
+✔ drill-down, ordenação, paginação e detalhe retornam à lista (356.198321ms)
+✔ agrupamentos de recorrência e evidências diárias são consultáveis (218.549109ms)
+✔ AND área e OR cores conciliam cards, cores e lista; filtros persistem entre páginas (610.39988ms)
+✔ busca, estado vazio e hoje usam relógio simulado (123.581557ms)
+✔ doze explicações acessíveis descrevem unidades, fórmulas e fontes (721.355607ms)
+✔ offline, notebook e móvel mantêm leitura e detalhamento (279.468287ms)
+✔ Vermelhos e Laranjas históricos reconciliam sem confundir ativos (0.601124ms)
+✔ equipamentos contam unidades distintas, não soma de recorrências (0.11418ms)
+✔ contratos sob pressão contam distintos com impacto Alto, não margem (0.138349ms)
+✔ áreas reconciliam cores e proporções com denominador local (0.099822ms)
+✔ série diária cobre 60 dias, cores e total; não seis meses (3.400785ms)
+✔ limites diários usam data local com offset e dias sem registros (0.184572ms)
+✔ recorrência por equipamento, componente e categoria preserva registros de suporte (0.591865ms)
+✔ motivos compostos são agrupados pelo texto inteiro, não causas inferidas (0.189577ms)
+✔ AND área e OR cores alimentam todos os agregados do mesmo recorte (2.47778ms)
+✔ nulos, chaves ausentes e limite de recorrência não viram zero nem entidade (0.25618ms)
+✔ vazio mantém proporções não calculáveis no consumidor e zero contagens (0.492157ms)
+✔ explicabilidade herda origem e filtros sem alterar valores materializados (7.875973ms)
+✔ sugestões demonstrativas possuem regras, suporte e não avançam criticidade (0.114233ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3812.384302

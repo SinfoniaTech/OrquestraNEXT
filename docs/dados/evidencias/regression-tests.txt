@@ -1,0 +1,23 @@
+✔ dez posições ordenadas, únicas e com uma entrada principal cada (1.593616ms)
+✔ chegadas e contagens da página conciliam a linha de base (0.214558ms)
+✔ Smart Fit mantém identidade/defeito e evolui Normal, Média, Alta (0.92194ms)
+✔ hospital prioritário por contexto, não por SLA; subida separada (0.146606ms)
+✔ ordenação de SLA é numérica e não modifica entrada (0.113823ms)
+✔ dez hashes diretos carregam e mantêm posição após refresh (7117.421152ms)
+✔ teclado, extremos, H, foco editável, hash inválido (618.884828ms)
+✔ posição 2: três chegadas, contagem final e detalhe (12145.496226ms)
+✔ normal→média sem subida; detalhe segue etapa durante roteiro (2644.709506ms)
+✔ média sobe com Web Animation; alta mantém topo (4249.913734ms)
+✔ hospital entra no fim, sobe e exibe tempo decorrido sem SLA (2883.696327ms)
+✔ alertas alta/crítico, notificações, expandir, fechar, reabrir e detalhe (8968.751495ms)
+✔ saída antes dos timers e revisita reinicia sem modal residual (1859.290253ms)
+✔ movimento reduzido mantém conteúdo e evolução; sem FLIP (1262.133427ms)
+✔ nenhum erro JS/console/chunk observado (0.821484ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 42252.827433

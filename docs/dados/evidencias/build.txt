@@ -1,0 +1,56 @@
+
+> orquestra-next@0.1.0 build
+> vite build --outDir /tmp/orquestra-protecao-43dd028/dist
+
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 132 modules transformed.
+
+(!) outDir /tmp/orquestra-protecao-43dd028/dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../../../tmp/orquestra-protecao-43dd028/dist/index.html                                                   0.45 kB │ gzip:  0.29 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/orquestra-logo13-BBrr8rpF.png                       106.07 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/CenaTransicao-DWsH3paR.css                            0.45 kB │ gzip:  0.25 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/index-DK9ErD-r.css                                    2.29 kB │ gzip:  0.97 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/hooks-BhxumCk7.css                                    3.11 kB │ gzip:  1.03 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/AvisoCritico-B2FR-neO.css                             3.67 kB │ gzip:  1.27 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/ChamadoDetalheView-Cq9XzaPt.css                      16.63 kB │ gzip:  3.64 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/BackofficeView-BrCGtxS2.css                          24.10 kB │ gzip:  5.13 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/backoffice-1-principal-Cs9jeHAf.js                    0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/backoffice-2-chamados-CptWytL3.js                     0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/orquestra-logo13-BL5170sf.js                          0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-aberto-CC0gKtcz.js                           0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-aberto-Cx0JBT5g.js                           0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-alerta-ChclaFng.js                           0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-alerta-CllDuUWk.js                           0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-repouso-BGcaqRWv.js                          0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-repouso-pR88bc9Z.js                          0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-concluido-Ba8v4Ltv.js                        0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-concluido-eAV05Q0p.js                        0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-priorizado-BrUfTYEH.js                       0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-priorizado-BsVrOLIP.js                       0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-encaminhado-C8JETB6Q.js                      0.20 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-encaminhado-h_tZ-CXX.js                      0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/supervisor-cena-3-media-para-alta-BCFLPgvm.js         0.20 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-em-atendimento-D-a488cN.js                   0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/chamados-em-atendimento-DEGei8HN.js                   0.20 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/supervisor-cena-2-normal-para-media-BIiZGUSm.js       0.21 kB │ gzip:  0.19 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/supervisor-cena-1-tela-DH1wCIk6.js                    0.65 kB │ gzip:  0.43 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/supervisor-cena-5-demanda-critica-4XFHcXtM.js         0.76 kB │ gzip:  0.48 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/supervisor-cena-2-media-sobe-DRiKMCZG.js              0.83 kB │ gzip:  0.52 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/supervisor-cena-6-demanda-critica-sobe-fBd5_NAh.js    0.86 kB │ gzip:  0.55 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/supervisor-cena-4-aviso-alta-CitoffSx.js              1.17 kB │ gzip:  0.68 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/supervisor-cena-7-aviso-estourado-tn1YYA3f.js         1.19 kB │ gzip:  0.69 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/CenaTransicao-DGo-LA-j.js                             2.14 kB │ gzip:  1.05 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/AvisoCritico-CUhSGss0.js                              7.73 kB │ gzip:  2.37 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/hooks-DuHEL9Z6.js                                     8.20 kB │ gzip:  3.26 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/supervisor-0o_Gy1rW.js                                9.06 kB │ gzip:  2.58 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/ChamadoDetalheView-BkE2Lexi.js                       24.63 kB │ gzip:  7.05 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/BackofficeView-Z-aSrpam.js                           62.21 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/BackofficeView-Dc51dO20.js                           62.22 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-protecao-43dd028/dist/assets/index-BoaSkjXi.js                                   230.94 kB │ gzip: 72.18 kB
+
+✓ built in 221ms

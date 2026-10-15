@@ -1,0 +1,57 @@
+# Explicabilidade BASE/CALC/EXT dos cards
+
+Requisito transversal de todas as histórias e telas, inclusive cards novos e gráficos com KPI. Mocks legados permanecem como referência recuperável e no Supervisor; não alimentar novos cards como se fossem XLSX. Mudança visual nesses cards será atividade futura autorizada.
+
+## Contrato de cada card
+
+Antes de liberar qualquer card, registrar: identificador e título; pergunta respondida; fonte/aba/versão; população e exclusões; período e momento de referência; unidade; fórmula aprovada ou campo materializado; tratamento de nulos e denominador; filtros aplicáveis; arredondamento só na apresentação; regra de comparação e cobertura do período anterior; acesso aos registros de suporte; estado vazio, erro e indisponibilidade.
+
+Detalhe explicativo acessível por teclado e sem depender só de hover. Mudança de filtros deve recalcular explicação/denominador e drill-down de forma coerente. Zero significa zero calculado; ausência é indisponível. Denominador zero deve mostrar não calculável, não 0%.
+
+## Catálogo inicial, sujeito a validação
+
+| Família | Regra sustentável / pendência |
+| --- | --- |
+| Chamados | Contar IDs únicos na fonte e recorte escolhido |
+| Não concluídos | Status diferente de Concluído; não chamar de críticos |
+| Criticidade | Contar campo fornecido por cor; distinguir abertos e histórico |
+| Clientes/contratos/unidades/técnicos | Distintos presentes no recorte; não chamar de ativos/disponíveis sem cadastro |
+| TA/TB médio | Bloqueado Q01; depois média dos elegíveis com N válido/nulos explícitos |
+| Aderência/consumo SLA | Preservar consumo fornecido; aderência bloqueada Q02 |
+| Recorrência | Distribuir Recorrencia_30d; taxa agregada bloqueada Q03; não somar como eventos únicos |
+| Custo | Soma/média de Custo_Estimado_R$ rotulada estimativa sintética; definir granularidade |
+| Impacto | Distribuição fornecida; regra de contrato sob pressão bloqueada Q09 |
+| Variação/tendência | Comparar janelas equivalentes completas; sem base anterior mostrar indisponível |
+| Insights | Mostrar motivo/insight fonte e registros associados; não inferir causalidade ou modelo preditivo |
+
+Toda instância de card precisa preencher esse contrato; a tabela não autoriza automaticamente fórmulas pendentes.
+
+## Classificação obrigatória
+
+- BASE: campo disponível na fonte, sem alegar fórmula geradora conhecida.
+- CALC: indicador calculado; informar fórmula aprovada e campos BASE de entrada. Soma/média/distintos são CALC.
+- EXT: depende de integração não disponibilizada, com pequeno selo visual textual EXT junto ao título/valor indisponível.
+
+Todo card registra classe, definição, origem e regra (ou ausência de cálculo). DEMO identifica natureza sintética; não substitui BASE/CALC/EXT. Informação mista deve separar parcelas e classes. O texto EXT é definido; detalhe gráfico/posicionamento final precisa de homologação UX em 1366×768.
+
+## EXT — integração externa pendente
+
+Selo textual EXT = depende de integração ainda não disponibilizada. Ao acioná-lo, explicar fonte necessária, campos, finalidade, última sincronização (se inexistente, dizer não conectado), e o que impede cálculo. Não sugerir integração ativa.
+
+Card EXT não recebe número plausível, zero, variação ou gráfico inventado. Mostrar “Integração pendente”/“Dados indisponíveis”; não usar verde “dados atualizados”. Se parte for local, separar métricas por origem; não esconder mistura. Exportações e detalhe mantêm proveniência e indisponibilidade. Dado sintético válido é DEMO, não EXT automaticamente.
+
+Aplicar EXT a receita/margem/TCO completo, custo de técnico, estoque/depósito/ETA logístico, skills, geolocalização, disponibilidade operacional e integrações externas. Classificação de contrato sob pressão permanece pendente até regra aprovada; não substituir Impacto_Contrato por margem.
+
+Aceite: nenhum card sem metadados; todos EXT identificam dependência; teclado abre explicação; vazio/nulo não viram zero; filtros e drill-down conciliam; nenhuma causalidade não sustentada.
+
+## Escopo aprovado C1
+
+As restrições de Q01/Q02 acima foram parcialmente resolvidas pelo usuário para a demonstração: média dos valores informados TA/TB com unidade em validação; aderência baseada no Percentual_SLA materializado entre concluídos elegíveis; faixas contínuas de consumo. [Contrato e resultados](entrega-c1-sla-criticidade.md). SLA restante, definições operacionais e fórmulas geradoras não foram aprovados. C1 apresenta dez explicações CALC e listas de suporte; passageiro preso conta ocorrências históricas, não pessoas atualmente presas.
+
+## C1.1 — TA/TB e SLA da simulação
+
+Substituída a pendência de unidade/conceito apenas para a massa: TA — Tempo até a chegada (min); TB — Tempo de resolução simulado (min). Definições confirmadas pelo responsável via usuário; evidência numérica separada no dicionário. Médias CALC dos materializados, N independente e nulos preservados. Nenhum horário de resolução foi registrado na planilha; não criar evento BASE. Resultados SLA são da simulação e não possuem validade contratual oficial. [Entrega C1.1](entrega-c11-tempos.md).
+
+## C2 — risco histórico e operação na referência
+
+Cards contam: Vermelho, Laranja, Unidade distinta nos registros com Recorrencia_30d >=3, Contrato distinto nos registros de impacto Alto e não concluídos Laranja/Vermelho. Doze explicações CALC incluem os sete painéis de análise. Motivos compostos agrupados inteiros; evolução por data de criação e cor histórica, não transição de estados. Sugestões demonstrativas têm predicado, lista de suporte e exemplo BASE identificado. Sem modelo de ML, causalidade, margem negativa presumida ou número EXT inventado. [Contrato e evidências](entrega-c2-riscos.md).
