@@ -10,9 +10,11 @@ export const FILTER_CONFIG=[
  {field:'Cliente',label:'Cliente'},
  {field:'Área',label:'Área'},
  {field:'Tipo de Unidade',label:'Tipo de Equipamento'},
- {field:'Categoria do Chamado',label:'Categoria',advanced:true}
+ {field:'Categoria do Chamado',label:'Categoria',advanced:true},
+ {field:'Unidade',label:'Unidade',advanced:true},
+ {field:'Componente Principal',label:'Componente Principal',advanced:true}
 ];
-export const FUTURE_FILTER_FIELDS=['Contrato','Supervisor','Técnico','Unidade','Componente Principal','Origem','Impacto_Contrato'];
+export const FUTURE_FILTER_FIELDS=['Contrato','Supervisor','Técnico','Origem','Impacto_Contrato'];
 export const RECURRENCES=[{id:'zero',label:'Sem recorrência (0)'},{id:'one-two',label:'1–2 ocorrências'},{id:'three-plus',label:'3 ou mais ocorrências'}];
 export const SEARCH_FIELDS=['ID_Chamado','Cliente','Contrato','Unidade','Categoria do Chamado','Problema','Descrição do Problema','Área','Técnico','Supervisor','Componente Principal','Origem'];
 export const SORT_FIELDS=['Criado em','ID_Chamado','Cliente','Unidade','Categoria do Chamado','Status','Criticidade_ORQUESTRA','Técnico'];

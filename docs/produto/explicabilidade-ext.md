@@ -67,3 +67,7 @@ Custos estimados: soma de Custo_Estimado_R$ finito não negativo, N válido/tota
 ## C5 — Custos / TCO
 
 Custos totais reutilizam C3; médias reutilizam average C1 com N válido. Técnico informado é atribuição do chamado, não remuneração/mão de obra. Custo recorrente usa chamados >0 da C4, sem multiplicar eventos; grupos positivos/zero/desconhecidos são disjuntos. Participação monetária exige total válido >0. TA/TB×custo exigem ambos válidos e N pareado; grupos SLA reutilizam C1 com N independentes e sem causalidade. Desvio é somente de SLA simulado aprovado, sem juízo financeiro. TCO e composição financeira são EXT, sem rateio artificial. 19 explicações na página, cobertura de custo e filtros contextuais no detalhe. [Regras, N e testes](entrega-c5-custos.md).
+
+## C6 — Equipamentos
+
+Unidades/tipos distintos com chamados não são cadastro instalado/ativo. Card elevada mantém >=3 C2; gráfico por tipo usa Unidade distinta com algum >0 / Unidade distinta do próprio tipo, com cobertura de recorrência por unidade; sem cobertura, indisponível. Recorrência da tabela é máximo válido e último valor BASE identificados, nunca soma nem volume de chamados. Cor/insight são do último chamado por criação/ID, sem estado atual inferido. Disponibilidade EXT exige operação/exposição/paradas/telemetria; TA/TB não permitem uptime. 13 explicações principais e detalhe com campos BASE/contagens CALC, N/filtros contextuais e suporte. Sem causalidade, probabilidade ou ML treinado. [Regras e evidências](entrega-c6-equipamentos.md).

@@ -1,12 +1,60 @@
-# Product Backlog revisado — BackOffice NEXT
+# Product Backlog — estado efetivo após C6
 
-Prioridade principal: novo BackOffice. P0 fundamento/liberação, P1 MVP, P2 expansão. Estado de implementação funcional: planejado. Atualização de proteção técnica: US01/02/15/16 têm validação parcial; US19 tem fronteiras documentadas. Ver quadro de evidências abaixo. BackOffice legado não exige equivalência visual; Supervisor protegido. Dependências de aprovação e dados não são resolvidas por suposição.
+Atualizado no encerramento de 15/10/2026, America/Sao_Paulo. Estado atual: sete páginas funcionais/cinco destinos pendentes; C6 — Equipamentos implementada com 225 testes aprovados, aguardando homologação visual. Prioridade seguinte planejada pelo usuário: Modo Feira/US14, ainda não implementado. P0 fundamento/liberação, P1 MVP, P2 expansão. Supervisor protegido. Este quadro distingue entrega técnica, aceite e versionamento; testes não substituem homologação. Nenhuma implementação, commit ou publicação está autorizada por este documento.
 
 IDs US01–18 mantidos com escopo revisado; US19 acrescentada para ponte explícita. US07 deixa de exigir consolidação das duas cópias; US06 expande entrada/login; US18 separa shell EXT obrigatório (A) de integração real (B).
 
 ## Épicos
 
 E1 proteção/entrega US01/02/15/16; E2 dados/explicação US03/04/05; E3 novo shell/modos US06/07; E4 consultas US08/09; E5 inteligência US10/11/12; E6 executivo/EXT US13/18; E7 ponte/Feira US19/14; E8 exportação US17.
+
+## Estado efetivo das 19 User Stories — referência atual
+
+Este quadro prevalece sobre os estados históricos das entregas abaixo. US18-A/B são partes de US18, não histórias extras. Critérios/dependências da seção seguinte continuam aplicáveis ao escopo restante.
+
+| US | Estado efetivo | Implementação e evidências atuais | Aceite / pendência efetiva |
+| --- | --- | --- | --- |
+| US01 | Implementada no escopo de proteção; contínua | Supervisor/dez cenas preservados, comparações Git e regressões até C6; referências locais até C5 | Obrigação em toda entrega; não auditoria visual integral. C6 local sem commit |
+| US02 | Mapeada e validada; preservada | Dez entradas/hash/refresh válidos; colisões de nomes auxiliares documentadas, sem refatoração | Mudança de índice exige análise; não corrigir legado incidentalmente |
+| US03 | Concluída tecnicamente e aprovada | Histórico rastreável 736 registros/46 campos, importador, origem/hash, JSON imutável | Manter integridade; sem fórmula geradora inferida |
+| US04 | Implementada para separação/consulta/projeção | HIST e T0/T1/T2 (10/16/24) separados das fixtures; proteção temporal C1.1 | Merge/completude/fontes e motor Feira pendentes; não somar snapshots |
+| US05 | Implementada nas sete páginas; transversal | BASE/CALC/EXT, explicações por botão, fórmula/N/nulos/período/fonte e suporte | Aplicar também às páginas/modos futuros; C6 aguarda visual |
+| US06 | Parcial | Login demo e plataforma opt-in; apresentação original padrão sem conflito de hash/teclado | Modos próprios Apresentação/Feira pendentes; demo não é autenticação corporativa |
+| US07 | Parcial | Shell/12 destinos; Visão Geral, Contratos & Margem, Custos / TCO, Riscos, Chamados, SLA e Equipamentos funcionais | Técnicos, Peças, Padrões & Insights, Contratos — BackOffice e Integrações pendentes |
+| US08 | Implementada e ampliada na C6 | Dez filtros compartilhados, AND/OR/busca/chips/limpar/vazio, populações antes da paginação e contexto em memória | B homologada; extensões C6 Unidade/Componente testadas, aguardam homologação visual da entrega; refresh reseta |
+| US09 | Implementada e homologada | Chamados B: busca/ordem/página/detalhe e retorno; suporte reutilizado até C6 | Preservar contexto e integridade nas próximas entregas |
+| US10 | Parcial | Visão Geral C3 implementada e expressamente homologada | Página Padrões & Insights pendente; textos em outras páginas não a concluem |
+| US11 | Entregue no escopo sintético aprovado | SLA C1/C1.1 e Riscos C2, regras explicadas e suporte | C1 aceito para continuidade, C1.1 regras aprovadas, C2 homologação preliminar. Regras oficiais/recálculos/pausas/SLA restante pendentes |
+| US12 | Parcial | Equipamentos C6: unidade/tipo/histórico/recorrência/desempenho/insights; disponibilidade EXT | C6 aguarda homologação visual; página Técnicos pendente. Agrupamentos C5 não implementam essa página |
+| US13 | Parcial | Contratos & Margem C4 e Custos / TCO C5 funcionais, custos estimados e lacunas financeiras explícitas | C4/C5 aprovadas para continuidade e commitadas; Contratos — BackOffice e finanças reais pendentes; sem CRUD presumido |
+| US14 | Planejada; próxima prioridade | Contrato e projeção temporal C1.1 preparados/testados; nenhum motor/controlador Feira implementado | Aguardar homologação C6 e autorização de escopo; clock/fontes/merge/completude/loop/velocidade/pausa/retorno precisam de definição |
+| US15 | Parcial e contínua | Notebook 1366×768, móvel 390×844, teclado/foco/explicações, movimento reduzido e regressões | Não auditoria integral de acessibilidade/cross-browser; C6 aguarda visual do usuário |
+| US16 | Validação/versionamento local parciais | Testes/build/docs/recuperação e commits até C5; C6 225 testes aprovados | C6 sem commit/nada staged; publicação/artefato publicado/retorno de deploy não certificados. Sem commit/push/deploy implícitos |
+| US17 | Pendente | Exportação não implementada | Escopo futuro: todo recorte com origem/regras/EXT; não só página |
+| US18 | Pendente nas duas partes | A: Peças/Integrações são placeholders; indicadores EXT reutilizáveis existentes. B: nenhuma integração real | A precisa de páginas com limites/fontes; B depende de contratos/dados externos autorizados; sem conexão/estoque fictícios |
+| US19 | Planejada, não implementada | Fronteiras Supervisor documentadas; link à apresentação original disponível | Link não é ponte contextual. Aviso, preservação de filtros/pausa Feira/retorno explícito e ponto de entrada dependem de escopo |
+
+Implementação/homologação/versionamento por entrega:
+
+| Entrega | Marco técnico | Aceite registrado | Referência Git atual |
+| --- | --- | --- | --- |
+| A | Shell/demo/12 menus, 41 testes | Validada antes da B | 03d8ced |
+| B | Chamados/filtros, 69 | Homologada explicitamente | 03d8ced |
+| C1 | SLA & Criticidade, 87 | Aceita para continuidade; sem registro separado de homologação visual final | 03d8ced |
+| C1.1 | TA/TB/contrato temporal, 97 | Definições/regras aprovadas, etapa concluída | 03d8ced |
+| C2 | Riscos & Tendências, 117 | Homologação preliminar | 03d8ced |
+| C3 | Visão Geral, 139 | Homologada expressamente antes da C4 | ef53ecf |
+| C4 | Contratos & Margem, 164 | Avaliada e aprovada para continuidade antes da C5 | ebd0db9 |
+| C5 | Custos / TCO, 194 | Avaliada e aprovada para continuidade antes da C6 | 485e6b4 (HEAD) |
+| C6 | Equipamentos, 225 | Aguardando homologação visual final | Local, sem commit próprio |
+
+Os totais de testes são cumulativos, não somar marcos. C6 =216 Node/browser +9 Python, incluindo 194 anteriores +31 novos (21 serviço/10 navegador). Build/importação --check aprovados; neste encerramento documental não foram reexecutados. [Evidências C6](entrega-c6-equipamentos.md).
+
+Branch `feature/next-evolucao`; HEAD `485e6b49f6b0f1342a69e0a126adcecbab9d06f6`. Há 15 arquivos modificados/19 não rastreados, nada staged, referentes à C6/documentação/evidências. Commits locais até C5; nenhum push/deploy efetuado nesta evolução. Usar a pasta atual, pois checkout limpo do HEAD não contém C6. [Inventário, arquitetura/regras e prompt de retomada](../CONTINUIDADE_CODEX.md).
+
+Próximo gate: homologação visual C6 → eventual autorização de versionamento C6 → análise/plano/aprovação específica de Modo Feira. Feira deve evoluir dados operacionais com pausa/retomada/reinício, preservando apresentação manual e Supervisor; autoplay de cenas não atende US14. Sequência não autoriza execução automática de nenhuma etapa.
+
+## Critérios e dependências por história
 
 | História e objetivo do usuário | Pri. | Dependências | Componentes afetados (proposta) | Critérios de aceite | Testes necessários |
 | --- | --- | --- | --- | --- | --- |
@@ -38,6 +86,10 @@ US18-A/B são tarefas de uma mesma história US18; total de histórias = 19. Res
 Ready: aprovação de escopo/tela/fonte/regra/aceite e autorização de alteração. Done: testes e evidências, nenhuma regressão Supervisor, todos cards explicáveis, docs/backlog atualizados, limitações claras. Layout novo do BackOffice é comparado à referência UX aprovada e 1366×768, não exige igualdade com antigo.
 
 A cada entrega relatar US, arquivos, funcionalidades, testes, riscos/EXT e próxima proposta. Não atualizar planejada para concluída por existir documento. [Sequência e gates](plano-incremental.md).
+
+## Histórico incremental — não usar como estado atual
+
+Os registros seguintes preservam evidências/decisões na época de cada entrega. Expressões como “planejado”, “sem telas”, “aguardar homologação C3” ou “sem commit” foram superadas onde indicado no quadro atual e nos registros seguintes. Não executar gates antigos como instruções novas nem apagar seu histórico. Para estado efetivo, usar o quadro das 19 histórias acima e a continuidade consolidada.
 
 ## Estado após proteção técnica mínima — 15/10/2026
 
@@ -109,3 +161,13 @@ US13 avança: Custos / TCO funcional com custo total/médio, atribuição a téc
 Critérios verificados: custos e médias conciliados, recorrentes/zero/desconhecidos disjuntos, N/cobertura/ausências, pares válidos TA/TB, SLA aprovado sem recálculo, tabela contratos/chamados com busca/ordem/paginação, filtros e retorno preservados, custo→desvio SLA→contrato→equipamento→chamado→insight, EXT sem valor fictício e notebook/móvel sem overflow. 194 testes distintos aprovados (164 anteriores +30 novos), build e importação --check aprovados. Arquivos: custos.js, CustosPage/estilos e testes novos; shell, ConsultationContext, chave mean em contratos.js e teste de menus adaptados. [Relatório completo e evidências](entrega-c5-custos.md).
 
 Pendências: dados financeiros realizados, composição/TCO, metas/orçamento, regras oficiais e páginas restantes. C5 sem commit, aguardando homologação. Próxima recomendação: Equipamentos (US12), somente após escopo autorizado; nenhuma nova página iniciada.
+
+## C6 — Equipamentos — 15/10/2026
+
+C5 avaliada e aprovada para continuidade pelo usuário. Commit local autorizado: 485e6b49f6b0f1342a69e0a126adcecbab9d06f6 após 194 testes/build e revisão de staging dos 30 arquivos; sem push/deploy.
+
+US12 parcialmente entregue: Equipamentos funcional, Técnicos pendente. Carteira/histórico técnico por unidade, métricas TA/TB/SLA/custo reutilizadas, recorrência elevada C2, gráficos por tipo/componente/dia/cor, insights e chamados. US05: 13 explicações principais mais detalhe contextual. US07: sete páginas funcionais/cinco destinos pendentes. US08: dois filtros preparados promovidos à UI compartilhada (Unidade/Componente Principal), total dez incluindo período/recorrência. US09 reutilizada; US01/15/16 revalidadas.
+
+Critérios verificados: 54 unidades/19 elevadas/736 ocorrências/4 tipos; disponibilidade EXT sem uptime; tipo >0 usa numerador/denominador de unidades do próprio tipo; volume, máximo e último valor registrados distintos; cronologia/cor/insight do mesmo último chamado; filtros AND/OR/chips, ordem/página/retorno e suporte; fluxo carteira→tipo→unidade→histórico→recorrência→insight→chamado; vazio/nulos/EXT/teclado e notebook/móvel. 225 testes distintos aprovados (194 anteriores +31 novos), build/importação --check aprovados. Arquivos: equipamentos.js, EquipamentosPage/estilos/testes; shell, ConsultationUI, ConsultationContext, filtros de chamados, callback de ordenação reutilizado e testes B/shell adaptados. [Relatório e evidências](entrega-c6-equipamentos.md).
+
+Limitações: massa sintética, sem cadastro mestre/uptime/parque ativo; recorrência materializada não soma eventos, último campo não indica estado atual; sem causalidade/ML validado. C6 sem commit, aguardando homologação. Próxima prioridade planejada pelo usuário: Modo Feira/US14, somente após homologação e autorização de escopo. Nenhum motor Feira ou outra página iniciado.

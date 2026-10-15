@@ -1,0 +1,63 @@
+
+> orquestra-next@0.1.0 build
+> vite build --outDir /tmp/orquestra-c6/dist
+
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 174 modules transformed.
+
+(!) outDir /tmp/orquestra-c6/dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../../../tmp/orquestra-c6/dist/index.html                                                     0.45 kB │ gzip:   0.29 kB
+../../../../../../tmp/orquestra-c6/dist/assets/orquestra-logo13-BBrr8rpF.png                         106.07 kB
+../../../../../../tmp/orquestra-c6/dist/assets/CenaTransicao-DWsH3paR.css                              0.45 kB │ gzip:   0.25 kB
+../../../../../../tmp/orquestra-c6/dist/assets/index-DK9ErD-r.css                                      2.29 kB │ gzip:   0.97 kB
+../../../../../../tmp/orquestra-c6/dist/assets/hooks-BhxumCk7.css                                      3.11 kB │ gzip:   1.03 kB
+../../../../../../tmp/orquestra-c6/dist/assets/AvisoCritico-B2FR-neO.css                               3.67 kB │ gzip:   1.27 kB
+../../../../../../tmp/orquestra-c6/dist/assets/ChamadoDetalheView-Cq9XzaPt.css                        16.63 kB │ gzip:   3.64 kB
+../../../../../../tmp/orquestra-c6/dist/assets/BackofficeView-BrCGtxS2.css                            24.10 kB │ gzip:   5.13 kB
+../../../../../../tmp/orquestra-c6/dist/assets/BackofficePlatform-BppPWVTz.css                        48.42 kB │ gzip:   9.69 kB
+../../../../../../tmp/orquestra-c6/dist/assets/backoffice-1-principal-BRK6T3Hn.js                      0.07 kB │ gzip:   0.08 kB
+../../../../../../tmp/orquestra-c6/dist/assets/backoffice-2-chamados-XDgGZ8tT.js                       0.07 kB │ gzip:   0.08 kB
+../../../../../../tmp/orquestra-c6/dist/assets/orquestra-logo13-BL5170sf.js                            0.07 kB │ gzip:   0.08 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-aberto-BEwua17T.js                             0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-aberto-CKdOfDkY.js                             0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-alerta-CzmJ8A5W.js                             0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-alerta-DBbiOQAC.js                             0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-repouso-BgqQqkR6.js                            0.19 kB │ gzip:   0.17 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-repouso-ni6dF_lk.js                            0.19 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-concluido-Bf0Vz2pt.js                          0.19 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-concluido-CjFFCzRM.js                          0.19 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-priorizado-BYarKqwe.js                         0.19 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-priorizado-VWxB0ojk.js                         0.19 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-encaminhado-BPzOoOyg.js                        0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-encaminhado-ULCWKsHr.js                        0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/supervisor-cena-3-media-para-alta-BR0nL-E5.js           0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-em-atendimento-C5gwMilf.js                     0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/chamados-em-atendimento-CeXSFcSN.js                     0.20 kB │ gzip:   0.18 kB
+../../../../../../tmp/orquestra-c6/dist/assets/supervisor-cena-2-normal-para-media-BRX9SE1K.js         0.21 kB │ gzip:   0.19 kB
+../../../../../../tmp/orquestra-c6/dist/assets/supervisor-cena-1-tela-CCT2SOYB.js                      0.65 kB │ gzip:   0.43 kB
+../../../../../../tmp/orquestra-c6/dist/assets/supervisor-cena-5-demanda-critica-CJuxw_5R.js           0.76 kB │ gzip:   0.48 kB
+../../../../../../tmp/orquestra-c6/dist/assets/supervisor-cena-2-media-sobe-CWP6ebL0.js                0.83 kB │ gzip:   0.52 kB
+../../../../../../tmp/orquestra-c6/dist/assets/supervisor-cena-6-demanda-critica-sobe-DgZGAjoB.js      0.86 kB │ gzip:   0.55 kB
+../../../../../../tmp/orquestra-c6/dist/assets/supervisor-cena-4-aviso-alta-Be1SJ9f1.js                1.17 kB │ gzip:   0.68 kB
+../../../../../../tmp/orquestra-c6/dist/assets/supervisor-cena-7-aviso-estourado-CPbu2bWY.js           1.19 kB │ gzip:   0.69 kB
+../../../../../../tmp/orquestra-c6/dist/assets/CenaTransicao-Db0jjoHs.js                               2.14 kB │ gzip:   1.05 kB
+../../../../../../tmp/orquestra-c6/dist/assets/AvisoCritico-uzZyQKND.js                                7.73 kB │ gzip:   2.37 kB
+../../../../../../tmp/orquestra-c6/dist/assets/hooks-CvLHTQ-A.js                                       8.20 kB │ gzip:   3.26 kB
+../../../../../../tmp/orquestra-c6/dist/assets/supervisor-yjtL1Tdy.js                                  9.06 kB │ gzip:   2.58 kB
+../../../../../../tmp/orquestra-c6/dist/assets/ChamadoDetalheView-3paVLEvO.js                         24.63 kB │ gzip:   7.05 kB
+../../../../../../tmp/orquestra-c6/dist/assets/BackofficeView-nywJtMJ-.js                             62.21 kB │ gzip:  17.71 kB
+../../../../../../tmp/orquestra-c6/dist/assets/BackofficeView-DghkiGR_.js                             62.22 kB │ gzip:  17.71 kB
+../../../../../../tmp/orquestra-c6/dist/assets/index-DN-iQ1U7.js                                     231.32 kB │ gzip:  72.34 kB
+../../../../../../tmp/orquestra-c6/dist/assets/BackofficePlatform-5r0timcI.js                      1,279.77 kB │ gzip: 116.45 kB
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 256ms

@@ -52,3 +52,7 @@ Carteira operacional/econômica com quatro cards sustentados, quatro fontes fina
 ## C5 — T04 Custos / TCO
 
 Cinco cards sustentados, TCO e composição financeira EXT, evolução diária, recorrentes/zero/desconhecidos, distribuição por contrato/área/técnico/equipamento/categoria/componente e demais campos disponíveis. Tabela carteira/chamados, pares custo×TA/TB, grupos SLA e aprofundamento com insights. Sem valores financeiros ilustrativos, 12 meses, trimestre ou causalidade inferidos. Seis páginas funcionais/seis destinos pendentes. [Entrega e evidências](entrega-c5-custos.md). Aguardando homologação C5.
+
+## C6 — T09 Equipamentos
+
+Carteira de 54 unidades no histórico completo, quatro tipos existentes (social/serviço/hospitalar/escada rolante), recorrência elevada C2, volume/máximo/último valor separados, identificação/histórico técnico/desempenho e insights com suporte. Quatro gráficos por componente, tipo (>0 por unidade), dia e cores; disponibilidade EXT sem percentual inventado. Sete páginas funcionais/cinco destinos pendentes. [Entrega C6](entrega-c6-equipamentos.md). Aguardando homologação; Feira planejada como próxima prioridade, sem implementação.

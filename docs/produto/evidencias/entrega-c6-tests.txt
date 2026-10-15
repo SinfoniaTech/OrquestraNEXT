@@ -1,0 +1,39 @@
+✔ C6 cards e carteira conciliam unidades ocorrências tipos e recorrência elevada (110.204902ms)
+✔ C6 disponibilidade é EXT e não apresenta uptime fictício (111.182482ms)
+✔ C6 ordenação por volume cor e máximo com paginação e retorno (458.251631ms)
+✔ C6 carteira → tipo → unidade → histórico → recorrência → insight → chamado (1279.026489ms)
+✔ C6 componentes evolução e cores abrem o suporte correspondente (317.67485ms)
+✔ C6 filtros Unidade Componente Categoria e Recorrência são cumulativos e compartilhados (1072.278882ms)
+✔ C6 período AND/OR busca e gráficos conservam população (470.52735ms)
+✔ C6 explicações por teclado mostram denominadores origem e ausentes (283.205936ms)
+✔ C6 vazio e elegibilidade SLA ausente sem valores fabricados (379.003356ms)
+✔ C6 notebook móvel e offline carregado mantêm contexto sem overflow (456.533245ms)
+✔ C6 unidades distintas e ocorrências conciliam histórico sem inventar parque (1.137681ms)
+✔ C6 recorrência elevada reutiliza >=3 sem somar eventos (0.162894ms)
+✔ C6 tipos correspondem somente às quatro categorias da fonte (0.0993ms)
+✔ C6 recorrência positiva em Escada Rolante usa denominador próprio (0.11136ms)
+✔ C6 recorrência positiva em Elevador Social usa denominador próprio (0.063143ms)
+✔ C6 recorrência positiva em Elevador Hospitalar usa denominador próprio (0.056416ms)
+✔ C6 recorrência positiva em Elevador de Serviço usa denominador próprio (0.05056ms)
+✔ C6 componentes contam chamados não peças ou causas (0.073597ms)
+✔ C6 valor de recorrência não é quantidade de chamados (0.481157ms)
+✔ C6 último chamado cor e insight são do mesmo registro no recorte (1.920306ms)
+✔ C6 histórico cronológico e agrupamentos técnicos preservam o suporte da unidade (2.43508ms)
+✔ C6 ordenação padrão por máximo e alternativas precedem paginação (3.523619ms)
+✔ C6 desempates nulos e criticidade não recalculam classificação (1.381023ms)
+✔ C6 filtros cumulativos de Unidade e Componente restringem toda análise (1.837665ms)
+✔ C6 cores por tipo e série diária conciliam chamados filtrados (1.321597ms)
+✔ C6 TA TB SLA e custos por unidade reutilizam elegibilidades aprovadas (0.282218ms)
+✔ C6 ausentes e inválidos não fabricam entidades recorrência ou componente (0.252616ms)
+✔ C6 recorrência por tipo não confunde unidade positiva com registro ou elevação (0.169083ms)
+✔ C6 vazio e ausência completa de recorrência são indisponíveis (0.296572ms)
+✔ C6 explicabilidade e disponibilidade EXT não calculam uptime (2.385112ms)
+✔ C6 operações não alteram histórico ou regras materializadas (9.976469ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5949.493687

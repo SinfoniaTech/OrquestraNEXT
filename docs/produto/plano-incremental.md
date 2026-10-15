@@ -38,3 +38,7 @@ O usuário homologou C3 e autorizou seu commit local (ef53ecf), testes e impleme
 ## Atualização autorizada C5 — 15/10/2026
 
 Usuário aprovou C4 para continuidade e autorizou commit local (ebd0db9) e implementação exclusiva de Custos / TCO. C5 implementada e validada com 194 testes/build; avança parcialmente R6/US13, sem TCO real/composição contábil inventados. [Relatório C5](entrega-c5-custos.md). Aguardar homologação; próxima sugestão Equipamentos/US12 depende de novo escopo. Nenhum commit C5/push/deploy autorizado.
+
+## Atualização autorizada C6 — 15/10/2026
+
+C5 aprovada para continuidade e registrada em 485e6b4, após 194 testes/build e staging revisados. Equipamentos C6 implementada exclusivamente, avançando R5/US12 com sete páginas funcionais; 225 testes/build aprovados. [Relatório C6](entrega-c6-equipamentos.md). Próxima prioridade planejada pelo usuário é Modo Feira/R8/US14, com evolução de dados/pausa/retomada/reinício preservando apresentação manual e Supervisor. Não iniciar antes da homologação C6 e autorização de escopo; decisões temporais/fontes/merge/velocidade/loop permanecem próprias. Nenhum commit C6/push/deploy autorizado.

@@ -104,7 +104,8 @@ try{
   await page.keyboard.press('Escape');await poll(async()=>await dialog.count()===0);
   assert.equal(await opener.evaluate(el=>el===document.activeElement),true);
   assert.deepEqual(await page.getByRole('table',{name:'Tabela de chamados'}).locator('tbody tr').allTextContents(),rows);
-  await nav().getByRole('link',{name:'Equipamentos',exact:true}).click();await page.getByText('Desenvolvimento pendente',{exact:true}).waitFor();
+  await nav().getByRole('link',{name:'Equipamentos',exact:true}).click();await page.getByTestId('equipment-total').waitFor();
+  assert.equal(Number(await page.getByTestId('equipment-total').innerText()),281);
   await nav().getByRole('link',{name:'Chamados',exact:true}).click();await page.getByText('Página 2 de 29',{exact:true}).waitFor();
   await consistency(281);assert.deepEqual(await page.getByRole('table',{name:'Tabela de chamados'}).locator('tbody tr').allTextContents(),rows);
  });

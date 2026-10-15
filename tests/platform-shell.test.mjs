@@ -43,6 +43,9 @@ try{
    if(item.id==='visao-geral'){
     await page.getByTestId('performance-total').waitFor();
     assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);
+   }else if(item.id==='equipamentos'){
+    await page.getByTestId('equipment-total').waitFor();
+    assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);
    }else if(item.id==='custos-tco'){
     await page.getByTestId('costs-total').waitFor();
     assert.match(await page.getByRole('main').innerText(),/HIST_60_DIAS/);

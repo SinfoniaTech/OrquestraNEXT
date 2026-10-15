@@ -3,6 +3,7 @@ import logo from '../assets/orquestra-logo13.png';
 import {MENU_GROUPS,PAGES,pageFromHash} from './navigation.js';
 import styles from './BackofficePlatform.module.css';
 import {ConsultationProvider,useConsultation} from './filters/ConsultationContext.jsx';
+import EquipamentosPage from './pages/EquipamentosPage.jsx';
 import CustosPage from './pages/CustosPage.jsx';
 import ContratosPage from './pages/ContratosPage.jsx';
 import PerformancePage from './pages/PerformancePage.jsx';
@@ -132,9 +133,9 @@ function PlatformShell(){
      <div className={styles.breadcrumb}>BACKOFFICE <span>/</span> {page?.title??page?.label??'Página não encontrada'}</div>
      <div className={styles.pageHeading}>
       <div><span className={styles.headingLine}/><h1 ref={heading} tabIndex={-1}>{page?.title??page?.label??'Página não encontrada'}</h1><p>{page?.description??'Este endereço não corresponde a uma página da plataforma.'}</p></div>
-      <span className={styles.phaseBadge}>{['visao-geral','contratos-margem','custos-tco','chamados','sla-criticidade','riscos-tendencias'].includes(route)?'Histórico consultável':'Estrutura inicial'}</span>
+      <span className={styles.phaseBadge}>{['visao-geral','contratos-margem','custos-tco','equipamentos','chamados','sla-criticidade','riscos-tendencias'].includes(route)?'Histórico consultável':'Estrutura inicial'}</span>
      </div>
-     {route==='custos-tco'?<CustosPage/>:route==='contratos-margem'?<ContratosPage/>:route==='visao-geral'?<PerformancePage/>:route==='chamados'?<ChamadosPage/>:route==='sla-criticidade'?<SlaCriticidadePage/>:route==='riscos-tendencias'?<RiscosPage/>:page?<section className={styles.pendingCard} aria-label="Estado da página">
+     {route==='equipamentos'?<EquipamentosPage/>:route==='custos-tco'?<CustosPage/>:route==='contratos-margem'?<ContratosPage/>:route==='visao-geral'?<PerformancePage/>:route==='chamados'?<ChamadosPage/>:route==='sla-criticidade'?<SlaCriticidadePage/>:route==='riscos-tendencias'?<RiscosPage/>:page?<section className={styles.pendingCard} aria-label="Estado da página">
       <div className={styles.pendingGraphic}><Icon name={page.icon} size={36}/><span className={styles.graphicLine}/><span className={styles.graphicDot}/></div>
       <span className={styles.sectionEyebrow}>CONSTRUINDO O NOVO BACKOFFICE</span>
       <h2>{page.id==='visao-geral'?'Um novo olhar sobre a operação.':'Espaço preparado para '+page.label.toLocaleLowerCase('pt-BR')+'.'}</h2>
@@ -142,7 +143,7 @@ function PlatformShell(){
       <span className={styles.pendingStatus}><span/>Desenvolvimento pendente</span>
       {page.id==='visao-geral'&&<a className={styles.secondaryButton} href="#/chamados">Conhecer a área de Chamados <Icon name="arrow" size={17}/></a>}
      </section>:<section className={styles.pendingCard}><h2>Vamos voltar ao início?</h2><a className={styles.secondaryButton} href="#/visao-geral">Ir para Visão Geral</a></section>}
-     {!['visao-geral','contratos-margem','custos-tco','chamados','sla-criticidade','riscos-tendencias'].includes(route)&&<div className={styles.contextStrip}><Icon name="shield" size={18}/><p><strong>Uma evolução por etapas.</strong> A consulta histórica está disponível em Chamados, SLA & Criticidade e Riscos & Tendências. As demais páginas continuam em desenvolvimento.</p></div>}
+     {!['visao-geral','contratos-margem','custos-tco','equipamentos','chamados','sla-criticidade','riscos-tendencias'].includes(route)&&<div className={styles.contextStrip}><Icon name="shield" size={18}/><p><strong>Uma evolução por etapas.</strong> A consulta histórica está disponível em Chamados, SLA & Criticidade e Riscos & Tendências. As demais páginas continuam em desenvolvimento.</p></div>}
      <footer className={styles.footer}><span>ORQUESTRA · NEXT FIAP</span><a href={legacyUrl}>Apresentação original <span aria-hidden="true">↗</span></a></footer>
     </main>
    </div>

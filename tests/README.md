@@ -74,3 +74,9 @@ Build final: `npm run build -- --outDir /tmp/orquestra-c4-final/dist`. Regressã
 Build: `npm run build -- --outDir /tmp/orquestra-c5-final/dist`. Regressão: `ORQUESTRA_TEST_DIST=/tmp/orquestra-c5-final/dist node --test tests/*.test.mjs`; complementar com 9 Python e importador --check no runtime documentado. Preview C5 porta 5201, evidências /tmp/orquestra-c5/evidence. Servidores locais/Chrome precisam de permissão apropriada no sandbox.
 
 20 testes de serviço +10 navegador C5; total 185 Node/browser +9 Python =194 distintos (164 anteriores incluídos). Após ação direta de custo→desvios, os 30 C5 passaram novamente no build final. Menus: seis páginas funcionais/seis pendentes, 12 destinos. [Cobertura e evidências](../docs/produto/entrega-c5-custos.md). Nenhuma dependência instalada.
+
+## C6 — Equipamentos
+
+Build: `npm run build -- --outDir /tmp/orquestra-c6/dist`. Regressão: `ORQUESTRA_TEST_DIST=/tmp/orquestra-c6/dist node --test tests/*.test.mjs`, mais os 9 Python e importador --check no runtime documentado. Preview C6 porta 5203, evidências /tmp/orquestra-c6/evidence; servidores locais/Chrome precisam de permissão apropriada no sandbox.
+
+21 serviço +10 navegador novos; total 216 Node/browser +9 Python =225 distintos (194 anteriores incluídos). Sete páginas funcionais/cinco pendentes, 12 menus. Teste B agora verifica Equipamentos funcional/281 chamados filtrados e mantém comparação integral de ordem/página/retorno. Suíte completa reexecutada após adaptar a expectativa antiga de placeholder, sem falhas. [Cobertura e evidências C6](../docs/produto/entrega-c6-equipamentos.md). Nenhuma dependência instalada.

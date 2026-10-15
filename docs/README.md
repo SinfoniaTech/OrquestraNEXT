@@ -67,3 +67,7 @@ C3 homologada e registrada em ef53ecf. [Entrega C4: carteira, detalhe, cálculos
 ## C5 — Custos / TCO
 
 C4 aprovada para continuidade e registrada em ebd0db9. [Entrega C5: custos sintéticos, grupos, análise temporal e limites EXT](produto/entrega-c5-custos.md). Seis páginas funcionais, 194 testes aprovados; C5 sem commit, aguardando homologação. Sem push/deploy.
+
+## C6 — Equipamentos
+
+C5 aprovada para continuidade e registrada em 485e6b4. [Entrega C6: carteira, tipos, histórico, recorrência, insights e limites EXT](produto/entrega-c6-equipamentos.md). Sete páginas funcionais, 225 testes aprovados; C6 sem commit, aguardando homologação. Próxima prioridade planejada: Modo Feira após autorização própria; não iniciado. Sem push/deploy.
