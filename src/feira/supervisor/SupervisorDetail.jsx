@@ -1,3 +1,4 @@
+import HistoryEvidence from '../HistoryEvidence.jsx';
 import {Dialog,StatusBadge} from '../../platform/components/OperationalUI.jsx';
 import {TEMPORAL_DEFINITIONS,SYNTHETIC_TIME_NOTICE} from '../../platform/services/temporalDefinitions.js';
 import {EVENT_FIELDS,fieldValue} from './presentation.js';
@@ -17,6 +18,7 @@ export default function SupervisorDetail({row,metadata,onClose,online,returnToAl
   <p>{TEMPORAL_DEFINITIONS.TA.definition}</p><p>{TEMPORAL_DEFINITIONS.TB.definition}</p><p>{SYNTHETIC_TIME_NOTICE}</p>
   {group('Histórico disponível nesta fotografia',EVENT_FIELDS)}
   <p>Eventos posteriores à referência ficam ocultos. Esta lista não reconstrói o encerramento técnico nem consulta snapshots futuros.</p>
+  <HistoryEvidence row={row} reference={metadata.reference}/>
   {group('Motivo e orientação demonstrativa',['Motivo_Criticidade','Insight_ORQUESTRA','Recorrencia_30d'])}
   <p>Cor e insight fornecidos pela massa sintética. {row.Status==='Concluído'?'Resultado histórico; não é alerta ativo.':'Laranja indica janela de intervenção; Vermelho indica condição crítica.'} Não constituem previsão comprovada de ML ou despacho efetivo.</p>
   <section className={styles.detailSection}><h3>Informações externas — EXT</h3><p>Disponibilidade e localização atual do técnico, estoque, ETA logístico, custo unitário real e despacho não estão disponíveis. Não há ações operacionais reais nesta demonstração.</p></section>

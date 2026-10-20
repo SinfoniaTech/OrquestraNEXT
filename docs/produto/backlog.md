@@ -304,3 +304,13 @@ Validação final dos avisos compactos:464 distintos reexecutados e aprovados (4
 ### Registro local do Modo Feira — 19/10/2026
 
 Usuário autorizou commit na `feature/modo-feira` para preservar o conjunto existente C9/C9.1/C9.2,Supervisor Feira,nova apresentação,testes/documentação/evidências. Mensagem:`feat: implementa modo feira sincronizado e supervisor C9.2`. Sem merge,push ou deploy. Última validação:464 testes aprovados,build e dois importadores --check;nenhuma alteração funcional posterior nesta etapa documental. Homologações visuais/físicas pendentes permanecem pendentes.
+
+
+### US14.13/US15 — Histórico no apoio à decisão, 19/10/2026
+
+Autorizado pelo usuário:alertas mais objetivos com ação/insight e possível solução sustentada pelo histórico;mesmo apoio nos cartões do Modo Feira. Implementado localmente:consulta retrospectiva de fechamentos anteriores compatíveis,distinção mesmo equipamento/semelhantes,hipótese com contagem sem garantia e rastreabilidade no detalhe. Emergências mantêm prioridade imediata. Sem nova história,dataset,motor,SSE/POST ou autenticação. [Relatório atual](entrega-c92-feira-estendida.md#histórico-como-apoio-ao-diagnóstico--19102026). Homologação pendente na nova porta5194;instâncias anteriores preservadas;sem novo commit/push/deploy. QRCode/acesso contínuo discutidos,fora desta implementação.
+
+Validação final do apoio histórico:472 distintos aprovados (455+17),build/dois --check;32 específicos também reexecutados. Serviço5194/T03pausado1× com dois clientesLAN e fluxo completo;sem novo commit/push/deploy. Homologação visual/física pendente.
+
+
+Registro local autorizado pelo usuário para a revisão histórica: `feat: adiciona apoio historico aos alertas da feira`,base53c6554. Inclui implementação,testes,documentação e evidências existentes;sem push/merge/deploy. Última validação:472 testes aprovados,build/dois --check,sem alteração funcional posterior. Pendência confirmada:aba Chamados mantém ficha direta;resumo acessível pela aba Alertas. Uniformização da entrada e QRCode/acesso contínuo não implementados neste registro. SHA do próprio commit consultável com `git log -1 --format=%H`.

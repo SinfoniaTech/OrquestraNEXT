@@ -425,3 +425,48 @@ Comandos: build com `node-do-runtime node_modules/vite/bin/vite.js build --outDi
 ## Registro local autorizado — 19/10/2026
 
 Após solicitação explícita do usuário,registro do trabalho existente na branch `feature/modo-feira`,base240253d,com a mensagem `feat: implementa modo feira sincronizado e supervisor C9.2`. Inclui C9/C9.1/C9.2,Supervisor,apresentação já implementada,testes,planilha estendida original do escopo,documentação e evidências. Revisados inventário,diff e sinais de segredos;credenciais efêmeras fora do Git. Testes/build/importadores aprovados no marco imediatamente anterior,sem nova alteração funcional nesta etapa. Commit local não autoriza merge/push/deploy nem presume homologação visual. O SHA do próprio registro é obtido por `git log -1 --format=%H`,evitando referência circular no conteúdo do commit.
+
+
+## Histórico como apoio ao diagnóstico — 19/10/2026
+
+Escopo autorizado pelo usuário: simplificar alertas Laranja/Vermelho com uma ação ou insight e aproveitar fechamentos históricos para evidenciar uma possível solução;estender o mesmo apoio aos cartões do Modo Feira. Implementado localmente na feature/modo-feira,base53c6554,sem novo commit/push/deploy. Não inclui QRCode ou alteração da autenticação.
+
+### Modelo e limites
+
+`src/feira/historyAdvice.js` é uma consulta CALC retrospectiva sobre HIST_60_DIAS existente,sem alterar BASE,dataset,snapshots,motor ou prioridade. Usa somente registros Concluídos,com ID diferente do atual/sem duplicação,criação e Saída válidas,Saída>=criação e Saída<=referência do snapshot. Não consulta snapshots futuros. Saída é critério de elegibilidade do registro concluído,não data inferida do campo textual Fechamento. A referência global da base histórica é posterior ao cenário Feira:trata-se de uma análise retrospectiva filtrada pelas datas registradas,não de prova de disponibilidade da informação em tempo real naquele dia.
+
+Correspondência exata (texto com trim) de Problema,Componente Principal e Tipo de Unidade. Prioriza os compatíveis do mesmo Cliente/Unidade;se inexistentes,usa equipamentos semelhantes e declara esse escopo. **Os identificadores de unidade da Feira não coincidem com os do histórico atual**;as evidências reais são de equipamentos semelhantes,nunca apresentadas como recorrência comprovada do equipamento atual. Sem agrupamento por palavras vagas,causalidade ou pareamento inventado.
+
+N=concluídos compatíveis antes do corte;conhecidos=Fechamento preenchido;nulos=N−conhecidos;n=ocorrências da solução selecionada. Uma hipótese só aparece se o mesmo texto de Fechamento tem ao menos2 registros e lidera sem empate. É uma regra conservadora de apresentação,sem alterar criticidade/política operacional. Caso único,empate,campos de correspondência ausentes ou falta de solução mantêm uma ação operacional fundamentada. Nulos permanecem no denominador. Contagem histórica não é probabilidade de sucesso. Solução textual é citada literalmente,como hipótese para validar no diagnóstico.
+
+Exemplo real emT03:CH-20260908-018/Cabine desnivelada→14 de14 casos compatíveis anteriores em equipamentos semelhantes:“Sensor ajustado/substituído”. CH-20260908-013/Movimento irregular→11 de11:“Parâmetros do inversor corrigidos”. Não são valores criados para o layout. Origem/IDs/datas/fechamentos podem ser consultados no detalhe.
+
+### Experiência
+
+Supervisor:aviso mantém ID/problema/urgência curta,possível solução histórica ou uma ação,Ver detalhes/Fechar. Laranja mostra prazo somente se comprovável;Vermelho por SLA mostra percentual excedido;passageiro preso destaca atendimento prioritário e ação imediata,com histórico apenas no detalhe. Retirados percentuais secundários e “impedimento não identificado” do primeiro aviso para reduzir ruído. Não se prometem resgate,despacho,peças ou técnico disponível.
+
+Novo `HistoryEvidence.jsx` é compartilhado pelos detalhes do Supervisor e Feira:resumo,limite de inferência e seção recolhida com população/nulos/período/corte/critério,casos e fonte/hash. Modo Feira reutiliza a mesma hipótese nos cartões “Alertas e apoio à decisão”;emergências mantêm a ação prioritária. Não altera a navegação da tabela ou cria outro fluxo de comandos.
+
+Fluxo original preservado:ACK antes do aviso,pausa global,Ver detalhes→completo→retorno ao resumo com mesmo lock,Fechar mantém pausa. Tema automático390×844/768×1024,mesmo motorSSE/POST/T00–T11.
+
+### Homologação e evidências
+
+Capturas reais:[Laranja](evidencias/supervisor-historico-alerta-laranja-light-390x844.png),[Vermelho por SLA](evidencias/supervisor-historico-alerta-vermelho-light-390x844.png),[emergência](evidencias/supervisor-historico-impacto-light.png),[Dark](evidencias/supervisor-historico-alerta-laranja-dark-390x844.png),[notebook](evidencias/supervisor-historico-notebook-historico.png),[fundamentação](evidencias/supervisor-historico-historico-fundamentacao.png). Prefixo supervisor-historico inclui cinco passos do fluxo e tablet.32 testes específicos aprovados=8 novos de histórico+15Supervisor+9temas,sem dupla contagem no total final. Primeiro ensaio ajustou asserção para texto convertido em maiúsculas pelo CSS;nenhuma regra de produto alterada por esse ajuste.
+
+Instância5192 preservada:PID202318,sessãob9b0f9c4. Tentativa de atualização sem reinício foi conferida por HTTP:servidor conserva index em memória na inicialização,portanto não entregou a nova UI. Índice anterior restaurado com backup;assets antigos preservados. Evidência da tentativa mantida e marcada como não ativada. Nenhum serviço anterior reiniciado nem sessão/cookie invalidado.
+
+**Homologação atual:5194**,PID261174,sessão2b5fa4f8,build `/tmp/orquestra-historico/dist`. Supervisor:http://192.168.0.3:5194/OrquestraNEXT/?modo=supervisor-feira;notebook:http://192.168.0.3:5194/OrquestraNEXT/?modo=feira. Novo pareamento em perfil anônimo/separado para não substituir cookies de outras portas. Códigos efêmeros em arquivo privado indicado por `/tmp/orquestra-historico/service.json`,não registrados em docs/logs/URLs. Ensaios/capturas usam fotografias reais com serviço de teste e tempo controlado;ensaio real da nova instância registrado nos resultados finais. Homologação física do usuário pendente. Expiração de30min para novos pareamentos e QRCode ainda não alterados nesta entrega.
+
+
+### Resultado final da revisão histórica
+
+**472 testes distintos aprovados nesta execução:455 Node/browser+17 Python (9+8),zero falhas/skip/cancelamentos.**8 novos testes de histórico cobrem N/nulos,imutabilidade,futuros/ativos/datas/duplicações/ID próprio,mesmo equipamento vs semelhantes,compatibilidade,caso único/empates/sem fechamento,referência inválida e12 estados reais.32 casos específicos também repetidos,sem dupla contagem. [Regressão](evidencias/supervisor-historico-regression.tap),[foco](evidencias/supervisor-historico-focused-final.tap),[build](evidencias/supervisor-historico-build.txt),[check original](evidencias/supervisor-historico-import-original.txt),[check estendido](evidencias/supervisor-historico-import-extended.txt). Build e dois --check aprovados;aviso de bundle>500kB mantido.100 ciclos UI,20 sincronizados,T00–T11,reconexão,pausa/ACK/retorno,tablet,legado/dez cenas preservados. [Contraste](evidencias/supervisor-historico-contrast.json):656 amostras de texto,mínimo≈4.63:1,não auditoria integral.
+
+Serviço5194 confirmado porHTTP200 e entry asset idêntico ao build validado. Dois clientes reais na LAN avançaramT00→T03/10:15,27registros/9alertas;resumo com hipótese,completo com evidência,retorno e fechamento mantiveram pausa. Um open-detail/um close-detail,locks0,zero errosJS. [Estado](evidencias/supervisor-historico-live-state.json),[artefato servido](evidencias/supervisor-historico-served-build.json). Deixado T03pausado1×;homologação física do usuário pendente. Instâncias anteriores preservadas.
+
+[Preservação](evidencias/supervisor-historico-preservation.txt):124 arquivos versionados de originais/dados/importadores/serviço/snapshots idênticos ao HEAD53c6554. Modificados7 arquivos de fonte (2 novos),3 testes (1 novo),4 documentos existentes e novas evidências. Sem alteração de datasets/arquitetura de sincronização/criticidade/EXT/relógio. Staging vazio;sem novo commit,push,merge ou deploy.
+
+Reprodução: `node-do-runtime node_modules/vite/bin/vite.js build --outDir /tmp/orquestra-historico/dist`; `CHOKIDAR_USEPOLLING=true ORQUESTRA_TEST_DIST=/tmp/orquestra-historico/dist node-do-runtime --test --test-concurrency=4 --test-reporter=tap tests/*.test.mjs`,com ORQUESTRA_*_EVIDENCE em diretórios próprios. Python existente com -B nos dois tests/importacao-*.test.py e scripts/import_orquestra.py/import_feira_estendida.py --check. Sem dependências novas.
+
+
+Registro local autorizado pelo usuário para a revisão histórica: `feat: adiciona apoio historico aos alertas da feira`,base53c6554. Inclui implementação,testes,documentação e evidências existentes;sem push/merge/deploy. Última validação:472 testes aprovados,build/dois --check,sem alteração funcional posterior. Pendência confirmada:aba Chamados mantém ficha direta;resumo acessível pela aba Alertas. Uniformização da entrada e QRCode/acesso contínuo não implementados neste registro. SHA do próprio commit consultável com `git log -1 --format=%H`.

@@ -4,11 +4,12 @@
 
 ## A. Identificação e Git
 
-- Atualização: **19/10/2026**, America/Sao_Paulo. US14.13/US15: avisos compactos conforme imagens implementados com Ver detalhes/Fechar e fluxo preservado.464 testes/build/dois importadores reexecutados e aprovados. Homologação desta revisão5192;serviços anteriores preservados. Registro local autorizado pelo usuário nesta sessão; homologação física e publicação pendentes.
-- Raiz: `/home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT`. O diretório pai é outro contexto Git.
-- Branch: **feature/modo-feira**. Base anterior ao registro: **240253d357560c5674e99bfccd7816632b388f29**. Esta revisão integra o commit `feat: implementa modo feira sincronizado e supervisor C9.2`; obtenha seu SHA com `git log -1 --format=%H`. Sem criação/troca de branch.
-- Inventário anterior ao commit:17 rastreados modificados e321 não rastreados, incluindo código, testes, planilha estendida existente, documentação e evidências. Trabalho preservado e incluído no registro local após revisão; nenhum descarte ou mudança de branch. Códigos efêmeros de pareamento continuam fora do repositório.
-- C9–C9.2, evolução visual e nova apresentação: **registro local autorizado neste commit, sem publicação**. O pedido atual autoriza este commit; não autoriza merge, push ou deploy. Homologações visuais pendentes continuam pendentes. Não reset/clean/stash/descartar/trocar branches.
+- Atualização: **19/10/2026**, America/Sao_Paulo. US14.13/US15:novo apoio histórico implementado localmente nos alertas Supervisor e cartões/detalhes Feira;472 testes/build/dois --check aprovados. Homologação visual/física pendente;nova instância5194;anteriores preservadas.
+- Raiz: `/home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT`.
+- Branch **feature/modo-feira**. Base anterior ao registro histórico: **53c65547ca519f68a07a01d69ce7f2e388697c0d**,já enviada a origin/feature/modo-feira. Esta revisão integra o commit local `feat: adiciona apoio historico aos alertas da feira`;obtenha seu SHA com `git log -1 --format=%H`. Sem push deste registro;main/next-evolucao intactas.
+- Revisão histórica registrada localmente por autorização explícita do usuário: UI/modelo/testes/documentação/evidências revisados e preservados. Sem reset/clean/stash/troca de branch.
+- Pedido atual autoriza somente o commit desta revisão existente. Sem merge/push/deploy ou alteração de autenticação/datasets. Homologação pendente não é presumida pelo registro.
+
 - Referência homologada C8: commit funcional8134059; documentação240253d enviada à feature/next-evolucao. Origin configurado HTTPS SinfoniaTech/OrquestraNEXT. Sem nova consulta remota nesta entrega; não inferir sincronização atual pelo cache local.
 - Última publicação comprovada: Pages gh-pages547db4d8124160521ae9dd1aa00f5a1157929bac; maina350cd0. origin/gh-pages local429d377 é referência antiga. [Publicação C8](produto/publicacao-controlada-c8.md).
 
@@ -16,7 +17,7 @@
 
 Demonstrador acadêmico FIAP Challenge/NEXT; dados sintéticos e indicadores explicáveis. Nove páginas BackOffice funcionais até C8; três pendentes. **A nova apresentação é a entrada padrão pretendida. A apresentação antiga continua preservada em ?modo=legado.** Implementado localmente, sem publicação desta mudança.
 
-**Escopo vigente:** avisos compactos do Supervisor Feira conforme as duas imagens do usuário: cabeçalho colorido com ID/urgência, problema, uma recomendação e impedimento, rodapé `Ver detalhes`/`Fechar`, sem barra de progresso/badges/seções extensas no resumo. Esta composição substitui o resumo anterior; lista permanece como implementada na revisão oficial. Fluxo/ACK/pausa e Light/Dark preservados. [Relatório atual](produto/entrega-c92-feira-estendida.md#avisos-compactos-conforme-imagens-do-usuário--19102026). Homologação em5192 pendente. Sem novas alterações funcionais: registro do trabalho existente autorizado pelo usuário;sem merge/push/deploy.
+**Escopo vigente:**apoio histórico nos alertas Supervisor e cartões do Modo Feira. Possível solução citada com n/N de concluídos compatíveis anteriores à referência;fallback fundamentado quando insuficiente. Emergências mantêm ação prioritária no aviso,histórico só no detalhe. Mesmo equipamento só com vínculo cliente/unidade;dados atuais só permitem similares,declarados. Sem alegar diagnóstico/causa/probabilidade. [Relatório atual](produto/entrega-c92-feira-estendida.md#histórico-como-apoio-ao-diagnóstico--19102026). Autenticação/QRCode/acesso contínuo ainda não implementados.
 
 **Resultado funcional:** aba Alertas espera ACK para abrir aviso compacto;`Ver detalhes` abre a ficha completa em transição local. Voltar/Escape retorna ao resumo com mesmo lock;`Fechar`/X/Escape libera lock e mantém pausa. Chamados mantém abertura direta da ficha. Texto do cabeçalho distingue prazo de emergência por impacto,sem inventar SLA/impedimento. Temas automáticos e fontes locais preservados. [Contrato atual](tecnica/pontos-integracao-supervisor.md#aviso-compacto--orientação-vigente-de-19102026).
 
@@ -60,7 +61,9 @@ Testes não homologam nem publicam. [Backlog oficial](produto/backlog.md), [sequ
 
 ## F. Validação e evidências
 
-**Avisos compactos atuais:**464 distintos aprovados nesta execução=447 Node/browser+17 Python,zero falhas/skip/cancelamentos;build/dois --check aprovados.15 casos específicos também repetidos,sem dupla contagem. Botões `Ver detalhes`/`Fechar`,um resumo sem barra/badges,capturas Light/Dark390×844 e768×1024;638 amostras de texto,mínimo≈4,63:1.197/199 fontes/serviço/dados preservados;apenas Parts/CSS alterados nesta revisão. Serviço5192 com dois clientesT03pausado1×,locks0,1open/1close,zero erros JS. [Resultados/telas atuais](produto/entrega-c92-feira-estendida.md#avisos-compactos-conforme-imagens-do-usuário--19102026). Abaixo,marcos anteriores históricos.
+**Revisão histórica atual:**472 distintos aprovados=455 Node/browser+17 Python,zero falhas/skip/cancelamentos;8 novos testes de histórico,build e dois --check aprovados.32 casos específicos também reexecutados,sem dupla contagem. Capturas Laranja/Vermelho/emergência Light/Dark390×844/tablet768×1024 e rastreabilidade no detalhe;656 amostras de texto,mínimo≈4.63:1.124 arquivos protegidos iguais ao HEAD. Serviço5194 com dois clientesLAN:T03pausado1×,locks0,1open/1close,zero errosJS;entry asset idêntico ao build validado. [Relatório/provas atuais](produto/entrega-c92-feira-estendida.md#histórico-como-apoio-ao-diagnóstico--19102026). Homologação pendente;marcos abaixo históricos.
+
+**Marco anterior — avisos compactos:**464 distintos aprovados nesta execução=447 Node/browser+17 Python,zero falhas/skip/cancelamentos;build/dois --check aprovados.15 casos específicos também repetidos,sem dupla contagem. Botões `Ver detalhes`/`Fechar`,um resumo sem barra/badges,capturas Light/Dark390×844 e768×1024;638 amostras de texto,mínimo≈4,63:1.197/199 fontes/serviço/dados preservados;apenas Parts/CSS alterados nesta revisão. Serviço5192 com dois clientesT03pausado1×,locks0,1open/1close,zero erros JS. [Resultados/telas atuais](produto/entrega-c92-feira-estendida.md#avisos-compactos-conforme-imagens-do-usuário--19102026). Abaixo,marcos anteriores históricos.
 
 **Marco anterior — revisão visual oficial:**464 testes reexecutados=447 Node/browser+17 Python,zero falhas/skip/cancelamentos;build e dois --check aprovados. Cards compactos conforme Cena3,comparações reais cenas3/7/10 em390×844 Light/Dark;624 amostras de texto,mínimo≈4,63:1. URLs públicas também renderizadas. Serviços anteriores preservados;5190 testado com dois clientes atéT03pausado1×,locks0,um open/um close,zero erros JS. [Relatório/provas atuais](produto/entrega-c92-feira-estendida.md#implementação-visual-oficial--19102026). Marco anterior abaixo permanece histórico.
 
@@ -82,11 +85,11 @@ Marcos anteriores450/439/417/400 e diagnósticos permanecem nos relatórios C9.2
 
 ## H. Próxima ação
 
-Aguardar homologação visual do fluxo lista→resumo→completo→resumo→lista e da identidade das cenas3/7/10 em celular/tablet,Light/Dark. Commit local autorizado para preservar o trabalho existente; aguardar orientação para merge/push/publicação e novas histórias. Critério de decisão em poucos segundos e ensaio físico conjunto/LAN sem WAN continuam pendentes. Nova apresentação US06 também aguarda aceite.
+Homologar os novos avisos e o apoio histórico no Supervisor/Feira,Light/Dark,mobile/tablet. Abrir porta5194 e parear em perfil separado;instâncias e pareamentos anteriores preservados. Conferir hipótese/ocorrências/fonte no detalhe,urgência por SLA e emergência,pausa/retorno. Commit desta revisão autorizado;sem merge/push/deploy ou outra história sem orientação. QRCode e remoção da expiração para novos acessos seguem discutidos,não implementados.
 
 Prompt compacto:
 
-> Retome ORQUESTRA em `/home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT`. Leia AGENTS.md/continuidade,confira branch/HEAD/Git e preserve todo trabalho local. Correção dos alertas conforme cenas3/7/10:fluxo lista/resumo/completo/retorno,Light/Dark e pausa existentes;consulte o relatório C9.2 e contrato vigente. Homologação desta revisão em5192;instâncias5180/5182/5184/5186 preservadas. Validação final464 testes/build/dois importadores aprovada;confira IP/processos/códigos privados. Confira o commit local autorizado;aguarde minha homologação e orientação para merge/push/deploy,datasets,motor,SSE/POST,legado ou nova história.
+> Retome ORQUESTRA na raiz habitual. Leia AGENTS.md/continuidade e confira branchfeature/modo-feira,HEAD53c6554/Git. Apoio histórico nos alertas Supervisor e Feira registrado no último commit local;consulte relatório C9.2/contrato. Preservar fontes,datasets,motor,SSE/POST e originais. Homologação na nova instância5194;parear em perfil separado. Histórico de similares é hipótese rastreável,não diagnóstico. Aguarde homologação;sem novo commit/push/deploy ou autenticação/QRCode fora do escopo.
 
 ## I. Ambiente e comandos
 
@@ -94,7 +97,8 @@ Conferência19/10:Wi-Fi192.168.0.3. Não presumir IP/processos ativos na próxim
 
 | Porta | Artefato/processo verificado | Situação |
 | --- | --- | --- |
-| 5192 | `/tmp/orquestra-alerta-compacto/dist`,PID202318,sessãob9b0f9c4 | **Avisos compactos atuais**. Dois clientesT00→T03,pausado1×,locks0,1open/1close,zero erros JS |
+| 5194 | `/tmp/orquestra-historico/dist`,PID261174,sessão2b5fa4f8 | **Nova revisão com apoio histórico**;ensaios/capturas no relatório atual |
+| 5192 | `/tmp/orquestra-alerta-compacto/dist`,PID202318,sessãob9b0f9c4 | Revisão compacta anterior,preservada;index em memória impede atualização sem reinício. Tentativa sem efeito documentada;novo build em5194 |
 | 5190 | `/tmp/orquestra-visual-oficial/dist`,PID189940,sessãoe1584137 | Revisão visual anterior,preservada. Dois clientesT00→T03/10:15,27 registros/9 alertas;1 open-detail/1 close-detail,pausado1×,locks0,zero erros JS |
 | 5188 | `/tmp/orquestra-alertas-cenas/final-dist`,PID173047,sessãoe6a673d5 | Revisão anterior conforme cenas3/7/10,preservada. Dois clientesT00→T03/10:15,27 registros/9 alertas;fluxo completo com1 open-detail/1 close-detail,pausado1×,locks0,zero erros JS |
 | 5186 | `/tmp/orquestra-temas/dist`,PID133261,sessão93df6322 | **Revisão anterior Light/Dark,preservada;conexão ativa observada**. Dois clientes percorreram tempo real atéT03/10:15,27 registros/9 alertas;troca de tema/detalhe/pausa/fechar sem retomar,zero erros JS. Na retomada:mesma sessão,T03 pausado1×,sem controlador/locks;HTTP200 nas páginas/API sem pareamento401 |
@@ -102,23 +106,27 @@ Conferência19/10:Wi-Fi192.168.0.3. Não presumir IP/processos ativos na próxim
 | 5182 | `/tmp/orquestra-apresentacao/dist`,PID98140 | Preview da nova apresentação,ativo/preservado |
 | 5180 | `/tmp/orquestra-supervisor-fixed/dist`,PID85493 | Homologação Supervisor anterior,ativa/preservada |
 
-**Endereços atuais:** http://192.168.0.3:5192/OrquestraNEXT/?modo=feira (ADMIN/notebook) e http://192.168.0.3:5192/OrquestraNEXT/?modo=supervisor-feira (SUPERVISOR/mobile). Novos códigos em arquivo efêmero privado(dir0700/arquivo0600),fora do Git/logs/HTTP;metadados locais `/tmp/orquestra-alerta-compacto/service.json` indicam caminho/PID/sessão. Códigos permitem novo pareamento por30min desde início;abas pareadas continuam enquanto a instância existir. Não copiar seus valores ao chat público/URLs/documentos. Código expirado exige reinício deliberado da instância correta,após conferir uso/avisar,sem reduzir autenticação. Launcher temporário desacoplado no mesmo diretório;log sanitizado,sem códigos.
+**Endereços atuais:** http://192.168.0.3:5194/OrquestraNEXT/?modo=feira (ADMIN/notebook) e http://192.168.0.3:5194/OrquestraNEXT/?modo=supervisor-feira (SUPERVISOR/mobile). Novos códigos em arquivo efêmero privado(dir0700/arquivo0600),fora do Git/logs/HTTP;metadados locais `/tmp/orquestra-historico/service.json` indicam caminho/PID/sessão. Códigos permitem novo pareamento por30min desde início;abas pareadas continuam enquanto a instância existir. Não copiar seus valores ao chat público/URLs/documentos. Código expirado exige reinício deliberado da instância correta,após conferir uso/avisar,sem reduzir autenticação. Launcher temporário desacoplado no mesmo diretório;log sanitizado,sem códigos.
 
 Notebook deve parear ADMIN,Assumir controle,Retomar. SUPERVISOR no notebook é somente leitura. Abrir detalhe exige ACK/pausa global;fechar não retoma. Desfocar/ocultar notebook pausa;retorno exige retomada explícita. Dev5173/5175 e Pages não substituem serviço autoritativo local. Standalone é independente. Público C8 previamente comprovado:https://sinfoniatech.github.io/OrquestraNEXT/;nenhum deploy destas revisões.
 
-**Recuperação após reiniciar Ubuntu:** não há autostart;/tmp é efêmero. Conferir IP com `ip -4 -brief address` e listener com `ss -ltnp '( sport = :5192 )'`;não encerrar outro processo. Se porta livre e inicialização autorizada,executar no terminal privado do operador(ajustar IP):
+**Recuperação após reiniciar Ubuntu:** não há autostart;/tmp é efêmero. Conferir IP com `ip -4 -brief address` e listener com `ss -ltnp '( sport = :5194 )'`;não encerrar outro processo. Se porta livre e inicialização autorizada,executar no terminal privado do operador(ajustar IP):
 
 ```bash
 cd /home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT
-npm run build -- --outDir /tmp/orquestra-alerta-compacto/dist
-npm run feira:local -- --host 192.168.0.3 --port 5192 --dist /tmp/orquestra-alerta-compacto/dist
+npm run build -- --outDir /tmp/orquestra-historico/dist
+npm run feira:local -- --host 192.168.0.3 --port 5194 --dist /tmp/orquestra-historico/dist
 ```
 
 CLI mostra novos códigos só no terminal privado;não redirecionar sua saída a logs públicos. Deixar terminal aberto;Ctrl+C encerra esse processo. Instância atualmente desacoplada com nohup/setsid;isso não configura inicialização automática.
 
 **Runtime existente:** Node `/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node`;Playwright no node_modules desse runtime;Chrome/usr/bin/google-chrome. Python `/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`,openpyxl existente. Sem instalação.
 
-**Validação reproduzível:** build no diretório acima;`CHOKIDAR_USEPOLLING=true ORQUESTRA_TEST_DIST=/tmp/orquestra-alerta-compacto/dist node-do-runtime --test --test-concurrency=4 --test-reporter=tap tests/*.test.mjs`,com ORQUESTRA_*_EVIDENCE em diretórios temporários próprios,ORQUESTRA_THEME_EVIDENCE para os temas. Python -B nos dois tests/importacao-*.test.py e nos scripts/import_orquestra.py/import_feira_estendida.py com --check. [Comandos/resultados detalhados](produto/entrega-c92-feira-estendida.md#alertas-simplificados-e-temas-lightdark--19102026). Portas/Chrome podem exigir execução real fora do sandbox;não confundir agrupamento de arquivos com contagem de casos,nem executar suítes de portas fixas em paralelo. Evidências duráveis em docs/produto/evidencias;/tmp não é backup.
+**Validação reproduzível:** build no diretório acima;`CHOKIDAR_USEPOLLING=true ORQUESTRA_TEST_DIST=/tmp/orquestra-historico/dist node-do-runtime --test --test-concurrency=4 --test-reporter=tap tests/*.test.mjs`,com ORQUESTRA_*_EVIDENCE em diretórios temporários próprios,ORQUESTRA_THEME_EVIDENCE para os temas. Python -B nos dois tests/importacao-*.test.py e nos scripts/import_orquestra.py/import_feira_estendida.py com --check. [Comandos/resultados detalhados](produto/entrega-c92-feira-estendida.md#alertas-simplificados-e-temas-lightdark--19102026). Portas/Chrome podem exigir execução real fora do sandbox;não confundir agrupamento de arquivos com contagem de casos,nem executar suítes de portas fixas em paralelo. Evidências duráveis em docs/produto/evidencias;/tmp não é backup.
 
 
-**Limites operacionais adicionais verificados:** legado depende de fonte externa bloqueada pela CSP do serviço conectado;mesmo erro reproduzido na instância anterior5186. Originais preservados e regressão no preview estático;não corrigido fora do escopo. Referências capturadas no preview com fallback tipográfico local. Cookies de pareamento têm mesmo nome/path no IP,portas não os isolam:para homologar5192 preservando outras sessões,use janela anônima/perfil separado. [Detalhes/provas](produto/entrega-c92-feira-estendida.md#alertas-das-cenas-3-7-e-10--19102026).
+**Limites operacionais adicionais verificados:** legado depende de fonte externa bloqueada pela CSP do serviço conectado;mesmo erro reproduzido na instância anterior5186. Originais preservados e regressão no preview estático;não corrigido fora do escopo. Referências capturadas no preview com fallback tipográfico local. Cookies de pareamento têm mesmo nome/path no IP,portas não os isolam:para homologar5194 preservando outras sessões,use janela anônima/perfil separado. [Detalhes/provas](produto/entrega-c92-feira-estendida.md#alertas-das-cenas-3-7-e-10--19102026).
+
+**Pareamento nesta revisão:**5194 dispõe de novos códigos efêmeros privados. Na instância anterior5192 o arquivo já expirou,sem invalidar cookies existentes. Tentativa de atualização sem reinício não mudou a UI antiga;índice restaurado e evidência marcada. Novos acessos continuam sujeitos a30min;QRCode/acesso contínuo seguem pendentes.
+
+**Pendência de navegação confirmada com o usuário:**Chamados ainda abre diretamente a ficha completa;Alertas abre o aviso resumido. Uniformizar Laranja/Vermelho nas duas abas foi discutido,mas não implementado neste commit. QRCode/acesso contínuo também permanecem pendentes.

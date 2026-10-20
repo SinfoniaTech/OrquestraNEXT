@@ -1,0 +1,52 @@
+## feature/modo-feira...origin/feature/modo-feira
+ M docs/CONTINUIDADE_CODEX.md
+ M docs/produto/backlog.md
+ M docs/produto/entrega-c92-feira-estendida.md
+ M docs/tecnica/pontos-integracao-supervisor.md
+ M src/feira/FeiraDetail.jsx
+ M src/feira/FeiraPanel.jsx
+ M src/feira/supervisor/Supervisor.module.css
+ M src/feira/supervisor/SupervisorDetail.jsx
+ M src/feira/supervisor/SupervisorParts.jsx
+ M tests/feira-supervisor-browser.test.mjs
+ M tests/feira-supervisor-theme-browser.test.mjs
+?? docs/produto/evidencias/supervisor-historico-alerta-laranja-dark-390x844.png
+?? docs/produto/evidencias/supervisor-historico-alerta-laranja-light-390x844.png
+?? docs/produto/evidencias/supervisor-historico-alerta-vermelho-dark-390x844.png
+?? docs/produto/evidencias/supervisor-historico-alerta-vermelho-dark-768x1024.png
+?? docs/produto/evidencias/supervisor-historico-alerta-vermelho-light-390x844.png
+?? docs/produto/evidencias/supervisor-historico-alerta-vermelho-light-768x1024.png
+?? docs/produto/evidencias/supervisor-historico-build.txt
+?? docs/produto/evidencias/supervisor-historico-captures.txt
+?? docs/produto/evidencias/supervisor-historico-chamados-dark-390x844.png
+?? docs/produto/evidencias/supervisor-historico-chamados-light-390x844.png
+?? docs/produto/evidencias/supervisor-historico-contrast.json
+?? docs/produto/evidencias/supervisor-historico-fluxo-1-lista.png
+?? docs/produto/evidencias/supervisor-historico-fluxo-2-resumo.png
+?? docs/produto/evidencias/supervisor-historico-fluxo-3-completo.png
+?? docs/produto/evidencias/supervisor-historico-fluxo-4-retorno-resumo.png
+?? docs/produto/evidencias/supervisor-historico-fluxo-5-retorno-lista.png
+?? docs/produto/evidencias/supervisor-historico-fluxo.json
+?? docs/produto/evidencias/supervisor-historico-focused-final.tap
+?? docs/produto/evidencias/supervisor-historico-historico-fundamentacao.png
+?? docs/produto/evidencias/supervisor-historico-impacto-dark.png
+?? docs/produto/evidencias/supervisor-historico-impacto-light.png
+?? docs/produto/evidencias/supervisor-historico-import-extended.txt
+?? docs/produto/evidencias/supervisor-historico-import-original.txt
+?? docs/produto/evidencias/supervisor-historico-lista-dark-390x844.png
+?? docs/produto/evidencias/supervisor-historico-lista-light-390x844.png
+?? docs/produto/evidencias/supervisor-historico-live-state.json
+?? docs/produto/evidencias/supervisor-historico-modal-laranja-dark.png
+?? docs/produto/evidencias/supervisor-historico-modal-laranja-light.png
+?? docs/produto/evidencias/supervisor-historico-modal-vermelho-dark.png
+?? docs/produto/evidencias/supervisor-historico-modal-vermelho-light.png
+?? docs/produto/evidencias/supervisor-historico-notebook-historico.png
+?? docs/produto/evidencias/supervisor-historico-preservation.txt
+?? docs/produto/evidencias/supervisor-historico-python-extended.txt
+?? docs/produto/evidencias/supervisor-historico-python-original.txt
+?? docs/produto/evidencias/supervisor-historico-regression.tap
+?? docs/produto/evidencias/supervisor-historico-served-build.json
+?? docs/produto/evidencias/supervisor-historico-service-update.json
+?? src/feira/HistoryEvidence.jsx
+?? src/feira/historyAdvice.js
+?? tests/feira-history.test.mjs

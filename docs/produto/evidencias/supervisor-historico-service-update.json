@@ -1,0 +1,10 @@
+{
+  "origin": "http://192.168.0.3:5192",
+  "pid": 202318,
+  "sessionId": "b9b0f9c4-a6af-4526-9827-1dfecd2768e3",
+  "dist": "/tmp/orquestra-alerta-compacto/dist",
+  "build": "/tmp/orquestra-historico/dist",
+  "method": "assets adicionados; index substituído atomicamente; sem reinício",
+  "outcome": "NÃO ATIVADA: servidor conserva index em memória; índice anterior restaurado e instância preservada. Usar serviço separado5194 para a revisão.",
+  "activeHistoricalUI": false
+}

@@ -363,3 +363,10 @@ Resumo reutiliza a identidade dos avisos Laranja/Vermelho, com uma recomendaçã
 ### Aviso compacto — orientação vigente de 19/10/2026
 
 As duas imagens fornecidas pelo usuário passam a orientar o resumo: cabeçalho colorido com ID/urgência,corpo curto com uma recomendação e impedimento,rodapé `Ver detalhes`/`Fechar`. `Ver detalhes` substitui o rótulo `Ver chamado completo` e mantém a mesma transição local ao detalhe;voltar mantém o lock,fechar mantém pausa. Sem barra de progresso ou cadastro no primeiro aviso. Percentual/prazo/emergência continuam fundamentados pelo helper aprovado;nenhuma regra de dados alterada. Light/Dark e acessibilidade mantidos. [Telas/evidências atuais](../produto/entrega-c92-feira-estendida.md#avisos-compactos-conforme-imagens-do-usuário--19102026).
+
+
+### Apoio histórico — orientação vigente de 19/10/2026
+
+Resumo pode apresentar uma hipótese de solução a partir de Fechamento em HIST_60_DIAS,ou a ação operacional existente. `historyAdvice.js` aplica correspondência exata de problema/componente/tipo,prioriza cliente/unidade quando existentes e rotula fallback como equipamentos semelhantes. N=compatíveis concluídos com datas válidas até a referência;n=mesmo fechamento,ao menos2 e líder sem empate. IDs próprios/duplicados,futuros e ativos não entram. Nulos permanecem no denominador. Sem correspondência/suporte suficiente mantém ação,sem solução inventada. Dados históricos são retrospectivos;Saída não vira timestamp fictício de Fechamento.
+
+Emergência mantém ação prioritária no primeiro aviso,histórico apenas no detalhe. Demais alertas mostram contagem/solução citada e orientação de validar no diagnóstico. Removidos detalhes secundários para manter concisão. `HistoryEvidence` compartilhado nos detalhes Supervisor/Feira expõe casos,período,N/nulos,corte,critério e fonte. Cartões de apoio do notebook reutilizam a mesma função. Nenhuma mudança em SSE/POST,ACK,lock,pausa,BASE,prioridade ou datasets. [Regras/evidências](../produto/entrega-c92-feira-estendida.md#histórico-como-apoio-ao-diagnóstico--19102026). Não é previsão de sucesso nem diagnóstico automático.
