@@ -314,3 +314,13 @@ Validação final do apoio histórico:472 distintos aprovados (455+17),build/doi
 
 
 Registro local autorizado pelo usuário para a revisão histórica: `feat: adiciona apoio historico aos alertas da feira`,base53c6554. Inclui implementação,testes,documentação e evidências existentes;sem push/merge/deploy. Última validação:472 testes aprovados,build/dois --check,sem alteração funcional posterior. Pendência confirmada:aba Chamados mantém ficha direta;resumo acessível pela aba Alertas. Uniformização da entrada e QRCode/acesso contínuo não implementados neste registro. SHA do próprio commit consultável com `git log -1 --format=%H`.
+
+
+### US14.13/US15 — Foco em Alertas e mudanças visuais, 20/10/2026
+
+Usuário avaliou positivamente a janela de alerta e autorizou foco inicial em Alertas e destaque por mudança. Implementado localmente:2 pulsos suaves na nova cor BASE,status destacado independentemente,entrada de novos e saída visual breve de concluídos sem mantê-los ativos. Sem replay por heartbeat/abas/entrada tardia,reduced-motion preservado. Sem popup/troca forçada de aba;pausa e histórico preservados.8 novos testes específicos aprovados;regressão final no [relatório](entrega-c92-feira-estendida.md#foco-em-alertas-e-pulsos-por-mudança--20102026). Homologação desta revisão pendente em5194. Sem commit/push/deploy. Acesso contínuo/QRCode e resumo também pela aba Chamados seguem pendentes.
+
+Validação final de foco/pulsos:480 distintos (463+17),build/dois --check. Integral462/463;teste antigo de navegação pós-refresh adaptado,arquivo reexecutado13/13 aprovado.8 novos casos específicos aprovados. T03pausado1× em5194,dois clientesLAN,pulsos e pausa confirmados;sem novo commit/push/deploy.
+
+
+Registro20/10 autorizado pelo usuário:commit `feat: destaca mudancas e prioriza alertas do supervisor` e envio à origin/feature/modo-feira,base64703c6. Inclui somente melhoria de foco/pulsos,testes,documentação e evidências existentes. Validação anterior:480 casos distintos após reexecução da suíte de navegação,build/dois --check. Sem nova mudança funcional nesta etapa. Sem merge ou deploy;homologação física permanece pendente. SHA do registro consultável por `git log -1 --format=%H`.

@@ -1,0 +1,6 @@
+480 testes distintos validados:463 Node/browser+17 Python.
+Execução integral:462/463 aprovados;um teste antigo procurava filtro Chamados após refresh sem selecionar a aba.
+Teste corrigido para selecionar Chamados explicitamente;arquivo completo reexecutado:13/13 aprovados.
+Nenhuma mudança funcional após build/regressão,apenas navegação do teste e documentação.
+8 casos novos de movimentos aprovados também isoladamente.
+Build/dois --check aprovados;656 amostras de texto,contraste mínimo4.6323:1.

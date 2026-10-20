@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: C9.1 navegador: dois clientes reais conectam T0 pausado
+ok 1 - C9.1 navegador: dois clientes reais conectam T0 pausado
+  ---
+  duration_ms: 2054.674837
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: notebook inicia e ambos avançam T1/T2 por uma autoridade
+ok 2 - C9.1 navegador: notebook inicia e ambos avançam T1/T2 por uma autoridade
+  ---
+  duration_ms: 255.136534
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: abrir detalhe mobile aguarda pausa global confirmada
+ok 3 - C9.1 navegador: abrir detalhe mobile aguarda pausa global confirmada
+  ---
+  duration_ms: 562.128947
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: refresh/entrada tardia recebem estado completo sem reset
+ok 4 - C9.1 navegador: refresh/entrada tardia recebem estado completo sem reset
+  ---
+  duration_ms: 842.73865
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: perda de rede congela e reconexão aplica estado atual
+ok 5 - C9.1 navegador: perda de rede congela e reconexão aplica estado atual
+  ---
+  duration_ms: 2607.819631
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: pausa por notebook em segundo plano e retorno sem retomada
+ok 6 - C9.1 navegador: pausa por notebook em segundo plano e retorno sem retomada
+  ---
+  duration_ms: 59.178755
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: 2× e reinício sincronizados
+ok 7 - C9.1 navegador: 2× e reinício sincronizados
+  ---
+  duration_ms: 89.604881
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: vinte loops sincronizados preservam fonte e contagens
+ok 8 - C9.1 navegador: vinte loops sincronizados preservam fonte e contagens
+  ---
+  duration_ms: 384.62391
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: mobile não monta engine nem controles administrativos
+ok 9 - C9.1 navegador: mobile não monta engine nem controles administrativos
+  ---
+  duration_ms: 7.224848
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: notebook/mobile/tablet sem overflow horizontal
+ok 10 - C9.1 navegador: notebook/mobile/tablet sem overflow horizontal
+  ---
+  duration_ms: 63.743464
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: fatos por ID e ausência de eventos futuros no mobile
+ok 11 - C9.1 navegador: fatos por ID e ausência de eventos futuros no mobile
+  ---
+  duration_ms: 150.807583
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: sessão do serviço reiniciada exige novo pareamento e T0 pausado
+ok 12 - C9.1 navegador: sessão do serviço reiniciada exige novo pareamento e T0 pausado
+  ---
+  duration_ms: 1357.114148
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: zero erros JavaScript
+ok 13 - C9.1 navegador: zero erros JavaScript
+  ---
+  duration_ms: 1.120357
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8914.390262

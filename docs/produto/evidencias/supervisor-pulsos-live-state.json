@@ -1,0 +1,21 @@
+{
+  "origin": "http://192.168.0.3:5194",
+  "sessionId": "619f37be-ebb9-4041-aa86-afd9772ae8d7",
+  "snapshot": "T03",
+  "status": "paused",
+  "speed": 1,
+  "total": 27,
+  "alerts": 9,
+  "locks": 0,
+  "initialTab": "alertas",
+  "pulses": {
+    "feira-criticality": 11,
+    "feira-status": 5,
+    "feira-new": 2,
+    "feira-concluded": 2,
+    "feira-move": 3
+  },
+  "openPosts": 1,
+  "closePosts": 1,
+  "jsErrors": 0
+}

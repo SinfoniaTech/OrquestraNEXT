@@ -1,0 +1,953 @@
+[
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-005",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-011",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-013",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-013",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-014",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-014",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-new",
+    "callId": "CH-20260908-019",
+    "tone": "orange",
+    "iterations": 1,
+    "duration": 500,
+    "frames": [
+      {
+        "opacity": 0.6
+      },
+      {
+        "opacity": 1
+      }
+    ]
+  },
+  {
+    "id": "feira-concluded",
+    "callId": "CH-20260908-005",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 1400,
+    "frames": [
+      {
+        "opacity": 0.95
+      },
+      {
+        "opacity": 0.95,
+        "offset": 0.7
+      },
+      {
+        "opacity": 0
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-013",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(141.578125px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-014",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(182.578125px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-014",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-019",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(182.578125px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-019",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-019",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-023",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-023",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-016",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-018",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-020",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-024",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-024",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-new",
+    "callId": "CH-20260908-025",
+    "tone": "orange",
+    "iterations": 1,
+    "duration": 500,
+    "frames": [
+      {
+        "opacity": 0.6
+      },
+      {
+        "opacity": 1
+      }
+    ]
+  },
+  {
+    "id": "feira-concluded",
+    "callId": "CH-20260908-011",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 1400,
+    "frames": [
+      {
+        "opacity": 0.95
+      },
+      {
+        "opacity": 0.95,
+        "offset": 0.7
+      },
+      {
+        "opacity": 0
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-019",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(262.15625px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-020",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(747.890625px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-020",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-023",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(161.578125px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-016",
+    "tone": "orange",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(202.578125px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-024",
+    "tone": "orange",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(506.734375px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-027",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-027",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-new",
+    "callId": "CH-20260908-030",
+    "tone": "orange",
+    "iterations": 1,
+    "duration": 500,
+    "frames": [
+      {
+        "opacity": 0.6
+      },
+      {
+        "opacity": 1
+      }
+    ]
+  },
+  {
+    "id": "feira-concluded",
+    "callId": "CH-20260908-013",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 1400,
+    "frames": [
+      {
+        "opacity": 0.95
+      },
+      {
+        "opacity": 0.95,
+        "offset": 0.7
+      },
+      {
+        "opacity": 0
+      }
+    ]
+  },
+  {
+    "id": "feira-concluded",
+    "callId": "CH-20260908-014",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 1400,
+    "frames": [
+      {
+        "opacity": 0.95
+      },
+      {
+        "opacity": 0.95,
+        "offset": 0.7
+      },
+      {
+        "opacity": 0
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-024",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(503.3125px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-024",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-027",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(482.3125px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-027",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-027",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-028",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-move",
+    "callId": "CH-20260908-030",
+    "tone": "orange",
+    "iterations": 1,
+    "duration": 450,
+    "frames": [
+      {
+        "transform": "translateY(320.734375px)"
+      },
+      {
+        "transform": "translateY(0)"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-030",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-new",
+    "callId": "CH-20260908-031",
+    "tone": "orange",
+    "iterations": 1,
+    "duration": 500,
+    "frames": [
+      {
+        "opacity": 0.6
+      },
+      {
+        "opacity": 1
+      }
+    ]
+  },
+  {
+    "id": "feira-concluded",
+    "callId": "CH-20260908-016",
+    "tone": "orange",
+    "iterations": 1,
+    "duration": 1400,
+    "frames": [
+      {
+        "opacity": 0.95
+      },
+      {
+        "opacity": 0.95,
+        "offset": 0.7
+      },
+      {
+        "opacity": 0
+      }
+    ]
+  },
+  {
+    "id": "feira-concluded",
+    "callId": "CH-20260908-019",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 1400,
+    "frames": [
+      {
+        "opacity": 0.95
+      },
+      {
+        "opacity": 0.95,
+        "offset": 0.7
+      },
+      {
+        "opacity": 0
+      }
+    ]
+  },
+  {
+    "id": "feira-concluded",
+    "callId": "CH-20260908-020",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 1400,
+    "frames": [
+      {
+        "opacity": 0.95
+      },
+      {
+        "opacity": 0.95,
+        "offset": 0.7
+      },
+      {
+        "opacity": 0
+      }
+    ]
+  },
+  {
+    "id": "feira-concluded",
+    "callId": "CH-20260908-023",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 1400,
+    "frames": [
+      {
+        "opacity": 0.95
+      },
+      {
+        "opacity": 0.95,
+        "offset": 0.7
+      },
+      {
+        "opacity": 0
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-005",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-011",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-013",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-013",
+    "tone": "red",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-criticality",
+    "callId": "CH-20260908-014",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 4px var(--motion-color)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-status",
+    "callId": "CH-20260908-014",
+    "tone": "orange",
+    "iterations": 2,
+    "duration": 700,
+    "frames": [
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      },
+      {
+        "boxShadow": "0 0 0 3px var(--focus)"
+      },
+      {
+        "boxShadow": "0 0 0 0 transparent"
+      }
+    ]
+  },
+  {
+    "id": "feira-new",
+    "callId": "CH-20260908-019",
+    "tone": "orange",
+    "iterations": 1,
+    "duration": 500,
+    "frames": [
+      {
+        "opacity": 0.6
+      },
+      {
+        "opacity": 1
+      }
+    ]
+  },
+  {
+    "id": "feira-concluded",
+    "callId": "CH-20260908-005",
+    "tone": "red",
+    "iterations": 1,
+    "duration": 1400,
+    "frames": [
+      {
+        "opacity": 0.95
+      },
+      {
+        "opacity": 0.95,
+        "offset": 0.7
+      },
+      {
+        "opacity": 0
+      }
+    ]
+  }
+]

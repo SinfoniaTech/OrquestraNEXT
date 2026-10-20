@@ -7,7 +7,7 @@ import {historyAdvice} from '../historyAdvice.js';
 import {alertPresentation} from './alertPresentation.js';
 export function FeiraPriority({value}) {
  const info = CRITICALITY[value];
- return <span className={`${styles.priority} ${styles[info?.tone]??''}`}><span aria-hidden="true">●</span> {info?.label??'Criticidade não informada'}</span>;
+ return <span data-call-priority className={`${styles.priority} ${styles[info?.tone]??''}`}><span aria-hidden="true">●</span> {info?.label??'Criticidade não informada'}</span>;
 }
 export function SupervisorCall({row,change,reference,onOpen,disabled,busy,alertEntry=false}) {
  const labels=changeLabels(change),alert=alertPresentation(row,reference);
@@ -16,12 +16,12 @@ export function SupervisorCall({row,change,reference,onOpen,disabled,busy,alertE
    <div className={styles.cardTop}><FeiraPriority value={row.Criticidade_ORQUESTRA}/><span className={styles.id}>{row.ID_Chamado}</span></div>
    <p className={styles.equipment}>{fieldValue(row,'Cliente')} · {fieldValue(row,'Unidade')}</p>
    <h3>{fieldValue(row,'Problema')}</h3>
-   <span className={styles.status}><StatusBadge value={row.Status}/></span>
+   <span className={styles.status} data-call-status><StatusBadge value={row.Status}/></span>
    {row['Passageiro Preso']==='Sim'&&<span className={styles.time}> · Passageiro preso</span>}
   </div>
   <div className={styles.callSla}><span>{alert.slaRelated?alert.nature:'SLA consumido'}</span><strong>{alert.sla.valid?`${alert.sla.percent}%`:'Indisponível'}</strong></div>
-  {labels.length>0&&<div className={styles.changes}>{labels.map(label=><span key={label}>{label}</span>)}</div>}
-  <span className={styles.open}>{busy?'Confirmando pausa global…':alertEntry?'Ver alerta →':'Consultar ocorrência →'}</span>
+  {labels.length>0&&<div className={styles.changes} data-call-changes>{labels.map(label=><span key={label}>{label}</span>)}</div>}
+  <span className={styles.open} data-call-action>{busy?'Confirmando pausa global…':alertEntry?'Ver alerta →':'Consultar ocorrência →'}</span>
  </button>;
 }
 

@@ -10,7 +10,7 @@ try {
  for(const page of [desktop,mobile])page.on('pageerror',e=>errors.push(e.message));
  await mc.route('**/*',route=>{if(new URL(route.request().url()).origin!==app.origin){external.push(route.request().url());return route.abort();}return route.continue();});
  await mobile.addInitScript(()=>{window.__motions=0;const animate=Element.prototype.animate;Element.prototype.animate=function(...args){window.__motions++;return animate.apply(this,args);};});
- async function pair(page,mode,code){await page.goto(app.origin+'/OrquestraNEXT/?modo='+mode);await page.getByLabel('Código de acesso',{exact:true}).fill(code);await page.getByRole('button',{name:'Conectar',exact:true}).click();await page.getByTestId('sync-connection').getByText('Sincronizado',{exact:true}).waitFor();}
+ async function pair(page,mode,code){await page.goto(app.origin+'/OrquestraNEXT/?modo='+mode);await page.getByLabel('Código de acesso',{exact:true}).fill(code);await page.getByRole('button',{name:'Conectar',exact:true}).click();await page.getByTestId('sync-connection').getByText('Sincronizado',{exact:true}).waitFor();if(mode==='supervisor-feira')await page.getByRole('navigation',{name:'Navegação do Supervisor Feira'}).getByRole('button',{name:'Chamados',exact:true}).click();}
  const nav=()=>mobile.getByRole('navigation',{name:'Navegação do Supervisor Feira'});
  const calls=()=>mobile.locator('[data-call-id]');
  async function same(index){await mobile.waitForFunction(label=>document.querySelector('[data-testid="mobile-moment"]')?.textContent.startsWith(label),'T'+String(index).padStart(2,'0'));assert.equal(Number(await mobile.getByTestId('mobile-total').innerText()),session.getState().view.summary.total);}

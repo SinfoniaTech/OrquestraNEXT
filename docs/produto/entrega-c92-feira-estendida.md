@@ -470,3 +470,38 @@ Reprodução: `node-do-runtime node_modules/vite/bin/vite.js build --outDir /tmp
 
 
 Registro local autorizado pelo usuário para a revisão histórica: `feat: adiciona apoio historico aos alertas da feira`,base53c6554. Inclui implementação,testes,documentação e evidências existentes;sem push/merge/deploy. Última validação:472 testes aprovados,build/dois --check,sem alteração funcional posterior. Pendência confirmada:aba Chamados mantém ficha direta;resumo acessível pela aba Alertas. Uniformização da entrada e QRCode/acesso contínuo não implementados neste registro. SHA do próprio commit consultável com `git log -1 --format=%H`.
+
+
+## Foco em Alertas e pulsos por mudança — 20/10/2026
+
+Autorização do usuário:manter foco na tela de alertas e evidenciar mudanças. Supervisor inicia na aba Alertas,sem abrir modal automaticamente ou tirar o usuário de Chamados/Mais quando ele navegar. Chamados continua disponível para consulta e conserva ficha direta;uniformização com resumo nessa aba segue pendente. Não há mudança no BackOffice,autenticação,QRCode ou regras operacionais.
+
+`useSnapshotMotion` reaproveita FLIP existente e considera sessão/ciclo/snapshot/contexto. Heartbeats de conectividade não disparam efeito. Entrada tardia/refresh estabelecem baseline;trocar abas não repete a mudança recebida;reinício de ciclo/sessão não anima comparação entre execuções diferentes. Somente fotografias autoritativas e changes auditados alimentam o destaque.
+
+- Criticidade:halo na nova cor BASE,dois pulsos suaves de700ms (1,4s total),sem alternar a classificação ou apagar o texto. Variáveis de tema são resolvidas no efeito,sem cores fixas incompatíveis com Dark.
+- Status:halo no rótulo,independente de criticidade;texto “Status: origem → destino” existente permanece. Status sozinho não produz pulso de cor do card.
+- Novo alerta:entrada suave de500ms. Reordenação mantém FLIP450ms.
+- Conclusão:ativo removido imediatamente da população autoritativa,com cópia visual por1,4s em posição sobreposta antes de desaparecer. Cópia rotulada Concluído,sem data-call-id,desabilitada,inert/aria-hidden,sem clique/foco e fora das contagens/lista de alertas ativos. Só para item antes visível;mudanças de aba/ciclo cancelam a saída. Eventual cor final vem do delta BASE;sem recalcular criticidade.
+- Movimento reduzido:cancela efeitos em curso e não cria novos,sem cópia de saída. Contadores,rótulos e aviso textual aria-live/atomic continuam disponíveis. Durações visuais não são relógio operacional;nenhum setTimeout/setInterval introduzido no Supervisor.
+
+Indicador textual “Nesta atualização” informa novos,mudanças de criticidade/status e concluídos da operação,sem repetir alteração de texto nos heartbeats. Animações e cópias são canceladas antes da medição seguinte,evitando acumular transformações/layout. Limite de até3 animações por card (FLIP/cor/status) e1 por cópia de saída verificado na regressão;CSS scoped ao Supervisor Feira.
+
+Alterados4 arquivos de fonte:SupervisorFeira.jsx,SupervisorParts.jsx,Supervisor.module.css,useSnapshotMotion.js. Quatro testes existentes passam a selecionar Chamados explicitamente quando precisam da carteira completa;novo teste de8 casos comprova o foco inicial real em Alertas,cor/pulsos,status independente,novos,concluídos,heartbeat/abas,redução de movimento,reconexão/entrada tardia e pausa/retorno. Sem modificar Supervisor original/dez cenas,datasets/importadores,serviçoSSE/POST ou motorT00–T11.
+
+Evidências:[Light](evidencias/supervisor-pulsos-pulsos-light-390x844.png),[Dark](evidencias/supervisor-pulsos-pulsos-dark-390x844.png),[concluído](evidencias/supervisor-pulsos-concluido-390x844.png),[tablet](evidencias/supervisor-pulsos-alertas-tablet-768x1024.png),[oito casos](evidencias/supervisor-pulsos-motion.tap). Capturas mostram o ponto intermediário do efeito real;pulsos não são animações permanentes. Resultado completo registrado após fechamento da regressão.
+
+Ambiente20/10:IP192.168.0.3. Porta5194 estava livre,foi iniciado novo serviço com build `/tmp/orquestra-pulsos/dist`,PID23514,sessão619f37be. Portas antigas5180/5182/5184/5186/5188/5190/5192 sem listener na conferência atual;nenhum serviço de usuário interrompido. Códigos privados efêmeros apontados por `/tmp/orquestra-pulsos/service.json`,não incluídos em logs/evidências. Mesmo limite de30min para novos pareamentos;QRCode/acesso contínuo não pertencem a esta revisão.
+
+
+### Resultado final dos pulsos
+
+**480 testes distintos validados=463 Node/browser+17 Python.** Transparência da execução:suíte integral executou463 casos,462 aprovados e1 falhou porque o teste C9.1 buscava o filtro Chamados após refresh sem sair da nova aba inicial Alertas. Ajustada somente a navegação do teste;arquivo sincronizado inteiro reexecutado com13/13 aprovados,incluindo o caso que falhou. Nenhuma fonte funcional alterada após build/regressão. Os8 casos novos também passaram isoladamente. Contagem distinta não soma casos repetidos. [Resumo](evidencias/supervisor-pulsos-validation.txt),[execução integral](evidencias/supervisor-pulsos-regression.tap),[revalidação13/13](evidencias/supervisor-pulsos-sync-recheck.tap).
+
+Build e dois importadores --check aprovados,17 testes Python (9+8) aprovados;aviso conhecido de bundle>500kB mantido. Cobertura inclui100 ciclos UI,20 sincronizados,T00–T11,legado/dez cenas,histórico,ACK/pausa,conexão e temas. [Contraste](evidencias/supervisor-pulsos-contrast.json):656 amostras de texto,mínimo≈4.63:1;não auditoria integral. [Preservação](evidencias/supervisor-pulsos-preservation.txt):124 arquivos protegidos idênticos ao HEAD64703c6. Sem dataset/servidor/motor/originais alterados.
+
+Ensaio real20/10 na LAN:dois clientesT00→T03,aba inicialAlertas,pulsos de criticidade/status/novos/conclusões registrados,sem popup automático. Resumo→completo(historico)→resumo→fechar:1open/1close,pausa mantida1×,locks0,27registros/9alertas,zero errosJS. [Estado sanitizado](evidencias/supervisor-pulsos-live-state.json). HTTP200 e [entry asset correto](evidencias/supervisor-pulsos-served-build.json). DeixadoT03pausado;para observar próximas mudanças,retomar pelo notebook autorizado. Homologação visual/física desta revisão pendente;sem commit/push/deploy.
+
+Comandos: `node-do-runtime node_modules/vite/bin/vite.js build --outDir /tmp/orquestra-pulsos/dist`; `CHOKIDAR_USEPOLLING=true ORQUESTRA_TEST_DIST=/tmp/orquestra-pulsos/dist node-do-runtime --test --test-concurrency=4 --test-reporter=tap tests/*.test.mjs`,com ORQUESTRA_*_EVIDENCE próprios e ORQUESTRA_MOTION_EVIDENCE;revalidação `node-do-runtime --test --test-reporter=tap tests/feira-sync-browser.test.mjs` com o mesmo build. Python -B nos dois tests/importacao-*.test.py e dois scripts --check. Sem dependências instaladas.
+
+
+Registro20/10 autorizado pelo usuário:commit `feat: destaca mudancas e prioriza alertas do supervisor` e envio à origin/feature/modo-feira,base64703c6. Inclui somente melhoria de foco/pulsos,testes,documentação e evidências existentes. Validação anterior:480 casos distintos após reexecução da suíte de navegação,build/dois --check. Sem nova mudança funcional nesta etapa. Sem merge ou deploy;homologação física permanece pendente. SHA do registro consultável por `git log -1 --format=%H`.
