@@ -2,6 +2,10 @@
 
 Único ponto de retomada. Leia [AGENTS.md](../AGENTS.md), A–I e somente as referências da tarefa. Relatórios guardam evidências/histórico; não reproduzir transcrições aqui.
 
+## Atualização documental — 20/10/2026
+
+Pedido atual: documentar todo o projeto, publicar a documentação no GitHub e indicar onde ajustar cards/espaçamentos. README revisado e guias [técnico](tecnica/guia-projeto.md) e [visual](tecnica/guia-estilos.md) adicionados; índice/backlog atualizados. Base verificada `0063467`, branch `feature/modo-feira`, árvore inicialmente limpa. Escopo autoriza commit/push destes documentos para a mesma branch, sem merge ou deploy do site. Verificação: links locais, diff e coerência; sem nova execução de testes/build por não haver alteração funcional. Próxima ação autorizada: publicar os documentos e confirmar o SHA remoto; demais homologações permanecem pendentes. O registro Git comprova o resultado da publicação.
+
 ## A. Identificação e Git
 
 - Atualização: **20/10/2026**, America/Sao_Paulo. US14.13/US15:foco inicial em Alertas e pulsos por nova criticidade/status implementados localmente;480 testes distintos validados,build/dois --check aprovados;homologação pendente. Janela anterior avaliada positivamente pelo usuário;isso não homologa esta revisão de movimentos/ciclo completo.

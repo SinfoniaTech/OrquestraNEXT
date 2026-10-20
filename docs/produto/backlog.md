@@ -324,3 +324,8 @@ Validação final de foco/pulsos:480 distintos (463+17),build/dois --check. Inte
 
 
 Registro20/10 autorizado pelo usuário:commit `feat: destaca mudancas e prioriza alertas do supervisor` e envio à origin/feature/modo-feira,base64703c6. Inclui somente melhoria de foco/pulsos,testes,documentação e evidências existentes. Validação anterior:480 casos distintos após reexecução da suíte de navegação,build/dois --check. Sem nova mudança funcional nesta etapa. Sem merge ou deploy;homologação física permanece pendente. SHA do registro consultável por `git log -1 --format=%H`.
+
+
+### Documentação transversal — 20/10/2026
+
+Apoio às histórias existentes de navegação, modos e UI: README atualizado para o produto atual; guias de arquitetura/manutenção e estilos adicionados, com pontos de edição de cards/espaçamentos. Sem nova história ou mudança funcional. Pedido do usuário autoriza commit e publicação desta documentação no GitHub em `feature/modo-feira`; sem merge ou deploy do site. Revisão documental de links locais, diff e coerência executada; testes/build não repetidos por ser alteração somente documental. [Guia técnico](../tecnica/guia-projeto.md), [guia visual](../tecnica/guia-estilos.md).

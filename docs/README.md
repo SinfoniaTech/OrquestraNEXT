@@ -13,6 +13,9 @@ Para retomar o trabalho, leia primeiro as [instruções permanentes do repositó
 
 ## Arquitetura, dados e preservação
 
+- [Guia técnico do projeto e mapa do código](tecnica/guia-projeto.md)
+- [Como alterar tamanho dos cards e espaçamentos](tecnica/guia-estilos.md)
+
 - [Arquitetura inicial e dependências](tecnica/arquitetura-atual.md)
 - [Arquitetura proposta](tecnica/arquitetura-proposta.md)
 - [Fronteiras de integração com Supervisor](tecnica/pontos-integracao-supervisor.md) — inclui matriz, arquitetura e contrato de UI do Supervisor Feira.
