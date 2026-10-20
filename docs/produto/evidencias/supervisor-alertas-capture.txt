@@ -1,0 +1,1 @@
+PASS: T03 Laranja/SLA, Vermelho/SLA, impedimento desconhecido, detalhe e T06 Vermelho por impacto abaixo de 100%; zero erros JS.

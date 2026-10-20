@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: C9.2 UI: pareamento, T00 pausado, 1366×768/390×844 e ciclo explicado
+ok 1 - C9.2 UI: pareamento, T00 pausado, 1366×768/390×844 e ciclo explicado
+  ---
+  duration_ms: 2028.117703
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: ambos percorrem os 12 estados e indicadores ativos sem acumular
+ok 2 - C9.2 UI: ambos percorrem os 12 estados e indicadores ativos sem acumular
+  ---
+  duration_ms: 790.884617
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: pausa confirmada pelo detalhe mobile; fechar não retoma
+ok 3 - C9.2 UI: pausa confirmada pelo detalhe mobile; fechar não retoma
+  ---
+  duration_ms: 575.999197
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: refresh tardio T11, espera final e loop
+ok 4 - C9.2 UI: refresh tardio T11, espera final e loop
+  ---
+  duration_ms: 864.362422
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: desconexão congela, reconexão recebe snapshot completo T04
+ok 5 - C9.2 UI: desconexão congela, reconexão recebe snapshot completo T04
+  ---
+  duration_ms: 2605.943568
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: entrada tardia T05 e refresh T10 recebem estado completo
+ok 6 - C9.2 UI: entrada tardia T05 e refresh T10 recebem estado completo
+  ---
+  duration_ms: 1870.911744
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: reinício e 20 ciclos completos 2× sem duplicar estado
+ok 7 - C9.2 UI: reinício e 20 ciclos completos 2× sem duplicar estado
+  ---
+  duration_ms: 579.537173
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: tablet, ausência de motor/dataset no cliente conectado e zero erros
+ok 8 - C9.2 UI: tablet, ausência de motor/dataset no cliente conectado e zero erros
+  ---
+  duration_ms: 82.832691
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: header, três indicadores e navegação funcionais T00
+ok 9 - Supervisor visual UI: header, três indicadores e navegação funcionais T00
+  ---
+  duration_ms: 2086.960334
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+ok 10 - Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+  ---
+  duration_ms: 81.076092
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+ok 11 - Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+  ---
+  duration_ms: 377.698456
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+ok 12 - Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+  ---
+  duration_ms: 37.604478
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+ok 13 - Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+  ---
+  duration_ms: 150.397725
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: ACK antes do detalhe, POST único e fechar mantém pausa
+ok 14 - Supervisor visual UI: ACK antes do detalhe, POST único e fechar mantém pausa
+  ---
+  duration_ms: 177.904713
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: falha explícita de abertura não exibe dados sem confirmação
+ok 15 - Supervisor visual UI: falha explícita de abertura não exibe dados sem confirmação
+  ---
+  duration_ms: 72.727524
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+ok 16 - Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+  ---
+  duration_ms: 221.928168
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+ok 17 - Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+  ---
+  duration_ms: 568.745412
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+ok 18 - Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+  ---
+  duration_ms: 3984.627678
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: cores materializadas não recebem nomenclatura do tutorial
+ok 19 - Supervisor visual: cores materializadas não recebem nomenclatura do tutorial
+  ---
+  duration_ms: 0.836156
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: nulos, vazio, zero e eventos futuros tratados sem inferência
+ok 20 - Supervisor visual: nulos, vazio, zero e eventos futuros tratados sem inferência
+  ---
+  duration_ms: 0.131174
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: tempo de abertura não calcula SLA/TA/TB ou usa relógio local
+ok 21 - Supervisor visual: tempo de abertura não calcula SLA/TA/TB ou usa relógio local
+  ---
+  duration_ms: 0.113315
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: alterações explicam novo, cor, status e conclusão
+ok 22 - Supervisor visual: alterações explicam novo, cor, status e conclusão
+  ---
+  duration_ms: 0.117753
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: alertas excluem concluídos e preservam ordem autoritativa
+ok 23 - Supervisor visual: alertas excluem concluídos e preservam ordem autoritativa
+  ---
+  duration_ms: 0.15575
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: dados T00 até T11 mantêm cores, prioridade e alertas exatos
+ok 24 - Supervisor visual: dados T00 até T11 mantêm cores, prioridade e alertas exatos
+  ---
+  duration_ms: 25.597188
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: UI sem fixture, motor temporal, Google Fonts ou protocolos próprios
+ok 25 - Supervisor visual: UI sem fixture, motor temporal, Google Fonts ou protocolos próprios
+  ---
+  duration_ms: 0.362896
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9907.267078

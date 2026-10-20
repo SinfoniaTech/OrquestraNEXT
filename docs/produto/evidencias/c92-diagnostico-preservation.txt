@@ -1,0 +1,1 @@
+125 arquivos protegidos (legado, fontes originais, XLSX e módulo estendido) comparados por SHA256; zero divergências.

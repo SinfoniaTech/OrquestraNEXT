@@ -2,7 +2,7 @@
 
 Processo de referência. O quadro abaixo organiza etapas e critérios; não autoriza sua execução. Estado atual e próxima ação ficam na [continuidade oficial](../CONTINUIDADE_CODEX.md); orientações permanentes em [AGENTS.md](../../AGENTS.md). Relatórios e atualizações incrementais abaixo preservam decisões da época, sem reabrir gates já superados.
 
-C7 e rotina documental homologadas pelo usuário; commit local C7 a5aea32 após revalidação 262 testes/build. Escopo atual C8 exclusivamente analítico, implementado com292 testes/build/importador aprovados, aguarda homologação visual e não possui commit. Modo Feira planejado em seguida, ainda não autorizado. Sem push/deploy.
+Estado atual: C9.2 integra localmente a série estendida à sincronização C9.1, aguardando homologação visual/física; sem commit/merge/push/deploy. Referência de Plataforma: C8 homologada, commit funcional 8134059, registro documental 240253d e Pages 547db4d. C9/US14 teve implementação/testes autorizados, incluindo reutilização da branch existente e início automático. A branch feature/modo-feira já foi encontrada em 240253d, sem alterações funcionais; não criada/trocada nesta etapa. Base confirmada; resultado e validações no relatório C9, homologação visual ainda pendente. Contrato C9 concentrado em [modos](modos.md#c9--planejamento-técnico-do-modo-feira--15102026); Git/autorizações atuais na continuidade.
 
 Fluxo obrigatório por entrega: ANÁLISE → PLANEJAMENTO → APROVAÇÃO → IMPLEMENTAÇÃO → TESTES → VALIDAÇÃO → ATUALIZAÇÃO DO BACKLOG. Nenhuma etapa implica aprovação da seguinte.
 
@@ -66,3 +66,37 @@ C6 aprovada para continuidade, commit local autorizado 05ec7d5 após revalidaç�
 ## Atualização autorizada C8 — 15/10/2026
 
 C7 homologada após correção de inicialização e rotina homologada; commit C7 a5aea32 autorizado e executado. C8 Peças analítica implementada na US18-A, nove páginas funcionais/três pendentes,30 testes novos/292 totais aprovados e build/importador. [Relatório](entrega-c8-pecas.md). Aguardar homologação visual C8; não iniciar Feira nem criar commit C8 sem autorização própria. Logística real EXT; sem operações de estoque/compra/reserva/despacho.
+
+
+## C9 — execução autorizada, aguardando homologação
+
+| Fase | Tarefas e dependências | Gate |
+| --- | --- | --- |
+| A — Isolamento | Conferir Git e preservação dos documentos locais; aprovar reutilização da feature/modo-feira existente; confirmar base 240253d igual à next-evolucao homologada | Branch reutilizada conforme autorização; base 240253d confirmada; divergências novas exigem avaliação |
+| B — Motor | Aprovar substituição integral e relógio discreto; seletores/projeção/reducer, testes puros, scheduler único e limpeza | 10/16/24, deltas/identidade, futuro oculto, pausa/retoma/reinício/velocidade/loop determinísticos |
+| C — Interface | Entrada opt-in, painel/alertas/controles/detalhe e fallback; reutilização segura dos componentes | 1366×768, quatro cores, alertas ativos separados de resultados, interação pausa sem retomada implícita |
+| D — Validação | Casos C9 e regressão 292, ESM real, build/importador, rede após carga, dez cenas/Supervisor, ensaio contínuo aprovado | Evidências, ausência de timers residuais, arquivos protegidos intactos; nenhum deploy |
+| E — Homologação | Usuário avalia; corrigir somente C9; atualizar modos/backlog/continuidade | Integração next-evolucao, commit/push e publicação exigem autorização específica |
+
+Planejamento não implementa US19 nem páginas pendentes. Estimativa e decisões de contrato no documento de modos. Implementação incremental C9.1 motor, C9.2 painel, C9.3 evolução visual e C9.4 estabilização autorizada; resultado no relatório C9. Ajuste aprovado: início automático, não estado pronto/Iniciar. Sem commit/push/merge/deploy.
+
+
+## C9.1 — sincronização local implementada; aguardando homologação física
+
+[Contrato central e decisões](../tecnica/pontos-integracao-supervisor.md#c91--planejamento-da-sincronização-notebook--supervisor-feira). Requisito obrigatório do aceite completo; C9 local permanece sem homologação e sem commit.
+
+Ordem proposta: aprovação de transporte/políticas → autoridade/sessão/protocolo → serviço compilado same-origin/pareamento → painel notebook conectado → Supervisor Feira mobile → reconexão/segurança → regressão 322 +casos novos e bancada física sem internet → homologação conjunta. Tarefas US14.6–14.10 no backlog; US19 legado não antecipada. Não confundir esta entrega C9.1 com o subincremento motor da C9 original.
+
+Etapas A–E implementadas, F validada no software: 360 testes/build/importador, rede SSE/POST real e 2 ciclos reais. A/SSE+POST/lease/boot pausado aprovados e implementados; standalone preservado. [Resultado e roteiro físico](entrega-c91-sincronizacao.md). F permanece pendente de notebook/celular físicos com WAN desligada e homologação conjunta. Sem instalação, mudança permanente de rede/firewall, commit/merge/push/deploy.
+
+## C9.2 — adaptação estendida autorizada
+
+Sequência: inspeção/preservação → leitura FEIRA_REGRAS/roteiro → importador isolado e auditoria → motor configurável → integração C9.1 existente → progresso/criticidade ativa nas duas interfaces → regressão completa/clock real/resoluções → homologação física e visual. Desenvolvimento autorizado pelo usuário, sem commit/merge/push/deploy. Tarefas US14.11–14.14 no backlog; [implementação/evidências](entrega-c92-feira-estendida.md). Próxima ação é homologação integrada, sem antecipar outra página/entrega.
+
+## Evolução visual do Supervisor Feira — US14.13 (19/10/2026)
+
+Sequência autorizada: auditoria/matriz → contrato técnico e critérios → UI isolada → testes/regressão/evidências → homologação. Não é nova User Story ou ponte US19. Arquitetura e decisão no [contrato técnico](../tecnica/pontos-integracao-supervisor.md#supervisor-feira--adaptação-visual-autorizada-19102026); critérios no backlog e resultados no relatório C9.2. Gate seguinte: homologação visual/física; commit/merge/push/deploy não autorizados.
+
+## Nova apresentação padrão — US06 (19/10/2026)
+
+Autorizada como escopo próprio, sem aguardar implementação de outra página. Sequência: inspeção de modos/roteamento → reutilização do shell/provedor e nove páginas → guia manual/seletor/legado explícito → testes completos/build/importadores/evidências → homologação local. Preservar serviço5180 existente; preview novo separado5182. [Contrato](modos.md) e [resultado](entrega-apresentacao-padrao.md). Gate seguinte: homologação visual; commit/merge/push/deploy não autorizados. Não inicia US19 nem nova sincronização pública.

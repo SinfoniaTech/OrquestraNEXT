@@ -1,6 +1,34 @@
 # Arquitetura e dependências
 
-React/React DOM, Vite, ES Modules, CSS Modules, SVG próprio e gh-pages. main.jsx monta StrictMode e estilos globais; App monta SceneController. Sem backend, autenticação, roteador ou leitura Excel implementados.
+## Roteamento atual — nova apresentação padrão (19/10/2026)
+
+App seleciona o modo por `src/modes.js` (função pura resolveMode). Raiz e ?modo=apresentacao montam BackofficePlatform com presentation=true; ?modo=plataforma mantém acesso demo livre. SceneController é lazy e montado somente em ?modo=legado; seu arquivo/configuração/consumidores não mudam. Feira/serviço/Supervisor conservam a seleção anterior (config local ou parâmetro de sessão), motor e contratos existentes. Modo inválido/vazio/duplicado mostra escolha segura.
+
+```mermaid
+flowchart TD
+ A[App / resolveMode] -->|raiz ou apresentacao| P[BackofficePlatform presentation=true]
+ A -->|plataforma| F[BackofficePlatform / login demo]
+ P --> C[ConsultationProvider / nove páginas atuais]
+ F --> C
+ P --> B[PresentationBar / roteiro manual]
+ P --> M[ModeMenu / URLs explícitas]
+ A -->|legado| L[SceneController original lazy]
+ A -->|feira| T[FeiraApp independente sinalizada ou SyncedFeiraApp]
+ A -->|supervisor-feira| S[SyncedFeiraApp mobile / serviço obrigatório]
+ A -->|inválido| I[InvalidMode / escolha explícita]
+```
+
+Responsabilidades: `src/presentation/itinerary.js` define nove IDs/purposes a partir do catálogo existente; PresentationBar só altera o hash por clique/teclado nativo dos botões. PlatformShell mantém um único listener de hash e o provedor existente; presentation filtra o menu para páginas implementadas, identifica o roteiro e dispensa login sem escrever sessionStorage. Indicadores/dados/fórmulas/componentes de páginas não são duplicados. Troca de tela preserva consulta; refresh e troca de modo mantêm os contratos de inicialização existentes. ModeMenu comunica fontes e limites; não faz descoberta de rede, ponte contextual ou transferência de dados entre modos.
+
+Deep links usam #/visao-geral etc.; legado usa ?modo=legado#/1–#/10. Hash inválido ou fora do roteiro permite retorno manual ao início e não monta o legado. Raiz serve assets/JSONs empacotados estáticos sob base /OrquestraNEXT; não consulta API5180. Nenhuma alteração em vite.config.js. Links denominados Apresentação original, inclusive fallback/footer Feira e acesso local, agora levam ao legado explícito. Alterações nesses consumidores são somente URLs, sem mexer no protocolo SSE/POST ou política de reprodução.
+
+Decisão19/10: reutilizar BackofficePlatform por prop de apresentação em vez de montar um segundo roteador/provedor ou adaptar SceneController. Motivo: mesmas telas e contexto de filtros, isolamento do legado, fonte histórica estável e nenhuma dependência de timers. Consequência: apresentação e Plataforma compartilham layout/serviços e diferem em acesso/menu/controles; ambas recebem teste de regressão. Ajuste responsivo do cabeçalho acomoda o seletor em celular. Sem ADR separado para essa adaptação contida no escopo aprovado.
+
+Contratos de produto em [modos](../produto/modos.md); resultados/arquivos/testes em [relatório da apresentação](../produto/entrega-apresentacao-padrao.md). Integração autoritativa permanece no contrato técnico do Supervisor.
+
+## Mapeamento inicial preservado
+
+As seções abaixo registram a análise inicial, anterior às entregas da Plataforma e Feira. Não descrevem o estado atual de App/serviço. Stack permanece React/React DOM, Vite, ES Modules e CSS Modules; fontes de dados/backend vigentes estão na continuidade e nos contratos específicos.
 
 ## Grafo funcional
 

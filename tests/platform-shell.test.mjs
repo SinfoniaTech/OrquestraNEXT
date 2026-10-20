@@ -103,10 +103,10 @@ try{
   await page.screenshot({path:evidence+'/mobile.png'});
   await page.setViewportSize({width:1366,height:768});
  });
- await test('apresentação original permanece padrão e recupera demo ao voltar',async()=>{
+ await test('apresentação original permanece no modo legado e recupera demo ao voltar',async()=>{
   await page.getByRole('link',{name:'Apresentação original',exact:true}).click();
   await page.getByRole('button',{name:'Próxima cena',exact:true}).waitFor();
-  assert.equal(new URL(page.url()).search,'');
+  assert.equal(new URL(page.url()).search,'?modo=legado');
   assert.equal(new URL(page.url()).hash,'#/1');
   await page.goBack();await heading('Chamados').waitFor();
  });

@@ -1,0 +1,7 @@
+Serviço real 1×: T1, 16 registros, dois clientes.
+Serviço real 1×: T2, 24 registros, dois clientes.
+OK ciclo sincronizado real 1×; retorno T0 sem pausa inesperada.
+Serviço real 2×: T1, 16 registros, dois clientes.
+Serviço real 2×: T2, 24 registros, dois clientes.
+OK ciclo sincronizado real 2×; retorno T0 sem pausa inesperada.
+OK dois ciclos reais 145s/72,5s, lease/heartbeat/SSE/POST, sem erros JS. Validação física pendente.

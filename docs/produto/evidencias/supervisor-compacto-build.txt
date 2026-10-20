@@ -1,0 +1,70 @@
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 209 modules transformed.
+
+(!) outDir /tmp/orquestra-alerta-compacto/dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../../../tmp/orquestra-alerta-compacto/dist/index.html                                                     0.45 kB │ gzip:  0.29 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/orquestra-logo13-BBrr8rpF.png                         106.07 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/CenaTransicao-DWsH3paR.css                              0.45 kB │ gzip:  0.25 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/SceneController-YhbGBo-Z.css                            1.98 kB │ gzip:  0.85 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/index-CiHksn17.css                                      2.91 kB │ gzip:  1.10 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/hooks-BhxumCk7.css                                      3.11 kB │ gzip:  1.03 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/AvisoCritico-B2FR-neO.css                               3.67 kB │ gzip:  1.27 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/FeiraPanel-C2iCLF5T.css                                 6.28 kB │ gzip:  1.81 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/ChamadoDetalheView-Cq9XzaPt.css                        16.63 kB │ gzip:  3.64 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/temporalDefinitions-Cn7j3AT-.css                       19.33 kB │ gzip:  4.60 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/SyncedFeiraApp-xdXUU8jZ.css                            23.59 kB │ gzip:  5.23 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/BackofficeView-BrCGtxS2.css                            24.10 kB │ gzip:  5.13 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/BackofficePlatform-CW7ghpnQ.css                        40.52 kB │ gzip:  7.19 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/backoffice-1-principal-C0a3RvDs.js                      0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/backoffice-2-chamados-DoEKgASQ.js                       0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/orquestra-logo13-BL5170sf.js                            0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-aberto-BgwizGN0.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-aberto-BlMONK75.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-alerta-C_Y1f-oJ.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-alerta-JYc5n2ER.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-repouso-CQld6ymJ.js                            0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-repouso-dVQf0lHo.js                            0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-concluido-CPFTJmpB.js                          0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-concluido-Dmy44Wu5.js                          0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-priorizado-Civxvr8d.js                         0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-priorizado-LCo_lsVp.js                         0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-encaminhado-CQWb4YW7.js                        0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-encaminhado-wp1IezcZ.js                        0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/supervisor-cena-3-media-para-alta-LwQksmZX.js           0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-em-atendimento-BrDXgSmI.js                     0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/chamados-em-atendimento-D4mOg_JK.js                     0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/supervisor-cena-2-normal-para-media-D5hAj5D9.js         0.21 kB │ gzip:  0.19 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/supervisor-cena-1-tela-vyL_kA7b.js                      0.66 kB │ gzip:  0.44 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/supervisor-cena-5-demanda-critica-Br94ZDtv.js           0.77 kB │ gzip:  0.49 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/supervisor-cena-2-media-sobe-DtAc5jz0.js                0.83 kB │ gzip:  0.52 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/supervisor-cena-6-demanda-critica-sobe-Ba9cJcNV.js      0.87 kB │ gzip:  0.55 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/supervisor-cena-4-aviso-alta-Kjww-66B.js                1.17 kB │ gzip:  0.68 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/supervisor-cena-7-aviso-estourado-C_JUCwb_.js           1.19 kB │ gzip:  0.69 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/CenaTransicao-CNtaZmsN.js                               2.15 kB │ gzip:  1.05 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/icons-lQjSzB5X.js                                       3.35 kB │ gzip:  1.06 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/AvisoCritico-5JqMwf80.js                                7.76 kB │ gzip:  2.39 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/hooks-Dkmkomjw.js                                       8.25 kB │ gzip:  3.28 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/temporalDefinitions-Z9h6F3eQ.js                         8.64 kB │ gzip:  3.10 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/supervisor-DlQoDs-S.js                                  9.08 kB │ gzip:  2.59 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/SceneController-HSFTeS02.js                            10.31 kB │ gzip:  3.05 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/FeiraPanel-DT_y81pb.js                                 13.22 kB │ gzip:  4.87 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/ChamadoDetalheView-Cy-O21MI.js                         21.42 kB │ gzip:  6.10 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/SyncedFeiraApp-IlfqJjIb.js                             31.31 kB │ gzip: 10.74 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/BackofficeView-CSU9xbSN.js                             62.21 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/BackofficeView-Dm1u4lae.js                             62.22 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/BackofficePlatform-DvoIP16K.js                        208.68 kB │ gzip: 51.10 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/index-B7EgVE0M.js                                     225.21 kB │ gzip: 70.85 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/FeiraApp-CnIyEKOe.js                                  708.85 kB │ gzip: 45.24 kB
+../../../../../../tmp/orquestra-alerta-compacto/dist/assets/temporal-BnPFJ1yd.js                                1,111.91 kB │ gzip: 73.98 kB
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 370ms

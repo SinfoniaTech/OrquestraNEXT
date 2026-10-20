@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: C9.2 UI: pareamento, T00 pausado, 1366×768/390×844 e ciclo explicado
+ok 1 - C9.2 UI: pareamento, T00 pausado, 1366×768/390×844 e ciclo explicado
+  ---
+  duration_ms: 1998.068075
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: ambos percorrem os 12 estados e indicadores ativos sem acumular
+ok 2 - C9.2 UI: ambos percorrem os 12 estados e indicadores ativos sem acumular
+  ---
+  duration_ms: 777.827592
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: pausa confirmada pelo detalhe mobile; fechar não retoma
+ok 3 - C9.2 UI: pausa confirmada pelo detalhe mobile; fechar não retoma
+  ---
+  duration_ms: 240.467744
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: refresh tardio T11, espera final e loop
+ok 4 - C9.2 UI: refresh tardio T11, espera final e loop
+  ---
+  duration_ms: 874.4543
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: desconexão congela, reconexão recebe snapshot completo T04
+ok 5 - C9.2 UI: desconexão congela, reconexão recebe snapshot completo T04
+  ---
+  duration_ms: 3115.385722
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: reinício e 20 ciclos completos 2× sem duplicar estado
+ok 6 - C9.2 UI: reinício e 20 ciclos completos 2× sem duplicar estado
+  ---
+  duration_ms: 539.606438
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: tablet, ausência de motor/dataset no cliente conectado e zero erros
+ok 7 - C9.2 UI: tablet, ausência de motor/dataset no cliente conectado e zero erros
+  ---
+  duration_ms: 80.795684
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8123.426742

@@ -1,3 +1,7 @@
+import ModeMenu from '../presentation/ModeMenu.jsx';
+import PresentationBar from '../presentation/PresentationBar.jsx';
+import {presentationIndex} from '../presentation/itinerary.js';
+import {modeHref} from '../modes.js';
 import PecasPage from './pages/PecasPage.jsx';
 import TecnicosPage from './pages/TecnicosPage.jsx';
 import {useEffect,useRef,useState} from 'react';
@@ -59,16 +63,16 @@ function DemoLogin({onEnter,legacyUrl}){
     <p>Explore a nova estrutura do BackOffice.</p>
     <div className={styles.demoNotice}><Icon name="shield" size={22}/><p><strong>Acesso demonstrativo</strong>Sem senha ou autenticação corporativa. Os dados do projeto são sintéticos e não representam registros reais ou oficiais da OTIS.</p></div>
     <button className={styles.primaryButton} onClick={onEnter}>Acessar demonstração <Icon name="arrow"/></button>
-    <a className={styles.legacyLink} href={legacyUrl}>Abrir apresentação original <span aria-hidden="true">↗</span></a>
+    <a className={styles.legacyLink} href={legacyUrl}>Abrir apresentação original <span aria-hidden="true">↗</span></a><ModeMenu/>
    </div>
    <p className={styles.loginFooter}>Inteligência operacional e executiva</p>
   </main>
  </div>;
 }
 
-export default function BackofficePlatform(){return <ConsultationProvider><PlatformShell/></ConsultationProvider>;}
+export default function BackofficePlatform({presentation=false}){return <ConsultationProvider><PlatformShell presentation={presentation}/></ConsultationProvider>;}
 
-function PlatformShell(){
+function PlatformShell({presentation}){
  const {dispatch}=useConsultation();
  const [active,setActive]=useState(readSession);
  const [route,setRoute]=useState(()=>pageFromHash(window.location.hash));
@@ -76,16 +80,17 @@ function PlatformShell(){
  const heading=useRef(null);
  const menuButton=useRef(null);
  const sidebarRef=useRef(null);
- const legacyUrl=window.location.pathname+'#/1';
+ const legacyUrl=modeHref('legado');
+ const groups=presentation?MENU_GROUPS.map(group=>({...group,items:group.items.filter(item=>presentationIndex(item.id)>=0)})).filter(group=>group.items.length):MENU_GROUPS;
  useEffect(()=>{
   const listener=()=>{setRoute(pageFromHash(window.location.hash));setMenuOpen(false);};
   window.addEventListener('hashchange',listener);
   return ()=>window.removeEventListener('hashchange',listener);
  },[]);
- const login=!active || route==='login';
- const page=PAGES.find(p=>p.id===route);
+ const login=!presentation&&(!active || route==='login');
+ const page=PAGES.find(p=>p.id===route&&(!presentation||presentationIndex(route)>=0));
  useEffect(()=>{
-  document.title=login?'ORQUESTRA · Acesso demonstrativo': 'ORQUESTRA · '+(page?.title??page?.label??'Página não encontrada');
+  document.title=login?'ORQUESTRA · Acesso demonstrativo': 'ORQUESTRA · '+(presentation?'Apresentação · ':'')+(page?.title??page?.label??'Página não encontrada');
   if(!login)heading.current?.focus();
  },[login,route,page]);
  useEffect(()=>{
@@ -114,7 +119,7 @@ function PlatformShell(){
     <a className={styles.brand} href="#/visao-geral" aria-label="Orquestra — Visão Geral"><img src={logo} alt="Orquestra"/></a>
     <button className={styles.drawerClose} aria-label="Fechar menu" onClick={()=>{setMenuOpen(false);menuButton.current?.focus();}}><Icon name="close"/></button>
     <nav id="platform-menu-content" aria-label="Menu principal" className={styles.navigation}>
-     {MENU_GROUPS.map(group=><div className={styles.navGroup} key={group.label}>
+     {groups.map(group=><div className={styles.navGroup} key={group.label}>
       <p className={styles.navGroupLabel}>{group.label}</p>
       {group.items.map(item=><a key={item.id} href={'#/'+item.id} className={styles.navItem+' '+(route===item.id?styles.navActive:'')} aria-current={route===item.id?'page':undefined}>
        <Icon name={item.icon} size={18}/><span>{item.label}</span>
@@ -129,8 +134,9 @@ function PlatformShell(){
       <button ref={menuButton} className={styles.menuButton} aria-label={menuOpen?'Recolher menu':'Abrir menu'} aria-expanded={menuOpen} aria-controls="platform-menu-content" onClick={()=>setMenuOpen(v=>!v)}><Icon name={menuOpen?'close':'menu'}/></button>
       <div><strong>Bem-vindo(a)!</strong><span>Inteligência para a operação e para a gestão.</span></div>
      </div>
-     <div className={styles.headerActions}><span className={styles.environment}>DEMO · Dados sintéticos</span><span className={styles.avatar} aria-hidden="true">D</span><button className={styles.exitButton} onClick={exit}>Sair da demonstração</button></div>
+     <div className={styles.headerActions}><ModeMenu/><span className={styles.environment}>DEMO · Dados sintéticos</span><span className={styles.avatar} aria-hidden="true">D</span>{presentation?<a className={styles.exitButton} href={modeHref('plataforma')}>Explorar Plataforma</a>:<button className={styles.exitButton} onClick={exit}>Sair da demonstração</button>}</div>
     </header>
+    {presentation&&<PresentationBar route={route}/>}
     <main id="platform-content" className={styles.content} tabIndex={-1}>
      <div className={styles.breadcrumb}>BACKOFFICE <span>/</span> {page?.title??page?.label??'Página não encontrada'}</div>
      <div className={styles.pageHeading}>

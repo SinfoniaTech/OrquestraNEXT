@@ -7,3 +7,6 @@
 @media(prefers-reduced-motion:reduce){.root *{transition:none!important;scroll-behavior:auto!important}}
 
 .drawerClose{display:none}@media(max-width:960px){.drawerClose{display:grid;position:absolute;right:7px;top:57px;place-items:center;background:#12305a;color:white;border-radius:4px;padding:4px}}
+
+/* Mode selector shares the header without squeezing the mobile viewport. */
+@media(max-width:640px){.header{flex-wrap:wrap;gap:8px}.headerActions{width:100%;justify-content:flex-end;min-width:0}.headerWelcome{min-width:0}}

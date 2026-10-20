@@ -1,0 +1,9 @@
+Diagnóstico de 15/10/2026; observações do serviço local, sem captura do celular.
+Usuário informou Supervisor na sessão 1e450867, revisão 1355, e notebook em http://127.0.0.1:5175/OrquestraNEXT/?modo=feira.
+GET notebook 5175: HTTP 200, sem local-config.js; App monta FeiraApp/useFeiraClock independente.
+GET serviço 192.168.0.3:5180: HTTP 200, com local-config.js; App monta SyncedFeiraApp.
+Leitura autenticada inicial da sessão 1e450867-6c55-4561-befa-92bc7cd64e66: revisão1381, T00, started=false, paused, 27000ms restantes, velocidade1, sem controlador/locks, 10 registros; pausas manual/interruption.
+GET events autenticado: HTTP200, Content-Type text/event-stream; eventos1381 e1382 com T00/paused, mesma sessão.
+Existiam conexões TCP LAN 192.168.0.9 -> 192.168.0.3:5180 com dados reconhecidos e filas zero; isso não comprova aplicação de eventos na interface do celular.
+Causa confirmada da divergência relatada: notebook independente e Supervisor conectado a outro relógio, cujo serviço não havia sido iniciado. Nenhuma falha SSE demonstrada nesse relato.
+Nenhum código, token, cookie ou CSRF registrado. Serviço e sessão existentes mantidos durante a coleta inicial. Atualização/novo pareamento posterior registrados no relatório e no estado final JSON.

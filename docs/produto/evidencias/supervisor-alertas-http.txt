@@ -1,0 +1,5 @@
+{
+  "/OrquestraNEXT/?modo=feira": 200,
+  "/OrquestraNEXT/?modo=supervisor-feira": 200,
+  "/OrquestraNEXT/api/state": 401
+}

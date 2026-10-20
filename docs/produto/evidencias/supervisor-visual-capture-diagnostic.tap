@@ -1,0 +1,78 @@
+TAP version 13
+# Subtest: C9.2 UI: pareamento, T00 pausado, 1366×768/390×844 e ciclo explicado
+ok 1 - C9.2 UI: pareamento, T00 pausado, 1366×768/390×844 e ciclo explicado
+  ---
+  duration_ms: 2140.073364
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: ambos percorrem os 12 estados e indicadores ativos sem acumular
+ok 2 - C9.2 UI: ambos percorrem os 12 estados e indicadores ativos sem acumular
+  ---
+  duration_ms: 841.826609
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: pausa confirmada pelo detalhe mobile; fechar não retoma
+ok 3 - C9.2 UI: pausa confirmada pelo detalhe mobile; fechar não retoma
+  ---
+  duration_ms: 593.689495
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: refresh tardio T11, espera final e loop
+ok 4 - C9.2 UI: refresh tardio T11, espera final e loop
+  ---
+  duration_ms: 898.674142
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: desconexão congela, reconexão recebe snapshot completo T04
+ok 5 - C9.2 UI: desconexão congela, reconexão recebe snapshot completo T04
+  ---
+  duration_ms: 2623.724375
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: entrada tardia T05 e refresh T10 recebem estado completo
+ok 6 - C9.2 UI: entrada tardia T05 e refresh T10 recebem estado completo
+  ---
+  duration_ms: 1944.746987
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: reinício e 20 ciclos completos 2× sem duplicar estado
+ok 7 - C9.2 UI: reinício e 20 ciclos completos 2× sem duplicar estado
+  ---
+  duration_ms: 589.032452
+  type: 'test'
+  ...
+# Tablet capture geometry {
+#   width: 768,
+#   height: 1024,
+#   scrollWidth: 768,
+#   scrollHeight: 33554432,
+#   animations: 626
+# }
+# Subtest: C9.2 UI: tablet, ausência de motor/dataset no cliente conectado e zero erros
+not ok 8 - C9.2 UI: tablet, ausência de motor/dataset no cliente conectado e zero erros
+  ---
+  duration_ms: 1142.095621
+  type: 'test'
+  location: '/home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT/tests/feira-extended-browser.test.mjs:21:8'
+  failureType: 'testCodeFailure'
+  error: |-
+    page.screenshot: Protocol error (Page.captureScreenshot): Unable to capture screenshot
+    Call log:
+    [2m  - taking page screenshot[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    TestContext.<anonymous> (/home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT/tests/feira-extended-browser.test.mjs:21:513)
+    async file:///home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT/tests/feira-extended-browser.test.mjs:21:2
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 7
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11248.872602

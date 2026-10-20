@@ -65,5 +65,21 @@ try{
    await page.screenshot({path:join(evidence,route+'.png')});
   });
  }
- await test('inicialização dev: nenhuma falha ESM, erro JS ou erro de console nas quatro rotas',()=>assert.deepEqual(errors,[]));
+ await test('inicialização dev: Feira ESM carrega, avança e refresh restaura T0',async()=>{
+  await page.clock.install();
+  await page.goto(base+'?modo=feira');
+  await page.getByRole('heading',{name:'Modo Feira — Simulação',exact:true}).waitFor();
+  assert.match(await page.getByTestId('feira-total').innerText(),/\n10\n/);
+  const model=await page.evaluate(async()=>{const m=await import('./src/feira/temporalState.js');return m.advance(m.initialState(),45000).phase;});
+  assert.equal(model,1);
+  await page.clock.runFor(27000);
+  assert.match(await page.getByTestId('feira-state').innerText(),/^T01/);
+  await page.reload();await page.getByTestId('feira-state').waitFor();
+  assert.match(await page.getByTestId('feira-state').innerText(),/^T0/);
+ });
+ await test('inicialização dev: módulos conectados e primitivos compartilhados têm ESM válido',async()=>{
+  const modules=await page.evaluate(async()=>{const [p,t,ui,synced]=await Promise.all([import('./src/feira/sync/protocol.js'),import('./src/feira/sync/transport.js'),import('./src/platform/components/OperationalUI.jsx'),import('./src/feira/SyncedFeiraApp.jsx')]);return [p.PROTOCOL_VERSION,typeof t.createSyncClient,typeof ui.Dialog,typeof ui.CriticalityBadge,typeof synced.default];});
+  assert.deepEqual(modules,[1,'function','function','function','function']);
+ });
+ await test('inicialização dev: nenhuma falha ESM, erro JS ou erro de console nas rotas Plataforma e Feira',()=>assert.deepEqual(errors,[]));
 }finally{await browser?.close();server?.kill('SIGTERM');}

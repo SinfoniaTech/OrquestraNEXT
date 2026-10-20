@@ -1,0 +1,3 @@
+OK origem HTTP LAN 192.168.0.3: UUID sem secure context, cookie/CSRF, dois contextos, SSE/POST e detalhe com pausa.
+OK backend indisponível: nenhuma simulação autônoma de fallback.
+IMPORTANTE: contextos no mesmo notebook; celular físico e WAN desligada ainda não testados.

@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: Nova apresentação: raiz pública inicia Visão Geral sem login/serviço local
+ok 1 - Nova apresentação: raiz pública inicia Visão Geral sem login/serviço local
+  ---
+  duration_ms: 485.328655
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: acesso explícito e refresh preservam a experiência manual
+ok 2 - Nova apresentação: acesso explícito e refresh preservam a experiência manual
+  ---
+  duration_ms: 1326.366024
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: percorre roteiro completo, limites, voltar e início
+ok 3 - Nova apresentação: percorre roteiro completo, limites, voltar e início
+  ---
+  duration_ms: 760.249758
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: menu inclui somente as nove telas implementadas
+ok 4 - Nova apresentação: menu inclui somente as nove telas implementadas
+  ---
+  duration_ms: 10.181484
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: filtros preservados ao avançar, voltar e explorar detalhes
+ok 5 - Nova apresentação: filtros preservados ao avançar, voltar e explorar detalhes
+  ---
+  duration_ms: 398.625433
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: nove deep links e refresh usam hashes do BackOffice
+ok 6 - Nova apresentação: nove deep links e refresh usam hashes do BackOffice
+  ---
+  duration_ms: 5167.983073
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: navegação do navegador e links internos mantêm o roteiro
+ok 7 - Nova apresentação: navegação do navegador e links internos mantêm o roteiro
+  ---
+  duration_ms: 123.119075
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: modo inválido ou hash desconhecido não monta cenas antigas
+ok 8 - Nova apresentação: modo inválido ou hash desconhecido não monta cenas antigas
+  ---
+  duration_ms: 728.087752
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: seletor explica fontes e dependência do Supervisor
+ok 9 - Nova apresentação: seletor explica fontes e dependência do Supervisor
+  ---
+  duration_ms: 170.716263
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: modo Plataforma mantém login e navegação livre/refresh
+ok 10 - Nova apresentação: modo Plataforma mantém login e navegação livre/refresh
+  ---
+  duration_ms: 1208.499719
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: legado explícito mantém cena/teclado e refresh
+ok 11 - Nova apresentação: legado explícito mantém cena/teclado e refresh
+  ---
+  duration_ms: 1702.376803
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: Feira estática mantém aviso de independência e refresh
+ok 12 - Nova apresentação: Feira estática mantém aviso de independência e refresh
+  ---
+  duration_ms: 1177.32252
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: Supervisor público comunica ausência do serviço, sem motor paralelo
+ok 13 - Nova apresentação: Supervisor público comunica ausência do serviço, sem motor paralelo
+  ---
+  duration_ms: 1656.521792
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: não há avanço automático ou atalhos globais de cenas
+ok 14 - Nova apresentação: não há avanço automático ou atalhos globais de cenas
+  ---
+  duration_ms: 869.166472
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: 1366×768,768×1024,390×844 e navegação por teclado
+ok 15 - Nova apresentação: 1366×768,768×1024,390×844 e navegação por teclado
+  ---
+  duration_ms: 534.737978
+  type: 'test'
+  ...
+# Subtest: Nova apresentação: assets sob /OrquestraNEXT e zero erros JavaScript
+ok 16 - Nova apresentação: assets sob /OrquestraNEXT e zero erros JavaScript
+  ---
+  duration_ms: 1.324845
+  type: 'test'
+  ...
+# Subtest: Modos: raiz e parâmetros alheios abrem a apresentação atual
+ok 17 - Modos: raiz e parâmetros alheios abrem a apresentação atual
+  ---
+  duration_ms: 0.56674
+  type: 'test'
+  ...
+# Subtest: Modos: cinco experiências explícitas permanecem distintas
+ok 18 - Modos: cinco experiências explícitas permanecem distintas
+  ---
+  duration_ms: 0.614567
+  type: 'test'
+  ...
+# Subtest: Modos: parâmetro inválido, vazio ou duplicado nunca escolhe legado
+ok 19 - Modos: parâmetro inválido, vazio ou duplicado nunca escolhe legado
+  ---
+  duration_ms: 0.133744
+  type: 'test'
+  ...
+# Subtest: Modos: Feira preserva seleção de autoridade e independente sinalizada
+ok 20 - Modos: Feira preserva seleção de autoridade e independente sinalizada
+  ---
+  duration_ms: 0.09409
+  type: 'test'
+  ...
+# Subtest: Modos: links são relativos ao subdiretório e preservam entradas explícitas
+ok 21 - Modos: links são relativos ao subdiretório e preservam entradas explícitas
+  ---
+  duration_ms: 0.339534
+  type: 'test'
+  ...
+# Subtest: Apresentação: roteiro contém somente nove páginas funcionais existentes
+ok 22 - Apresentação: roteiro contém somente nove páginas funcionais existentes
+  ---
+  duration_ms: 0.506972
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16811.225683

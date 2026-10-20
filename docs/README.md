@@ -15,7 +15,7 @@ Para retomar o trabalho, leia primeiro as [instruções permanentes do repositó
 
 - [Arquitetura inicial e dependências](tecnica/arquitetura-atual.md)
 - [Arquitetura proposta](tecnica/arquitetura-proposta.md)
-- [Fronteiras de integração com Supervisor](tecnica/pontos-integracao-supervisor.md)
+- [Fronteiras de integração com Supervisor](tecnica/pontos-integracao-supervisor.md) — inclui matriz, arquitetura e contrato de UI do Supervisor Feira.
 - [Dicionário dos 46 campos e decisões aprovadas](dados/dicionario.md)
 - [Camada de dados e importador](dados/camada-dados.md)
 - [Separação das fontes](dados/fontes.md)
@@ -24,6 +24,8 @@ Para retomar o trabalho, leia primeiro as [instruções permanentes do repositó
 - [Estratégia de regressão](preservacao/estrategia-regressao.md)
 - [Recuperação](preservacao/recuperacao.md)
 - [Comandos e cobertura dos testes](../tests/README.md)
+
+- [Nova apresentação padrão — roteiro manual, modos e evidências](produto/entrega-apresentacao-padrao.md)
 
 ## Relatórios de entrega e evidências
 
@@ -48,3 +50,8 @@ Relatórios preservam o estado e as autorizações da época; gates antigos não
 | Pós-C7 | [Tela branca: mecanismo observado, recuperação e limite do diagnóstico](produto/correcao-inicializacao-c7.md) |
 
 **Observado** exige evidência; **requisito** vem do usuário; **proposta** depende de aprovação; **pendente** indica definição/evidência ausente. Imagens orientam UX e não comprovam dados. Documentos não são autorizações implícitas para implementar, testar, versionar ou publicar.
+
+- [C9 — Modo Feira: entrega local e validação](produto/entrega-c9-feira.md).
+- [C9.1 — sincronização local e roteiro de homologação física](produto/entrega-c91-sincronizacao.md).
+
+- [C9.2 — Feira estendida e sincronização](produto/entrega-c92-feira-estendida.md).

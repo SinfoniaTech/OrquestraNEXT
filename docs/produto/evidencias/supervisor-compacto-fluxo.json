@@ -1,0 +1,42 @@
+[
+  {
+    "stage": "lista",
+    "snapshot": "T03",
+    "status": "paused",
+    "locks": 0,
+    "openPosts": 4,
+    "closePosts": 4
+  },
+  {
+    "stage": "resumo",
+    "snapshot": "T03",
+    "status": "paused",
+    "locks": 1,
+    "openPosts": 5,
+    "closePosts": 4
+  },
+  {
+    "stage": "completo",
+    "snapshot": "T03",
+    "status": "paused",
+    "locks": 1,
+    "openPosts": 5,
+    "closePosts": 4
+  },
+  {
+    "stage": "retorno-resumo",
+    "snapshot": "T03",
+    "status": "paused",
+    "locks": 1,
+    "openPosts": 5,
+    "closePosts": 4
+  },
+  {
+    "stage": "retorno-lista",
+    "snapshot": "T03",
+    "status": "paused",
+    "locks": 0,
+    "openPosts": 5,
+    "closePosts": 5
+  }
+]

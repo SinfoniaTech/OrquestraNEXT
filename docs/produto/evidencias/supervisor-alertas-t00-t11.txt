@@ -1,0 +1,12 @@
+{"snapshot":"T00","alerts":0,"consistent":true,"autoModal":false}
+{"snapshot":"T01","alerts":1,"consistent":true,"autoModal":false}
+{"snapshot":"T02","alerts":4,"consistent":true,"autoModal":false}
+{"snapshot":"T03","alerts":9,"consistent":true,"autoModal":false}
+{"snapshot":"T04","alerts":7,"consistent":true,"autoModal":false}
+{"snapshot":"T05","alerts":5,"consistent":true,"autoModal":false}
+{"snapshot":"T06","alerts":5,"consistent":true,"autoModal":false}
+{"snapshot":"T07","alerts":5,"consistent":true,"autoModal":false}
+{"snapshot":"T08","alerts":7,"consistent":true,"autoModal":false}
+{"snapshot":"T09","alerts":7,"consistent":true,"autoModal":false}
+{"snapshot":"T10","alerts":5,"consistent":true,"autoModal":false}
+{"snapshot":"T11","alerts":5,"consistent":true,"autoModal":false}

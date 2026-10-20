@@ -1,0 +1,16 @@
+✔ inicialização dev: módulo servido exporta estado inicial, reducer e seletor (243.937747ms)
+✔ inicialização dev: todas importações nomeadas do serviço têm export correspondente (44.743282ms)
+✔ inicialização dev: #/visao-geral carrega diretamente e após refresh (501.206682ms)
+✔ inicialização dev: #/chamados carrega diretamente e após refresh (443.486881ms)
+✔ inicialização dev: #/tecnicos carrega diretamente e após refresh (494.376519ms)
+✔ inicialização dev: #/pecas carrega diretamente e após refresh (958.455268ms)
+✔ inicialização dev: Feira ESM carrega, avança e refresh restaura T0 (2495.412966ms)
+✔ inicialização dev: nenhuma falha ESM, erro JS ou erro de console nas rotas Plataforma e Feira (0.215769ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5257.729842

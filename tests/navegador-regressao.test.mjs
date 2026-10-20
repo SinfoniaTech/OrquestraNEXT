@@ -9,7 +9,7 @@ const {chromium}=require(pw);
 const port=process.env.ORQUESTRA_TEST_PORT || '5187';
 const out=process.env.ORQUESTRA_TEST_DIST || '/tmp/orquestra-protecao-43dd028/dist';
 const evidence=process.env.ORQUESTRA_TEST_EVIDENCE || '/tmp/orquestra-protecao-43dd028/evidence';
-const base='http://127.0.0.1:'+port+'/OrquestraNEXT/';
+const base='http://127.0.0.1:'+port+'/OrquestraNEXT/?modo=legado';
 mkdirSync(evidence,{recursive:true});
 const poll=async(fn,ms=8000)=>{const end=Date.now()+ms;while(Date.now()<end){if(await fn())return;await new Promise(r=>setTimeout(r,50));}throw new Error('Condição não atingida no prazo');};
 const server=spawn(process.execPath,['node_modules/vite/bin/vite.js','preview','--host','127.0.0.1','--port',port,'--strictPort','--outDir',out],{stdio:['ignore','pipe','pipe']});

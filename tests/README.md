@@ -101,3 +101,49 @@ Total atual 262 testes distintos =253 Node/browser + 9 Python (255 anteriores + 
 Build: npm run build -- --outDir /tmp/orquestra-c8/dist. Regressão: ORQUESTRA_TEST_DIST=/tmp/orquestra-c8/dist node-do-runtime --test tests/*.test.mjs, mais 9 Python/importador --check. Comando completo/runtime na continuidade. Preview C8 porta 5211; evidências /tmp/orquestra-c8/evidence copiadas para docs/produto/evidencias. Portas/Chrome exigem permissão apropriada, sem novas dependências.
 
 21 serviço +9 navegador novos, total 283 Node/browser +9 Python =292 distintos, incluindo 262 anteriores. Shell e dev agora verificam Peças funcional, conservando demais verificações ESM/rotas/erros/menus; expectativa de placeholder foi superada pela implementação autorizada. Testes dev também passaram na instância 5173 sem export ausente. [Cobertura e evidências](../docs/produto/entrega-c8-pecas.md). C7 revalidada 262/build e commitada a5aea32; C8 sem commit/aguarda homologação.
+
+## C9 — Modo Feira
+
+Build: `npm run build -- --outDir /tmp/orquestra-c9/dist`. Suite completa com `ORQUESTRA_TEST_DIST=/tmp/orquestra-c9/dist` e `ORQUESTRA_DEV_URL` apontando para servidor dev existente confirmado, conforme comandos no [relatório C9](../docs/produto/entrega-c9-feira.md). Usar runtime Node documentado na continuidade.
+
+`feira-temporal.test.mjs`: 14 casos puros, incluindo 1000 ciclos/clock injetável/cleanup/projeção e deltas. `feira-browser.test.mjs`: 15 casos, preview próprio 5215, Chrome/Playwright existentes; 100 ciclos com clock controlado (leva cerca de 2 minutos), três snapshots, detalhes/pausa/rede/refresh/visibilidade e falha de chunk. `platform-dev.test.mjs` adiciona ESM/refresh Feira aos casos antigos. Nenhum flag de teste ou aceleração artificial é exposto no produto.
+
+`feira-endurance.mjs`: ensaio separado com relógio real, preview 5217, um ciclo normal +um 2× (~217,5 s mais carga/capturas). Evidências em ORQUESTRA_FEIRA_EVIDENCE ou /tmp/orquestra-c9/evidence. Encerra somente o próprio preview/Chrome; não mexe no dev do usuário. Não equivale a ensaio de um dia de exposição.
+
+## C9.1 — sincronização local
+
+Construir com `npm run build -- --outDir /tmp/orquestra-c91/final` e usar ORQUESTRA_TEST_DIST nesse diretório; servidor rejeita build pré-C9.1. `feira-sync-service.test.mjs` testa autoridade/motor, revisões/roles/locks/leases/1000 ciclos; `feira-sync-http.test.mjs` usa HTTP/SSE reais, build/segurança/reconexão; `feira-sync-browser.test.mjs` usa dois contextos Chrome, backend Node com relógio injetável somente em teste e rede real de loopback, mais 20 loops sincronizados. Nenhum endpoint público acelera tempo nem expõe hooks de teste.
+
+`feira-sync-endurance.mjs` é ensaio separado com serviço/motor/rede reais: 1 ciclo normal +1 acelerado (~217,5 s). Ferramentas já instaladas; nenhum download. Casos dev verificam módulos conectados e primitivas UI extraídas. Comandos, resultados e roteiro físico em [entrega C9.1](../docs/produto/entrega-c91-sincronizacao.md). Contextos no mesmo PC e emulação de Wi-Fi/visibilidade não comprovam celular físico nem WAN desligada.
+
+## C9.2 — série estendida
+
+`feira-extended.test.mjs`: 19 casos de dados/diffs, 12 estados/417/55/189, ausência de futuro, criticidade ativa, duração/espera/1×/2×/10 mil loops, scheduler/cleanup, sessão/pausa/revisões, atomicidade e configuração inválida. `feira-extended-browser.test.mjs`: oito casos com dois contextos Chrome, 12 estados, detalhes/ACK/pausa, refresh/reconexão, 20 loops 2× e dimensões 1366×768,390×844,768×1024. Testes C9.1 puros/browser mantêm explicitamente a sequência original para regressão; standalone/ESM seguem a nova série aprovada.
+
+```bash
+/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B scripts/import_feira_estendida.py --check
+/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B tests/importacao-feira.test.py
+npm run build -- --outDir /tmp/orquestra-c92/delivery
+ORQUESTRA_DEV_URL=http://127.0.0.1:5175/OrquestraNEXT/ ORQUESTRA_TEST_DIST=/tmp/orquestra-c92/delivery /home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node --test --test-reporter=tap tests/*.test.mjs
+ORQUESTRA_TEST_DIST=/tmp/orquestra-c92/delivery /home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node tests/feira-sync-endurance.mjs
+```
+
+Importador novo tem oito casos Python (total17 com os nove históricos). Executar os arquivos Python diretamente: nomes com ponto não são descobertos por unittest discover. Ensaios reais sincronizados usam 336 s/168 s; `ORQUESTRA_ENDURANCE_SPEEDS=2` limita ao ciclo acelerado. Sandbox sem escalonamento pode apenas agrupar arquivos Node como testes e não comprova a contagem dos casos; testes reais de navegador/portas exigem permissão do ambiente. Resultados/evidências finais no relatório C9.2.
+
+### Diagnóstico de fonte C9.2
+
+`feira-source-browser.test.mjs` tem cinco casos: reproduz standalone T02 versus serviço/mobile T00 não iniciado, valida aviso/diagnóstico da origem e depois usa a mesma autoridade para T01/T02, revisão/sessão, pausa, refresh, visibilidade mobile, página realmente congelada durante transição e troca de acesso leitor→operador com código inválido/cancelamento. Preview próprio5223, service porta efêmera; não usar a mesma porta em outra execução simultânea. `feira-extended-browser.test.mjs` acrescenta entrada tardiaT05 e refreshT10. Resultados atuais no relatório C9.2; nenhuma evidência automatizada substitui homologação física. Fonte independente por design não pode ser apresentada como cliente conectado.
+
+### Supervisor Feira — evolução visual (19/10/2026)
+
+`feira-supervisor.test.mjs`: sete casos puros/contrato (cores BASE, zero/nulos/futuro, abertura sem relógio, mudanças, alertas/ordenação,12 estados, ausência de fixtures/motor/fontes externas). `feira-supervisor-browser.test.mjs`: dez casos com dois clientes Chrome e backend real em porta efêmera, clock injetado somente no teste, navegação/vazios,12 estados, FLIP/heartbeat/reduced-motion,alertas,POST retido/negado,pausa/foco/Escape,concluídos,3 resoluções/teclado,toques,refresh/reconexão e bloqueio de origens externas. `ORQUESTRA_SUPERVISOR_EVIDENCE` define capturas. Build final em `/tmp/orquestra-supervisor-fixed/dist`; suíte completa com `ORQUESTRA_TEST_DIST` e runtime da continuidade. Resultados e capturas no relatório C9.2. Nenhum hook/endpoint de teste acrescentado ao produto.
+
+O caso tablet de `feira-extended-browser.test.mjs` também verifica limites de altura e animações após20 ciclos rápidos: regressão do acúmulo de FLIP corrigido no adaptador isolado. Regressão completa usa CHOKIDAR_USEPOLLING=true somente no processo de teste, evitando EMFILE sem mudar configuração permanente.
+
+Resultado final desta evolução:400 Node/browser +17 Python =417 distintos aprovados, sem falhas/skip/cancelamentos. Build e ambos importadores --check aprovados; homologação visual/física pendente. TAP/capturas/limites no relatório C9.2.
+
+## Nova apresentação padrão — US06 (19/10/2026)
+
+`apresentacao.test.mjs`:6 casos puros de modos/URLs/autoridade/roteiro. `apresentacao-browser.test.mjs`:16 casos de navegação/estático/modos, preview próprio5227,22 novos no total. Build `/tmp/orquestra-apresentacao/dist`, evidências via ORQUESTRA_PRESENTATION_EVIDENCE. Testes de navegador do legado passam a `?modo=legado`; suas assertions das dez cenas/teclado/timers permanecem. platform-shell e fallback Feira verificam URLs explícitas, substituindo a premissa antiga de legado padrão. Protocolo/clock/dados C9.2 não mudam. Comandos/resultados no [relatório da apresentação](../docs/produto/entrega-apresentacao-padrao.md). Rodar suíte inteira com CHOKIDAR_USEPOLLING=true/ORQUESTRA_TEST_DIST e Node do runtime, além dos17 Python/dois --check; não usar5180/5182 para fixtures de testes.
+
+Resultado da apresentação padrão:422 Node/browser +17 Python =439 distintos aprovados, incluindo417 anteriores +22 novos. Build e ambos importadores --check aprovados; homologação/publicação pendentes. O legado permanece integralmente validado no modo explícito.

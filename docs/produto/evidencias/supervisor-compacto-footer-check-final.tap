@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: Supervisor visual UI: header, três indicadores e navegação funcionais T00
+ok 1 - Supervisor visual UI: header, três indicadores e navegação funcionais T00
+  ---
+  duration_ms: 2118.148765
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+ok 2 - Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+  ---
+  duration_ms: 125.43871
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+ok 3 - Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+  ---
+  duration_ms: 398.451214
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+ok 4 - Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+  ---
+  duration_ms: 48.574055
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+ok 5 - Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+  ---
+  duration_ms: 152.195637
+  type: 'test'
+  ...
+# Subtest: Alertas UI: lista compacta abre resumo confirmado, Laranja/Vermelho e SLA acessível
+ok 6 - Alertas UI: lista compacta abre resumo confirmado, Laranja/Vermelho e SLA acessível
+  ---
+  duration_ms: 581.845904
+  type: 'test'
+  ...
+# Subtest: Alertas UI: lista → resumo → completo → resumo → lista mantém pausa e foco
+ok 7 - Alertas UI: lista → resumo → completo → resumo → lista mantém pausa e foco
+  ---
+  duration_ms: 317.86795
+  type: 'test'
+  ...
+# Subtest: Alertas fluxo: ACK antes do resumo, um lock e nenhum POST para aprofundar/voltar
+ok 8 - Alertas fluxo: ACK antes do resumo, um lock e nenhum POST para aprofundar/voltar
+  ---
+  duration_ms: 214.084651
+  type: 'test'
+  ...
+# Subtest: Alertas fluxo: falha no ACK não abre resumo nem chamado completo
+ok 9 - Alertas fluxo: falha no ACK não abre resumo nem chamado completo
+  ---
+  duration_ms: 136.285479
+  type: 'test'
+  ...
+# Subtest: Alertas fluxo: reinício invalida resumo e não abre alertas automaticamente no próximo estado
+ok 10 - Alertas fluxo: reinício invalida resumo e não abre alertas automaticamente no próximo estado
+  ---
+  duration_ms: 183.656215
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: ACK antes do detalhe, POST único e fechar mantém pausa
+ok 11 - Supervisor visual UI: ACK antes do detalhe, POST único e fechar mantém pausa
+  ---
+  duration_ms: 202.007754
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: falha explícita de abertura não exibe dados sem confirmação
+ok 12 - Supervisor visual UI: falha explícita de abertura não exibe dados sem confirmação
+  ---
+  duration_ms: 72.861221
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+ok 13 - Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+  ---
+  duration_ms: 205.042575
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+ok 14 - Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+  ---
+  duration_ms: 504.83702
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+ok 15 - Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+  ---
+  duration_ms: 3470.067754
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9250.3724

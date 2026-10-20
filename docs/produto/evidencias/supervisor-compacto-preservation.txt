@@ -1,0 +1,3 @@
+197/199 arquivos fonte/serviço/dados preservados. Alterados somente:
+src/feira/supervisor/Supervisor.module.css
+src/feira/supervisor/SupervisorParts.jsx
