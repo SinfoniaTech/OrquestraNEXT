@@ -1,0 +1,173 @@
+## feature/modo-feira
+ M docs/CONTINUIDADE_CODEX.md
+ M docs/README.md
+ M docs/produto/backlog.md
+ M docs/produto/modos.md
+ M docs/produto/plano-incremental.md
+ M docs/tecnica/arquitetura-atual.md
+ M docs/tecnica/pontos-integracao-supervisor.md
+ M package.json
+ M src/App.jsx
+ M src/platform/BackofficePlatform.jsx
+ M src/platform/BackofficePlatform.module.css
+ M src/platform/components/ConsultationUI.jsx
+ M src/platform/components/DataTable.jsx
+ M tests/README.md
+ M tests/navegador-regressao.test.mjs
+ M tests/platform-dev.test.mjs
+ M tests/platform-shell.test.mjs
+?? datasets/ORQUESTRA_Modo_Feira_Estendido_12_Estados.xlsx
+?? docs/produto/entrega-apresentacao-padrao.md
+?? docs/produto/entrega-c9-feira.md
+?? docs/produto/entrega-c91-sincronizacao.md
+?? docs/produto/entrega-c92-feira-estendida.md
+?? docs/produto/evidencias/apresentacao-padrao-build.txt
+?? docs/produto/evidencias/apresentacao-padrao-entrada-1366x768.png
+?? docs/produto/evidencias/apresentacao-padrao-entrada-390x844.png
+?? docs/produto/evidencias/apresentacao-padrao-entrada-768x1024.png
+?? docs/produto/evidencias/apresentacao-padrao-entrada-desktop.png
+?? docs/produto/evidencias/apresentacao-padrao-final-git.txt
+?? docs/produto/evidencias/apresentacao-padrao-focused.tap
+?? docs/produto/evidencias/apresentacao-padrao-import-extended.txt
+?? docs/produto/evidencias/apresentacao-padrao-import-original.txt
+?? docs/produto/evidencias/apresentacao-padrao-initial-git.txt
+?? docs/produto/evidencias/apresentacao-padrao-legado-cena4.png
+?? docs/produto/evidencias/apresentacao-padrao-preservation.txt
+?? docs/produto/evidencias/apresentacao-padrao-preview-legado.png
+?? docs/produto/evidencias/apresentacao-padrao-preview-root.png
+?? docs/produto/evidencias/apresentacao-padrao-preview.txt
+?? docs/produto/evidencias/apresentacao-padrao-python-extended.txt
+?? docs/produto/evidencias/apresentacao-padrao-python-original.txt
+?? docs/produto/evidencias/apresentacao-padrao-regression.tap
+?? docs/produto/evidencias/apresentacao-padrao-roteiro-pecas.png
+?? docs/produto/evidencias/apresentacao-padrao-seletor-modos.png
+?? docs/produto/evidencias/c9-after-100-cycles.png
+?? docs/produto/evidencias/c9-build.txt
+?? docs/produto/evidencias/c9-detail-paused.png
+?? docs/produto/evidencias/c9-dev.txt
+?? docs/produto/evidencias/c9-endurance.txt
+?? docs/produto/evidencias/c9-final-smoke.txt
+?? docs/produto/evidencias/c9-import.txt
+?? docs/produto/evidencias/c9-python.txt
+?? docs/produto/evidencias/c9-regression.tap
+?? docs/produto/evidencias/c9-t0.png
+?? docs/produto/evidencias/c9-t1.png
+?? docs/produto/evidencias/c9-t2.png
+?? docs/produto/evidencias/c91-build.txt
+?? docs/produto/evidencias/c91-dev.txt
+?? docs/produto/evidencias/c91-endurance.txt
+?? docs/produto/evidencias/c91-import.txt
+?? docs/produto/evidencias/c91-lan-mobile-detail.png
+?? docs/produto/evidencias/c91-lan-smoke.txt
+?? docs/produto/evidencias/c91-mobile-detail-paused.png
+?? docs/produto/evidencias/c91-mobile-t2.png
+?? docs/produto/evidencias/c91-notebook-t2.png
+?? docs/produto/evidencias/c91-python.txt
+?? docs/produto/evidencias/c91-regression.tap
+?? docs/produto/evidencias/c91-tablet.png
+?? docs/produto/evidencias/c92-build.txt
+?? docs/produto/evidencias/c92-diagnostico-build.txt
+?? docs/produto/evidencias/c92-diagnostico-connected-mobile.png
+?? docs/produto/evidencias/c92-diagnostico-connected-notebook.png
+?? docs/produto/evidencias/c92-diagnostico-endurance.txt
+?? docs/produto/evidencias/c92-diagnostico-import-extended.txt
+?? docs/produto/evidencias/c92-diagnostico-import-original.txt
+?? docs/produto/evidencias/c92-diagnostico-independent-notebook.png
+?? docs/produto/evidencias/c92-diagnostico-preservation.txt
+?? docs/produto/evidencias/c92-diagnostico-python-extended.txt
+?? docs/produto/evidencias/c92-diagnostico-python-original.txt
+?? docs/produto/evidencias/c92-diagnostico-regression.tap
+?? docs/produto/evidencias/c92-diagnostico-roles.tap
+?? docs/produto/evidencias/c92-diagnostico-servico-final.json
+?? docs/produto/evidencias/c92-diagnostico-source.txt
+?? docs/produto/evidencias/c92-endurance-before-sse-fix.txt
+?? docs/produto/evidencias/c92-endurance.txt
+?? docs/produto/evidencias/c92-import-extended.txt
+?? docs/produto/evidencias/c92-import-original.txt
+?? docs/produto/evidencias/c92-lan-mobile.png
+?? docs/produto/evidencias/c92-lan-notebook.png
+?? docs/produto/evidencias/c92-lan-smoke.txt
+?? docs/produto/evidencias/c92-mobile-detail.png
+?? docs/produto/evidencias/c92-mobile-t11.png
+?? docs/produto/evidencias/c92-mobile-t3.png
+?? docs/produto/evidencias/c92-notebook-t11.png
+?? docs/produto/evidencias/c92-notebook-t3.png
+?? docs/produto/evidencias/c92-preservation.txt
+?? docs/produto/evidencias/c92-python-extended.txt
+?? docs/produto/evidencias/c92-python-original.txt
+?? docs/produto/evidencias/c92-regression.tap
+?? docs/produto/evidencias/c92-restauracao-conectividade-20261019.txt
+?? docs/produto/evidencias/c92-restauracao-estado-20261019.json
+?? docs/produto/evidencias/c92-tablet.png
+?? docs/produto/evidencias/c92-two-views.tap
+?? docs/produto/evidencias/supervisor-visual-after-1366x768.png
+?? docs/produto/evidencias/supervisor-visual-after-390x844.png
+?? docs/produto/evidencias/supervisor-visual-after-768x1024.png
+?? docs/produto/evidencias/supervisor-visual-after-alerts.png
+?? docs/produto/evidencias/supervisor-visual-after-detail.png
+?? docs/produto/evidencias/supervisor-visual-after-mobile-t00.png
+?? docs/produto/evidencias/supervisor-visual-after-mobile-t03.png
+?? docs/produto/evidencias/supervisor-visual-after-mobile-viewport.png
+?? docs/produto/evidencias/supervisor-visual-before.png
+?? docs/produto/evidencias/supervisor-visual-build.txt
+?? docs/produto/evidencias/supervisor-visual-capture-diagnostic.tap
+?? docs/produto/evidencias/supervisor-visual-dev.tap
+?? docs/produto/evidencias/supervisor-visual-final-git.txt
+?? docs/produto/evidencias/supervisor-visual-first-regression.tap
+?? docs/produto/evidencias/supervisor-visual-focused.tap
+?? docs/produto/evidencias/supervisor-visual-import-extended.txt
+?? docs/produto/evidencias/supervisor-visual-import-original.txt
+?? docs/produto/evidencias/supervisor-visual-initial-git.txt
+?? docs/produto/evidencias/supervisor-visual-motion-fixed.tap
+?? docs/produto/evidencias/supervisor-visual-preservation.txt
+?? docs/produto/evidencias/supervisor-visual-python-extended.txt
+?? docs/produto/evidencias/supervisor-visual-python-original.txt
+?? docs/produto/evidencias/supervisor-visual-regression.tap
+?? docs/produto/evidencias/supervisor-visual-stable-capture.tap
+?? docs/produto/evidencias/supervisor-visual-tablet-after-20-loops.png
+?? scripts/import_feira_estendida.py
+?? server/feira-server.mjs
+?? server/feira-session.mjs
+?? src/feira/FeiraApp.jsx
+?? src/feira/FeiraApp.module.css
+?? src/feira/FeiraDetail.jsx
+?? src/feira/FeiraErrorBoundary.jsx
+?? src/feira/FeiraPanel.jsx
+?? src/feira/SupervisorFeira.jsx
+?? src/feira/SyncFeira.module.css
+?? src/feira/SyncedFeiraApp.jsx
+?? src/feira/data/generated.json
+?? src/feira/data/index.js
+?? src/feira/metricDefinitions.js
+?? src/feira/selectors.js
+?? src/feira/supervisor/Supervisor.module.css
+?? src/feira/supervisor/SupervisorDetail.jsx
+?? src/feira/supervisor/SupervisorParts.jsx
+?? src/feira/supervisor/presentation.js
+?? src/feira/supervisor/useSnapshotMotion.js
+?? src/feira/sync/protocol.js
+?? src/feira/sync/transport.js
+?? src/feira/sync/useSyncedFeira.js
+?? src/feira/temporalState.js
+?? src/feira/useFeiraClock.js
+?? src/modes.js
+?? src/platform/components/OperationalUI.jsx
+?? src/presentation/ModeMenu.jsx
+?? src/presentation/Presentation.module.css
+?? src/presentation/PresentationBar.jsx
+?? src/presentation/itinerary.js
+?? tests/apresentacao-browser.test.mjs
+?? tests/apresentacao.test.mjs
+?? tests/feira-browser.test.mjs
+?? tests/feira-endurance.mjs
+?? tests/feira-extended-browser.test.mjs
+?? tests/feira-extended.test.mjs
+?? tests/feira-source-browser.test.mjs
+?? tests/feira-supervisor-browser.test.mjs
+?? tests/feira-supervisor.test.mjs
+?? tests/feira-sync-browser.test.mjs
+?? tests/feira-sync-endurance.mjs
+?? tests/feira-sync-http.test.mjs
+?? tests/feira-sync-service.test.mjs
+?? tests/feira-temporal.test.mjs
+?? tests/importacao-feira.test.py

@@ -1,0 +1,12 @@
+{
+  "origin": "http://192.168.0.3:5184",
+  "sessionId": "243ece66-6d9f-4532-b2b2-f2ce44ef2c6b",
+  "snapshotId": "T03",
+  "reference": "2026-09-08T10:15:00-03:00",
+  "revision": 71,
+  "status": "paused",
+  "speed": 1,
+  "total": 27,
+  "alerts": 9,
+  "jsErrors": 0
+}

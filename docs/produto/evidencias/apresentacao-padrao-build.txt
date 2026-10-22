@@ -1,0 +1,73 @@
+
+> orquestra-next@0.1.0 build
+> vite build --outDir /tmp/orquestra-apresentacao/dist
+
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 208 modules transformed.
+
+(!) outDir /tmp/orquestra-apresentacao/dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../../../tmp/orquestra-apresentacao/dist/index.html                                                     0.45 kB │ gzip:  0.29 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/orquestra-logo13-BBrr8rpF.png                         106.07 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/CenaTransicao-DWsH3paR.css                              0.45 kB │ gzip:  0.25 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/SceneController-YhbGBo-Z.css                            1.98 kB │ gzip:  0.85 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/index-CiHksn17.css                                      2.91 kB │ gzip:  1.10 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/hooks-BhxumCk7.css                                      3.11 kB │ gzip:  1.03 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/AvisoCritico-B2FR-neO.css                               3.67 kB │ gzip:  1.27 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/FeiraPanel-C2iCLF5T.css                                 6.28 kB │ gzip:  1.81 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/SyncedFeiraApp-B0n4Y4c3.css                             8.94 kB │ gzip:  2.49 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/ChamadoDetalheView-Cq9XzaPt.css                        16.63 kB │ gzip:  3.64 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/temporalDefinitions-Cn7j3AT-.css                       19.33 kB │ gzip:  4.60 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/BackofficeView-BrCGtxS2.css                            24.10 kB │ gzip:  5.13 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/BackofficePlatform-CW7ghpnQ.css                        40.52 kB │ gzip:  7.19 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/backoffice-1-principal-DWJFM0w2.js                      0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/backoffice-2-chamados-B64DAC1I.js                       0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/orquestra-logo13-BL5170sf.js                            0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-aberto-BtzrE6xO.js                             0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-aberto-DTDpI6jy.js                             0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-alerta-DpQprYQ7.js                             0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-alerta-otrlVQxd.js                             0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-repouso-BUw54JXO.js                            0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-repouso-C1XTWM8-.js                            0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-concluido-BSl2su50.js                          0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-concluido-D2uwbCec.js                          0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-priorizado-CjfW4H3V.js                         0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-priorizado-DJN-kBdm.js                         0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-encaminhado-BBMx3dAD.js                        0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-encaminhado-D3TE5Gk_.js                        0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/supervisor-cena-3-media-para-alta-DfS-OK2K.js           0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-em-atendimento-B1BI4vXq.js                     0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/chamados-em-atendimento-B9JWvUfx.js                     0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/supervisor-cena-2-normal-para-media-glx64mcy.js         0.21 kB │ gzip:  0.19 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/supervisor-cena-1-tela-Dvxv8wP5.js                      0.66 kB │ gzip:  0.44 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/supervisor-cena-5-demanda-critica-BtZxA-Sq.js           0.77 kB │ gzip:  0.49 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/supervisor-cena-2-media-sobe-D62UxCWX.js                0.83 kB │ gzip:  0.52 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/supervisor-cena-6-demanda-critica-sobe-ooHGheq0.js      0.87 kB │ gzip:  0.55 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/supervisor-cena-4-aviso-alta-8RI1NKwy.js                1.17 kB │ gzip:  0.68 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/supervisor-cena-7-aviso-estourado-2h3z2QNe.js           1.19 kB │ gzip:  0.69 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/CenaTransicao-BLjVM13u.js                               2.15 kB │ gzip:  1.05 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/AvisoCritico-DVHptQKN.js                                7.73 kB │ gzip:  2.37 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/hooks-Bm7spJct.js                                       8.21 kB │ gzip:  3.26 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/temporalDefinitions-B6SWoWsS.js                         8.64 kB │ gzip:  3.10 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/supervisor-BstXK2BF.js                                  9.06 kB │ gzip:  2.59 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/SceneController-BJ24qt-c.js                            10.26 kB │ gzip:  3.03 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/FeiraPanel-jXF94Qix.js                                 13.22 kB │ gzip:  4.87 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/ChamadoDetalheView-C_vKH24Y.js                         24.63 kB │ gzip:  7.05 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/SyncedFeiraApp-BcMuF2KE.js                             25.23 kB │ gzip:  8.84 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/BackofficeView-V3n8VHJ9.js                             62.21 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/BackofficeView-BxEdLWOP.js                             62.22 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/BackofficePlatform-DYZveXZ_.js                        208.68 kB │ gzip: 51.10 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/index-s4M5Q6OL.js                                     225.18 kB │ gzip: 70.84 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/FeiraApp-kV4bTOdG.js                                  708.85 kB │ gzip: 45.24 kB
+../../../../../../tmp/orquestra-apresentacao/dist/assets/temporal-BnPFJ1yd.js                                1,111.91 kB │ gzip: 73.98 kB
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 312ms

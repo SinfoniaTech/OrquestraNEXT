@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: Supervisor visual UI: header, três indicadores e navegação funcionais T00
+ok 1 - Supervisor visual UI: header, três indicadores e navegação funcionais T00
+  ---
+  duration_ms: 2099.817447
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+ok 2 - Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+  ---
+  duration_ms: 142.991567
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+ok 3 - Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+  ---
+  duration_ms: 402.90533
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+ok 4 - Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+  ---
+  duration_ms: 49.923722
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+ok 5 - Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+  ---
+  duration_ms: 190.847031
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: ACK antes do detalhe, POST único e fechar mantém pausa
+ok 6 - Supervisor visual UI: ACK antes do detalhe, POST único e fechar mantém pausa
+  ---
+  duration_ms: 559.317696
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: falha explícita de abertura não exibe dados sem confirmação
+ok 7 - Supervisor visual UI: falha explícita de abertura não exibe dados sem confirmação
+  ---
+  duration_ms: 53.574413
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+ok 8 - Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+  ---
+  duration_ms: 209.504927
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+ok 9 - Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+  ---
+  duration_ms: 564.278472
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+ok 10 - Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+  ---
+  duration_ms: 3477.054391
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: cores materializadas não recebem nomenclatura do tutorial
+ok 11 - Supervisor visual: cores materializadas não recebem nomenclatura do tutorial
+  ---
+  duration_ms: 0.836813
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: nulos, vazio, zero e eventos futuros tratados sem inferência
+ok 12 - Supervisor visual: nulos, vazio, zero e eventos futuros tratados sem inferência
+  ---
+  duration_ms: 0.128059
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: tempo de abertura não calcula SLA/TA/TB ou usa relógio local
+ok 13 - Supervisor visual: tempo de abertura não calcula SLA/TA/TB ou usa relógio local
+  ---
+  duration_ms: 0.112722
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: alterações explicam novo, cor, status e conclusão
+ok 14 - Supervisor visual: alterações explicam novo, cor, status e conclusão
+  ---
+  duration_ms: 0.119345
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: alertas excluem concluídos e preservam ordem autoritativa
+ok 15 - Supervisor visual: alertas excluem concluídos e preservam ordem autoritativa
+  ---
+  duration_ms: 0.139465
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: dados T00 até T11 mantêm cores, prioridade e alertas exatos
+ok 16 - Supervisor visual: dados T00 até T11 mantêm cores, prioridade e alertas exatos
+  ---
+  duration_ms: 26.359665
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: UI sem fixture, motor temporal, Google Fonts ou protocolos próprios
+ok 17 - Supervisor visual: UI sem fixture, motor temporal, Google Fonts ou protocolos próprios
+  ---
+  duration_ms: 0.350324
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8235.936643

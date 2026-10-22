@@ -1,0 +1,77 @@
+[
+  {
+    "dark": false,
+    "samples": 4,
+    "minRatio": 14.509039594971117
+  },
+  {
+    "dark": true,
+    "samples": 3,
+    "minRatio": 10.139369177898999
+  },
+  {
+    "dark": false,
+    "samples": 57,
+    "minRatio": 4.632326848779844
+  },
+  {
+    "dark": true,
+    "samples": 57,
+    "minRatio": 8.16947719111259
+  },
+  {
+    "dark": false,
+    "samples": 57,
+    "minRatio": 4.632326848779844
+  },
+  {
+    "dark": true,
+    "samples": 72,
+    "minRatio": 8.16947719111259
+  },
+  {
+    "dark": false,
+    "samples": 72,
+    "minRatio": 4.632326848779844
+  },
+  {
+    "dark": true,
+    "samples": 9,
+    "minRatio": 8.735677311701275
+  },
+  {
+    "dark": true,
+    "samples": 10,
+    "minRatio": 8.350631631169847
+  },
+  {
+    "dark": false,
+    "samples": 9,
+    "minRatio": 4.8378562034379575
+  },
+  {
+    "dark": false,
+    "samples": 10,
+    "minRatio": 4.8378562034379575
+  },
+  {
+    "dark": true,
+    "samples": 70,
+    "minRatio": 8.16947719111259
+  },
+  {
+    "dark": false,
+    "samples": 70,
+    "minRatio": 4.632326848779844
+  },
+  {
+    "dark": true,
+    "samples": 2,
+    "minRatio": 8.350631631169847
+  },
+  {
+    "dark": false,
+    "samples": 8,
+    "minRatio": 4.632326848779844
+  }
+]

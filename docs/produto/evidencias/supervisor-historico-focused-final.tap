@@ -1,0 +1,202 @@
+TAP version 13
+# Subtest: Histórico: conta solução documentada, N e nulos sem alterar entradas
+ok 1 - Histórico: conta solução documentada, N e nulos sem alterar entradas
+  ---
+  duration_ms: 0.797253
+  type: 'test'
+  ...
+# Subtest: Histórico: exclui futuros, ativos, IDs repetidos/próprio e datas inválidas
+ok 2 - Histórico: exclui futuros, ativos, IDs repetidos/próprio e datas inválidas
+  ---
+  duration_ms: 0.485785
+  type: 'test'
+  ...
+# Subtest: Histórico: não confunde equipamento semelhante com o mesmo equipamento
+ok 3 - Histórico: não confunde equipamento semelhante com o mesmo equipamento
+  ---
+  duration_ms: 0.173988
+  type: 'test'
+  ...
+# Subtest: Histórico: prioriza mesmo cliente/unidade sem inflar com similares
+ok 4 - Histórico: prioriza mesmo cliente/unidade sem inflar com similares
+  ---
+  duration_ms: 0.107567
+  type: 'test'
+  ...
+# Subtest: Histórico: exige compatibilidade de problema, componente e tipo
+ok 5 - Histórico: exige compatibilidade de problema, componente e tipo
+  ---
+  duration_ms: 0.164823
+  type: 'test'
+  ...
+# Subtest: Histórico: um único caso, empate e fechamentos ausentes não viram solução
+ok 6 - Histórico: um único caso, empate e fechamentos ausentes não viram solução
+  ---
+  duration_ms: 4.347539
+  type: 'test'
+  ...
+# Subtest: Histórico: referência inválida não revela fechamentos
+ok 7 - Histórico: referência inválida não revela fechamentos
+  ---
+  duration_ms: 0.118375
+  type: 'test'
+  ...
+# Subtest: Histórico real: 12 estados sem resultados futuros e sem inventar vínculo de equipamento
+ok 8 - Histórico real: 12 estados sem resultados futuros e sem inventar vínculo de equipamento
+  ---
+  duration_ms: 95.149857
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: header, três indicadores e navegação funcionais T00
+ok 9 - Supervisor visual UI: header, três indicadores e navegação funcionais T00
+  ---
+  duration_ms: 2078.043308
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+ok 10 - Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+  ---
+  duration_ms: 131.831049
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+ok 11 - Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+  ---
+  duration_ms: 406.029414
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+ok 12 - Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+  ---
+  duration_ms: 49.701745
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+ok 13 - Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+  ---
+  duration_ms: 136.350028
+  type: 'test'
+  ...
+# Subtest: Alertas UI: lista compacta abre resumo confirmado, Laranja/Vermelho e SLA acessível
+ok 14 - Alertas UI: lista compacta abre resumo confirmado, Laranja/Vermelho e SLA acessível
+  ---
+  duration_ms: 450.1582
+  type: 'test'
+  ...
+# Subtest: Alertas UI: lista → resumo → completo → resumo → lista mantém pausa e foco
+ok 15 - Alertas UI: lista → resumo → completo → resumo → lista mantém pausa e foco
+  ---
+  duration_ms: 298.937259
+  type: 'test'
+  ...
+# Subtest: Alertas fluxo: ACK antes do resumo, um lock e nenhum POST para aprofundar/voltar
+ok 16 - Alertas fluxo: ACK antes do resumo, um lock e nenhum POST para aprofundar/voltar
+  ---
+  duration_ms: 224.407534
+  type: 'test'
+  ...
+# Subtest: Alertas fluxo: falha no ACK não abre resumo nem chamado completo
+ok 17 - Alertas fluxo: falha no ACK não abre resumo nem chamado completo
+  ---
+  duration_ms: 146.580541
+  type: 'test'
+  ...
+# Subtest: Alertas fluxo: reinício invalida resumo e não abre alertas automaticamente no próximo estado
+ok 18 - Alertas fluxo: reinício invalida resumo e não abre alertas automaticamente no próximo estado
+  ---
+  duration_ms: 162.618
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: ACK antes do detalhe, POST único e fechar mantém pausa
+ok 19 - Supervisor visual UI: ACK antes do detalhe, POST único e fechar mantém pausa
+  ---
+  duration_ms: 180.911172
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: falha explícita de abertura não exibe dados sem confirmação
+ok 20 - Supervisor visual UI: falha explícita de abertura não exibe dados sem confirmação
+  ---
+  duration_ms: 66.479923
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+ok 21 - Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+  ---
+  duration_ms: 187.320841
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+ok 22 - Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+  ---
+  duration_ms: 521.466362
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+ok 23 - Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+  ---
+  duration_ms: 3476.939704
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: acesso Light e fallback sem preferência, sem dependências externas
+ok 24 - Supervisor temas: acesso Light e fallback sem preferência, sem dependências externas
+  ---
+  duration_ms: 2842.842284
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: mudança dinâmica mantém DOM, sessão, snapshot, POST e SSE
+ok 25 - Supervisor temas: mudança dinâmica mantém DOM, sessão, snapshot, POST e SSE
+  ---
+  duration_ms: 42.38144
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: chamados compactos Light/Dark em T03, cores BASE e contraste AA
+ok 26 - Supervisor temas: chamados compactos Light/Dark em T03, cores BASE e contraste AA
+  ---
+  duration_ms: 135.263917
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: resumo Light/Dark com quatro respostas e um botão após seleção
+ok 27 - Supervisor temas: resumo Light/Dark com quatro respostas e um botão após seleção
+  ---
+  duration_ms: 700.243284
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: completo acompanha tema sem remontagem; retorno ao resumo mantém lock/pausa
+ok 28 - Supervisor temas: completo acompanha tema sem remontagem; retorno ao resumo mantém lock/pausa
+  ---
+  duration_ms: 270.663627
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: Vermelho por impacto usa emergência e SLA secundário, sem barra principal
+ok 29 - Supervisor temas: Vermelho por impacto usa emergência e SLA secundário, sem barra principal
+  ---
+  duration_ms: 292.562723
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: BackOffice e legado mantêm estilos, sem tokens móveis
+ok 30 - Supervisor temas: BackOffice e legado mantêm estilos, sem tokens móveis
+  ---
+  duration_ms: 921.993903
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: Dark offline/reconexão e entrada tardia preservam fotografia
+ok 31 - Supervisor temas: Dark offline/reconexão e entrada tardia preservam fotografia
+  ---
+  duration_ms: 3651.495669
+  type: 'test'
+  ...
+# Subtest: Supervisor temas:390×844/768×1024, foco, vazio e filtros nos dois temas
+ok 32 - Supervisor temas:390×844/768×1024, foco, vazio e filtros nos dois temas
+  ---
+  duration_ms: 337.499636
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9693.468185

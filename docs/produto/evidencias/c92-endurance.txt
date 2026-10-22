@@ -1,0 +1,13 @@
+Serviço real 2×: T1, 16 registros, dois clientes.
+Serviço real 2×: T2, 24 registros, dois clientes.
+Serviço real 2×: T3, 27 registros, dois clientes.
+Serviço real 2×: T4, 30 registros, dois clientes.
+Serviço real 2×: T5, 34 registros, dois clientes.
+Serviço real 2×: T6, 37 registros, dois clientes.
+Serviço real 2×: T7, 41 registros, dois clientes.
+Serviço real 2×: T8, 44 registros, dois clientes.
+Serviço real 2×: T9, 48 registros, dois clientes.
+Serviço real 2×: T10, 51 registros, dois clientes.
+Serviço real 2×: T11, 55 registros, dois clientes.
+OK ciclo sincronizado real 2×; retorno T00 sem pausa inesperada.
+OK ciclos reais 2× (336s/velocidade), lease/heartbeat/SSE/POST, sem erros JS. Validação física pendente.

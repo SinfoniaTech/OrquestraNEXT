@@ -1,0 +1,24 @@
+{
+  "module": "src/platform/services/chamados.js",
+  "server": "http://127.0.0.1:5173/OrquestraNEXT/",
+  "before": {
+    "bytes": 167,
+    "sha256": "9aab19732596d672a64d88ea470115c3aad2b7d455622c4309cd2f64133e2f1b",
+    "sourcesContent": [
+      ""
+    ],
+    "browser": {
+      "errors": [
+        "The requested module '/OrquestraNEXT/src/platform/services/chamados.js?t=1792076032342' does not provide an export named 'DEFAULT_STATE'"
+      ],
+      "body": ""
+    }
+  },
+  "after": {
+    "bytes": 30900,
+    "sha256": "b67aa283b67546900bab52fc96234ac2f46d7764c1eda0c3b094873e6e8f921e",
+    "exportsDefaultState": true
+  },
+  "action": "Reinício apenas do processo Vite antigo na porta 5173; nenhuma modificação de produto.",
+  "trigger": "Não determinado; não há remoção de DEFAULT_STATE no diff C7."
+}

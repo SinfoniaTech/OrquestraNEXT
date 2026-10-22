@@ -1,0 +1,26 @@
+✔ C1 reconcilia 736, aderência 91,9%, N TA/TB e atenção atual (86.140398ms)
+✔ criticidade, faixa e motivo aprofundam em lista e detalhe com retorno (475.104672ms)
+✔ drill de tempos inclui grupos e médias explicam unidade/denominador (183.415591ms)
+✔ filtros compartilhados persistem entre SLA e Chamados e limitam todos os painéis (290.415443ms)
+✔ vazio não exibe NaN ou aderência zero fabricada (66.208748ms)
+✔ explicações de todos os nove painéis e SLA restante pendente (1131.083351ms)
+✔ offline carregado, notebook/móvel sem overflow e sem erros JS (367.525493ms)
+✔ aderência aprovada reconcilia 665 dentro e 59 acima entre 724 concluídos (0.669185ms)
+✔ elegibilidade de aderência exclui abertos, nulos, inválidos e SLA zero; 100% cumpre (0.146749ms)
+✔ médias usam N por campo e preservam materializados (0.254823ms)
+✔ média exclui ausentes sem trocar por zero; zero informado participa (0.268139ms)
+✔ faixas contínuas não têm lacunas nem sobreposição nos limites (0.110486ms)
+✔ distribuições reconciliam o total sem recodificar criticidade pelo consumo (0.521404ms)
+✔ passageiro preso conta ocorrências, atenção exclui concluídos (0.109234ms)
+✔ motivos completos são grupos exclusivos e preservam textos compostos (0.241696ms)
+✔ agrupamentos por área/categoria/cliente/equipamento preservam N independente (1.738827ms)
+✔ análise consome somente recorte compartilhado, inclusive vazio (2.006285ms)
+✔ explicação mantém origem, filtros, elegíveis e regra específica (1.459744ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4060.629759

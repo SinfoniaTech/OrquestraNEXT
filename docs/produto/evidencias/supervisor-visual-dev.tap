@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: inicialização dev: módulo servido exporta estado inicial, reducer e seletor
+ok 1 - inicialização dev: módulo servido exporta estado inicial, reducer e seletor
+  ---
+  duration_ms: 238.831655
+  type: 'test'
+  ...
+# Subtest: inicialização dev: todas importações nomeadas do serviço têm export correspondente
+ok 2 - inicialização dev: todas importações nomeadas do serviço têm export correspondente
+  ---
+  duration_ms: 44.190234
+  type: 'test'
+  ...
+# Subtest: inicialização dev: \#/visao-geral carrega diretamente e após refresh
+ok 3 - inicialização dev: \#/visao-geral carrega diretamente e após refresh
+  ---
+  duration_ms: 501.306784
+  type: 'test'
+  ...
+# Subtest: inicialização dev: \#/chamados carrega diretamente e após refresh
+ok 4 - inicialização dev: \#/chamados carrega diretamente e após refresh
+  ---
+  duration_ms: 462.57518
+  type: 'test'
+  ...
+# Subtest: inicialização dev: \#/tecnicos carrega diretamente e após refresh
+ok 5 - inicialização dev: \#/tecnicos carrega diretamente e após refresh
+  ---
+  duration_ms: 499.204041
+  type: 'test'
+  ...
+# Subtest: inicialização dev: \#/pecas carrega diretamente e após refresh
+ok 6 - inicialização dev: \#/pecas carrega diretamente e após refresh
+  ---
+  duration_ms: 987.255148
+  type: 'test'
+  ...
+# Subtest: inicialização dev: Feira ESM carrega, avança e refresh restaura T0
+ok 7 - inicialização dev: Feira ESM carrega, avança e refresh restaura T0
+  ---
+  duration_ms: 1667.540939
+  type: 'test'
+  ...
+# Subtest: inicialização dev: módulos conectados e primitivos compartilhados têm ESM válido
+ok 8 - inicialização dev: módulos conectados e primitivos compartilhados têm ESM válido
+  ---
+  duration_ms: 31.236202
+  type: 'test'
+  ...
+# Subtest: inicialização dev: nenhuma falha ESM, erro JS ou erro de console nas rotas Plataforma e Feira
+ok 9 - inicialização dev: nenhuma falha ESM, erro JS ou erro de console nas rotas Plataforma e Feira
+  ---
+  duration_ms: 0.270287
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5185.157692

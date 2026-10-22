@@ -1,115 +1,87 @@
-# OrquestraNEXT — Controlador de Cenas
+# ORQUESTRA — OrquestraNEXT
 
-Apresentação ao vivo feita de **cenas**: cada cena é uma página React
-independente dentro de `src/views/`, e um controlador avança/retrocede entre
-elas na ordem definida em um único arquivo, `src/scenes.config.js`.
+Demonstrador acadêmico do FIAP Challenge/NEXT para consulta operacional de manutenção de elevadores, análise histórica e apresentação de uma operação simulada. Usa dados sintéticos; não representa uma integração corporativa em produção.
 
-Stack: **React + Vite + JavaScript + CSS Modules** — nenhuma dependência além
-de `react` e `react-dom`.
+O projeto reúne BackOffice, apresentação guiada, simulação temporal Feira, Supervisor conectado e dez cenas originais preservadas.
 
-## Como executar
+## Executar
 
-```bash
-npm install
-npm run dev      # http://localhost:5173
-npm run build    # build de produção (gera /dist)
-npm run preview  # serve o build de produção
+Requer Node.js compatível com o Vite instalado (consulte `node_modules/vite/package.json`, campo `engines`) e npm. O lockfile fixa as dependências. Python 3 e `openpyxl` são necessários somente para os importadores XLSX.
+
+```sh
+npm ci
+npm run dev
 ```
 
-## Arquitetura
+Abra o endereço indicado pelo Vite com a base `/OrquestraNEXT/`. Para gerar e consultar a versão estática:
 
-```
-App
-└── SceneController                      (posição atual · teclado · URL · palco)
-    ├── src/scenes.config.js             (ORDEM da apresentação — editar AQUI)
-    ├── src/scenes/sceneIndex.js         (descoberta automática das cenas)
-    └── src/views/<cena>/index.jsx       (cada cena, carregada com React.lazy)
+```sh
+npm run build
+npm run preview
 ```
 
-| Peça | Responsabilidade |
-|---|---|
-| `src/components/SceneController.jsx` | Dono da posição atual. Monta a linha do tempo a partir da configuração, lida com o teclado, sincroniza o hash da URL, renderiza as cenas (lazy + Suspense) remontadas do zero a cada posição e exibe controles discretos ocultáveis com `H`. |
-| `src/scenes.config.js` | Array `{ scene, position }` com a ordem. **Fonte única de verdade** — reordenar a apresentação é editar só este arquivo. O comentário no topo explica todas as regras. |
-| `src/scenes/sceneIndex.js` | `import.meta.glob('../views/*/index.jsx')`: toda pasta em `src/views/` com `index.jsx` vira uma cena disponível automaticamente. |
-| `src/views/<cena>/` | A cena em si (componentes, dados e estilos próprios). O `index.jsx` deve ter `export default` de um componente React; ele recebe as props `isActive` e `side`. |
+Stack: React, Vite, JavaScript/JSX e CSS Modules. `gh-pages` é a ferramenta de publicação estática. Dependências e comandos estão em [package.json](package.json).
 
-## Como adicionar uma nova cena
+## Modos de acesso
 
-1. Crie a pasta da cena: `src/views/minha-cena/index.jsx`;
-2. O `index.jsx` exporta um componente React por `export default` (ele recebe
-   `isActive` — true quando visível — e `side` — `"full" | "left" | "right"`);
-3. Registre a ordem em `src/scenes.config.js`:
+Acrescente os caminhos abaixo à origem do servidor:
 
-   ```js
-   export const scenesConfig = [
-     // ...
-     { scene: 'minha-cena', position: 3 },
-   ];
-   ```
+| Modo | Caminho | Uso |
+| --- | --- | --- |
+| Apresentação guiada (padrão) | `/OrquestraNEXT/` | Nove telas atuais; avanço manual; sem login ou API local |
+| Plataforma livre | `/OrquestraNEXT/?modo=plataforma` | Acesso demonstrativo e navegação pelo BackOffice |
+| Feira | `/OrquestraNEXT/?modo=feira` | Simulação independente no site estático; conectada quando servida pelo serviço local |
+| Supervisor Feira | `/OrquestraNEXT/?modo=supervisor-feira` | Serviço local e pareamento obrigatórios |
+| Legado | `/OrquestraNEXT/?modo=legado#/1` | Dez cenas originais com seu próprio roteiro |
 
-Nenhuma outra alteração é necessária. A raiz da cena deve ocupar 100% da área
-(`height: 100%`): o painel do palco isola e recorta o conteúdo da cena
-(`overflow: hidden`).
+Visão Geral, Contratos & Margem, Custos / TCO, Riscos & Tendências, Chamados, SLA & Criticidade, Técnicos, Equipamentos e Peças têm telas funcionais. Padrões & Insights, Contratos — BackOffice e Integrações permanecem pendentes. Consulte [modos e contratos](docs/produto/modos.md).
 
-## Ordem, posições e tela dividida
+## Feira sincronizada
 
-- Apresentação em **ordem crescente** de `position`; posições não precisam ser
-  contíguas (1, 2, 5, 10 é válido).
-- **Duas cenas com o mesmo `position`** dividem a tela em duas metades iguais,
-  separadas por um divisor sutil de 1px (a primeira do array fica à esquerda).
-  Exemplo: `exemplo-b` e `exemplo-c` compartilham a position 2.
-- Mais de 2 cenas na mesma posição: as duas primeiras vencem e o controlador
-  emite `console.warn`.
-- Nome de cena inexistente: `console.error` e a entrada é ignorada — nada
-  quebra.
-- Configuração vazia ou sem cenas válidas: mensagem legível na tela.
+```sh
+npm run build
+npm run feira:local -- --host 127.0.0.1 --port 5180
+```
 
-## Navegação
+Para notebook e celular, use `--host` com o IPv4 específico do notebook na rede compartilhada e uma porta disponível. O processo informa as URLs com a sessão e os códigos de pareamento; o código ADMIN é exclusivo do operador. A sessão inicia T00 pausada. O servidor Node serve `dist`, mantém o motor autoritativo e envia atualizações por SSE; comandos usam POST. O celular recebe o mesmo estado e os detalhes usam confirmação, fotografia e pausa global. Reiniciar o servidor cria uma nova sessão.
 
-| Tecla | Ação |
-|---|---|
-| `→` · `Espaço` · `PageDown` | próxima posição |
-| `←` · `PageUp` | posição anterior |
-| `Home` / `End` | primeira / última posição |
-| `H` | oculta/exibe os controles (útil na projeção) |
+O GitHub Pages hospeda apenas arquivos estáticos: não executa esse servidor nem sincroniza o celular. Procedimentos, limites e homologações pendentes estão em [C9.1](docs/produto/entrega-c91-sincronizacao.md) e [C9.2](docs/produto/entrega-c92-feira-estendida.md).
 
-Sem loop: não avança além do fim nem retrocede antes do início. Os atalhos
-são ignorados quando o foco está em campos editáveis. Os botões ◀/▶ e o
-indicador `3 / 8` ficam discretos no canto inferior direito.
+## Estrutura e fluxo
 
-## URL e ensaios
+| Local | Responsabilidade |
+| --- | --- |
+| `src/App.jsx`, `src/modes.js` | Seleção do modo e carregamento sob demanda |
+| `src/presentation/` | Menu e roteiro manual da apresentação atual |
+| `src/platform/` | Shell, páginas, filtros, componentes e serviços analíticos |
+| `src/data/orquestra/` | Consulta imutável, esquema e dados históricos/snapshots |
+| `src/feira/` | Motor visual, seletores, simulação e clientes sincronizados |
+| `src/feira/supervisor/` | Interface do Supervisor Feira, temas e movimentos |
+| `server/` | Sessão autoritativa, HTTP, SSE e comandos |
+| `src/components/SceneController.jsx`, `src/scenes*`, `src/views/` | Controlador, configuração e cenas legadas |
+| `src/styles/` | Estilos globais mínimos e variáveis do controlador |
+| `datasets/`, `scripts/` | Fontes XLSX e importação controlada |
+| `tests/` | Testes de dados, regras, protocolos e navegador |
+| `docs/`, `referencias/` | Documentação, evidências e referências |
 
-A posição atual vira hash: `#/3` é a 3ª posição da lista ordenada (não o valor
-bruto de `position`). Abrir direto em `#/3` ou apertar F5 mantém a cena atual.
+No BackOffice, páginas consomem serviços de domínio e o contexto de filtros compartilhado. Na Feira conectada, o servidor mantém o tempo operacional; o cliente não avança a operação por conta própria. Arquitetura detalhada: [guia técnico](docs/tecnica/guia-projeto.md).
 
-## Remontagem a cada entrada
+## Dados e indicadores
 
-Trocar de posição **remonta** as cenas (o palco usa a posição como `key`):
-animações CSS de entrada e estados internos reiniciam a cada visita — o
-comportamento desejado para uma apresentação ao vivo. Em troca, o estado
-interno de uma cena **não** sobrevive à navegação entre posições.
+- Histórico `HIST_60_DIAS`: 736 registros e 46 campos; snapshots T0/T1/T2 separados.
+- Feira estendida: 12 fotografias T00–T11, 417 registros, 55 IDs e 189 eventos.
+- BASE identifica dado fornecido; CALC identifica cálculo explicável; EXT identifica fonte indisponível, sem valor fictício.
+- Criticidade, SLA, TA/TB, recorrência e custos têm contratos próprios; uma cor não implica automaticamente violação de SLA.
 
-## As aplicações `backoffice` e `supervisor`
+Não edite JSON gerado manualmente. Consulte [fontes](docs/dados/fontes.md), [dicionário](docs/dados/dicionario.md), [camada de dados](docs/dados/camada-dados.md) e [explicabilidade](docs/produto/explicabilidade-ext.md).
 
-As pastas `src/views/backoffice/` e `src/views/supervisor/` são aplicações
-completas e **não são cenas**: o controlador só descobre pastas com
-`index.jsx`, então elas ficam intactas e fora da apresentação. Para promover
-uma delas a cena:
+## Manutenção, testes e publicação
 
-1. Crie `src/views/backoffice/index.jsx` contendo apenas:
+- **Tamanho dos cards e espaçamentos:** [guia visual com arquivos, seletores e exemplos](docs/tecnica/guia-estilos.md).
+- **Testes:** [comandos e requisitos por suíte](tests/README.md). Os testes de navegador precisam do runtime Playwright/Chrome documentado; não existe script `npm test` neste projeto.
+- **Cenas legadas:** ordem em `src/scenes.config.js`; cada cena fica em `src/views/<cena>/index.jsx`. Posições iguais dividem o palco. Setas, Espaço, PageUp/PageDown, Home/End e H controlam o roteiro legado. A apresentação atual usa `src/presentation/itinerary.js`.
+- **GitHub:** `origin` aponta para `SinfoniaTech/OrquestraNEXT`. Publicar documentação na branch não atualiza o site. `npm run deploy` executa build e publica `dist` via `gh-pages`; execute somente em uma entrega autorizada para o site. A base está em `vite.config.js` e o endereço pretendido em `package.json`.
 
-   ```js
-   export { default } from './BackofficeView.jsx';
-   ```
+## Documentação completa
 
-2. Adicione a entrada correspondente em `src/scenes.config.js`.
-
-## Isolamento de estilos
-
-- `src/styles/global.css` — mínimo absoluto; nenhuma tag genérica é estilizada
-  globalmente.
-- `src/styles/theme.css` — apenas variáveis CSS (`--onx-*`); o controlador usa
-  `--onx-accent` no anel de foco dos botões.
-- Todos os componentes do controlador usam **CSS Modules**.
-- Transição entre posições: fade de 250ms (apenas `opacity`), desativado com
-  `prefers-reduced-motion: reduce`.
+Comece pelo [índice de documentação](docs/README.md). O [backlog](docs/produto/backlog.md) registra escopo e critérios; a [continuidade oficial](docs/CONTINUIDADE_CODEX.md) registra o estado verificável e as próximas ações. Relatórios antigos preservam evidências da época e não comprovam o estado da publicação atual. Para contribuir, siga [AGENTS.md](AGENTS.md).

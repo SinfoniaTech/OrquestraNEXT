@@ -1,0 +1,5 @@
+OK build final T0, 10 chamados; 1366x768, quatro colunas visíveis.
+OK build final T1, 16 chamados; 1366x768, quatro colunas visíveis.
+OK build final T2, 24 chamados; 1366x768, quatro colunas visíveis.
+OK detalhe pausa e fecha sem retomar; foco visível.
+OK refresh T0; 390x844; saída para apresentação; zero erros JavaScript.

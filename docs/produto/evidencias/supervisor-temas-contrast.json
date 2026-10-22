@@ -1,0 +1,67 @@
+[
+  {
+    "dark": false,
+    "samples": 4,
+    "minRatio": 6.559041986779861
+  },
+  {
+    "dark": true,
+    "samples": 3,
+    "minRatio": 7.724989309124644
+  },
+  {
+    "dark": false,
+    "samples": 57,
+    "minRatio": 5.694751452689254
+  },
+  {
+    "dark": true,
+    "samples": 57,
+    "minRatio": 7.724989309124644
+  },
+  {
+    "dark": false,
+    "samples": 57,
+    "minRatio": 5.694751452689254
+  },
+  {
+    "dark": true,
+    "samples": 72,
+    "minRatio": 7.724989309124644
+  },
+  {
+    "dark": false,
+    "samples": 72,
+    "minRatio": 5.694751452689254
+  },
+  {
+    "dark": true,
+    "samples": 88,
+    "minRatio": 7.724989309124644
+  },
+  {
+    "dark": false,
+    "samples": 88,
+    "minRatio": 5.694751452689254
+  },
+  {
+    "dark": true,
+    "samples": 70,
+    "minRatio": 7.922471781382086
+  },
+  {
+    "dark": false,
+    "samples": 70,
+    "minRatio": 5.694751452689254
+  },
+  {
+    "dark": true,
+    "samples": 2,
+    "minRatio": 8.237025350181968
+  },
+  {
+    "dark": false,
+    "samples": 8,
+    "minRatio": 5.694751452689254
+  }
+]

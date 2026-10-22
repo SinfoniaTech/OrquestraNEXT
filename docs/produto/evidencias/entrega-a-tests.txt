@@ -1,0 +1,15 @@
+✔ acesso independente é demonstrativo, sem credenciais corporativas (581.524227ms)
+✔ 12 menus e logo acessíveis; placeholders sem métricas (963.748381ms)
+✔ refresh, histórico e endereço desconhecido são previsíveis (1001.948655ms)
+✔ atalho ao conteúdo mantém rota e foca main (37.169043ms)
+✔ menu compacto móvel, Escape e ausência de overflow horizontal (416.680857ms)
+✔ apresentação original permanece padrão e recupera demo ao voltar (898.787599ms)
+✔ saída retorna login; URL direta não simula sessão autenticada (49.028548ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4532.596311

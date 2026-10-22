@@ -1,0 +1,2272 @@
+TAP version 13
+# Subtest: Vite empacota JSONs locais; consulta funciona com navegador offline
+ok 1 - Vite empacota JSONs locais; consulta funciona com navegador offline
+  ---
+  duration_ms: 995.194105
+  type: 'test'
+  ...
+# Subtest: 736 registros, 46 campos, IDs únicos e metadados offline
+ok 2 - 736 registros, 46 campos, IDs únicos e metadados offline
+  ---
+  duration_ms: 3.211881
+  type: 'test'
+  ...
+# Subtest: reconciliação independente de status e criticidade históricos
+ok 3 - reconciliação independente de status e criticidade históricos
+  ---
+  duration_ms: 3.464004
+  type: 'test'
+  ...
+# Subtest: snapshots separados com relógios e contagens próprios
+ok 4 - snapshots separados com relógios e contagens próprios
+  ---
+  duration_ms: 0.426869
+  type: 'test'
+  ...
+# Subtest: nulos preservados, TA/TB/percentual não recalculados
+ok 5 - nulos preservados, TA/TB/percentual não recalculados
+  ---
+  duration_ms: 0.768581
+  type: 'test'
+  ...
+# Subtest: consultas básicas cumulativas, busca por ID e proveniência BASE
+ok 6 - consultas básicas cumulativas, busca por ID e proveniência BASE
+  ---
+  duration_ms: 1.299901
+  type: 'test'
+  ...
+# Subtest: 60 dias civis inclusivos, Criado em e limites do dia local
+ok 7 - 60 dias civis inclusivos, Criado em e limites do dia local
+  ---
+  duration_ms: 3.973455
+  type: 'test'
+  ...
+# Subtest: datas ambíguas, inválidas e intervalo invertido falham explicitamente
+ok 8 - datas ambíguas, inválidas e intervalo invertido falham explicitamente
+  ---
+  duration_ms: 0.197313
+  type: 'test'
+  ...
+# Subtest: mesmo resultado independentemente do timezone do processo
+ok 9 - mesmo resultado independentemente do timezone do processo
+  ---
+  duration_ms: 0.073622
+  type: 'test'
+  ...
+# Subtest: distribuição CALC explica fonte, população e filtros sem mutá-los
+ok 10 - distribuição CALC explica fonte, população e filtros sem mutá-los
+  ---
+  duration_ms: 1.653374
+  type: 'test'
+  ...
+# Subtest: 736 históricos, 724 concluídos, 66 Vermelhos, só 1 atenção ativa
+ok 11 - 736 históricos, 724 concluídos, 66 Vermelhos, só 1 atenção ativa
+  ---
+  duration_ms: 107.459067
+  type: 'test'
+  ...
+# Subtest: períodos inclusivos com relógio fixo mesmo em browser Tóquio
+ok 12 - períodos inclusivos com relógio fixo mesmo em browser Tóquio
+  ---
+  duration_ms: 94.213431
+  type: 'test'
+  ...
+# Subtest: OR de criticidade e AND de área; remover chip preserva restrição
+ok 13 - OR de criticidade e AND de área; remover chip preserva restrição
+  ---
+  duration_ms: 524.310765
+  type: 'test'
+  ...
+# Subtest: status, cliente, equipamento, categoria e recorrência funcionam juntos
+ok 14 - status, cliente, equipamento, categoria e recorrência funcionam juntos
+  ---
+  duration_ms: 709.993494
+  type: 'test'
+  ...
+# Subtest: busca sem acentos/caixa, vazio e limpeza completa
+ok 15 - busca sem acentos/caixa, vazio e limpeza completa
+  ---
+  duration_ms: 211.952295
+  type: 'test'
+  ...
+# Subtest: ordenação/página/contexto permanecem no detalhe e entre menus
+ok 16 - ordenação/página/contexto permanecem no detalhe e entre menus
+  ---
+  duration_ms: 641.020702
+  type: 'test'
+  ...
+# Subtest: detalhe de TA/TB ausentes informa ausência, não zero
+ok 17 - detalhe de TA/TB ausentes informa ausência, não zero
+  ---
+  duration_ms: 170.179669
+  type: 'test'
+  ...
+# Subtest: todos os cards implementados têm explicação de fonte/população/cálculo
+ok 18 - todos os cards implementados têm explicação de fonte/população/cálculo
+  ---
+  duration_ms: 661.674092
+  type: 'test'
+  ...
+# Subtest: consulta e detalhe funcionam offline depois de carregados
+ok 19 - consulta e detalhe funcionam offline depois de carregados
+  ---
+  duration_ms: 189.755331
+  type: 'test'
+  ...
+# Subtest: 1366x768 e mobile sem overflow; analítica acessível
+ok 20 - 1366x768 e mobile sem overflow; analítica acessível
+  ---
+  duration_ms: 218.197232
+  type: 'test'
+  ...
+# Subtest: sem erros de execução/rede na nova consulta
+ok 21 - sem erros de execução/rede na nova consulta
+  ---
+  duration_ms: 0.144009
+  type: 'test'
+  ...
+# Subtest: períodos inclusivos usam data civil da demonstração, não hoje real
+ok 22 - períodos inclusivos usam data civil da demonstração, não hoje real
+  ---
+  duration_ms: 11.482863
+  type: 'test'
+  ...
+# Subtest: criticidade OR Laranja/Vermelho mantém histórico concluído separado
+ok 23 - criticidade OR Laranja/Vermelho mantém histórico concluído separado
+  ---
+  duration_ms: 1.691783
+  type: 'test'
+  ...
+# Subtest: status selecionado usa valor fonte exato
+ok 24 - status selecionado usa valor fonte exato
+  ---
+  duration_ms: 1.296839
+  type: 'test'
+  ...
+# Subtest: campos diferentes usam AND e valores do mesmo campo usam OR
+ok 25 - campos diferentes usam AND e valores do mesmo campo usam OR
+  ---
+  duration_ms: 1.837356
+  type: 'test'
+  ...
+# Subtest: cliente, tipo e categoria podem restringir cumulativamente
+ok 26 - cliente, tipo e categoria podem restringir cumulativamente
+  ---
+  duration_ms: 4.057541
+  type: 'test'
+  ...
+# Subtest: busca tolera acentos, caixa, espaços e combina com filtros
+ok 27 - busca tolera acentos, caixa, espaços e combina com filtros
+  ---
+  duration_ms: 16.383145
+  type: 'test'
+  ...
+# Subtest: remoção de chip preserva outros filtros e volta à página 1
+ok 28 - remoção de chip preserva outros filtros e volta à página 1
+  ---
+  duration_ms: 0.251982
+  type: 'test'
+  ...
+# Subtest: limpar restaura 60 dias, busca, ordenação e paginação padrão
+ok 29 - limpar restaura 60 dias, busca, ordenação e paginação padrão
+  ---
+  duration_ms: 0.902184
+  type: 'test'
+  ...
+# Subtest: total, distribuições e paginação conciliam para qualquer recorte
+ok 30 - total, distribuições e paginação conciliam para qualquer recorte
+  ---
+  duration_ms: 7.972524
+  type: 'test'
+  ...
+# Subtest: ordenação antecede paginação e não modifica fonte
+ok 31 - ordenação antecede paginação e não modifica fonte
+  ---
+  duration_ms: 19.362623
+  type: 'test'
+  ...
+# Subtest: estado vazio não inventa porcentagem nem página negativa
+ok 32 - estado vazio não inventa porcentagem nem página negativa
+  ---
+  duration_ms: 3.000249
+  type: 'test'
+  ...
+# Subtest: TA/TB nulos preservados; ETA e SLA não inferem regras desconhecidas
+ok 33 - TA/TB nulos preservados; ETA e SLA não inferem regras desconhecidas
+  ---
+  duration_ms: 3.594237
+  type: 'test'
+  ...
+# Subtest: atenção exclui concluídos mesmo que historicamente Vermelhos
+ok 34 - atenção exclui concluídos mesmo que historicamente Vermelhos
+  ---
+  duration_ms: 8.433022
+  type: 'test'
+  ...
+# Subtest: recorrência usa faixas fornecidas, OR e nulos preservados
+ok 35 - recorrência usa faixas fornecidas, OR e nulos preservados
+  ---
+  duration_ms: 0.841862
+  type: 'test'
+  ...
+# Subtest: explicação CALC rastreia população, período, filtros e campos
+ok 36 - explicação CALC rastreia população, período, filtros e campos
+  ---
+  duration_ms: 0.902718
+  type: 'test'
+  ...
+# Subtest: filtros futuros usam mesmo serviço sem uma segunda importação
+ok 37 - filtros futuros usam mesmo serviço sem uma segunda importação
+  ---
+  duration_ms: 1.578806
+  type: 'test'
+  ...
+# Subtest: ordenação mantém ausentes no fim nos dois sentidos
+ok 38 - ordenação mantém ausentes no fim nos dois sentidos
+  ---
+  duration_ms: 0.442304
+  type: 'test'
+  ...
+# Subtest: C4 síntese reconcilia quatro cards e seis gráficos
+ok 39 - C4 síntese reconcilia quatro cards e seis gráficos
+  ---
+  duration_ms: 130.445977
+  type: 'test'
+  ...
+# Subtest: C4 finanças EXT não possuem valores inventados
+ok 40 - C4 finanças EXT não possuem valores inventados
+  ---
+  duration_ms: 437.702878
+  type: 'test'
+  ...
+# Subtest: C4 ordenação, paginação e contexto da carteira sobrevivem à navegação
+ok 41 - C4 ordenação, paginação e contexto da carteira sobrevivem à navegação
+  ---
+  duration_ms: 363.876813
+  type: 'test'
+  ...
+# Subtest: C4 contrato → indicadores → equipamento → chamado preserva retornos
+ok 42 - C4 contrato → indicadores → equipamento → chamado preserva retornos
+  ---
+  duration_ms: 930.974466
+  type: 'test'
+  ...
+# Subtest: C4 cada gráfico e indicador leva a registros do suporte coerente
+ok 43 - C4 cada gráfico e indicador leva a registros do suporte coerente
+  ---
+  duration_ms: 465.662504
+  type: 'test'
+  ...
+# Subtest: C4 filtros AND/OR e busca sincronizam cards, tabela, gráficos e páginas anteriores
+ok 44 - C4 filtros AND/OR e busca sincronizam cards, tabela, gráficos e páginas anteriores
+  ---
+  duration_ms: 586.282626
+  type: 'test'
+  ...
+# Subtest: C4 explicações acessíveis em cards, colunas, gráficos e insights
+ok 45 - C4 explicações acessíveis em cards, colunas, gráficos e insights
+  ---
+  duration_ms: 470.438261
+  type: 'test'
+  ...
+# Subtest: C4 estado vazio e nenhum concluído não fabricam custos ou SLA
+ok 46 - C4 estado vazio e nenhum concluído não fabricam custos ou SLA
+  ---
+  duration_ms: 306.388833
+  type: 'test'
+  ...
+# Subtest: C4 notebook/móvel e consulta offline carregada sem erro
+ok 47 - C4 notebook/móvel e consulta offline carregada sem erro
+  ---
+  duration_ms: 644.036745
+  type: 'test'
+  ...
+# Subtest: C4 carteira reconcilia todos os contratos distintos e volume
+ok 48 - C4 carteira reconcilia todos os contratos distintos e volume
+  ---
+  duration_ms: 1.479976
+  type: 'test'
+  ...
+# Subtest: C4 custos reconcilia soma da fonte por contrato e cobertura
+ok 49 - C4 custos reconcilia soma da fonte por contrato e cobertura
+  ---
+  duration_ms: 1.019724
+  type: 'test'
+  ...
+# Subtest: C4 inclui contratos sem Alto e classifica pressão sem faixas inventadas
+ok 50 - C4 inclui contratos sem Alto e classifica pressão sem faixas inventadas
+  ---
+  duration_ms: 0.758343
+  type: 'test'
+  ...
+# Subtest: C4 recorrência é proporção de chamados positivos sobre total, sem soma de eventos
+ok 51 - C4 recorrência é proporção de chamados positivos sobre total, sem soma de eventos
+  ---
+  duration_ms: 0.194302
+  type: 'test'
+  ...
+# Subtest: C4 SLA por contrato usa concluídos elegíveis, não consumo médio
+ok 52 - C4 SLA por contrato usa concluídos elegíveis, não consumo médio
+  ---
+  duration_ms: 0.643028
+  type: 'test'
+  ...
+# Subtest: C4 custos/TA/TB nulos excluídos e zeros válidos
+ok 53 - C4 custos/TA/TB nulos excluídos e zeros válidos
+  ---
+  duration_ms: 0.471893
+  type: 'test'
+  ...
+# Subtest: C4 vazio e recorrência toda ausente são indisponíveis
+ok 54 - C4 vazio e recorrência toda ausente são indisponíveis
+  ---
+  duration_ms: 0.374824
+  type: 'test'
+  ...
+# Subtest: C4 contratos ausentes não criam entidade e custo geral mantém esses registros
+ok 55 - C4 contratos ausentes não criam entidade e custo geral mantém esses registros
+  ---
+  duration_ms: 0.38574
+  type: 'test'
+  ...
+# Subtest: C4 ordenação numérica precede paginação e desempata por contrato
+ok 56 - C4 ordenação numérica precede paginação e desempata por contrato
+  ---
+  duration_ms: 0.679121
+  type: 'test'
+  ...
+# Subtest: C4 busca por cliente ou contrato ignora acentos/caixa e combina palavras
+ok 57 - C4 busca por cliente ou contrato ignora acentos/caixa e combina palavras
+  ---
+  duration_ms: 0.319891
+  type: 'test'
+  ...
+# Subtest: C4 ordenação preserva indisponíveis por último nos dois sentidos
+ok 58 - C4 ordenação preserva indisponíveis por último nos dois sentidos
+  ---
+  duration_ms: 0.200148
+  type: 'test'
+  ...
+# Subtest: C4 filtros cumulativos alimentam carteira, gráficos e suporte únicos
+ok 59 - C4 filtros cumulativos alimentam carteira, gráficos e suporte únicos
+  ---
+  duration_ms: 3.863943
+  type: 'test'
+  ...
+# Subtest: C4 séries diárias conciliam volume e custo sem misturar unidades
+ok 60 - C4 séries diárias conciliam volume e custo sem misturar unidades
+  ---
+  duration_ms: 0.203909
+  type: 'test'
+  ...
+# Subtest: C4 categorias, componentes e equipamentos permitem reconciliar recorrência e chamados
+ok 61 - C4 categorias, componentes e equipamentos permitem reconciliar recorrência e chamados
+  ---
+  duration_ms: 0.125215
+  type: 'test'
+  ...
+# Subtest: C4 explicabilidade e quatro fontes EXT nunca fabricam finanças
+ok 62 - C4 explicabilidade e quatro fontes EXT nunca fabricam finanças
+  ---
+  duration_ms: 4.508544
+  type: 'test'
+  ...
+# Subtest: C4 agregações preservam dados e regras materializadas
+ok 63 - C4 agregações preservam dados e regras materializadas
+  ---
+  duration_ms: 19.148973
+  type: 'test'
+  ...
+# Subtest: C5 cinco cards conciliam custos média técnicos recorrentes e pressão
+ok 64 - C5 cinco cards conciliam custos média técnicos recorrentes e pressão
+  ---
+  duration_ms: 103.176411
+  type: 'test'
+  ...
+# Subtest: C5 TCO e composição são EXT sem parcelas ou números financeiros fictícios
+ok 65 - C5 TCO e composição são EXT sem parcelas ou números financeiros fictícios
+  ---
+  duration_ms: 324.912378
+  type: 'test'
+  ...
+# Subtest: C5 agrupamentos por contrato área técnico equipamento categoria e componente sincronizam
+ok 66 - C5 agrupamentos por contrato área técnico equipamento categoria e componente sincronizam
+  ---
+  duration_ms: 792.178931
+  type: 'test'
+  ...
+# Subtest: C5 tabela alterna contratos/chamados ordena média e pagina antes de navegar
+ok 67 - C5 tabela alterna contratos/chamados ordena média e pagina antes de navegar
+  ---
+  duration_ms: 419.353971
+  type: 'test'
+  ...
+# Subtest: C5 custo → desvio SLA → contrato → equipamento → chamado → insight e retorno
+ok 68 - C5 custo → desvio SLA → contrato → equipamento → chamado → insight e retorno
+  ---
+  duration_ms: 1389.461518
+  type: 'test'
+  ...
+# Subtest: C5 recorrência e série diária levam ao conjunto de suporte
+ok 69 - C5 recorrência e série diária levam ao conjunto de suporte
+  ---
+  duration_ms: 408.851401
+  type: 'test'
+  ...
+# Subtest: C5 filtros AND/OR busca e contexto conservados entre seis páginas
+ok 70 - C5 filtros AND/OR busca e contexto conservados entre seis páginas
+  ---
+  duration_ms: 562.311875
+  type: 'test'
+  ...
+# Subtest: C5 explicações por teclado mostram origem fórmula cobertura nulos e período
+ok 71 - C5 explicações por teclado mostram origem fórmula cobertura nulos e período
+  ---
+  duration_ms: 434.903314
+  type: 'test'
+  ...
+# Subtest: C5 vazio e não concluídos mantêm resultados indisponíveis sem fabricação
+ok 72 - C5 vazio e não concluídos mantêm resultados indisponíveis sem fabricação
+  ---
+  duration_ms: 320.270345
+  type: 'test'
+  ...
+# Subtest: C5 notebook/móvel offline carregado e custo alto individual sem erro
+ok 73 - C5 notebook/móvel offline carregado e custo alto individual sem erro
+  ---
+  duration_ms: 557.539201
+  type: 'test'
+  ...
+# Subtest: C5 soma válida e média conciliam fonte e população completa
+ok 74 - C5 soma válida e média conciliam fonte e população completa
+  ---
+  duration_ms: 0.799506
+  type: 'test'
+  ...
+# Subtest: C5 nulos negativos strings e não finitos não viram custos zero
+ok 75 - C5 nulos negativos strings e não finitos não viram custos zero
+  ---
+  duration_ms: 0.463997
+  type: 'test'
+  ...
+# Subtest: C5 custos associados aos técnicos excluem nome ausente no card e conservam grupo desconhecido
+ok 76 - C5 custos associados aos técnicos excluem nome ausente no card e conservam grupo desconhecido
+  ---
+  duration_ms: 0.706693
+  type: 'test'
+  ...
+# Subtest: C5 agrupamento por Contrato reconcilia custo e chamados
+ok 77 - C5 agrupamento por Contrato reconcilia custo e chamados
+  ---
+  duration_ms: 7.551469
+  type: 'test'
+  ...
+# Subtest: C5 agrupamento por Área reconcilia custo e chamados
+ok 78 - C5 agrupamento por Área reconcilia custo e chamados
+  ---
+  duration_ms: 2.251943
+  type: 'test'
+  ...
+# Subtest: C5 agrupamento por Técnico reconcilia custo e chamados
+ok 79 - C5 agrupamento por Técnico reconcilia custo e chamados
+  ---
+  duration_ms: 4.628541
+  type: 'test'
+  ...
+# Subtest: C5 agrupamento por Unidade reconcilia custo e chamados
+ok 80 - C5 agrupamento por Unidade reconcilia custo e chamados
+  ---
+  duration_ms: 5.92919
+  type: 'test'
+  ...
+# Subtest: C5 agrupamento por Categoria do Chamado reconcilia custo e chamados
+ok 81 - C5 agrupamento por Categoria do Chamado reconcilia custo e chamados
+  ---
+  duration_ms: 5.265358
+  type: 'test'
+  ...
+# Subtest: C5 agrupamento por Componente Principal reconcilia custo e chamados
+ok 82 - C5 agrupamento por Componente Principal reconcilia custo e chamados
+  ---
+  duration_ms: 1.751452
+  type: 'test'
+  ...
+# Subtest: C5 custo de recorrência usa chamados positivos sem multiplicar eventos
+ok 83 - C5 custo de recorrência usa chamados positivos sem multiplicar eventos
+  ---
+  duration_ms: 1.64745
+  type: 'test'
+  ...
+# Subtest: C5 recorrentes zeros e desconhecidos formam partição disjunta
+ok 84 - C5 recorrentes zeros e desconhecidos formam partição disjunta
+  ---
+  duration_ms: 1.302228
+  type: 'test'
+  ...
+# Subtest: C5 custo e tempo pareados exigem ambos os valores válidos
+ok 85 - C5 custo e tempo pareados exigem ambos os valores válidos
+  ---
+  duration_ms: 0.858234
+  type: 'test'
+  ...
+# Subtest: C5 grupos SLA reaproveitam elegibilidade e cobrem todos sem sobreposição
+ok 86 - C5 grupos SLA reaproveitam elegibilidade e cobrem todos sem sobreposição
+  ---
+  duration_ms: 0.134807
+  type: 'test'
+  ...
+# Subtest: C5 filtros cumulativos alimentam cards gráficos e carteira
+ok 87 - C5 filtros cumulativos alimentam cards gráficos e carteira
+  ---
+  duration_ms: 1.915399
+  type: 'test'
+  ...
+# Subtest: C5 série diária respeita dias civis lacunas e limite disponível
+ok 88 - C5 série diária respeita dias civis lacunas e limite disponível
+  ---
+  duration_ms: 0.231883
+  type: 'test'
+  ...
+# Subtest: C5 carteira e chamados ordenam por custo e média antes da página
+ok 89 - C5 carteira e chamados ordenam por custo e média antes da página
+  ---
+  duration_ms: 19.434842
+  type: 'test'
+  ...
+# Subtest: C5 desempate determinístico nulos por último e busca preservada
+ok 90 - C5 desempate determinístico nulos por último e busca preservada
+  ---
+  duration_ms: 0.494393
+  type: 'test'
+  ...
+# Subtest: C5 vazio todos ausentes e custo zero não fabricam médias ou participação
+ok 91 - C5 vazio todos ausentes e custo zero não fabricam médias ou participação
+  ---
+  duration_ms: 0.48617
+  type: 'test'
+  ...
+# Subtest: C5 explicabilidade mantém cobertura fontes EXT e limites financeiros
+ok 92 - C5 explicabilidade mantém cobertura fontes EXT e limites financeiros
+  ---
+  duration_ms: 3.814448
+  type: 'test'
+  ...
+# Subtest: C5 dados materializados intactos sem novas regras de SLA ou pressão
+ok 93 - C5 dados materializados intactos sem novas regras de SLA ou pressão
+  ---
+  duration_ms: 43.103078
+  type: 'test'
+  ...
+# Subtest: dez posições ordenadas, únicas e com uma entrada principal cada
+ok 94 - dez posições ordenadas, únicas e com uma entrada principal cada
+  ---
+  duration_ms: 1.894428
+  type: 'test'
+  ...
+# Subtest: chegadas e contagens da página conciliam a linha de base
+ok 95 - chegadas e contagens da página conciliam a linha de base
+  ---
+  duration_ms: 0.282544
+  type: 'test'
+  ...
+# Subtest: Smart Fit mantém identidade/defeito e evolui Normal, Média, Alta
+ok 96 - Smart Fit mantém identidade/defeito e evolui Normal, Média, Alta
+  ---
+  duration_ms: 0.268815
+  type: 'test'
+  ...
+# Subtest: hospital prioritário por contexto, não por SLA; subida separada
+ok 97 - hospital prioritário por contexto, não por SLA; subida separada
+  ---
+  duration_ms: 1.040789
+  type: 'test'
+  ...
+# Subtest: ordenação de SLA é numérica e não modifica entrada
+ok 98 - ordenação de SLA é numérica e não modifica entrada
+  ---
+  duration_ms: 0.177917
+  type: 'test'
+  ...
+# Subtest: C6 cards e carteira conciliam unidades ocorrências tipos e recorrência elevada
+ok 99 - C6 cards e carteira conciliam unidades ocorrências tipos e recorrência elevada
+  ---
+  duration_ms: 105.231423
+  type: 'test'
+  ...
+# Subtest: C6 disponibilidade é EXT e não apresenta uptime fictício
+ok 100 - C6 disponibilidade é EXT e não apresenta uptime fictício
+  ---
+  duration_ms: 96.752837
+  type: 'test'
+  ...
+# Subtest: C6 ordenação por volume cor e máximo com paginação e retorno
+ok 101 - C6 ordenação por volume cor e máximo com paginação e retorno
+  ---
+  duration_ms: 449.110356
+  type: 'test'
+  ...
+# Subtest: C6 carteira → tipo → unidade → histórico → recorrência → insight → chamado
+ok 102 - C6 carteira → tipo → unidade → histórico → recorrência → insight → chamado
+  ---
+  duration_ms: 1670.759666
+  type: 'test'
+  ...
+# Subtest: C6 componentes evolução e cores abrem o suporte correspondente
+ok 103 - C6 componentes evolução e cores abrem o suporte correspondente
+  ---
+  duration_ms: 331.567426
+  type: 'test'
+  ...
+# Subtest: C6 filtros Unidade Componente Categoria e Recorrência são cumulativos e compartilhados
+ok 104 - C6 filtros Unidade Componente Categoria e Recorrência são cumulativos e compartilhados
+  ---
+  duration_ms: 923.045975
+  type: 'test'
+  ...
+# Subtest: C6 período AND/OR busca e gráficos conservam população
+ok 105 - C6 período AND/OR busca e gráficos conservam população
+  ---
+  duration_ms: 382.60056
+  type: 'test'
+  ...
+# Subtest: C6 explicações por teclado mostram denominadores origem e ausentes
+ok 106 - C6 explicações por teclado mostram denominadores origem e ausentes
+  ---
+  duration_ms: 252.256763
+  type: 'test'
+  ...
+# Subtest: C6 vazio e elegibilidade SLA ausente sem valores fabricados
+ok 107 - C6 vazio e elegibilidade SLA ausente sem valores fabricados
+  ---
+  duration_ms: 314.269666
+  type: 'test'
+  ...
+# Subtest: C6 notebook móvel e offline carregado mantêm contexto sem overflow
+ok 108 - C6 notebook móvel e offline carregado mantêm contexto sem overflow
+  ---
+  duration_ms: 408.379708
+  type: 'test'
+  ...
+# Subtest: C6 unidades distintas e ocorrências conciliam histórico sem inventar parque
+ok 109 - C6 unidades distintas e ocorrências conciliam histórico sem inventar parque
+  ---
+  duration_ms: 1.146979
+  type: 'test'
+  ...
+# Subtest: C6 recorrência elevada reutiliza >=3 sem somar eventos
+ok 110 - C6 recorrência elevada reutiliza >=3 sem somar eventos
+  ---
+  duration_ms: 0.331041
+  type: 'test'
+  ...
+# Subtest: C6 tipos correspondem somente às quatro categorias da fonte
+ok 111 - C6 tipos correspondem somente às quatro categorias da fonte
+  ---
+  duration_ms: 0.097503
+  type: 'test'
+  ...
+# Subtest: C6 recorrência positiva em Escada Rolante usa denominador próprio
+ok 112 - C6 recorrência positiva em Escada Rolante usa denominador próprio
+  ---
+  duration_ms: 0.118306
+  type: 'test'
+  ...
+# Subtest: C6 recorrência positiva em Elevador Social usa denominador próprio
+ok 113 - C6 recorrência positiva em Elevador Social usa denominador próprio
+  ---
+  duration_ms: 0.118608
+  type: 'test'
+  ...
+# Subtest: C6 recorrência positiva em Elevador Hospitalar usa denominador próprio
+ok 114 - C6 recorrência positiva em Elevador Hospitalar usa denominador próprio
+  ---
+  duration_ms: 0.134549
+  type: 'test'
+  ...
+# Subtest: C6 recorrência positiva em Elevador de Serviço usa denominador próprio
+ok 115 - C6 recorrência positiva em Elevador de Serviço usa denominador próprio
+  ---
+  duration_ms: 0.099475
+  type: 'test'
+  ...
+# Subtest: C6 componentes contam chamados não peças ou causas
+ok 116 - C6 componentes contam chamados não peças ou causas
+  ---
+  duration_ms: 0.079076
+  type: 'test'
+  ...
+# Subtest: C6 valor de recorrência não é quantidade de chamados
+ok 117 - C6 valor de recorrência não é quantidade de chamados
+  ---
+  duration_ms: 1.411465
+  type: 'test'
+  ...
+# Subtest: C6 último chamado cor e insight são do mesmo registro no recorte
+ok 118 - C6 último chamado cor e insight são do mesmo registro no recorte
+  ---
+  duration_ms: 1.7707
+  type: 'test'
+  ...
+# Subtest: C6 histórico cronológico e agrupamentos técnicos preservam o suporte da unidade
+ok 119 - C6 histórico cronológico e agrupamentos técnicos preservam o suporte da unidade
+  ---
+  duration_ms: 3.014073
+  type: 'test'
+  ...
+# Subtest: C6 ordenação padrão por máximo e alternativas precedem paginação
+ok 120 - C6 ordenação padrão por máximo e alternativas precedem paginação
+  ---
+  duration_ms: 4.325625
+  type: 'test'
+  ...
+# Subtest: C6 desempates nulos e criticidade não recalculam classificação
+ok 121 - C6 desempates nulos e criticidade não recalculam classificação
+  ---
+  duration_ms: 2.566964
+  type: 'test'
+  ...
+# Subtest: C6 filtros cumulativos de Unidade e Componente restringem toda análise
+ok 122 - C6 filtros cumulativos de Unidade e Componente restringem toda análise
+  ---
+  duration_ms: 3.845525
+  type: 'test'
+  ...
+# Subtest: C6 cores por tipo e série diária conciliam chamados filtrados
+ok 123 - C6 cores por tipo e série diária conciliam chamados filtrados
+  ---
+  duration_ms: 2.77324
+  type: 'test'
+  ...
+# Subtest: C6 TA TB SLA e custos por unidade reutilizam elegibilidades aprovadas
+ok 124 - C6 TA TB SLA e custos por unidade reutilizam elegibilidades aprovadas
+  ---
+  duration_ms: 0.531048
+  type: 'test'
+  ...
+# Subtest: C6 ausentes e inválidos não fabricam entidades recorrência ou componente
+ok 125 - C6 ausentes e inválidos não fabricam entidades recorrência ou componente
+  ---
+  duration_ms: 1.130186
+  type: 'test'
+  ...
+# Subtest: C6 recorrência por tipo não confunde unidade positiva com registro ou elevação
+ok 126 - C6 recorrência por tipo não confunde unidade positiva com registro ou elevação
+  ---
+  duration_ms: 0.425348
+  type: 'test'
+  ...
+# Subtest: C6 vazio e ausência completa de recorrência são indisponíveis
+ok 127 - C6 vazio e ausência completa de recorrência são indisponíveis
+  ---
+  duration_ms: 0.700975
+  type: 'test'
+  ...
+# Subtest: C6 explicabilidade e disponibilidade EXT não calculam uptime
+ok 128 - C6 explicabilidade e disponibilidade EXT não calculam uptime
+  ---
+  duration_ms: 11.892931
+  type: 'test'
+  ...
+# Subtest: C6 operações não alteram histórico ou regras materializadas
+ok 129 - C6 operações não alteram histórico ou regras materializadas
+  ---
+  duration_ms: 19.938356
+  type: 'test'
+  ...
+# Subtest: Feira navegador: acesso direto/refresh inicia automaticamente T0
+ok 130 - Feira navegador: acesso direto/refresh inicia automaticamente T0
+  ---
+  duration_ms: 856.373594
+  type: 'test'
+  ...
+# Subtest: Feira navegador: 1366×768, quatro colunas visíveis e T0 documentado
+ok 131 - Feira navegador: 1366×768, quatro colunas visíveis e T0 documentado
+  ---
+  duration_ms: 94.217755
+  type: 'test'
+  ...
+# Subtest: Feira navegador: pausa/retoma residual e velocidade 2×
+ok 132 - Feira navegador: pausa/retoma residual e velocidade 2×
+  ---
+  duration_ms: 330.784343
+  type: 'test'
+  ...
+# Subtest: Feira navegador: T1 evidencia novos/status/cores e alerta ativo
+ok 133 - Feira navegador: T1 evidencia novos/status/cores e alerta ativo
+  ---
+  duration_ms: 82.682383
+  type: 'test'
+  ...
+# Subtest: Feira navegador: detalhe pausa, não antecipa saída e fechar mantém pausa
+ok 134 - Feira navegador: detalhe pausa, não antecipa saída e fechar mantém pausa
+  ---
+  duration_ms: 221.981786
+  type: 'test'
+  ...
+# Subtest: Feira navegador: T2 mantém concluídos separados dos quatro alertas ativos
+ok 135 - Feira navegador: T2 mantém concluídos separados dos quatro alertas ativos
+  ---
+  duration_ms: 358.73525
+  type: 'test'
+  ...
+# Subtest: Feira navegador: sem rede após carga, encerramento e loop preservam snapshots
+ok 136 - Feira navegador: sem rede após carga, encerramento e loop preservam snapshots
+  ---
+  duration_ms: 2417.371871
+  type: 'test'
+  ...
+# Subtest: Feira navegador: reinício manual limpa seleção e volta T0 executando
+ok 137 - Feira navegador: reinício manual limpa seleção e volta T0 executando
+  ---
+  duration_ms: 256.522791
+  type: 'test'
+  ...
+# Subtest: Feira navegador: mudança de hash pausa e mantém estado
+ok 138 - Feira navegador: mudança de hash pausa e mantém estado
+  ---
+  duration_ms: 11.719057
+  type: 'test'
+  ...
+# Subtest: Feira navegador: visibilidade pausa, retorno não retoma
+ok 139 - Feira navegador: visibilidade pausa, retorno não retoma
+  ---
+  duration_ms: 42.401453
+  type: 'test'
+  ...
+# Subtest: Feira navegador: explicação de indicador pausa com fonte correta
+ok 140 - Feira navegador: explicação de indicador pausa com fonte correta
+  ---
+  duration_ms: 88.98972
+  type: 'test'
+  ...
+# Subtest: Feira navegador: teclado e móvel sem overflow da página
+ok 141 - Feira navegador: teclado e móvel sem overflow da página
+  ---
+  duration_ms: 43.261439
+  type: 'test'
+  ...
+# Subtest: Feira navegador: 100 ciclos acelerados na UI sem duplicar eventos
+ok 142 - Feira navegador: 100 ciclos acelerados na UI sem duplicar eventos
+  ---
+  duration_ms: 278490.349211
+  type: 'test'
+  ...
+# Subtest: Feira navegador: zero erros JavaScript/HTTP
+ok 143 - Feira navegador: zero erros JavaScript/HTTP
+  ---
+  duration_ms: 1.216565
+  type: 'test'
+  ...
+# Subtest: Feira navegador: falha de chunk apresenta retorno à apresentação
+ok 144 - Feira navegador: falha de chunk apresenta retorno à apresentação
+  ---
+  duration_ms: 806.849197
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: pareamento, T00 pausado, 1366×768/390×844 e ciclo explicado
+ok 145 - C9.2 UI: pareamento, T00 pausado, 1366×768/390×844 e ciclo explicado
+  ---
+  duration_ms: 1782.743926
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: ambos percorrem os 12 estados e indicadores ativos sem acumular
+ok 146 - C9.2 UI: ambos percorrem os 12 estados e indicadores ativos sem acumular
+  ---
+  duration_ms: 648.896685
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: pausa confirmada pelo detalhe mobile; fechar não retoma
+ok 147 - C9.2 UI: pausa confirmada pelo detalhe mobile; fechar não retoma
+  ---
+  duration_ms: 250.086329
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: refresh tardio T11, espera final e loop
+ok 148 - C9.2 UI: refresh tardio T11, espera final e loop
+  ---
+  duration_ms: 868.161783
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: desconexão congela, reconexão recebe snapshot completo T04
+ok 149 - C9.2 UI: desconexão congela, reconexão recebe snapshot completo T04
+  ---
+  duration_ms: 2588.303787
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: reinício e 20 ciclos completos 2× sem duplicar estado
+ok 150 - C9.2 UI: reinício e 20 ciclos completos 2× sem duplicar estado
+  ---
+  duration_ms: 511.352007
+  type: 'test'
+  ...
+# Subtest: C9.2 UI: tablet, ausência de motor/dataset no cliente conectado e zero erros
+ok 151 - C9.2 UI: tablet, ausência de motor/dataset no cliente conectado e zero erros
+  ---
+  duration_ms: 60.256341
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T00
+ok 152 - C9.2 dados e auditoria T00
+  ---
+  duration_ms: 9.572105
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T01
+ok 153 - C9.2 dados e auditoria T01
+  ---
+  duration_ms: 0.59413
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T02
+ok 154 - C9.2 dados e auditoria T02
+  ---
+  duration_ms: 1.102552
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T03
+ok 155 - C9.2 dados e auditoria T03
+  ---
+  duration_ms: 1.024081
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T04
+ok 156 - C9.2 dados e auditoria T04
+  ---
+  duration_ms: 1.081906
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T05
+ok 157 - C9.2 dados e auditoria T05
+  ---
+  duration_ms: 4.474006
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T06
+ok 158 - C9.2 dados e auditoria T06
+  ---
+  duration_ms: 1.002641
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T07
+ok 159 - C9.2 dados e auditoria T07
+  ---
+  duration_ms: 1.1141
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T08
+ok 160 - C9.2 dados e auditoria T08
+  ---
+  duration_ms: 1.364616
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T09
+ok 161 - C9.2 dados e auditoria T09
+  ---
+  duration_ms: 2.235506
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T10
+ok 162 - C9.2 dados e auditoria T10
+  ---
+  duration_ms: 1.251842
+  type: 'test'
+  ...
+# Subtest: C9.2 dados e auditoria T11
+ok 163 - C9.2 dados e auditoria T11
+  ---
+  duration_ms: 1.214725
+  type: 'test'
+  ...
+# Subtest: C9.2: 417 estados de registros, 55 IDs finais e 189 eventos independentes
+ok 164 - C9.2: 417 estados de registros, 55 IDs finais e 189 eventos independentes
+  ---
+  duration_ms: 0.131111
+  type: 'test'
+  ...
+# Subtest: C9.2: roteiro 27 s, espera 12 s, ciclo 336 s e velocidade 2×
+ok 165 - C9.2: roteiro 27 s, espera 12 s, ciclo 336 s e velocidade 2×
+  ---
+  duration_ms: 1.64688
+  type: 'test'
+  ...
+# Subtest: C9.2: 10000 ciclos, pausa residual, restart e sequência alternativa
+ok 166 - C9.2: 10000 ciclos, pausa residual, restart e sequência alternativa
+  ---
+  duration_ms: 1.330284
+  type: 'test'
+  ...
+# Subtest: C9.2: scheduler único e descarte de callbacks da sequência estendida
+ok 167 - C9.2: scheduler único e descarte de callbacks da sequência estendida
+  ---
+  duration_ms: 0.268668
+  type: 'test'
+  ...
+# Subtest: C9.2: serviço autoritativo, 12 estados, pausa mobile, revisões e sessão nova
+ok 168 - C9.2: serviço autoritativo, 12 estados, pausa mobile, revisões e sessão nova
+  ---
+  duration_ms: 82.792874
+  type: 'test'
+  ...
+# Subtest: C9.2: comando publica somente estado atômico com pausa e lock completos
+ok 169 - C9.2: comando publica somente estado atômico com pausa e lock completos
+  ---
+  duration_ms: 1.665276
+  type: 'test'
+  ...
+# Subtest: C9.2: sequência temporal inválida e DTO divergente são rejeitados
+ok 170 - C9.2: sequência temporal inválida e DTO divergente são rejeitados
+  ---
+  duration_ms: 0.757153
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: dois clientes reais conectam T0 pausado
+ok 171 - C9.1 navegador: dois clientes reais conectam T0 pausado
+  ---
+  duration_ms: 1755.1319
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: notebook inicia e ambos avançam T1/T2 por uma autoridade
+ok 172 - C9.1 navegador: notebook inicia e ambos avançam T1/T2 por uma autoridade
+  ---
+  duration_ms: 265.033293
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: abrir detalhe mobile aguarda pausa global confirmada
+ok 173 - C9.1 navegador: abrir detalhe mobile aguarda pausa global confirmada
+  ---
+  duration_ms: 206.477789
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: refresh/entrada tardia recebem estado completo sem reset
+ok 174 - C9.1 navegador: refresh/entrada tardia recebem estado completo sem reset
+  ---
+  duration_ms: 832.733567
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: perda de rede congela e reconexão aplica estado atual
+ok 175 - C9.1 navegador: perda de rede congela e reconexão aplica estado atual
+  ---
+  duration_ms: 2579.883397
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: pausa por notebook em segundo plano e retorno sem retomada
+ok 176 - C9.1 navegador: pausa por notebook em segundo plano e retorno sem retomada
+  ---
+  duration_ms: 33.386756
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: 2× e reinício sincronizados
+ok 177 - C9.1 navegador: 2× e reinício sincronizados
+  ---
+  duration_ms: 77.481765
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: vinte loops sincronizados preservam fonte e contagens
+ok 178 - C9.1 navegador: vinte loops sincronizados preservam fonte e contagens
+  ---
+  duration_ms: 323.588681
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: mobile não monta engine nem controles administrativos
+ok 179 - C9.1 navegador: mobile não monta engine nem controles administrativos
+  ---
+  duration_ms: 11.109588
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: notebook/mobile/tablet sem overflow horizontal
+ok 180 - C9.1 navegador: notebook/mobile/tablet sem overflow horizontal
+  ---
+  duration_ms: 86.056981
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: fatos por ID e ausência de eventos futuros no mobile
+ok 181 - C9.1 navegador: fatos por ID e ausência de eventos futuros no mobile
+  ---
+  duration_ms: 110.377987
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: sessão do serviço reiniciada exige novo pareamento e T0 pausado
+ok 182 - C9.1 navegador: sessão do serviço reiniciada exige novo pareamento e T0 pausado
+  ---
+  duration_ms: 1343.420042
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: zero erros JavaScript
+ok 183 - C9.1 navegador: zero erros JavaScript
+  ---
+  duration_ms: 1.241424
+  type: 'test'
+  ...
+# Subtest: C9.1 HTTP: build e assets locais, flag de sessão e CSP mesma origem
+ok 184 - C9.1 HTTP: build e assets locais, flag de sessão e CSP mesma origem
+  ---
+  duration_ms: 15.684285
+  type: 'test'
+  ...
+# Subtest: C9.1 HTTP: dois streams reais recebem estado completo e pausa
+ok 185 - C9.1 HTTP: dois streams reais recebem estado completo e pausa
+  ---
+  duration_ms: 25.770019
+  type: 'test'
+  ...
+# Subtest: C9.1 HTTP: cookie HttpOnly/SameSite, comandos sem auth/CSRF/Origin bloqueados
+ok 186 - C9.1 HTTP: cookie HttpOnly/SameSite, comandos sem auth/CSRF/Origin bloqueados
+  ---
+  duration_ms: 15.643819
+  type: 'test'
+  ...
+# Subtest: C9.1 HTTP: reconexão recebe fonte completa sem replay de eventos
+ok 187 - C9.1 HTTP: reconexão recebe fonte completa sem replay de eventos
+  ---
+  duration_ms: 3.286991
+  type: 'test'
+  ...
+# Subtest: C9.1 HTTP: corpo limitado, comandos desconhecidos e traversal rejeitados
+ok 188 - C9.1 HTTP: corpo limitado, comandos desconhecidos e traversal rejeitados
+  ---
+  duration_ms: 12.201478
+  type: 'test'
+  ...
+# Subtest: C9.1 HTTP: heartbeat conserva sessão e autorização sem revelar credenciais
+ok 189 - C9.1 HTTP: heartbeat conserva sessão e autorização sem revelar credenciais
+  ---
+  duration_ms: 4.688784
+  type: 'test'
+  ...
+# Subtest: C9.1 HTTP: build antigo não inicia segunda simulação silenciosa
+ok 190 - C9.1 HTTP: build antigo não inicia segunda simulação silenciosa
+  ---
+  duration_ms: 4.998986
+  type: 'test'
+  ...
+# Subtest: C9.1 HTTP: entrada estática sem script é rejeitada
+ok 191 - C9.1 HTTP: entrada estática sem script é rejeitada
+  ---
+  duration_ms: 4.725256
+  type: 'test'
+  ...
+# Subtest: C9.1 HTTP: limite de tentativas de pareamento
+ok 192 - C9.1 HTTP: limite de tentativas de pareamento
+  ---
+  duration_ms: 13.751476
+  type: 'test'
+  ...
+# Subtest: C9.1: serviço nasce T0 pausado e sem agendamento temporal ativo
+ok 193 - C9.1: serviço nasce T0 pausado e sem agendamento temporal ativo
+  ---
+  duration_ms: 8.509858
+  type: 'test'
+  ...
+# Subtest: C9.1: um motor com dois clientes e avanço/loop 10/16/24
+ok 194 - C9.1: um motor com dois clientes e avanço/loop 10/16/24
+  ---
+  duration_ms: 7.462292
+  type: 'test'
+  ...
+# Subtest: C9.1: leitor não pode executar comandos administrativos
+ok 195 - C9.1: leitor não pode executar comandos administrativos
+  ---
+  duration_ms: 0.876015
+  type: 'test'
+  ...
+# Subtest: C9.1: pausa global antes do detalhe, fechar não retoma
+ok 196 - C9.1: pausa global antes do detalhe, fechar não retoma
+  ---
+  duration_ms: 1.056268
+  type: 'test'
+  ...
+# Subtest: C9.1: comando repetido é idempotente e ID não pode mudar de intenção
+ok 197 - C9.1: comando repetido é idempotente e ID não pode mudar de intenção
+  ---
+  duration_ms: 0.721315
+  type: 'test'
+  ...
+# Subtest: C9.1: sessão/CSRF inválidos e operação desconhecida rejeitados
+ok 198 - C9.1: sessão/CSRF inválidos e operação desconhecida rejeitados
+  ---
+  duration_ms: 0.80418
+  type: 'test'
+  ...
+# Subtest: C9.1: estado obsoleto após transição exige nova intenção
+ok 199 - C9.1: estado obsoleto após transição exige nova intenção
+  ---
+  duration_ms: 1.457514
+  type: 'test'
+  ...
+# Subtest: C9.1: velocidade, reinício e 1000 ciclos sem timer duplicado
+ok 200 - C9.1: velocidade, reinício e 1000 ciclos sem timer duplicado
+  ---
+  duration_ms: 1501.405755
+  type: 'test'
+  ...
+# Subtest: C9.1: lease expira e segunda aba só assume após pausa
+ok 201 - C9.1: lease expira e segunda aba só assume após pausa
+  ---
+  duration_ms: 0.900507
+  type: 'test'
+  ...
+# Subtest: C9.1: lock expira sem retomada automática e só dono fecha
+ok 202 - C9.1: lock expira sem retomada automática e só dono fecha
+  ---
+  duration_ms: 0.851705
+  type: 'test'
+  ...
+# Subtest: C9.1: suspensão não atravessa snapshots ao acordar
+ok 203 - C9.1: suspensão não atravessa snapshots ao acordar
+  ---
+  duration_ms: 0.523982
+  type: 'test'
+  ...
+# Subtest: C9.1: projeção mantém saídas futuras ocultas e alertas só ativos
+ok 204 - C9.1: projeção mantém saídas futuras ocultas e alertas só ativos
+  ---
+  duration_ms: 1.391256
+  type: 'test'
+  ...
+# Subtest: C9.1: payload não contém códigos, CSRF ou tokens
+ok 205 - C9.1: payload não contém códigos, CSRF ou tokens
+  ---
+  duration_ms: 0.454759
+  type: 'test'
+  ...
+# Subtest: C9.1: duplicatas/atrasos descartados e sessão/versão diferente rejeitadas
+ok 206 - C9.1: duplicatas/atrasos descartados e sessão/versão diferente rejeitadas
+  ---
+  duration_ms: 0.492142
+  type: 'test'
+  ...
+# Subtest: C9.1: reinício do processo invalida sessão e credenciais anteriores
+ok 207 - C9.1: reinício do processo invalida sessão e credenciais anteriores
+  ---
+  duration_ms: 0.558476
+  type: 'test'
+  ...
+# Subtest: Feira: início automático, limites e ciclo completo
+ok 208 - Feira: início automático, limites e ciclo completo
+  ---
+  duration_ms: 0.826426
+  type: 'test'
+  ...
+# Subtest: Feira: pausa residual e retomada não duplicam avanço
+ok 209 - Feira: pausa residual e retomada não duplicam avanço
+  ---
+  duration_ms: 0.708419
+  type: 'test'
+  ...
+# Subtest: Feira: 2× preserva progresso e horários
+ok 210 - Feira: 2× preserva progresso e horários
+  ---
+  duration_ms: 6.273937
+  type: 'test'
+  ...
+# Subtest: Feira: detalhe e visibilidade bloqueiam retomada, fechar não retoma
+ok 211 - Feira: detalhe e visibilidade bloqueiam retomada, fechar não retoma
+  ---
+  duration_ms: 0.718648
+  type: 'test'
+  ...
+# Subtest: Feira: reinício elimina resíduo e preserva apenas visibilidade/velocidade
+ok 212 - Feira: reinício elimina resíduo e preserva apenas visibilidade/velocidade
+  ---
+  duration_ms: 0.399997
+  type: 'test'
+  ...
+# Subtest: Feira: scheduler único, cleanup e callbacks obsoletos em remontagem
+ok 213 - Feira: scheduler único, cleanup e callbacks obsoletos em remontagem
+  ---
+  duration_ms: 0.179665
+  type: 'test'
+  ...
+# Subtest: Feira: 1000 ciclos determinísticos sem resíduos
+ok 214 - Feira: 1000 ciclos determinísticos sem resíduos
+  ---
+  duration_ms: 1.240064
+  type: 'test'
+  ...
+# Subtest: Feira: população e alertas T0
+ok 215 - Feira: população e alertas T0
+  ---
+  duration_ms: 0.505773
+  type: 'test'
+  ...
+# Subtest: Feira: população e alertas T1
+ok 216 - Feira: população e alertas T1
+  ---
+  duration_ms: 2.919338
+  type: 'test'
+  ...
+# Subtest: Feira: população e alertas T2
+ok 217 - Feira: população e alertas T2
+  ---
+  duration_ms: 0.664711
+  type: 'test'
+  ...
+# Subtest: Feira: identidade e substituição cumulativa, sem soma ou histórico
+ok 218 - Feira: identidade e substituição cumulativa, sem soma ou histórico
+  ---
+  duration_ms: 0.799472
+  type: 'test'
+  ...
+# Subtest: Feira: deltas observados por ID e métricas
+ok 219 - Feira: deltas observados por ID e métricas
+  ---
+  duration_ms: 0.882394
+  type: 'test'
+  ...
+# Subtest: Feira: saídas futuras ocultas, conclusão técnica preservada
+ok 220 - Feira: saídas futuras ocultas, conclusão técnica preservada
+  ---
+  duration_ms: 1.960411
+  type: 'test'
+  ...
+# Subtest: Feira: estado vazio válido, fonte ausente/inválida e duplicidade
+ok 221 - Feira: estado vazio válido, fonte ausente/inválida e duplicidade
+  ---
+  duration_ms: 0.325208
+  type: 'test'
+  ...
+# Subtest: dez hashes diretos carregam e mantêm posição após refresh
+ok 222 - dez hashes diretos carregam e mantêm posição após refresh
+  ---
+  duration_ms: 7086.519817
+  type: 'test'
+  ...
+# Subtest: teclado, extremos, H, foco editável, hash inválido
+ok 223 - teclado, extremos, H, foco editável, hash inválido
+  ---
+  duration_ms: 604.910522
+  type: 'test'
+  ...
+# Subtest: posição 2: três chegadas, contagem final e detalhe
+ok 224 - posição 2: três chegadas, contagem final e detalhe
+  ---
+  duration_ms: 12135.444737
+  type: 'test'
+  ...
+# Subtest: normal→média sem subida; detalhe segue etapa durante roteiro
+ok 225 - normal→média sem subida; detalhe segue etapa durante roteiro
+  ---
+  duration_ms: 2671.730532
+  type: 'test'
+  ...
+# Subtest: média sobe com Web Animation; alta mantém topo
+ok 226 - média sobe com Web Animation; alta mantém topo
+  ---
+  duration_ms: 4267.443046
+  type: 'test'
+  ...
+# Subtest: hospital entra no fim, sobe e exibe tempo decorrido sem SLA
+ok 227 - hospital entra no fim, sobe e exibe tempo decorrido sem SLA
+  ---
+  duration_ms: 2864.750188
+  type: 'test'
+  ...
+# Subtest: alertas alta/crítico, notificações, expandir, fechar, reabrir e detalhe
+ok 228 - alertas alta/crítico, notificações, expandir, fechar, reabrir e detalhe
+  ---
+  duration_ms: 8416.718867
+  type: 'test'
+  ...
+# Subtest: saída antes dos timers e revisita reinicia sem modal residual
+ok 229 - saída antes dos timers e revisita reinicia sem modal residual
+  ---
+  duration_ms: 1844.682242
+  type: 'test'
+  ...
+# Subtest: movimento reduzido mantém conteúdo e evolução; sem FLIP
+ok 230 - movimento reduzido mantém conteúdo e evolução; sem FLIP
+  ---
+  duration_ms: 1260.350792
+  type: 'test'
+  ...
+# Subtest: nenhum erro JS/console/chunk observado
+ok 231 - nenhum erro JS/console/chunk observado
+  ---
+  duration_ms: 0.932069
+  type: 'test'
+  ...
+# Subtest: C8 cards e carteira conciliam componentes ocorrências recorrência críticos e custo
+ok 232 - C8 cards e carteira conciliam componentes ocorrências recorrência críticos e custo
+  ---
+  duration_ms: 182.528171
+  type: 'test'
+  ...
+# Subtest: C8 fontes logísticas são EXT sem saldos preços ou ETA inventados
+ok 233 - C8 fontes logísticas são EXT sem saldos preços ou ETA inventados
+  ---
+  duration_ms: 103.415582
+  type: 'test'
+  ...
+# Subtest: C8 ordenação tamanho e navegação preservam carteira
+ok 234 - C8 ordenação tamanho e navegação preservam carteira
+  ---
+  duration_ms: 332.15881
+  type: 'test'
+  ...
+# Subtest: C8 carteira → componente → equipamento → ocorrência → histórico → insight
+ok 235 - C8 carteira → componente → equipamento → ocorrência → histórico → insight
+  ---
+  duration_ms: 1423.825699
+  type: 'test'
+  ...
+# Subtest: C8 filtros componente unidade categoria recorrência e AND OR compartilham consulta
+ok 236 - C8 filtros componente unidade categoria recorrência e AND OR compartilham consulta
+  ---
+  duration_ms: 919.308531
+  type: 'test'
+  ...
+# Subtest: C8 gráficos e criticidade abrem suporte correto
+ok 237 - C8 gráficos e criticidade abrem suporte correto
+  ---
+  duration_ms: 289.666563
+  type: 'test'
+  ...
+# Subtest: C8 explicações por teclado informam regra N origem e nulos
+ok 238 - C8 explicações por teclado informam regra N origem e nulos
+  ---
+  duration_ms: 442.105024
+  type: 'test'
+  ...
+# Subtest: C8 busca normalizada período e vazio não fabricam indicadores
+ok 239 - C8 busca normalizada período e vazio não fabricam indicadores
+  ---
+  duration_ms: 100.530677
+  type: 'test'
+  ...
+# Subtest: C8 notebook móvel e offline após carga sem overflow ou erros
+ok 240 - C8 notebook móvel e offline após carga sem overflow ou erros
+  ---
+  duration_ms: 323.124269
+  type: 'test'
+  ...
+# Subtest: C8 componentes e cobertura conciliam histórico sem inventar SKU
+ok 241 - C8 componentes e cobertura conciliam histórico sem inventar SKU
+  ---
+  duration_ms: 3.083921
+  type: 'test'
+  ...
+# Subtest: C8 unidades e recorrência elevada usam distintos C2
+ok 242 - C8 unidades e recorrência elevada usam distintos C2
+  ---
+  duration_ms: 0.387778
+  type: 'test'
+  ...
+# Subtest: C8 críticos são Vermelhos históricos com ativos separados
+ok 243 - C8 críticos são Vermelhos históricos com ativos separados
+  ---
+  duration_ms: 0.114709
+  type: 'test'
+  ...
+# Subtest: C8 custos são dos chamados e não preços ou rateio de material
+ok 244 - C8 custos são dos chamados e não preços ou rateio de material
+  ---
+  duration_ms: 0.151855
+  type: 'test'
+  ...
+# Subtest: C8 Subcomponente preserva texto e suporte por componente
+ok 245 - C8 Subcomponente preserva texto e suporte por componente
+  ---
+  duration_ms: 0.457732
+  type: 'test'
+  ...
+# Subtest: C8 Categoria do Chamado preserva texto e suporte por componente
+ok 246 - C8 Categoria do Chamado preserva texto e suporte por componente
+  ---
+  duration_ms: 0.341728
+  type: 'test'
+  ...
+# Subtest: C8 Falha preserva texto e suporte por componente
+ok 247 - C8 Falha preserva texto e suporte por componente
+  ---
+  duration_ms: 0.246438
+  type: 'test'
+  ...
+# Subtest: C8 Defeito preserva texto e suporte por componente
+ok 248 - C8 Defeito preserva texto e suporte por componente
+  ---
+  duration_ms: 0.150999
+  type: 'test'
+  ...
+# Subtest: C8 contratos e clientes concentram ocorrências sem inferir vigência
+ok 249 - C8 contratos e clientes concentram ocorrências sem inferir vigência
+  ---
+  duration_ms: 0.366258
+  type: 'test'
+  ...
+# Subtest: C8 série diária usa criação e zero nos dias sem ocorrências
+ok 250 - C8 série diária usa criação e zero nos dias sem ocorrências
+  ---
+  duration_ms: 0.483534
+  type: 'test'
+  ...
+# Subtest: C8 TA TB SLA mantêm elegibilidades anteriores
+ok 251 - C8 TA TB SLA mantêm elegibilidades anteriores
+  ---
+  duration_ms: 0.121612
+  type: 'test'
+  ...
+# Subtest: C8 filtros cumulativos selecionam mesma população em todos painéis
+ok 252 - C8 filtros cumulativos selecionam mesma população em todos painéis
+  ---
+  duration_ms: 5.723719
+  type: 'test'
+  ...
+# Subtest: C8 busca normalizada e OR por componentes coexistem
+ok 253 - C8 busca normalizada e OR por componentes coexistem
+  ---
+  duration_ms: 11.707191
+  type: 'test'
+  ...
+# Subtest: C8 ordenação e paginação com população maior que a página
+ok 254 - C8 ordenação e paginação com população maior que a página
+  ---
+  duration_ms: 0.448113
+  type: 'test'
+  ...
+# Subtest: C8 desempates determinísticos e custos nulos no fim
+ok 255 - C8 desempates determinísticos e custos nulos no fim
+  ---
+  duration_ms: 0.598628
+  type: 'test'
+  ...
+# Subtest: C8 componentes ausentes não fabricam entidade nem custo associado
+ok 256 - C8 componentes ausentes não fabricam entidade nem custo associado
+  ---
+  duration_ms: 0.467102
+  type: 'test'
+  ...
+# Subtest: C8 zero válido e ausências numéricas mantêm cobertura
+ok 257 - C8 zero válido e ausências numéricas mantêm cobertura
+  ---
+  duration_ms: 0.679964
+  type: 'test'
+  ...
+# Subtest: C8 vazio tem população zero e médias indisponíveis
+ok 258 - C8 vazio tem população zero e médias indisponíveis
+  ---
+  duration_ms: 0.183789
+  type: 'test'
+  ...
+# Subtest: C8 metadados explicitam fonte nulos N e ausência de causalidade
+ok 259 - C8 metadados explicitam fonte nulos N e ausência de causalidade
+  ---
+  duration_ms: 3.246725
+  type: 'test'
+  ...
+# Subtest: C8 logística disponibilidade catálogo e preço permanecem EXT
+ok 260 - C8 logística disponibilidade catálogo e preço permanecem EXT
+  ---
+  duration_ms: 3.19321
+  type: 'test'
+  ...
+# Subtest: C8 consultas não alteram dados ou materializados
+ok 261 - C8 consultas não alteram dados ou materializados
+  ---
+  duration_ms: 13.885918
+  type: 'test'
+  ...
+# Subtest: Visão Geral executiva reconcilia os seis cards e os mostra no notebook
+ok 262 - Visão Geral executiva reconcilia os seis cards e os mostra no notebook
+  ---
+  duration_ms: 103.766759
+  type: 'test'
+  ...
+# Subtest: EXT não possui números financeiros nem integração simulada
+ok 263 - EXT não possui números financeiros nem integração simulada
+  ---
+  duration_ms: 268.654995
+  type: 'test'
+  ...
+# Subtest: cinco contratos inicialmente e lista completa de doze, com populações distintas
+ok 264 - cinco contratos inicialmente e lista completa de doze, com populações distintas
+  ---
+  duration_ms: 564.42566
+  type: 'test'
+  ...
+# Subtest: gráficos oferecem registros elegíveis e suporte por dia
+ok 265 - gráficos oferecem registros elegíveis e suporte por dia
+  ---
+  duration_ms: 348.620577
+  type: 'test'
+  ...
+# Subtest: AND/OR, busca e contexto preservados nas quatro páginas funcionais
+ok 266 - AND/OR, busca e contexto preservados nas quatro páginas funcionais
+  ---
+  duration_ms: 724.35396
+  type: 'test'
+  ...
+# Subtest: vazio e ausência de concluídos não fabricam custo ou aderência
+ok 267 - vazio e ausência de concluídos não fabricam custo ou aderência
+  ---
+  duration_ms: 342.329701
+  type: 'test'
+  ...
+# Subtest: catorze explicações descrevem fonte, fórmula, população e cobertura
+ok 268 - catorze explicações descrevem fonte, fórmula, população e cobertura
+  ---
+  duration_ms: 691.865171
+  type: 'test'
+  ...
+# Subtest: offline carregado e responsividade mantêm a consulta sem erros
+ok 269 - offline carregado e responsividade mantêm a consulta sem erros
+  ---
+  duration_ms: 287.48294
+  type: 'test'
+  ...
+# Subtest: síntese executiva reconcilia custo, SLA, contratos, histórico e ativos
+ok 270 - síntese executiva reconcilia custo, SLA, contratos, histórico e ativos
+  ---
+  duration_ms: 8.167266
+  type: 'test'
+  ...
+# Subtest: custos excluem ausentes e inválidos, sem transformar nulo em zero
+ok 271 - custos excluem ausentes e inválidos, sem transformar nulo em zero
+  ---
+  duration_ms: 0.216439
+  type: 'test'
+  ...
+# Subtest: cinco primeiros contratos são ordenados por N Alto, com desempate por ID
+ok 272 - cinco primeiros contratos são ordenados por N Alto, com desempate por ID
+  ---
+  duration_ms: 0.588221
+  type: 'test'
+  ...
+# Subtest: lista completa tem doze contratos; não confundir eventos Alto e todos os chamados
+ok 273 - lista completa tem doze contratos; não confundir eventos Alto e todos os chamados
+  ---
+  duration_ms: 0.130086
+  type: 'test'
+  ...
+# Subtest: indicadores do contrato usam todos os seus registros filtrados
+ok 274 - indicadores do contrato usam todos os seus registros filtrados
+  ---
+  duration_ms: 3.643747
+  type: 'test'
+  ...
+# Subtest: contrato sem Alto não entra na tabela, mas participa da síntese geral
+ok 275 - contrato sem Alto não entra na tabela, mas participa da síntese geral
+  ---
+  duration_ms: 0.555369
+  type: 'test'
+  ...
+# Subtest: série de custos reconcilia o total e respeita os 60 dias
+ok 276 - série de custos reconcilia o total e respeita os 60 dias
+  ---
+  duration_ms: 0.17907
+  type: 'test'
+  ...
+# Subtest: SLA por dia reutiliza elegibilidade, não média de percentuais diários
+ok 277 - SLA por dia reutiliza elegibilidade, não média de percentuais diários
+  ---
+  duration_ms: 0.449293
+  type: 'test'
+  ...
+# Subtest: dia sem elegíveis ou custo tem lacuna e não percentual zero fabricado
+ok 278 - dia sem elegíveis ou custo tem lacuna e não percentual zero fabricado
+  ---
+  duration_ms: 0.377825
+  type: 'test'
+  ...
+# Subtest: limites temporais preservam a data civil de São Paulo
+ok 279 - limites temporais preservam a data civil de São Paulo
+  ---
+  duration_ms: 4.049868
+  type: 'test'
+  ...
+# Subtest: filtros compartilhados limitam todos os indicadores e listas de suporte
+ok 280 - filtros compartilhados limitam todos os indicadores e listas de suporte
+  ---
+  duration_ms: 3.266767
+  type: 'test'
+  ...
+# Subtest: vazio e contrato ausente não inventam entidade ou custo
+ok 281 - vazio e contrato ausente não inventam entidade ou custo
+  ---
+  duration_ms: 0.29664
+  type: 'test'
+  ...
+# Subtest: explicabilidade CALC e EXT mantém origem, cobertura e indisponibilidade
+ok 282 - explicabilidade CALC e EXT mantém origem, cobertura e indisponibilidade
+  ---
+  duration_ms: 5.147838
+  type: 'test'
+  ...
+# Subtest: agregações não modificam TA, TB, SLA, criticidade ou dados originais
+ok 283 - agregações não modificam TA, TB, SLA, criticidade ou dados originais
+  ---
+  duration_ms: 13.08214
+  type: 'test'
+  ...
+# Subtest: inicialização dev: módulo servido exporta estado inicial, reducer e seletor
+ok 284 - inicialização dev: módulo servido exporta estado inicial, reducer e seletor
+  ---
+  duration_ms: 270.037184
+  type: 'test'
+  ...
+# Subtest: inicialização dev: todas importações nomeadas do serviço têm export correspondente
+ok 285 - inicialização dev: todas importações nomeadas do serviço têm export correspondente
+  ---
+  duration_ms: 33.625331
+  type: 'test'
+  ...
+# Subtest: inicialização dev: \#/visao-geral carrega diretamente e após refresh
+ok 286 - inicialização dev: \#/visao-geral carrega diretamente e após refresh
+  ---
+  duration_ms: 543.921109
+  type: 'test'
+  ...
+# Subtest: inicialização dev: \#/chamados carrega diretamente e após refresh
+ok 287 - inicialização dev: \#/chamados carrega diretamente e após refresh
+  ---
+  duration_ms: 471.473585
+  type: 'test'
+  ...
+# Subtest: inicialização dev: \#/tecnicos carrega diretamente e após refresh
+ok 288 - inicialização dev: \#/tecnicos carrega diretamente e após refresh
+  ---
+  duration_ms: 1017.902116
+  type: 'test'
+  ...
+# Subtest: inicialização dev: \#/pecas carrega diretamente e após refresh
+ok 289 - inicialização dev: \#/pecas carrega diretamente e após refresh
+  ---
+  duration_ms: 498.097038
+  type: 'test'
+  ...
+# Subtest: inicialização dev: Feira ESM carrega, avança e refresh restaura T0
+ok 290 - inicialização dev: Feira ESM carrega, avança e refresh restaura T0
+  ---
+  duration_ms: 2147.930245
+  type: 'test'
+  ...
+# Subtest: inicialização dev: módulos conectados e primitivos compartilhados têm ESM válido
+ok 291 - inicialização dev: módulos conectados e primitivos compartilhados têm ESM válido
+  ---
+  duration_ms: 9.801079
+  type: 'test'
+  ...
+# Subtest: inicialização dev: nenhuma falha ESM, erro JS ou erro de console nas rotas Plataforma e Feira
+ok 292 - inicialização dev: nenhuma falha ESM, erro JS ou erro de console nas rotas Plataforma e Feira
+  ---
+  duration_ms: 0.164901
+  type: 'test'
+  ...
+# Subtest: acesso independente é demonstrativo, sem credenciais corporativas
+ok 293 - acesso independente é demonstrativo, sem credenciais corporativas
+  ---
+  duration_ms: 800.335732
+  type: 'test'
+  ...
+# Subtest: 12 menus e logo acessíveis; placeholders sem métricas
+ok 294 - 12 menus e logo acessíveis; placeholders sem métricas
+  ---
+  duration_ms: 990.605174
+  type: 'test'
+  ...
+# Subtest: refresh, histórico e endereço desconhecido são previsíveis
+ok 295 - refresh, histórico e endereço desconhecido são previsíveis
+  ---
+  duration_ms: 577.786924
+  type: 'test'
+  ...
+# Subtest: atalho ao conteúdo mantém rota e foca main
+ok 296 - atalho ao conteúdo mantém rota e foca main
+  ---
+  duration_ms: 30.141403
+  type: 'test'
+  ...
+# Subtest: menu compacto móvel, Escape e ausência de overflow horizontal
+ok 297 - menu compacto móvel, Escape e ausência de overflow horizontal
+  ---
+  duration_ms: 417.00771
+  type: 'test'
+  ...
+# Subtest: apresentação original permanece padrão e recupera demo ao voltar
+ok 298 - apresentação original permanece padrão e recupera demo ao voltar
+  ---
+  duration_ms: 884.096715
+  type: 'test'
+  ...
+# Subtest: saída retorna login; URL direta não simula sessão autenticada
+ok 299 - saída retorna login; URL direta não simula sessão autenticada
+  ---
+  duration_ms: 37.765544
+  type: 'test'
+  ...
+# Subtest: cards reconciliam histórico, distintos e prioridade ativa
+ok 300 - cards reconciliam histórico, distintos e prioridade ativa
+  ---
+  duration_ms: 118.222582
+  type: 'test'
+  ...
+# Subtest: drill-down, ordenação, paginação e detalhe retornam à lista
+ok 301 - drill-down, ordenação, paginação e detalhe retornam à lista
+  ---
+  duration_ms: 373.598594
+  type: 'test'
+  ...
+# Subtest: agrupamentos de recorrência e evidências diárias são consultáveis
+ok 302 - agrupamentos de recorrência e evidências diárias são consultáveis
+  ---
+  duration_ms: 252.398669
+  type: 'test'
+  ...
+# Subtest: AND área e OR cores conciliam cards, cores e lista; filtros persistem entre páginas
+ok 303 - AND área e OR cores conciliam cards, cores e lista; filtros persistem entre páginas
+  ---
+  duration_ms: 580.84662
+  type: 'test'
+  ...
+# Subtest: busca, estado vazio e hoje usam relógio simulado
+ok 304 - busca, estado vazio e hoje usam relógio simulado
+  ---
+  duration_ms: 159.359812
+  type: 'test'
+  ...
+# Subtest: doze explicações acessíveis descrevem unidades, fórmulas e fontes
+ok 305 - doze explicações acessíveis descrevem unidades, fórmulas e fontes
+  ---
+  duration_ms: 711.32219
+  type: 'test'
+  ...
+# Subtest: offline, notebook e móvel mantêm leitura e detalhamento
+ok 306 - offline, notebook e móvel mantêm leitura e detalhamento
+  ---
+  duration_ms: 287.045754
+  type: 'test'
+  ...
+# Subtest: Vermelhos e Laranjas históricos reconciliam sem confundir ativos
+ok 307 - Vermelhos e Laranjas históricos reconciliam sem confundir ativos
+  ---
+  duration_ms: 0.79653
+  type: 'test'
+  ...
+# Subtest: equipamentos contam unidades distintas, não soma de recorrências
+ok 308 - equipamentos contam unidades distintas, não soma de recorrências
+  ---
+  duration_ms: 0.166151
+  type: 'test'
+  ...
+# Subtest: contratos sob pressão contam distintos com impacto Alto, não margem
+ok 309 - contratos sob pressão contam distintos com impacto Alto, não margem
+  ---
+  duration_ms: 0.343187
+  type: 'test'
+  ...
+# Subtest: áreas reconciliam cores e proporções com denominador local
+ok 310 - áreas reconciliam cores e proporções com denominador local
+  ---
+  duration_ms: 0.128344
+  type: 'test'
+  ...
+# Subtest: série diária cobre 60 dias, cores e total; não seis meses
+ok 311 - série diária cobre 60 dias, cores e total; não seis meses
+  ---
+  duration_ms: 3.936507
+  type: 'test'
+  ...
+# Subtest: limites diários usam data local com offset e dias sem registros
+ok 312 - limites diários usam data local com offset e dias sem registros
+  ---
+  duration_ms: 0.259979
+  type: 'test'
+  ...
+# Subtest: recorrência por equipamento, componente e categoria preserva registros de suporte
+ok 313 - recorrência por equipamento, componente e categoria preserva registros de suporte
+  ---
+  duration_ms: 0.940188
+  type: 'test'
+  ...
+# Subtest: motivos compostos são agrupados pelo texto inteiro, não causas inferidas
+ok 314 - motivos compostos são agrupados pelo texto inteiro, não causas inferidas
+  ---
+  duration_ms: 0.284028
+  type: 'test'
+  ...
+# Subtest: AND área e OR cores alimentam todos os agregados do mesmo recorte
+ok 315 - AND área e OR cores alimentam todos os agregados do mesmo recorte
+  ---
+  duration_ms: 2.960804
+  type: 'test'
+  ...
+# Subtest: nulos, chaves ausentes e limite de recorrência não viram zero nem entidade
+ok 316 - nulos, chaves ausentes e limite de recorrência não viram zero nem entidade
+  ---
+  duration_ms: 0.34145
+  type: 'test'
+  ...
+# Subtest: vazio mantém proporções não calculáveis no consumidor e zero contagens
+ok 317 - vazio mantém proporções não calculáveis no consumidor e zero contagens
+  ---
+  duration_ms: 0.595633
+  type: 'test'
+  ...
+# Subtest: explicabilidade herda origem e filtros sem alterar valores materializados
+ok 318 - explicabilidade herda origem e filtros sem alterar valores materializados
+  ---
+  duration_ms: 21.590119
+  type: 'test'
+  ...
+# Subtest: sugestões demonstrativas possuem regras, suporte e não avançam criticidade
+ok 319 - sugestões demonstrativas possuem regras, suporte e não avançam criticidade
+  ---
+  duration_ms: 0.18777
+  type: 'test'
+  ...
+# Subtest: C1 reconcilia 736, aderência 91,9%, N TA/TB e atenção atual
+ok 320 - C1 reconcilia 736, aderência 91,9%, N TA/TB e atenção atual
+  ---
+  duration_ms: 86.299828
+  type: 'test'
+  ...
+# Subtest: criticidade, faixa e motivo aprofundam em lista e detalhe com retorno
+ok 321 - criticidade, faixa e motivo aprofundam em lista e detalhe com retorno
+  ---
+  duration_ms: 472.602813
+  type: 'test'
+  ...
+# Subtest: drill de tempos inclui grupos e médias explicam unidade/denominador
+ok 322 - drill de tempos inclui grupos e médias explicam unidade/denominador
+  ---
+  duration_ms: 177.095466
+  type: 'test'
+  ...
+# Subtest: filtros compartilhados persistem entre SLA e Chamados e limitam todos os painéis
+ok 323 - filtros compartilhados persistem entre SLA e Chamados e limitam todos os painéis
+  ---
+  duration_ms: 253.705476
+  type: 'test'
+  ...
+# Subtest: vazio não exibe NaN ou aderência zero fabricada
+ok 324 - vazio não exibe NaN ou aderência zero fabricada
+  ---
+  duration_ms: 79.432619
+  type: 'test'
+  ...
+# Subtest: explicações de todos os dez painéis e SLA restante pendente
+ok 325 - explicações de todos os dez painéis e SLA restante pendente
+  ---
+  duration_ms: 1075.703771
+  type: 'test'
+  ...
+# Subtest: offline carregado, notebook/móvel sem overflow e sem erros JS
+ok 326 - offline carregado, notebook/móvel sem overflow e sem erros JS
+  ---
+  duration_ms: 302.706308
+  type: 'test'
+  ...
+# Subtest: aderência aprovada reconcilia 665 dentro e 59 acima entre 724 concluídos
+ok 327 - aderência aprovada reconcilia 665 dentro e 59 acima entre 724 concluídos
+  ---
+  duration_ms: 0.842253
+  type: 'test'
+  ...
+# Subtest: elegibilidade de aderência exclui abertos, nulos, inválidos e SLA zero; 100% cumpre
+ok 328 - elegibilidade de aderência exclui abertos, nulos, inválidos e SLA zero; 100% cumpre
+  ---
+  duration_ms: 0.205479
+  type: 'test'
+  ...
+# Subtest: médias usam N por campo e preservam materializados
+ok 329 - médias usam N por campo e preservam materializados
+  ---
+  duration_ms: 0.532748
+  type: 'test'
+  ...
+# Subtest: média exclui ausentes sem trocar por zero; zero informado participa
+ok 330 - média exclui ausentes sem trocar por zero; zero informado participa
+  ---
+  duration_ms: 0.329293
+  type: 'test'
+  ...
+# Subtest: faixas contínuas não têm lacunas nem sobreposição nos limites
+ok 331 - faixas contínuas não têm lacunas nem sobreposição nos limites
+  ---
+  duration_ms: 0.132174
+  type: 'test'
+  ...
+# Subtest: distribuições reconciliam o total sem recodificar criticidade pelo consumo
+ok 332 - distribuições reconciliam o total sem recodificar criticidade pelo consumo
+  ---
+  duration_ms: 0.62025
+  type: 'test'
+  ...
+# Subtest: passageiro preso conta ocorrências, atenção exclui concluídos
+ok 333 - passageiro preso conta ocorrências, atenção exclui concluídos
+  ---
+  duration_ms: 0.121718
+  type: 'test'
+  ...
+# Subtest: motivos completos são grupos exclusivos e preservam textos compostos
+ok 334 - motivos completos são grupos exclusivos e preservam textos compostos
+  ---
+  duration_ms: 0.285313
+  type: 'test'
+  ...
+# Subtest: agrupamentos por área/categoria/cliente/equipamento preservam N independente
+ok 335 - agrupamentos por área/categoria/cliente/equipamento preservam N independente
+  ---
+  duration_ms: 2.834689
+  type: 'test'
+  ...
+# Subtest: análise consome somente recorte compartilhado, inclusive vazio
+ok 336 - análise consome somente recorte compartilhado, inclusive vazio
+  ---
+  duration_ms: 3.052312
+  type: 'test'
+  ...
+# Subtest: explicação mantém origem, filtros, elegíveis e regra específica
+ok 337 - explicação mantém origem, filtros, elegíveis e regra específica
+  ---
+  duration_ms: 1.74853
+  type: 'test'
+  ...
+# Subtest: C7 cards e cobertura conciliam histórico e tabela
+ok 338 - C7 cards e cobertura conciliam histórico e tabela
+  ---
+  duration_ms: 166.992253
+  type: 'test'
+  ...
+# Subtest: C7 disponibilidade e dependências reais são EXT sem números inventados
+ok 339 - C7 disponibilidade e dependências reais são EXT sem números inventados
+  ---
+  duration_ms: 104.464765
+  type: 'test'
+  ...
+# Subtest: C7 ordenação paginação e retorno entre páginas preservam carteira
+ok 340 - C7 ordenação paginação e retorno entre páginas preservam carteira
+  ---
+  duration_ms: 346.535839
+  type: 'test'
+  ...
+# Subtest: C7 área → técnico → atendimentos → equipamento → histórico e insight
+ok 341 - C7 área → técnico → atendimentos → equipamento → histórico e insight
+  ---
+  duration_ms: 1594.647065
+  type: 'test'
+  ...
+# Subtest: C7 filtros cumulativos de técnico supervisor rota e unidade compartilham contexto
+ok 342 - C7 filtros cumulativos de técnico supervisor rota e unidade compartilham contexto
+  ---
+  duration_ms: 767.865995
+  type: 'test'
+  ...
+# Subtest: C7 AND OR período busca normalizada e vazio
+ok 343 - C7 AND OR período busca normalizada e vazio
+  ---
+  duration_ms: 336.935887
+  type: 'test'
+  ...
+# Subtest: C7 gráficos abrem suporte e operação na referência sem avaliação de pessoal
+ok 344 - C7 gráficos abrem suporte e operação na referência sem avaliação de pessoal
+  ---
+  duration_ms: 419.166416
+  type: 'test'
+  ...
+# Subtest: C7 explicações acessíveis por teclado incluem origem N e ausências
+ok 345 - C7 explicações acessíveis por teclado incluem origem N e ausências
+  ---
+  duration_ms: 521.140445
+  type: 'test'
+  ...
+# Subtest: C7 notebook móvel e offline após carga sem overflow e erros
+ok 346 - C7 notebook móvel e offline após carga sem overflow e erros
+  ---
+  duration_ms: 315.314227
+  type: 'test'
+  ...
+# Subtest: C7 técnicos distintos, cobertura e vinculados reconciliam
+ok 347 - C7 técnicos distintos, cobertura e vinculados reconciliam
+  ---
+  duration_ms: 1.912776
+  type: 'test'
+  ...
+# Subtest: C7 concluídos por técnico mantêm status materializado
+ok 348 - C7 concluídos por técnico mantêm status materializado
+  ---
+  duration_ms: 0.524931
+  type: 'test'
+  ...
+# Subtest: C7 média ta e N independente
+ok 349 - C7 média ta e N independente
+  ---
+  duration_ms: 0.172661
+  type: 'test'
+  ...
+# Subtest: C7 média tb e N independente
+ok 350 - C7 média tb e N independente
+  ---
+  duration_ms: 0.069812
+  type: 'test'
+  ...
+# Subtest: C7 nulos inválidos e zero de tempos/custos não são confundidos
+ok 351 - C7 nulos inválidos e zero de tempos/custos não são confundidos
+  ---
+  duration_ms: 0.668342
+  type: 'test'
+  ...
+# Subtest: C7 agrupamento Área preserva população
+ok 352 - C7 agrupamento Área preserva população
+  ---
+  duration_ms: 0.387368
+  type: 'test'
+  ...
+# Subtest: C7 agrupamento Rota preserva população
+ok 353 - C7 agrupamento Rota preserva população
+  ---
+  duration_ms: 0.29658
+  type: 'test'
+  ...
+# Subtest: C7 agrupamento Supervisor preserva população
+ok 354 - C7 agrupamento Supervisor preserva população
+  ---
+  duration_ms: 0.282084
+  type: 'test'
+  ...
+# Subtest: C7 criticidade histórica e ainda não concluída são distintas
+ok 355 - C7 criticidade histórica e ainda não concluída são distintas
+  ---
+  duration_ms: 0.550969
+  type: 'test'
+  ...
+# Subtest: C7 custos associados e recorrentes reutilizam regras sem multiplicação
+ok 356 - C7 custos associados e recorrentes reutilizam regras sem multiplicação
+  ---
+  duration_ms: 0.182868
+  type: 'test'
+  ...
+# Subtest: C7 SLA reutiliza concluídos elegíveis sem recálculo
+ok 357 - C7 SLA reutiliza concluídos elegíveis sem recálculo
+  ---
+  duration_ms: 0.763408
+  type: 'test'
+  ...
+# Subtest: C7 nomes ausentes ficam fora dos vinculados sem perder cobertura global
+ok 358 - C7 nomes ausentes ficam fora dos vinculados sem perder cobertura global
+  ---
+  duration_ms: 0.306708
+  type: 'test'
+  ...
+# Subtest: C7 vínculos múltiplos não escolhem cadastro permanente
+ok 359 - C7 vínculos múltiplos não escolhem cadastro permanente
+  ---
+  duration_ms: 0.339725
+  type: 'test'
+  ...
+# Subtest: C7 filtros AND e OR de técnico supervisor rota e área
+ok 360 - C7 filtros AND e OR de técnico supervisor rota e área
+  ---
+  duration_ms: 6.163004
+  type: 'test'
+  ...
+# Subtest: C7 busca normalizada inclui rota, técnico e supervisor
+ok 361 - C7 busca normalizada inclui rota, técnico e supervisor
+  ---
+  duration_ms: 22.327619
+  type: 'test'
+  ...
+# Subtest: C7 ordenação antes da paginação, nulos no fim e desempate por nome
+ok 362 - C7 ordenação antes da paginação, nulos no fim e desempate por nome
+  ---
+  duration_ms: 0.547142
+  type: 'test'
+  ...
+# Subtest: C7 limpar e chips removem seleções sem estado paralelo
+ok 363 - C7 limpar e chips removem seleções sem estado paralelo
+  ---
+  duration_ms: 0.193516
+  type: 'test'
+  ...
+# Subtest: C7 vazio não fabrica médias entidades nem custo
+ok 364 - C7 vazio não fabrica médias entidades nem custo
+  ---
+  duration_ms: 0.165201
+  type: 'test'
+  ...
+# Subtest: C7 metadados incluem fonte, elegibilidade, ausências e filtros
+ok 365 - C7 metadados incluem fonte, elegibilidade, ausências e filtros
+  ---
+  duration_ms: 7.049362
+  type: 'test'
+  ...
+# Subtest: C7 todos campos externos ficam EXT sem valor simulado
+ok 366 - C7 todos campos externos ficam EXT sem valor simulado
+  ---
+  duration_ms: 3.85702
+  type: 'test'
+  ...
+# Subtest: C7 análise e ordenação preservam a fonte imutável
+ok 367 - C7 análise e ordenação preservam a fonte imutável
+  ---
+  duration_ms: 21.084922
+  type: 'test'
+  ...
+# Subtest: TA é criação até chegada em minutos, por fonte, sem misturar estados
+ok 368 - TA é criação até chegada em minutos, por fonte, sem misturar estados
+  ---
+  duration_ms: 7.987576
+  type: 'test'
+  ...
+# Subtest: permanência adicional corresponde ao contrato sintético confirmado
+ok 369 - permanência adicional corresponde ao contrato sintético confirmado
+  ---
+  duration_ms: 2.308513
+  type: 'test'
+  ...
+# Subtest: marcos presentes respeitam a sequência e ausências TA/TB são preservadas
+ok 370 - marcos presentes respeitam a sequência e ausências TA/TB são preservadas
+  ---
+  duration_ms: 7.570286
+  type: 'test'
+  ...
+# Subtest: nulos não viram zero, nem eventos realizados
+ok 371 - nulos não viram zero, nem eventos realizados
+  ---
+  duration_ms: 0.359188
+  type: 'test'
+  ...
+# Subtest: duas saídas posteriores à referência são identificadas sem corrigir snapshots
+ok 372 - duas saídas posteriores à referência são identificadas sem corrigir snapshots
+  ---
+  duration_ms: 0.325996
+  type: 'test'
+  ...
+# Subtest: projeção oculta eventos futuros e não cria evento de encerramento técnico
+ok 373 - projeção oculta eventos futuros e não cria evento de encerramento técnico
+  ---
+  duration_ms: 2.075914
+  type: 'test'
+  ...
+# Subtest: snapshot não é liberado antes da referência; limite exato é inclusivo
+ok 374 - snapshot não é liberado antes da referência; limite exato é inclusivo
+  ---
+  duration_ms: 0.424055
+  type: 'test'
+  ...
+# Subtest: avanço do relógio sozinho não promove uma saída futura a evento confirmado
+ok 375 - avanço do relógio sozinho não promove uma saída futura a evento confirmado
+  ---
+  duration_ms: 0.563311
+  type: 'test'
+  ...
+# Subtest: TA/TB padronizados têm definição sintética em minutos
+ok 376 - TA/TB padronizados têm definição sintética em minutos
+  ---
+  duration_ms: 0.183275
+  type: 'test'
+  ...
+# Subtest: indicadores C1 permanecem reconciliados sem substituir materializados
+ok 377 - indicadores C1 permanecem reconciliados sem substituir materializados
+  ---
+  duration_ms: 14.02557
+  type: 'test'
+  ...
+1..377
+# tests 377
+# suites 0
+# pass 377
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 285137.003744

@@ -1,0 +1,8 @@
+OK produção: visao-geral direto + refresh; 1366x768; sem overflow
+OK produção: chamados direto + refresh; 1366x768; sem overflow
+OK produção: tecnicos direto + refresh; 1366x768; sem overflow
+OK produção: pecas direto + refresh; 1366x768; sem overflow
+OK apresentação/Supervisor: #/1 direto + refresh
+OK apresentação/Supervisor: #/3 direto + refresh
+OK apresentação/Supervisor: #/10 direto + refresh
+OK assets HTTP e JavaScript: sem erros.

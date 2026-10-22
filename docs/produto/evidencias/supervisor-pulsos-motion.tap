@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: Pulsos: Supervisor inicia em Alertas sem popup ou animação de entrada tardia
+ok 1 - Pulsos: Supervisor inicia em Alertas sem popup ou animação de entrada tardia
+  ---
+  duration_ms: 1981.910092
+  type: 'test'
+  ...
+# Subtest: Pulsos: criticidade usa exatamente a nova cor BASE e dois pulsos limitados
+ok 2 - Pulsos: criticidade usa exatamente a nova cor BASE e dois pulsos limitados
+  ---
+  duration_ms: 120.481187
+  type: 'test'
+  ...
+# Subtest: Pulsos: heartbeat e troca de abas não repetem destaques nem roubam navegação
+ok 3 - Pulsos: heartbeat e troca de abas não repetem destaques nem roubam navegação
+  ---
+  duration_ms: 111.481507
+  type: 'test'
+  ...
+# Subtest: Pulsos: novo alerta tem entrada destacada e status sem mudança de cor só destaca o rótulo
+ok 4 - Pulsos: novo alerta tem entrada destacada e status sem mudança de cor só destaca o rótulo
+  ---
+  duration_ms: 84.077265
+  type: 'test'
+  ...
+# Subtest: Pulsos: concluído tem saída breve não interativa, não entra no contador ativo e é removido
+ok 5 - Pulsos: concluído tem saída breve não interativa, não entra no contador ativo e é removido
+  ---
+  duration_ms: 1942.177779
+  type: 'test'
+  ...
+# Subtest: Pulsos: movimento reduzido cancela efeitos e preserva indicação textual
+ok 6 - Pulsos: movimento reduzido cancela efeitos e preserva indicação textual
+  ---
+  duration_ms: 70.689062
+  type: 'test'
+  ...
+# Subtest: Pulsos: reconexão e entrada tardia não reapresentam mudança já recebida
+ok 7 - Pulsos: reconexão e entrada tardia não reapresentam mudança já recebida
+  ---
+  duration_ms: 3694.312912
+  type: 'test'
+  ...
+# Subtest: Pulsos: abrir resumo mantém Alertas, pausa global, lock e retorno sem replay
+ok 8 - Pulsos: abrir resumo mantém Alertas, pausa global, lock e retorno sem replay
+  ---
+  duration_ms: 196.634986
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8684.165653

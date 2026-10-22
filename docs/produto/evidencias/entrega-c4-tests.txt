@@ -1,0 +1,33 @@
+✔ C4 síntese reconcilia quatro cards e seis gráficos (124.495713ms)
+✔ C4 finanças EXT não possuem valores inventados (422.357671ms)
+✔ C4 ordenação, paginação e contexto da carteira sobrevivem à navegação (307.033232ms)
+✔ C4 contrato → indicadores → equipamento → chamado preserva retornos (767.906615ms)
+✔ C4 cada gráfico e indicador leva a registros do suporte coerente (462.426203ms)
+✔ C4 filtros AND/OR e busca sincronizam cards, tabela, gráficos e páginas anteriores (629.977846ms)
+✔ C4 explicações acessíveis em cards, colunas, gráficos e insights (454.505883ms)
+✔ C4 estado vazio e nenhum concluído não fabricam custos ou SLA (368.843319ms)
+✔ C4 notebook/móvel e consulta offline carregada sem erro (713.636684ms)
+✔ C4 carteira reconcilia todos os contratos distintos e volume (1.088462ms)
+✔ C4 custos reconcilia soma da fonte por contrato e cobertura (0.57866ms)
+✔ C4 inclui contratos sem Alto e classifica pressão sem faixas inventadas (0.556384ms)
+✔ C4 recorrência é proporção de chamados positivos sobre total, sem soma de eventos (0.150183ms)
+✔ C4 SLA por contrato usa concluídos elegíveis, não consumo médio (0.314242ms)
+✔ C4 custos/TA/TB nulos excluídos e zeros válidos (0.14468ms)
+✔ C4 vazio e recorrência toda ausente são indisponíveis (0.227746ms)
+✔ C4 contratos ausentes não criam entidade e custo geral mantém esses registros (0.217897ms)
+✔ C4 ordenação numérica precede paginação e desempata por contrato (0.498496ms)
+✔ C4 busca por cliente ou contrato ignora acentos/caixa e combina palavras (0.259485ms)
+✔ C4 ordenação preserva indisponíveis por último nos dois sentidos (0.137822ms)
+✔ C4 filtros cumulativos alimentam carteira, gráficos e suporte únicos (2.316005ms)
+✔ C4 séries diárias conciliam volume e custo sem misturar unidades (0.165884ms)
+✔ C4 categorias, componentes e equipamentos permitem reconciliar recorrência e chamados (0.112595ms)
+✔ C4 explicabilidade e quatro fontes EXT nunca fabricam finanças (3.124996ms)
+✔ C4 agregações preservam dados e regras materializadas (9.759094ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5677.120686

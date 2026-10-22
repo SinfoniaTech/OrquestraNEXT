@@ -1,0 +1,3 @@
+HTTP200 + Chrome + refresh: http://192.168.0.3:5182/OrquestraNEXT/
+HTTP200 + Chrome + refresh: http://192.168.0.3:5182/OrquestraNEXT/?modo=apresentacao
+PASS: legado explícito + zero erros JavaScript. Serviço5180 preservado.

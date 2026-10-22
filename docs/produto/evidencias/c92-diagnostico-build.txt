@@ -1,0 +1,71 @@
+
+> orquestra-next@0.1.0 build
+> vite build --outDir /tmp/orquestra-c92-diagnostico/operador
+
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 198 modules transformed.
+
+(!) outDir /tmp/orquestra-c92-diagnostico/operador is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../../../tmp/orquestra-c92-diagnostico/operador/index.html                                                     0.45 kB │ gzip:  0.29 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/orquestra-logo13-BBrr8rpF.png                         106.07 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/CenaTransicao-DWsH3paR.css                              0.45 kB │ gzip:  0.25 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/index-DK9ErD-r.css                                      2.29 kB │ gzip:  0.97 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/SyncedFeiraApp-Cy8x1sJ2.css                             2.64 kB │ gzip:  0.88 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/hooks-BhxumCk7.css                                      3.11 kB │ gzip:  1.03 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/AvisoCritico-B2FR-neO.css                               3.67 kB │ gzip:  1.27 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/FeiraPanel-C2iCLF5T.css                                 6.28 kB │ gzip:  1.81 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/ChamadoDetalheView-Cq9XzaPt.css                        16.63 kB │ gzip:  3.64 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/temporalDefinitions-Cn7j3AT-.css                       19.33 kB │ gzip:  4.60 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/BackofficeView-BrCGtxS2.css                            24.10 kB │ gzip:  5.13 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/BackofficePlatform-BHwu5_F5.css                        40.35 kB │ gzip:  7.17 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/backoffice-1-principal-CbyXMXni.js                      0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/backoffice-2-chamados-CXqxYtVC.js                       0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/orquestra-logo13-BL5170sf.js                            0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-aberto-BijCvB_k.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-aberto-DZp481ez.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-alerta-DPWC9F-c.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-alerta-nBmoUuDg.js                             0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-repouso-BLjm_HTJ.js                            0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-repouso-CjUfg-1U.js                            0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-concluido-BGtPTF7G.js                          0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-concluido-BvNmXtf2.js                          0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-priorizado-FJMIT1Lz.js                         0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-priorizado-SqsQt35-.js                         0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-encaminhado-B8cg_CCb.js                        0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-encaminhado-BJ7khX-D.js                        0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/supervisor-cena-3-media-para-alta-D7LNTznp.js           0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-em-atendimento-BDamStRN.js                     0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/chamados-em-atendimento-t2ImN1S0.js                     0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/supervisor-cena-2-normal-para-media-BhkC259_.js         0.21 kB │ gzip:  0.19 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/supervisor-cena-1-tela-raqZ8Wer.js                      0.65 kB │ gzip:  0.43 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/supervisor-cena-5-demanda-critica-BKMK429J.js           0.76 kB │ gzip:  0.48 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/supervisor-cena-2-media-sobe-CcebwiPN.js                0.83 kB │ gzip:  0.52 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/supervisor-cena-6-demanda-critica-sobe-CLodwPkw.js      0.86 kB │ gzip:  0.55 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/supervisor-cena-4-aviso-alta-CaYgAae0.js                1.17 kB │ gzip:  0.69 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/supervisor-cena-7-aviso-estourado-BZINd030.js           1.19 kB │ gzip:  0.69 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/CenaTransicao-VHweLryM.js                               2.14 kB │ gzip:  1.05 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/AvisoCritico-DgUqGsY4.js                                7.73 kB │ gzip:  2.37 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/hooks-BwVPH8ef.js                                       8.20 kB │ gzip:  3.26 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/temporalDefinitions-GOw7cgf9.js                         8.64 kB │ gzip:  3.10 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/supervisor-OytHmrAs.js                                  9.06 kB │ gzip:  2.58 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/FeiraPanel-CaA9g-xk.js                                 13.21 kB │ gzip:  4.86 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/SyncedFeiraApp-DywPqXsa.js                             16.33 kB │ gzip:  5.94 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/ChamadoDetalheView-CltN4ySQ.js                         24.63 kB │ gzip:  7.05 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/BackofficeView-CZms-wcC.js                             62.21 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/BackofficeView-BrfSMDk2.js                             62.22 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/BackofficePlatform-BLBV5JRk.js                        206.37 kB │ gzip: 50.26 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/index-D57mWhWp.js                                     232.93 kB │ gzip: 72.89 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/FeiraApp--747rykH.js                                  708.85 kB │ gzip: 45.24 kB
+../../../../../../tmp/orquestra-c92-diagnostico/operador/assets/temporal-BnPFJ1yd.js                                1,111.91 kB │ gzip: 73.98 kB
+
+✓ built in 323ms
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

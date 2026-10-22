@@ -1,0 +1,1 @@
+{"previousService":5186,"error":"Unable to preload CSS for http://192.168.0.3:5186/OrquestraNEXT/assets/ChamadoDetalheView-Cq9XzaPt.css","scope":"leitura isolada,sem pareamento ou comandos"}

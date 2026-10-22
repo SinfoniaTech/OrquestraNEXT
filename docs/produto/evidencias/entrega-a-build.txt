@@ -1,0 +1,58 @@
+
+> orquestra-next@0.1.0 build
+> vite build --outDir /tmp/orquestra-shell-a/dist
+
+vite v8.3.0 building client environment for production...
+transforming...
+✓ 135 modules transformed.
+
+(!) outDir /tmp/orquestra-shell-a/dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../../../tmp/orquestra-shell-a/dist/index.html                                                   0.45 kB │ gzip:  0.29 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/orquestra-logo13-BBrr8rpF.png                       106.07 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/CenaTransicao-DWsH3paR.css                            0.45 kB │ gzip:  0.25 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/index-DK9ErD-r.css                                    2.29 kB │ gzip:  0.97 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/hooks-BhxumCk7.css                                    3.11 kB │ gzip:  1.03 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/AvisoCritico-B2FR-neO.css                             3.67 kB │ gzip:  1.27 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/BackofficePlatform-CBGtn_xA.css                      11.24 kB │ gzip:  3.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/ChamadoDetalheView-Cq9XzaPt.css                      16.63 kB │ gzip:  3.64 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/BackofficeView-BrCGtxS2.css                          24.10 kB │ gzip:  5.13 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/backoffice-1-principal-JteugUNU.js                    0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/backoffice-2-chamados-DuYEJHTz.js                     0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/orquestra-logo13-BL5170sf.js                          0.07 kB │ gzip:  0.08 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-aberto-Cq-d07dz.js                           0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-aberto-Fx4GFa4e.js                           0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-alerta-Bi_S8_vU.js                           0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-alerta-BjSnoZ2O.js                           0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-repouso-CVtqV6Kx.js                          0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-repouso-fhkXgpJ0.js                          0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-concluido-Bi6RiOB1.js                        0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-concluido-P7kLYkiJ.js                        0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-priorizado-5nq0Qhfd.js                       0.19 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-priorizado-CV_6AnJP.js                       0.19 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-encaminhado-CgM4hBSD.js                      0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-encaminhado-cYNTHQJ3.js                      0.20 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/supervisor-cena-3-media-para-alta-DgHrT2dt.js         0.20 kB │ gzip:  0.17 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-em-atendimento-Cr18_8if.js                   0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/chamados-em-atendimento-DSvIoKxS.js                   0.20 kB │ gzip:  0.18 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/supervisor-cena-2-normal-para-media-CbnumWsJ.js       0.21 kB │ gzip:  0.19 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/supervisor-cena-1-tela-DHOB2dUR.js                    0.65 kB │ gzip:  0.43 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/supervisor-cena-5-demanda-critica-B3QKiI43.js         0.76 kB │ gzip:  0.48 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/supervisor-cena-2-media-sobe-D8nMRBQ_.js              0.83 kB │ gzip:  0.52 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/supervisor-cena-6-demanda-critica-sobe-y_O9Ue47.js    0.86 kB │ gzip:  0.55 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/supervisor-cena-4-aviso-alta-DwGgSQf0.js              1.17 kB │ gzip:  0.68 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/supervisor-cena-7-aviso-estourado-B-k-9IYM.js         1.19 kB │ gzip:  0.69 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/CenaTransicao-kU4rdJ-b.js                             2.14 kB │ gzip:  1.05 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/AvisoCritico-CPcdVhRH.js                              7.73 kB │ gzip:  2.37 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/hooks-UxSsziWl.js                                     8.20 kB │ gzip:  3.26 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/supervisor-BsRiIC5j.js                                9.06 kB │ gzip:  2.58 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/BackofficePlatform-DoGuKBuI.js                       13.36 kB │ gzip:  4.66 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/ChamadoDetalheView-C3cnqXbO.js                       24.63 kB │ gzip:  7.05 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/BackofficeView-BZMulhS7.js                           62.21 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/BackofficeView-CM6tytbS.js                           62.22 kB │ gzip: 17.71 kB
+../../../../../../tmp/orquestra-shell-a/dist/assets/index-CvXpuhcS.js                                   231.32 kB │ gzip: 72.34 kB
+
+✓ built in 233ms

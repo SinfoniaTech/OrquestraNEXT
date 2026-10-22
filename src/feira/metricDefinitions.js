@@ -1,0 +1,4 @@
+export function metricDefinition(view,key,title){
+ const rules={total:'contar IDs únicos na fonte',active:'contar Status diferente de Concluído',concluded:'contar Status igual a Concluído',attention:'contar Status diferente de Concluído e criticidade Laranja ou Vermelho'};
+ return {title,classification:'CALC',definition:'Contagem no snapshot apresentado; simulação, sem mistura com histórico ou Supervisor.',fields:['ID_Chamado','Status','Criticidade_ORQUESTRA'],calculation:rules[key],population:view.rows.length,period:'Snapshot em '+view.metadata.reference,unit:'chamados',missing:'Nulos não viram zero. Zero significa ausência de registros no grupo.',source:view.metadata.sheet,reference:view.metadata.reference,timezone:view.metadata.timezone,sourceFile:view.metadata.sourceFile,sourceHash:view.metadata.sourceSha256,filters:{},recurrence:[],search:''};
+}

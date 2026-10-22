@@ -1,0 +1,30 @@
+✔ Visão Geral executiva reconcilia os seis cards e os mostra no notebook (116.817438ms)
+✔ EXT não possui números financeiros nem integração simulada (312.990974ms)
+✔ cinco contratos inicialmente e lista completa de doze, com populações distintas (527.49248ms)
+✔ gráficos oferecem registros elegíveis e suporte por dia (323.803966ms)
+✔ AND/OR, busca e contexto preservados nas quatro páginas funcionais (679.440848ms)
+✔ vazio e ausência de concluídos não fabricam custo ou aderência (329.457618ms)
+✔ catorze explicações descrevem fonte, fórmula, população e cobertura (716.605332ms)
+✔ offline carregado e responsividade mantêm a consulta sem erros (325.043883ms)
+✔ síntese executiva reconcilia custo, SLA, contratos, histórico e ativos (4.66883ms)
+✔ custos excluem ausentes e inválidos, sem transformar nulo em zero (0.142483ms)
+✔ cinco primeiros contratos são ordenados por N Alto, com desempate por ID (0.472883ms)
+✔ lista completa tem doze contratos; não confundir eventos Alto e todos os chamados (0.095959ms)
+✔ indicadores do contrato usam todos os seus registros filtrados (0.372819ms)
+✔ contrato sem Alto não entra na tabela, mas participa da síntese geral (0.404349ms)
+✔ série de custos reconcilia o total e respeita os 60 dias (0.125709ms)
+✔ SLA por dia reutiliza elegibilidade, não média de percentuais diários (0.433775ms)
+✔ dia sem elegíveis ou custo tem lacuna e não percentual zero fabricado (0.226902ms)
+✔ limites temporais preservam a data civil de São Paulo (0.232537ms)
+✔ filtros compartilhados limitam todos os indicadores e listas de suporte (1.811813ms)
+✔ vazio e contrato ausente não inventam entidade ou custo (0.243225ms)
+✔ explicabilidade CALC e EXT mantém origem, cobertura e indisponibilidade (3.376011ms)
+✔ agregações não modificam TA, TB, SLA, criticidade ou dados originais (7.774252ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4745.148429

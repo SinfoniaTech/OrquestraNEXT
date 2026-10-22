@@ -1,0 +1,20 @@
+{
+  "observedAt": "2026-10-15T20:54:45.397Z",
+  "origin": "http://192.168.0.3:5180",
+  "sessionId": "e562d2a8-1656-44c1-9904-1556dd94b05d",
+  "revision": 279,
+  "snapshot": "T01",
+  "operationalTime": "2026-09-08T08:30:00-03:00",
+  "started": true,
+  "status": "paused",
+  "speed": 1,
+  "remainingMs": 20318.910533999995,
+  "pauses": [
+    "manual",
+    "interruption"
+  ],
+  "controller": true,
+  "locks": 0,
+  "records": 16,
+  "physicalValidation": "Usuário confirmou controles no notebook e avanço conjunto; serviço lido em T01. Ciclo físico completo não homologado."
+}

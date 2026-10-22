@@ -1,0 +1,1 @@
+PASS: referências operacionais T03/T06,Light/Dark,390×844/768×1024 e fluxo de cinco passos;zero erros JS.

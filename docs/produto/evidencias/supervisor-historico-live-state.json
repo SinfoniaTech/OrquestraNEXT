@@ -1,0 +1,15 @@
+{
+  "origin": "http://192.168.0.3:5194",
+  "sessionId": "2b5fa4f8-bbb7-42a9-94ca-0b4fd4076fb2",
+  "snapshotId": "T03",
+  "reference": "2026-09-08T10:15:00-03:00",
+  "status": "paused",
+  "speed": 1,
+  "total": 27,
+  "alerts": 9,
+  "locks": 0,
+  "openPosts": 1,
+  "closePosts": 1,
+  "flow": "lista → resumo → completo → resumo → lista",
+  "jsErrors": 0
+}

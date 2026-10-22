@@ -1,0 +1,33 @@
+## feature/modo-feira...origin/feature/modo-feira
+ M docs/CONTINUIDADE_CODEX.md
+ M docs/produto/backlog.md
+ M docs/produto/entrega-c92-feira-estendida.md
+ M docs/tecnica/pontos-integracao-supervisor.md
+ M src/feira/SupervisorFeira.jsx
+ M src/feira/supervisor/Supervisor.module.css
+ M src/feira/supervisor/SupervisorParts.jsx
+ M src/feira/supervisor/useSnapshotMotion.js
+ M tests/feira-extended-browser.test.mjs
+ M tests/feira-supervisor-browser.test.mjs
+ M tests/feira-supervisor-theme-browser.test.mjs
+ M tests/feira-sync-browser.test.mjs
+?? docs/produto/evidencias/supervisor-pulsos-alertas-inicial-390x844.png
+?? docs/produto/evidencias/supervisor-pulsos-alertas-tablet-768x1024.png
+?? docs/produto/evidencias/supervisor-pulsos-build.txt
+?? docs/produto/evidencias/supervisor-pulsos-concluido-390x844.png
+?? docs/produto/evidencias/supervisor-pulsos-contrast.json
+?? docs/produto/evidencias/supervisor-pulsos-import-extended.txt
+?? docs/produto/evidencias/supervisor-pulsos-import-original.txt
+?? docs/produto/evidencias/supervisor-pulsos-live-state.json
+?? docs/produto/evidencias/supervisor-pulsos-motion.tap
+?? docs/produto/evidencias/supervisor-pulsos-preservation.txt
+?? docs/produto/evidencias/supervisor-pulsos-pulsos-dark-390x844.png
+?? docs/produto/evidencias/supervisor-pulsos-pulsos-light-390x844.png
+?? docs/produto/evidencias/supervisor-pulsos-pulsos.json
+?? docs/produto/evidencias/supervisor-pulsos-python-extended.txt
+?? docs/produto/evidencias/supervisor-pulsos-python-original.txt
+?? docs/produto/evidencias/supervisor-pulsos-regression.tap
+?? docs/produto/evidencias/supervisor-pulsos-served-build.json
+?? docs/produto/evidencias/supervisor-pulsos-sync-recheck.tap
+?? docs/produto/evidencias/supervisor-pulsos-validation.txt
+?? tests/feira-supervisor-motion-browser.test.mjs

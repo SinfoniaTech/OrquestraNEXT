@@ -1,0 +1,7 @@
+Relógio real 1×: T1; 2026-10-15T16:48:35.678Z
+Relógio real 1×: T2; 2026-10-15T16:49:20.676Z
+OK ciclo completo real 1×, sem pausas inesperadas
+Relógio real 2×: T1; 2026-10-15T16:50:38.240Z
+Relógio real 2×: T2; 2026-10-15T16:51:00.739Z
+OK ciclo completo real 2×, sem pausas inesperadas
+OK ensaio real: 1 ciclo normal (145s) +1 acelerado (72,5s); zero erros JavaScript.

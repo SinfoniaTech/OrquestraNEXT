@@ -1,0 +1,17 @@
+✔ 736 registros, 46 campos, IDs únicos e metadados offline (5.843665ms)
+✔ reconciliação independente de status e criticidade históricos (3.448974ms)
+✔ snapshots separados com relógios e contagens próprios (0.398594ms)
+✔ nulos preservados, TA/TB/percentual não recalculados (0.687211ms)
+✔ consultas básicas cumulativas, busca por ID e proveniência BASE (1.307075ms)
+✔ 60 dias civis inclusivos, Criado em e limites do dia local (3.210836ms)
+✔ datas ambíguas, inválidas e intervalo invertido falham explicitamente (0.17081ms)
+✔ mesmo resultado independentemente do timezone do processo (0.06965ms)
+✔ distribuição CALC explica fonte, população e filtros sem mutá-los (1.180612ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65.122895

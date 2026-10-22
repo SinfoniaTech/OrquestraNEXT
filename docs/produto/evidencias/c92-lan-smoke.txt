@@ -1,0 +1,1 @@
+OK serviço C9.2 192.168.0.3:5180, dois contextos Chrome no IP Wi-Fi; T00/10, pareamento, detalhe com pausa/fechar, zero erros JS. Serviço permanece T00 pausado. Não comprova dois dispositivos físicos nem WAN desligada.

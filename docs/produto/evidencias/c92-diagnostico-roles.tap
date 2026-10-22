@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: C9.2 diagnóstico: notebook independente T02 pode coexistir com serviço/mobile T00 não iniciado
+ok 1 - C9.2 diagnóstico: notebook independente T02 pode coexistir com serviço/mobile T00 não iniciado
+  ---
+  duration_ms: 2777.947059
+  type: 'test'
+  ...
+# Subtest: C9.2 diagnóstico: notebook pareado como Supervisor exige código administrativo para controlar
+ok 2 - C9.2 diagnóstico: notebook pareado como Supervisor exige código administrativo para controlar
+  ---
+  duration_ms: 1220.946735
+  type: 'test'
+  ...
+# Subtest: C9.2 diagnóstico: mesmo serviço, sessão/revisão e Iniciar fazem ambas as telas avançarem
+ok 3 - C9.2 diagnóstico: mesmo serviço, sessão/revisão e Iniciar fazem ambas as telas avançarem
+  ---
+  duration_ms: 445.35271
+  type: 'test'
+  ...
+# Subtest: C9.2 diagnóstico: pausa global explícita, refresh e retorno de página mobile não criam motor
+ok 4 - C9.2 diagnóstico: pausa global explícita, refresh e retorno de página mobile não criam motor
+  ---
+  duration_ms: 931.324092
+  type: 'test'
+  ...
+# Subtest: C9.2 diagnóstico: página mobile suspensa recupera T05 sem refresh manual
+ok 5 - C9.2 diagnóstico: página mobile suspensa recupera T05 sem refresh manual
+  ---
+  duration_ms: 123.054384
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: dois clientes reais conectam T0 pausado
+ok 6 - C9.1 navegador: dois clientes reais conectam T0 pausado
+  ---
+  duration_ms: 1923.760197
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: notebook inicia e ambos avançam T1/T2 por uma autoridade
+ok 7 - C9.1 navegador: notebook inicia e ambos avançam T1/T2 por uma autoridade
+  ---
+  duration_ms: 236.363083
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: abrir detalhe mobile aguarda pausa global confirmada
+ok 8 - C9.1 navegador: abrir detalhe mobile aguarda pausa global confirmada
+  ---
+  duration_ms: 218.937274
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: refresh/entrada tardia recebem estado completo sem reset
+ok 9 - C9.1 navegador: refresh/entrada tardia recebem estado completo sem reset
+  ---
+  duration_ms: 832.692772
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: perda de rede congela e reconexão aplica estado atual
+ok 10 - C9.1 navegador: perda de rede congela e reconexão aplica estado atual
+  ---
+  duration_ms: 2610.65079
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: pausa por notebook em segundo plano e retorno sem retomada
+ok 11 - C9.1 navegador: pausa por notebook em segundo plano e retorno sem retomada
+  ---
+  duration_ms: 43.483684
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: 2× e reinício sincronizados
+ok 12 - C9.1 navegador: 2× e reinício sincronizados
+  ---
+  duration_ms: 101.979374
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: vinte loops sincronizados preservam fonte e contagens
+ok 13 - C9.1 navegador: vinte loops sincronizados preservam fonte e contagens
+  ---
+  duration_ms: 358.481722
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: mobile não monta engine nem controles administrativos
+ok 14 - C9.1 navegador: mobile não monta engine nem controles administrativos
+  ---
+  duration_ms: 15.171535
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: notebook/mobile/tablet sem overflow horizontal
+ok 15 - C9.1 navegador: notebook/mobile/tablet sem overflow horizontal
+  ---
+  duration_ms: 96.121666
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: fatos por ID e ausência de eventos futuros no mobile
+ok 16 - C9.1 navegador: fatos por ID e ausência de eventos futuros no mobile
+  ---
+  duration_ms: 118.640339
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: sessão do serviço reiniciada exige novo pareamento e T0 pausado
+ok 17 - C9.1 navegador: sessão do serviço reiniciada exige novo pareamento e T0 pausado
+  ---
+  duration_ms: 1373.336685
+  type: 'test'
+  ...
+# Subtest: C9.1 navegador: zero erros JavaScript
+ok 18 - C9.1 navegador: zero erros JavaScript
+  ---
+  duration_ms: 0.573549
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8434.197313

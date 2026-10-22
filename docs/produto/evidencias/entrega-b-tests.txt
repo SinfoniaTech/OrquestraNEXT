@@ -1,0 +1,36 @@
+✔ 736 históricos, 724 concluídos, 66 Vermelhos, só 1 atenção ativa (104.609944ms)
+✔ períodos inclusivos com relógio fixo mesmo em browser Tóquio (60.212387ms)
+✔ OR de criticidade e AND de área; remover chip preserva restrição (492.201159ms)
+✔ status, cliente, equipamento, categoria e recorrência funcionam juntos (761.952157ms)
+✔ busca sem acentos/caixa, vazio e limpeza completa (195.160354ms)
+✔ ordenação/página/contexto permanecem no detalhe e entre menus (601.951972ms)
+✔ detalhe de TA/TB ausentes informa ausência, não zero (156.859861ms)
+✔ todos os cards implementados têm explicação de fonte/população/cálculo (741.474392ms)
+✔ consulta e detalhe funcionam offline depois de carregados (257.318998ms)
+✔ 1366x768 e mobile sem overflow; analítica acessível (255.305421ms)
+✔ sem erros de execução/rede na nova consulta (0.234246ms)
+✔ períodos inclusivos usam data civil da demonstração, não hoje real (10.851186ms)
+✔ criticidade OR Laranja/Vermelho mantém histórico concluído separado (1.379539ms)
+✔ status selecionado usa valor fonte exato (1.182061ms)
+✔ campos diferentes usam AND e valores do mesmo campo usam OR (1.671127ms)
+✔ cliente, tipo e categoria podem restringir cumulativamente (0.967304ms)
+✔ busca tolera acentos, caixa, espaços e combina com filtros (14.136882ms)
+✔ remoção de chip preserva outros filtros e volta à página 1 (0.215817ms)
+✔ limpar restaura 60 dias, busca, ordenação e paginação padrão (0.687163ms)
+✔ total, distribuições e paginação conciliam para qualquer recorte (10.251305ms)
+✔ ordenação antecede paginação e não modifica fonte (13.594961ms)
+✔ estado vazio não inventa porcentagem nem página negativa (3.148817ms)
+✔ TA/TB nulos preservados; ETA e SLA não inferem regras desconhecidas (2.447431ms)
+✔ atenção exclui concluídos mesmo que historicamente Vermelhos (4.206821ms)
+✔ recorrência usa faixas fornecidas, OR e nulos preservados (0.808682ms)
+✔ explicação CALC rastreia população, período, filtros e campos (0.768401ms)
+✔ filtros futuros usam mesmo serviço sem uma segunda importação (0.71761ms)
+✔ ordenação mantém ausentes no fim nos dois sentidos (0.070269ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5019.610972

@@ -1,0 +1,3 @@
+PASS: cena original 3 capturada sem modificar código/fixtures.
+PASS: cena original 7 capturada sem modificar código/fixtures.
+PASS: cena original 10 capturada sem modificar código/fixtures.

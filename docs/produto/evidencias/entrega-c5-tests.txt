@@ -1,0 +1,38 @@
+✔ C5 cinco cards conciliam custos média técnicos recorrentes e pressão (111.238609ms)
+✔ C5 TCO e composição são EXT sem parcelas ou números financeiros fictícios (323.219518ms)
+✔ C5 agrupamentos por contrato área técnico equipamento categoria e componente sincronizam (797.059292ms)
+✔ C5 tabela alterna contratos/chamados ordena média e pagina antes de navegar (413.83081ms)
+✔ C5 custo → desvio SLA → contrato → equipamento → chamado → insight e retorno (1228.519054ms)
+✔ C5 recorrência e série diária levam ao conjunto de suporte (462.796528ms)
+✔ C5 filtros AND/OR busca e contexto conservados entre seis páginas (659.500997ms)
+✔ C5 explicações por teclado mostram origem fórmula cobertura nulos e período (414.645551ms)
+✔ C5 vazio e não concluídos mantêm resultados indisponíveis sem fabricação (383.742047ms)
+✔ C5 notebook/móvel offline carregado e custo alto individual sem erro (605.845635ms)
+✔ C5 soma válida e média conciliam fonte e população completa (0.653434ms)
+✔ C5 nulos negativos strings e não finitos não viram custos zero (0.199698ms)
+✔ C5 custos associados aos técnicos excluem nome ausente no card e conservam grupo desconhecido (0.534375ms)
+✔ C5 agrupamento por Contrato reconcilia custo e chamados (2.104437ms)
+✔ C5 agrupamento por Área reconcilia custo e chamados (1.470097ms)
+✔ C5 agrupamento por Técnico reconcilia custo e chamados (1.651366ms)
+✔ C5 agrupamento por Unidade reconcilia custo e chamados (3.72903ms)
+✔ C5 agrupamento por Categoria do Chamado reconcilia custo e chamados (1.205522ms)
+✔ C5 agrupamento por Componente Principal reconcilia custo e chamados (1.083836ms)
+✔ C5 custo de recorrência usa chamados positivos sem multiplicar eventos (0.811621ms)
+✔ C5 recorrentes zeros e desconhecidos formam partição disjunta (0.816051ms)
+✔ C5 custo e tempo pareados exigem ambos os valores válidos (0.324029ms)
+✔ C5 grupos SLA reaproveitam elegibilidade e cobrem todos sem sobreposição (0.107507ms)
+✔ C5 filtros cumulativos alimentam cards gráficos e carteira (1.73347ms)
+✔ C5 série diária respeita dias civis lacunas e limite disponível (0.188965ms)
+✔ C5 carteira e chamados ordenam por custo e média antes da página (12.537277ms)
+✔ C5 desempate determinístico nulos por último e busca preservada (0.348251ms)
+✔ C5 vazio todos ausentes e custo zero não fabricam médias ou participação (0.518683ms)
+✔ C5 explicabilidade mantém cobertura fontes EXT e limites financeiros (3.8812ms)
+✔ C5 dados materializados intactos sem novas regras de SLA ou pressão (23.019739ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6818.608762

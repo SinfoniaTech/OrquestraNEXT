@@ -1,0 +1,13 @@
+{
+  "http": {
+    "?modo=feira": 200,
+    "?modo=supervisor-feira": 200,
+    "api/state": 401
+  },
+  "sessionId": "e6a673d5-a861-4954-b94c-4eb4014912f7",
+  "snapshotId": "T03",
+  "status": "paused",
+  "speed": 1,
+  "locks": 0,
+  "privateCodesFile": "0700/0600"
+}
