@@ -1,26 +1,25 @@
 # ORQUESTRA — continuidade oficial
 
-> Autorização atual: usuário autorizou explicitamente commit e push exclusivamente em `feature/modo-feira`. Publicação em preparação após conferência de diff, HEAD remoto e preservação dos170 arquivos protegidos. Sem merge/rebase/deploy; Arena permanece pendente. Gates anteriores abaixo são históricos.
 
-Único ponto de retomada. Leia [AGENTS.md](../AGENTS.md), confira Git e consulte apenas referências do escopo. Relatórios preservam o histórico e evidências anteriores.
+Único ponto de retomada. Leia [AGENTS.md](../AGENTS.md) e confira Git antes de trabalhar.
 
-## Estado vigente — validação integral pré-versionamento, 23/10/2026
+## Estado vigente — entrega publicada na feature, 23/10/2026
 
-**APTO PARA COMMIT E PUSH**, aguardando autorização final do usuário; não executar até recebê-la. Homologação visual/funcional dos seis critérios aprovada pelo usuário. Validação técnica atual: **524 testes distintos aprovados =507 Node/navegador (49 arquivos)+17 Python (dois arquivos)**, zero falhas/ignorados/cancelados. Build e dois importadores --check aprovados; chunk>500kB é aviso preexistente não bloqueante.170 arquivos protegidos iguais ao HEAD; nenhum código funcional/teste modificado nesta validação.
+Usuário autorizou explicitamente commit e push exclusivamente em `feature/modo-feira`. Commit funcional/documental **`b8aa92eb96bb34ca33b711e8391254eac6ba9d32`** (`feat(feira): consolida continuidade, visitantes e evidências técnicas`) publicado com sucesso: remoto avançou de13d315a para b8aa92e. Esta atualização de continuidade integra o commit documental subsequente `docs(feira): registra publicação autorizada da entrega`, destinado à mesma feature. Conferir `git log -2` e `git status --short --branch` para seus hashes/estado final; a verificação final de igualdade HEAD/remoto é feita após o push documental.
 
-Ensaio nativo integrado atual aprovado em335.996s, T00–T11→T00, dois visitantes, minimização X11, fechamento/reabertura ADMIN, lease expirado/reassumido; zero errosJS/pausas inesperadas. Serviços do usuário preservados; somente serviço/perfis/janelas próprios usados. Arena não homologada: rede/aparelhos físicos e operação prolongada ainda pendentes.
+Homologação visual/funcional dos seis critérios aprovada pelo usuário. Validação técnica preservada: **524 testes distintos =507 Node/navegador+17 Python**, zero falhas/skip/cancelamentos; build e dois --check aprovados. Ensaio nativo integrado335,996s aprovado, incluindo minimização/fechamento ADMIN e recuperação de controle, sem errosJS/pausas inesperadas.170 arquivos protegidos iguais ao HEAD-base13d315a. Fontes e testes iguais ao estado validado; bateria não repetida sem mudança funcional. Somente espaços finais dos logs de build normalizados para diff --check.
 
-[Relatório atual com tabela, comandos, inventário, Git e limites](produto/entrega-c92-feira-estendida.md#validação-integral-pré-versionamento--23102026).498 histórico=481+17;512=495+17;113 era seleção de15 arquivos, todos incluídos nos507 atuais.12 novos de evidências explicam512→524; sem testes perdidos ou duplicados.
+[Relatório de validação e publicação](produto/entrega-c92-feira-estendida.md#publicação-autorizada-na-feature--23102026). Evidências versionadas nas quatro pastas de23/10/2026; logs explicitamente selecionados e conferidos sem códigos de pareamento/credenciais. Antes da atualização documental final, árvore limpa após o commit e push funcional. Nenhum arquivo fora do escopo incluído; sem merge/rebase/force-push/deploy e sem modificação de main, feature/next-evolucao ou gh-pages.
 
-Branch `feature/modo-feira`, HEAD `13d315aa7539637b22a782bb2744e67c3ae54451`, sem staged; todo trabalho anterior preservado. Sem commit/push/merge/rebase/deploy ou mudança de outras branches. Evidências atuais em `docs/produto/evidencias/final-validation-2026-10-23`; Git completo registrado no relatório. Próxima ação única: aguardar autorização final para commits/push da feature. Futuro PR requer revalidar conflitos/CSS e regressão integrada.
+**Arena não homologada.** Pendências: rede/client isolation/DHCP/porta, aparelhos físicos e operação prolongada. Chunk>500kB continua aviso não bloqueante. Futuro PR/integração exige autorização própria, atualização da análise de conflitos/CSS Feira e regressão do resultado integrado. Próxima ação: aguardar orientação do usuário; nenhum merge/deploy ou novo trabalho autorizado automaticamente.
 
-Homologação anterior5200 e serviços5196/5198 não foram reiniciados; verificar PID/porta antes de reutilizar. Códigos privados nunca devem ir para URL/chat/Git. Seções abaixo são histórico da continuidade, não nova autorização nem homologação pendente dos seis critérios já aceitos.
+Serviços anteriores5196/5198/5200 não foram reiniciados nesta publicação; verificar PID/porta antes de reutilizar. Códigos privados nunca devem ir para URL/chat/Git. Seções seguintes preservam o histórico anterior à publicação, incluindo gates já superados por esta autorização.
 
 ## Marco anterior — continuidade, 23/10/2026, America/Sao_Paulo
 
 Revisão vigente:continuidade independente de foco/lease e linguagem operacional histórica,nas US14.6–14.14/US15/US16. Implementadas sobre as quatro frentes anteriores: sessão Supervisor de seis horas; aviso/reconexão; consulta sem pausa global com fotografia fixada; destaques determinísticos de até dois fatos auditados por transição. [Relatório vigente e evidências](produto/entrega-c92-feira-estendida.md#continuidade-independente-de-foco-e-linguagem-operacional--23102026). [Contrato técnico/Supervisor vigente](tecnica/pontos-integracao-supervisor.md#continuidade-e-linguagem-operacional-vigentes--23102026). Marcos anteriores nesse relatório são históricos e não comprovam a execução atual.
 
-## Git e autorizações
+## Git e autorizações — histórico anterior à publicação
 
 - Raiz real: `/home/p2dutra/Documents/ChatGPT/Projeto_Challenge_OTIS/OrquestraNEXT`. O pai é outro repositório, em main, com diretórios não rastreados; não trabalhar nele.
 - Branch `feature/modo-feira`, HEAD `13d315aa7539637b22a782bb2744e67c3ae54451`. Nesta retomada,árvore inicialmente já continha as alterações e evidências locais da adequação NEXT,sem staged;preservadas. Estado atual: fonte/servidor/testes/docs/evidências locais não commitados; conferir `git status --short --branch --untracked-files=all` e preservar tudo.
@@ -60,7 +59,7 @@ Roteiro físico no relatório: notebook+dois celulares,Light/Dark,12 estados/1×
 
 ## Próxima ação
 
-Homologação funcional aprovada e validação técnica integral atual aprovada. Aguardar autorização final de registro: commit/push apenas feature/modo-feira e PR futuro para main; antes da integração,revisar CSS sobrepostos e repetir regressão sobre o resultado integrado em trabalho autorizado. Sem merge/rebase/force-push/deploy ou nova funcionalidade.
+Commit/push autorizado e executado somente na feature/modo-feira conforme estado vigente acima. PR futuro para main depende de autorização; antes da integração,revisar CSS sobrepostos e repetir regressão sobre o resultado integrado em trabalho autorizado. Sem merge/rebase/force-push/deploy ou nova funcionalidade.
 
 ## Comandos e runtime
 

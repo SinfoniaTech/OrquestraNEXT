@@ -1,6 +1,13 @@
 # Product Backlog — Plataforma C8 e evolução Feira C9.2
 
-> Autorização atual: usuário autorizou explicitamente commit e push exclusivamente em `feature/modo-feira`. Publicação em preparação após conferência de diff, HEAD remoto e preservação dos170 arquivos protegidos. Sem merge/rebase/deploy; Arena permanece pendente. Gates anteriores abaixo são históricos.
+## Publicação autorizada na feature — 23/10/2026
+
+Usuário autorizou explicitamente commit/push. Commit `b8aa92eb96bb34ca33b711e8391254eac6ba9d32` publicado com sucesso exclusivamente em `feature/modo-feira`, remoto13d315a→b8aa92e. Atualização final registrada em commit documental subsequente `docs(feira): registra publicação autorizada da entrega`, para a mesma feature. Sem merge/rebase/force-push/deploy, sem alteração em main ou branches dos demais integrantes. Código e testes correspondem aos524 casos aprovados; sem repetição desnecessária da bateria.170 arquivos protegidos preservados. Diff revisado e credenciais ausentes dos arquivos selecionados; logs de validação explicitamente incluídos, somente espaços finais normalizados. Árvore limpa após primeiro commit/push, com esta atualização documental como único complemento. Resultado final do segundo push/HEAD remoto conferido ao encerrar; consultar git log -2 para identificação do commit documental.
+
+Permanecem pendentes rede/aparelhos físicos/operação prolongada na Arena; não há homologação da Arena. Aviso de bundle>500kB não bloqueante. Futuro PR exige análise atualizada de conflitos/CSS e regressão integrada, sob autorização própria. Relatórios anteriores abaixo preservam estados e evidências históricos.
+
+
+> Estado atual: commit e push autorizados e executados somente em `feature/modo-feira`; detalhes de publicação abaixo. Gates de autorização anteriores são históricos. Arena permanece pendente.
 
 ## Gate técnico integral — 23/10/2026
 
