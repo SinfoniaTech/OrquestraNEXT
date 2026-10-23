@@ -1,4 +1,6 @@
 import {useEffect,useId,useRef,useState} from 'react';
+import {createPortal} from 'react-dom';
+import {useFilterPanel} from '../filters/FilterPanelContext.jsx';
 import {FILTER_CONFIG,optionsFor,PERIODS,RECURRENCES} from '../services/chamados.js';
 import styles from './Consultation.module.css';
 export {Dialog,IndicatorInfo,KpiCard,StatusBadge,CriticalityBadge} from './OperationalUI.jsx';
@@ -35,9 +37,18 @@ export function FilterChips({state,dispatch}){
  </div>;
 }
 export function FilterBar({state,dispatch,total}){
- const [advanced,setAdvanced]=useState(false);
+ const [advanced,setAdvanced]=useState(false),[settled,setSettled]=useState(false);
+ const panel=useFilterPanel(),open=panel?.open??true,register=panel?.register;
  const options=useRef(Object.fromEntries(FILTER_CONFIG.map(f=>[f.field,f.options??optionsFor(f.field)])));
- return <section className={styles.filterCard} aria-label="Filtros de chamados">
+ // Avisa o cabeçalho da página que existe um card de filtros (mostra o ícone de filtro).
+ useEffect(()=>register?.(),[register]);
+ // Enquanto abre/fecha o conteúdo é recortado; depois de aberto, libera o overflow (menus suspensos dos filtros).
+ useEffect(()=>{
+  if(!open){setSettled(false);return;}
+  const timer=setTimeout(()=>setSettled(true),300);
+  return ()=>clearTimeout(timer);
+ },[open]);
+ const card=<section className={styles.filterCard+(panel?' '+styles.filterCardSlot:'')} aria-label="Filtros de chamados">
   <div className={styles.filterToolbar}><div><h2>Explorar o histórico</h2><p>Combine filtros para aprofundar sua consulta.</p></div><div className={styles.filterActions}><SearchInput value={state.search} onChange={value=>dispatch({type:'search',value})}/><button className={styles.outlineButton} aria-expanded={advanced} aria-controls="advanced-filters" onClick={()=>setAdvanced(v=>!v)}>Mais filtros {state.recurrence.length+FILTER_CONFIG.filter(f=>f.advanced).reduce((n,f)=>n+(state.filters[f.field]??[]).length,0)>0?'●':''}</button><button className={styles.clearButton} onClick={()=>dispatch({type:'reset'})}>Limpar filtros</button></div></div>
   <div className={styles.filterGrid}>
    <label className={styles.periodField}><span className={styles.fieldLabel}>Período</span><select aria-label="Período" value={state.days} onChange={e=>dispatch({type:'period',value:e.target.value})}>{PERIODS.map(p=><option value={p.days} key={p.days}>{p.label}</option>)}</select></label>
@@ -51,6 +62,13 @@ export function FilterBar({state,dispatch,total}){
   <FilterChips state={state} dispatch={dispatch}/>
   <span className={styles.srOnly} role="status" aria-live="polite">{total} registros encontrados</span>
  </section>;
+ // Sem provider (ex.: uso isolado): comportamento original, card sempre visível no lugar.
+ if(!panel)return card;
+ // Com provider: o card é projetado logo abaixo do título/parágrafo da página e só abre pelo ícone de filtro.
+ if(!panel.slot)return null;
+ return createPortal(<div id="filter-panel" className={styles.consultation+' '+styles.filterCollapse+(open?' '+styles.filterOpen:'')+(open&&settled?' '+styles.filterSettled:'')} inert={!open}>
+  <div className={styles.filterCollapseInner}>{card}</div>
+ </div>,panel.slot);
 }
 export function EmptyState({onClear}){return <div className={styles.empty}><strong>Nenhum registro encontrado</strong><p>Experimente remover uma seleção ou limpar os filtros.</p><button className={styles.outlineButton} onClick={onClear}>Limpar consulta</button></div>;}
 export function Pagination({page,pages,total,pageSize,onPage,onPageSize}){
