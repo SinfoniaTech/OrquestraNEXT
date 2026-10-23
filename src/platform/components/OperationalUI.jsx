@@ -22,10 +22,18 @@ export function IndicatorInfo({definition}){
   </dl>
  </Dialog>}</>;
 }
-export function KpiCard({title,value,definition,tone='blue',subtitle}){
- return <article className={styles.kpi+' '+styles[tone]} data-testid={'kpi-'+title}>
+/*
+ * KpiCard
+ *  - tone: blue | green | orange | violet | teal | rose | amber
+ *  - accent: barra superior colorida + fundo suave (opt-in; o Modo Feira não usa)
+ *  - action: {label,onClick} — link "Ver x registros" DENTRO do card, à direita e fixado na base
+ */
+export function KpiCard({title,value,definition,tone='blue',subtitle,action,accent=false,className=''}){
+ const classes=[styles.kpi,styles[tone],action&&styles.kpiWithAction,accent&&styles.kpiAccent,className].filter(Boolean).join(' ');
+ return <article className={classes} data-testid={'kpi-'+title} data-tone={tone}>
   <div className={styles.kpiTitle}><h2>{title}</h2><IndicatorInfo definition={definition}/></div>
   <strong className={styles.kpiNumber}>{value.toLocaleString('pt-BR')}</strong><span className={styles.kpiSubtitle}>{subtitle}</span>
+  {action&&<button type="button" className={styles.kpiAction} onClick={action.onClick}>{action.label}</button>}
  </article>;
 }
 export function StatusBadge({value}){return <span className={styles.statusBadge}>{value}</span>;}
