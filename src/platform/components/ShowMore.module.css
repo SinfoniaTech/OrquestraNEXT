@@ -1,64 +1,63 @@
 .frame {
   position: relative;
+  min-width: 0;
 }
 
 .content {
-  animation: showMoreIn var(--bo-dur, 0.26s) var(--bo-ease, ease);
+  min-width: 0;
 }
 
-/* Gradiente bottom-to-top sobreposto ao último item visível */
 .fade {
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 72px;
+  position: relative;
+  z-index: 1;
   display: flex;
+  min-height: 34px;
   align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 6px;
-  background: linear-gradient(to top, var(--show-more-bg, #fff) 22%, transparent);
+  justify-content: flex-end;
+  margin-top: -34px;
+  padding: 36px 8px 5px;
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 0%) 0%,
+    rgb(255 255 255 / 92%) 68%,
+    #ffffff 100%
+  );
   pointer-events: none;
 }
 
 .more,
 .less {
-  pointer-events: auto;
-  font: inherit;
-  font-size: var(--bo-fs-sm, 11px);
-  font-weight: var(--bo-fw-semibold, 600);
+  padding: 5px 2px;
   color: var(--bo-link, #0965ce);
-  background: var(--bo-card, #fff);
-  border: 1px solid var(--bo-border, #dfe9f5) !important;
-  border-radius: var(--bo-radius-pill, 999px);
-  padding: 5px 14px;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 600;
   cursor: pointer;
-  box-shadow: var(--bo-shadow-md, 0 4px 18px #1e518210);
-  transition: background var(--bo-dur-fast, 0.15s), transform var(--bo-dur-fast, 0.15s);
+  pointer-events: auto;
 }
 
 .more:hover,
 .less:hover {
-  background: var(--bo-accent-blue-soft, #e8f1fd);
-  transform: translateY(-1px);
-}
-
-.more:focus-visible,
-.less:focus-visible {
-  outline: 2px solid var(--bo-primary, #0968f6);
-  outline-offset: 2px;
+  text-decoration: underline;
 }
 
 .less {
   display: block;
-  margin: 8px auto 0;
-  box-shadow: none;
+  margin: 4px 8px 0 auto;
 }
 
-@keyframes showMoreIn {
-  from { opacity: 0.35; transform: translateY(-4px); }
-  to { opacity: 1; transform: none; }
+.more:focus-visible,
+.less:focus-visible {
+  outline: 2px solid var(--bo-focus, #76b6ff);
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .content { animation: none; }
-  .more, .less { transition: none; }
+  .more,
+  .less {
+    scroll-behavior: auto;
+  }
 }

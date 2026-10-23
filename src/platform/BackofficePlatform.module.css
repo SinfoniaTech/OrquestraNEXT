@@ -23,3 +23,16 @@
 @media(max-width:640px){.pageHeading{flex-wrap:wrap}.headingActions{margin-left:auto}}
 
 .loginModes{margin-top:20px}
+
+
+.content{padding:12px 20px 10px}
+.breadcrumb{margin-bottom:8px}
+.pageHeading{margin-bottom:10px;gap:14px}
+.pageHeading h1{margin-bottom:3px}
+.pageHeading p{line-height:1.45}
+.header{height:58px}
+.contextStrip{margin-top:12px;padding:11px 14px}
+.footer{padding-top:9px}
+@media(max-width:960px){.content{padding:16px}}
+@media(max-width:640px){.content{padding:16px 12px}.pageHeading{margin-bottom:14px}}
+
