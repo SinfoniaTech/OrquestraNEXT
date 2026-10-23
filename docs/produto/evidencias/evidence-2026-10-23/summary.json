@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-23",
+  "branch": "feature/modo-feira",
+  "head": "13d315aa7539637b22a782bb2744e67c3ae54451",
+  "tests": 113,
+  "passed": 113,
+  "failed": 0,
+  "newEvidenceTests": 12,
+  "build": "passed",
+  "importChecks": 2,
+  "engineAndControlUnchanged": true,
+  "commitPushMergeDeploy": false
+}

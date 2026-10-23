@@ -1,0 +1,534 @@
+[
+  {
+    "snapshot": "T01",
+    "revision": 5,
+    "changes": [
+      {
+        "id": "CH-20260908-005",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Amarelo",
+          "to": "Vermelho"
+        },
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T01",
+        "Horario_Observacao": "2026-09-08T08:30:00-03:00",
+        "ID_Chamado": "CH-20260908-005",
+        "Unidade": "E-105",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Amarelo",
+        "Valor_Atual": "Vermelho",
+        "Evidencia_Explicacao": "SLA estourado; carro parado"
+      }
+    ]
+  },
+  {
+    "snapshot": "T02",
+    "revision": 7,
+    "changes": [
+      {
+        "id": "CH-20260908-011",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Amarelo",
+          "to": "Vermelho"
+        },
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-014",
+        "isNew": false,
+        "status": {
+          "from": "Técnico a caminho",
+          "to": "Em atendimento"
+        },
+        "criticality": {
+          "from": "Verde",
+          "to": "Laranja"
+        },
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T02",
+        "Horario_Observacao": "2026-09-08T09:30:00-03:00",
+        "ID_Chamado": "CH-20260908-011",
+        "Unidade": "E-111",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Amarelo",
+        "Valor_Atual": "Vermelho",
+        "Evidencia_Explicacao": "2 recorrências/30d; SLA estourado"
+      },
+      {
+        "ID_Snapshot": "T02",
+        "Horario_Observacao": "2026-09-08T09:30:00-03:00",
+        "ID_Chamado": "CH-20260908-014",
+        "Unidade": "E-114",
+        "Tipo_Mudanca": "STATUS",
+        "Valor_Anterior": "Técnico a caminho",
+        "Valor_Atual": "Em atendimento",
+        "Evidencia_Explicacao": "Evolução operacional registrada no estado."
+      },
+      {
+        "ID_Snapshot": "T02",
+        "Horario_Observacao": "2026-09-08T09:30:00-03:00",
+        "ID_Chamado": "CH-20260908-014",
+        "Unidade": "E-114",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Verde",
+        "Valor_Atual": "Laranja",
+        "Evidencia_Explicacao": "SLA acima de 80%"
+      }
+    ]
+  },
+  {
+    "snapshot": "T03",
+    "revision": 9,
+    "changes": [
+      {
+        "id": "CH-20260908-014",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Laranja",
+          "to": "Vermelho"
+        },
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-016",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Amarelo",
+          "to": "Laranja"
+        },
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T03",
+        "Horario_Observacao": "2026-09-08T10:15:00-03:00",
+        "ID_Chamado": "CH-20260908-014",
+        "Unidade": "E-114",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Laranja",
+        "Valor_Atual": "Vermelho",
+        "Evidencia_Explicacao": "SLA sintético excedido (tempo acumulado ≥ 100% do SLA)"
+      },
+      {
+        "ID_Snapshot": "T03",
+        "Horario_Observacao": "2026-09-08T10:15:00-03:00",
+        "ID_Chamado": "CH-20260908-016",
+        "Unidade": "E-116",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Amarelo",
+        "Valor_Atual": "Laranja",
+        "Evidencia_Explicacao": "janela de intervenção: recorrência ≥ 4/30d e equipamento parado"
+      }
+    ]
+  },
+  {
+    "snapshot": "T04",
+    "revision": 11,
+    "changes": [
+      {
+        "id": "CH-20260908-020",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Laranja",
+          "to": "Vermelho"
+        },
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-027",
+        "isNew": false,
+        "status": {
+          "from": "Contactado",
+          "to": "Técnico a caminho"
+        },
+        "criticality": {
+          "from": "Amarelo",
+          "to": "Laranja"
+        },
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T04",
+        "Horario_Observacao": "2026-09-08T11:00:00-03:00",
+        "ID_Chamado": "CH-20260908-020",
+        "Unidade": "E-120",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Laranja",
+        "Valor_Atual": "Vermelho",
+        "Evidencia_Explicacao": "SLA sintético excedido (tempo acumulado ≥ 100% do SLA)"
+      },
+      {
+        "ID_Snapshot": "T04",
+        "Horario_Observacao": "2026-09-08T11:00:00-03:00",
+        "ID_Chamado": "CH-20260908-027",
+        "Unidade": "E-127",
+        "Tipo_Mudanca": "STATUS",
+        "Valor_Anterior": "Contactado",
+        "Valor_Atual": "Técnico a caminho",
+        "Evidencia_Explicacao": "Evolução operacional registrada no estado."
+      },
+      {
+        "ID_Snapshot": "T04",
+        "Horario_Observacao": "2026-09-08T11:00:00-03:00",
+        "ID_Chamado": "CH-20260908-027",
+        "Unidade": "E-127",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Amarelo",
+        "Valor_Atual": "Laranja",
+        "Evidencia_Explicacao": "janela de intervenção: tempo acumulado ≥ 80% do SLA"
+      }
+    ]
+  },
+  {
+    "snapshot": "T05",
+    "revision": 13,
+    "changes": [
+      {
+        "id": "CH-20260908-024",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Laranja",
+          "to": "Vermelho"
+        },
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-028",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Verde",
+          "to": "Laranja"
+        },
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T05",
+        "Horario_Observacao": "2026-09-08T11:45:00-03:00",
+        "ID_Chamado": "CH-20260908-024",
+        "Unidade": "E-124",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Laranja",
+        "Valor_Atual": "Vermelho",
+        "Evidencia_Explicacao": "SLA sintético excedido (tempo acumulado ≥ 100% do SLA)"
+      },
+      {
+        "ID_Snapshot": "T05",
+        "Horario_Observacao": "2026-09-08T11:45:00-03:00",
+        "ID_Chamado": "CH-20260908-028",
+        "Unidade": "E-128",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Verde",
+        "Valor_Atual": "Laranja",
+        "Evidencia_Explicacao": "janela de intervenção: tempo acumulado ≥ 80% do SLA"
+      }
+    ]
+  },
+  {
+    "snapshot": "T06",
+    "revision": 15,
+    "changes": [
+      {
+        "id": "CH-20260908-028",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Laranja",
+          "to": "Vermelho"
+        },
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-027",
+        "isNew": false,
+        "status": {
+          "from": "Em atendimento",
+          "to": "Concluído"
+        },
+        "criticality": null,
+        "concluded": true
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T06",
+        "Horario_Observacao": "2026-09-08T12:30:00-03:00",
+        "ID_Chamado": "CH-20260908-027",
+        "Unidade": "E-127",
+        "Tipo_Mudanca": "STATUS",
+        "Valor_Anterior": "Em atendimento",
+        "Valor_Atual": "Concluído",
+        "Evidencia_Explicacao": "Conclusão simulada registrada."
+      },
+      {
+        "ID_Snapshot": "T06",
+        "Horario_Observacao": "2026-09-08T12:30:00-03:00",
+        "ID_Chamado": "CH-20260908-028",
+        "Unidade": "E-128",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Laranja",
+        "Valor_Atual": "Vermelho",
+        "Evidencia_Explicacao": "SLA sintético excedido (tempo acumulado ≥ 100% do SLA)"
+      }
+    ]
+  },
+  {
+    "snapshot": "T07",
+    "revision": 17,
+    "changes": [
+      {
+        "id": "CH-20260908-034",
+        "isNew": false,
+        "status": {
+          "from": "Técnico a caminho",
+          "to": "Em atendimento"
+        },
+        "criticality": {
+          "from": "Amarelo",
+          "to": "Vermelho"
+        },
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-038",
+        "isNew": true,
+        "status": null,
+        "criticality": null,
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T07",
+        "Horario_Observacao": "2026-09-08T13:15:00-03:00",
+        "ID_Chamado": "CH-20260908-034",
+        "Unidade": "E-134",
+        "Tipo_Mudanca": "STATUS",
+        "Valor_Anterior": "Técnico a caminho",
+        "Valor_Atual": "Em atendimento",
+        "Evidencia_Explicacao": "Evolução operacional registrada no estado."
+      },
+      {
+        "ID_Snapshot": "T07",
+        "Horario_Observacao": "2026-09-08T13:15:00-03:00",
+        "ID_Chamado": "CH-20260908-034",
+        "Unidade": "E-134",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Amarelo",
+        "Valor_Atual": "Vermelho",
+        "Evidencia_Explicacao": "SLA sintético excedido (tempo acumulado ≥ 100% do SLA)"
+      },
+      {
+        "ID_Snapshot": "T07",
+        "Horario_Observacao": "2026-09-08T13:15:00-03:00",
+        "ID_Chamado": "CH-20260908-038",
+        "Unidade": "E-138",
+        "Tipo_Mudanca": "NOVO",
+        "Valor_Anterior": null,
+        "Valor_Atual": "Técnico a caminho",
+        "Evidencia_Explicacao": "Chamado passa a integrar o estado T07; Parada Intermitente / Painel/Comando."
+      }
+    ]
+  },
+  {
+    "snapshot": "T08",
+    "revision": 19,
+    "changes": [
+      {
+        "id": "CH-20260908-035",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Amarelo",
+          "to": "Vermelho"
+        },
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-038",
+        "isNew": false,
+        "status": {
+          "from": "Técnico a caminho",
+          "to": "Em atendimento"
+        },
+        "criticality": null,
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T08",
+        "Horario_Observacao": "2026-09-08T14:00:00-03:00",
+        "ID_Chamado": "CH-20260908-035",
+        "Unidade": "E-135",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Amarelo",
+        "Valor_Atual": "Vermelho",
+        "Evidencia_Explicacao": "SLA sintético excedido (tempo acumulado ≥ 100% do SLA)"
+      },
+      {
+        "ID_Snapshot": "T08",
+        "Horario_Observacao": "2026-09-08T14:00:00-03:00",
+        "ID_Chamado": "CH-20260908-038",
+        "Unidade": "E-138",
+        "Tipo_Mudanca": "STATUS",
+        "Valor_Anterior": "Técnico a caminho",
+        "Valor_Atual": "Em atendimento",
+        "Evidencia_Explicacao": "Evolução operacional registrada no estado."
+      }
+    ]
+  },
+  {
+    "snapshot": "T09",
+    "revision": 21,
+    "changes": [
+      {
+        "id": "CH-20260908-045",
+        "isNew": true,
+        "status": null,
+        "criticality": null,
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-046",
+        "isNew": true,
+        "status": null,
+        "criticality": null,
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T09",
+        "Horario_Observacao": "2026-09-08T15:00:00-03:00",
+        "ID_Chamado": "CH-20260908-045",
+        "Unidade": "E-145",
+        "Tipo_Mudanca": "NOVO",
+        "Valor_Anterior": null,
+        "Valor_Atual": "Em atendimento",
+        "Evidencia_Explicacao": "Chamado passa a integrar o estado T09; Passageiro Preso / Tração."
+      },
+      {
+        "ID_Snapshot": "T09",
+        "Horario_Observacao": "2026-09-08T15:00:00-03:00",
+        "ID_Chamado": "CH-20260908-046",
+        "Unidade": "E-146",
+        "Tipo_Mudanca": "NOVO",
+        "Valor_Anterior": null,
+        "Valor_Atual": "Técnico a caminho",
+        "Evidencia_Explicacao": "Chamado passa a integrar o estado T09; Parada Intermitente / Painel/Comando."
+      }
+    ]
+  },
+  {
+    "snapshot": "T10",
+    "revision": 23,
+    "changes": [
+      {
+        "id": "CH-20260908-049",
+        "isNew": true,
+        "status": null,
+        "criticality": null,
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-042",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Amarelo",
+          "to": "Laranja"
+        },
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T10",
+        "Horario_Observacao": "2026-09-08T16:00:00-03:00",
+        "ID_Chamado": "CH-20260908-042",
+        "Unidade": "E-142",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Amarelo",
+        "Valor_Atual": "Laranja",
+        "Evidencia_Explicacao": "janela de intervenção: tempo acumulado ≥ 80% do SLA"
+      },
+      {
+        "ID_Snapshot": "T10",
+        "Horario_Observacao": "2026-09-08T16:00:00-03:00",
+        "ID_Chamado": "CH-20260908-049",
+        "Unidade": "E-149",
+        "Tipo_Mudanca": "NOVO",
+        "Valor_Anterior": null,
+        "Valor_Atual": "Em atendimento",
+        "Evidencia_Explicacao": "Chamado passa a integrar o estado T10; Falha de Tração / Máquina de Tração."
+      }
+    ]
+  },
+  {
+    "snapshot": "T11",
+    "revision": 25,
+    "changes": [
+      {
+        "id": "CH-20260908-042",
+        "isNew": false,
+        "status": null,
+        "criticality": {
+          "from": "Laranja",
+          "to": "Vermelho"
+        },
+        "concluded": false
+      },
+      {
+        "id": "CH-20260908-054",
+        "isNew": true,
+        "status": null,
+        "criticality": null,
+        "concluded": false
+      }
+    ],
+    "audit": [
+      {
+        "ID_Snapshot": "T11",
+        "Horario_Observacao": "2026-09-08T17:00:00-03:00",
+        "ID_Chamado": "CH-20260908-042",
+        "Unidade": "E-142",
+        "Tipo_Mudanca": "CRITICIDADE",
+        "Valor_Anterior": "Laranja",
+        "Valor_Atual": "Vermelho",
+        "Evidencia_Explicacao": "SLA sintético excedido (tempo acumulado ≥ 100% do SLA)"
+      },
+      {
+        "ID_Snapshot": "T11",
+        "Horario_Observacao": "2026-09-08T17:00:00-03:00",
+        "ID_Chamado": "CH-20260908-054",
+        "Unidade": "E-142",
+        "Tipo_Mudanca": "NOVO",
+        "Valor_Anterior": null,
+        "Valor_Atual": "Técnico a caminho",
+        "Evidencia_Explicacao": "Chamado passa a integrar o estado T11; Parada Intermitente / Painel/Comando."
+      }
+    ]
+  }
+]

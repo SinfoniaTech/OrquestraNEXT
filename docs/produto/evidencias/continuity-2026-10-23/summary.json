@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-23",
+  "branch": "feature/modo-feira",
+  "head": "13d315aa7539637b22a782bb2744e67c3ae54451",
+  "nodeBrowserTests": 495,
+  "pythonTests": 17,
+  "distinctPassed": 512,
+  "failed": 0,
+  "build": "passed with existing >500kB chunk warning",
+  "importers": "both --check passed",
+  "newTests": 14,
+  "nativeCycle": {
+    "speed": 1,
+    "elapsedSeconds": 335.997,
+    "snapshots": "T00–T11→T00",
+    "nativeAppSwitch": true,
+    "nativeEdgeSwitch": true,
+    "nativeMinimizedWindow": "X11 IsUnMapped confirmed",
+    "adminClosedAndReopened": true,
+    "leaseExpiredAndReclaimed": true,
+    "simulatedVisitors": 2,
+    "unexpectedPauses": 0,
+    "javascriptErrors": 0
+  },
+  "physicalDevices": "pending",
+  "ubuntuPowerSettingsChanged": false,
+  "commitPushDeploy": false,
+  "protectedFiles": 170,
+  "protectedChanges": 0
+}

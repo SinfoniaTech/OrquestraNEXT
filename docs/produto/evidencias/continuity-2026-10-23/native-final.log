@@ -1,0 +1,22 @@
+{"at":"2026-10-23T11:08:36.919Z","action":"start","snapshot":"T00","cycle":0,"revision":6,"playback":"running","controller":true,"nativeFocus":"X11 input focus: 0x1e00004"}
+{"at":"2026-10-23T11:08:37.546Z","action":"switch-application","snapshot":"T00","cycle":0,"revision":7,"playback":"running","controller":true,"nativeFocus":"X11 input focus: 0x2a00024","adminFocus":false}
+{"at":"2026-10-23T11:09:03.935Z","action":"converged-1","snapshot":"T01","cycle":0,"revision":34,"playback":"running","controller":true}
+{"at":"2026-10-23T11:09:04.264Z","action":"minimized-real-window","snapshot":"T01","cycle":0,"revision":34,"playback":"running","controller":true,"map":"Map State: IsUnMapped","bounds":{"left":24,"top":18,"width":1344,"height":812,"windowState":"minimized"},"visibility":"visible"}
+{"at":"2026-10-23T11:09:30.913Z","action":"converged-2","snapshot":"T02","cycle":0,"revision":62,"playback":"running","controller":true}
+{"at":"2026-10-23T11:09:30.944Z","action":"restored","snapshot":"T02","cycle":0,"revision":62,"playback":"running","controller":true,"nativeFocus":"X11 input focus: 0x1e00004"}
+{"at":"2026-10-23T11:09:57.921Z","action":"converged-3","snapshot":"T03","cycle":0,"revision":90,"playback":"running","controller":true}
+{"at":"2026-10-23T11:09:58.292Z","action":"switch-browser-edge","snapshot":"T03","cycle":0,"revision":90,"playback":"running","controller":true,"nativeFocus":"X11 input focus: 0x2a00004","isolatedProfile":true}
+{"at":"2026-10-23T11:10:24.915Z","action":"converged-4","snapshot":"T04","cycle":0,"revision":118,"playback":"running","controller":true}
+{"at":"2026-10-23T11:10:51.920Z","action":"converged-5","snapshot":"T05","cycle":0,"revision":146,"playback":"running","controller":true}
+{"at":"2026-10-23T11:10:51.928Z","action":"admin-tab-closed","snapshot":"T05","cycle":0,"revision":147,"playback":"running","controller":false}
+{"at":"2026-10-23T11:11:18.915Z","action":"converged-6","snapshot":"T06","cycle":0,"revision":175,"playback":"running","controller":false}
+{"at":"2026-10-23T11:11:45.921Z","action":"converged-7","snapshot":"T07","cycle":0,"revision":203,"playback":"running","controller":false}
+{"at":"2026-10-23T11:11:47.069Z","action":"admin-reopened-and-reclaimed","snapshot":"T07","cycle":0,"revision":205,"playback":"running","controller":true}
+{"at":"2026-10-23T11:12:12.923Z","action":"converged-8","snapshot":"T08","cycle":0,"revision":232,"playback":"running","controller":true}
+{"at":"2026-10-23T11:12:12.925Z","action":"admin-connection-interrupted","snapshot":"T08","cycle":0,"revision":232,"playback":"running","controller":true}
+{"at":"2026-10-23T11:12:39.924Z","action":"converged-9","snapshot":"T09","cycle":0,"revision":260,"playback":"running","controller":false}
+{"at":"2026-10-23T11:12:39.924Z","action":"lease-expired-real","snapshot":"T09","cycle":0,"revision":260,"playback":"running","controller":false}
+{"at":"2026-10-23T11:13:06.921Z","action":"converged-10","snapshot":"T10","cycle":0,"revision":288,"playback":"running","controller":false}
+{"at":"2026-10-23T11:13:10.772Z","action":"admin-lease-reclaimed-after-freeze","snapshot":"T10","cycle":0,"revision":293,"playback":"running","controller":true}
+{"at":"2026-10-23T11:13:33.919Z","action":"converged-11","snapshot":"T11","cycle":0,"revision":317,"playback":"running","controller":true}
+{"at":"2026-10-23T11:14:12.916Z","action":"cycle-complete-real-1x","snapshot":"T00","cycle":1,"revision":358,"playback":"running","controller":true,"errors":[]}

@@ -1,0 +1,14 @@
+{
+  "baselineFiles": 850,
+  "missing": [],
+  "changedSinceStart": [
+    "src/feira/FeiraPanel.jsx",
+    "src/feira/HistoryEvidence.jsx",
+    "src/feira/SyncedFeiraApp.jsx",
+    "src/feira/historyAdvice.js",
+    "src/feira/supervisor/SupervisorParts.jsx",
+    "tests/feira-continuity-browser.test.mjs",
+    "tests/feira-continuity.test.mjs"
+  ],
+  "engineAndControlUnchanged": true
+}

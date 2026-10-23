@@ -5,3 +5,5 @@
 .progress{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:10px 16px;margin:12px 0;background:#edf5fb;border-radius:10px;font-size:13px}.progress progress{flex:1;min-width:120px;accent-color:#176aa1}.progress span{color:#45576a}
 
 .localNotice{display:grid;gap:5px;padding:12px 16px;margin-bottom:14px;border:1px solid #d89b32;border-left:4px solid #c17a17;border-radius:8px;background:#fff6df;color:#68460d;font-size:12px;line-height:1.5}
+
+.metricChanged{outline:2px solid #3778ad;outline-offset:3px;border-radius:12px;animation:feiraMetric 1.2s ease-out} @keyframes feiraMetric{from{background:#dcebf7}to{background:transparent}} @media(prefers-reduced-motion:reduce){.metricChanged{animation:none}}

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-23",
+  "readOnly": true,
+  "settings": {
+    "org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-type": "'suspend'",
+    "org.gnome.settings-daemon.plugins.power.sleep-inactive-ac-timeout": "1200",
+    "org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-type": "'suspend'",
+    "org.gnome.settings-daemon.plugins.power.sleep-inactive-battery-timeout": "1200",
+    "org.gnome.desktop.session.idle-delay": "uint32 300"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "changedSinceTurnStart": [
+    "docs/CONTINUIDADE_CODEX.md",
+    "docs/produto/backlog.md",
+    "docs/produto/entrega-c92-feira-estendida.md",
+    "docs/produto/modos.md",
+    "docs/tecnica/pontos-integracao-supervisor.md",
+    "server/feira-session.mjs",
+    "src/feira/FeiraPanel.jsx",
+    "src/feira/HistoryEvidence.jsx",
+    "src/feira/SyncedFeiraApp.jsx",
+    "src/feira/historyAdvice.js",
+    "src/feira/supervisor/Supervisor.module.css",
+    "src/feira/supervisor/SupervisorParts.jsx",
+    "src/feira/temporalState.js",
+    "tests/README.md",
+    "tests/feira-history.test.mjs",
+    "tests/feira-supervisor-browser.test.mjs",
+    "tests/feira-supervisor-theme-browser.test.mjs",
+    "tests/feira-sync-browser.test.mjs",
+    "tests/feira-sync-service.test.mjs"
+  ],
+  "missingPriorFiles": [],
+  "preservedMultipleVisitorModules": {
+    "src/feira/ReadingSnapshot.jsx": true,
+    "src/feira/highlights.js": true,
+    "src/feira/useTransitionHighlights.js": true,
+    "src/feira/sync/transport.js": true,
+    "server/feira-server.mjs": true,
+    "src/feira/selectors.js": true,
+    "src/feira/data/generated.json": true
+  },
+  "protectedFilesComparedToHead": 170,
+  "protectedChanges": []
+}

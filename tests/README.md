@@ -1,5 +1,15 @@
 # Proteção mínima sem dependências novas
 
+## Validação integral atual — 23/10/2026
+
+49 arquivos tests/*.test.mjs:507 casos aprovados, zero falhas/skip/cancelamentos. Executar CHOKIDAR_USEPOLLING=true ORQUESTRA_TEST_DIST=/tmp/orquestra-final-validation/dist com Node do runtime, --test --test-concurrency=4 --test-reporter=tap tests/*.test.mjs. Dois testes Python executados diretamente:9+8=17; total524 distintos.113 anterior foi seleção,498=481+17,512=495+17;12 novos explicam524. Ensaio nativo real aprovado separadamente, sem dupla contagem. Comandos completos/durações/evidências no relatório C9.2, seção Validação integral pré-versionamento.
+
+
+## Regressão de evidências — 23/10/2026
+
+Novos feira-evidence.test.mjs (7 casos) e feira-evidence-browser.test.mjs (5 casos): cálculo real, limites/ausência de base, orientação de inspeção, privacidade, resultado documentado, botão/teclado/ARIA, pertinência e entradas sem link. Regressão pertinente total113/113, incluindo continuidade/ADMIN/transporte/temas/original; build e dois importadores --check aprovados.512 da revisão anterior não foram reexecutados nesta etapa. Comando completo e TAP no relatório de entrega, seção Evidências técnicas e percentuais.
+
+
 Não altera src/, CSS, package.json ou lockfile. Testes puros usam node:test. Browser usa Playwright já fornecido pelo ambiente e Chrome instalado; nenhum download automático.
 
 Na raiz:
@@ -147,3 +157,19 @@ Resultado final desta evolução:400 Node/browser +17 Python =417 distintos apro
 `apresentacao.test.mjs`:6 casos puros de modos/URLs/autoridade/roteiro. `apresentacao-browser.test.mjs`:16 casos de navegação/estático/modos, preview próprio5227,22 novos no total. Build `/tmp/orquestra-apresentacao/dist`, evidências via ORQUESTRA_PRESENTATION_EVIDENCE. Testes de navegador do legado passam a `?modo=legado`; suas assertions das dez cenas/teclado/timers permanecem. platform-shell e fallback Feira verificam URLs explícitas, substituindo a premissa antiga de legado padrão. Protocolo/clock/dados C9.2 não mudam. Comandos/resultados no [relatório da apresentação](../docs/produto/entrega-apresentacao-padrao.md). Rodar suíte inteira com CHOKIDAR_USEPOLLING=true/ORQUESTRA_TEST_DIST e Node do runtime, além dos17 Python/dois --check; não usar5180/5182 para fixtures de testes.
 
 Resultado da apresentação padrão:422 Node/browser +17 Python =439 distintos aprovados, incluindo417 anteriores +22 novos. Build e ambos importadores --check aprovados; homologação/publicação pendentes. O legado permanece integralmente validado no modo explícito.
+
+## Adequação NEXT — 23/10/2026
+
+`feira-next.test.mjs`, `feira-next-transport.test.mjs`, `feira-next-http.test.mjs` e `feira-next-browser.test.mjs` acrescentam18 casos: validade absoluta6 h/revogação,pareamento independente,40 consultas sem locks,seleção auditada,não repetição,watchdog/retry,HTTP/SSE/cookie,1/5/20/40 visitantes e cliente lento,duas leituras simultâneas/ciclo/evidências,desconexão/refresh/reduced-motion. Critérios antigos de pausa/lock por leitura conectada foram substituídos pelo contrato aprovado de fotografia local; standalone e pausa por foco ADMIN permanecem.
+
+Comando integral e resultados atuais na [continuidade](../docs/CONTINUIDADE_CODEX.md) e [relatório C9.2](../docs/produto/entrega-c92-feira-estendida.md#adequação-final-para-o-next--23102026). Usar `ORQUESTRA_TEST_DIST=/tmp/orquestra-next-final/dist`; testes de carga gravam performance.json e UI grava capturas em /tmp/orquestra-next-final,posteriormente copiadas para evidências duráveis. Sem dependências novas; não apontar o harness para serviços do usuário. Relógio injetado somente em testes; ensaio real separado com feira-sync-endurance.mjs.
+
+Execução final desta sessão:481 casos Node/navegador+17 Python=498 distintos,zero falhas/cancelamentos/skip;build/dois --check e ciclo real1× de336 s aprovados. Evidências finais no relatório,sem reutilizar resultados anteriores.
+
+## Continuidade e linguagem operacional — 23/10/2026
+
+`feira-continuity.test.mjs` (10 casos) e `feira-continuity-browser.test.mjs` (4 casos) acrescentam controle exclusivo/lease/release/reassunção sem pausa,interrupções monotônica/civil antes da transição,redação fiel com X/Y,ausência de suporte,casos reais/elegibilidade,evidências recolhidas Light/Dark e dois visitantes atéT11. Regra antiga de pausa por foco/lease conectado foi substituída;standalone preservado. Execução integral atual495 Node/navegador+17 Python=512 distintos,zero falhas/cancelamentos/skip,build/dois --check aprovados.
+
+Ensaio nativo separado exige `ORQUESTRA_NATIVE_ENDURANCE=1`,DISPLAY e ferramentas já existentes Chrome/Edge,xmessage,xwininfo,Python/libX11. `ORQUESTRA_CONTINUITY_EVIDENCE=/tmp/orquestra-continuity-final/native-final ORQUESTRA_TEST_DIST=/tmp/orquestra-continuity-final/dist node-do-runtime tests/feira-continuity-endurance.mjs`. Opera apenas janelas próprias identificadas por título/ID,com perfis isolados e processos encerrados ao terminar. Foco emulado do Playwright é desativado;Map State X11 comprova minimização. Bloqueio de comunicação fica restrito ao contexto ADMIN,não altera rede/firewall. Não suspende Ubuntu nem substitui homologação física. `feira-browser-switch.mjs` permite ensaio suplementar de Edge contra journal de ciclo já ativo,com a mesma autorização explícita por variável.
+
+Ensaio nativo final aprovado nesta sessão:335.997 s,T00–T11→T00,dois visitantes,aplicativo/Edge,minimização X11,aba ADMIN fechada/reaberta e lease vencido/reassumido,zero pausas inesperadas/errosJS. Capturas/logs em docs/produto/evidencias/continuity-2026-10-23.

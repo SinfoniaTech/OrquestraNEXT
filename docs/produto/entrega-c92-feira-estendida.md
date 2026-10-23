@@ -1,5 +1,247 @@
 # C9.2 — Simulação estendida integrada
 
+> Autorização atual: usuário autorizou explicitamente commit e push exclusivamente em `feature/modo-feira`. Publicação em preparação após conferência de diff, HEAD remoto e preservação dos170 arquivos protegidos. Sem merge/rebase/deploy; Arena permanece pendente. Gates anteriores abaixo são históricos.
+
+## Validação integral pré-versionamento — 23/10/2026
+
+**APTO PARA COMMIT E PUSH**, exclusivamente na `feature/modo-feira`, aguardando autorização final explícita. Nenhum commit/push/merge/rebase/deploy realizado. Usuário confirmou a homologação visual e funcional dos seis critérios: linguagem, percentuais, expansão/recolhimento, acessibilidade inicial, remoção do link e continuidade ADMIN. Isso está aprovado; Arena ainda não homologada.
+
+AGENTS.md aplicável e continuidade consultados, scripts oficiais e inventário inspecionados. Branch `feature/modo-feira`, HEAD `13d315aa7539637b22a782bb2744e67c3ae54451`, sem staged. Nenhuma branch trocada ou modificada. Estado inicial completo preservado por SHA256: 868 arquivos, zero removidos e zero modificados antes da atualização documental desta validação. Código funcional/testes não foram alterados para contornar testes.
+
+### Cobertura real e reconciliação
+
+Inventário atual: **49 arquivos Node `tests/*.test.mjs`, 507 casos com507 nomes únicos; dois arquivos Python,17 casos**. Total **524 testes distintos**, todos aprovados. Navegador e integração estão incluídos nos507, não somados novamente. Descoberta usa glob explícito; Python é executado diretamente porque nomes com ponto não entram no unittest discover. package.json não define npm test; não executar deploy/predeploy. [Inventário comparativo com todos os nomes](evidencias/final-validation-2026-10-23/inventory.json).
+
+- 498 anterior =481 Node/navegador+17 Python, confirmado no TAP preservado.
+- 512 anterior =495 Node/navegador+17 Python;14 casos de continuidade acrescentados.
+- 113 da última entrega =seleção de15 arquivos Node/navegador, sem execução Python naquela revisão. Todos os113 estão presentes na execução integral atual, com394 casos adicionais. Não era regressão completa nem redução da suíte.
+- 524 atual =507 Node/navegador+17 Python; os12 casos novos de evidências explicam512→524. Todos os495 nomes do TAP512 permanecem; nenhum arquivo de teste anterior excluído, nenhuma alteração da quantidade de declarações nos arquivos rastreados e nenhuma duplicação de nomes. Dois nomes do TAP498 mudaram com o contrato homologado: pausa por notebook em segundo plano→continuidade; lease com pausa→lease sem pausa/controle exclusivo. Foram substituídas expectativas superadas, não removida cobertura silenciosamente.
+
+### Execução efetiva
+
+Nos comandos abaixo, NODE=`/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node`, PY=`/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`, DIST=`/tmp/orquestra-final-validation/dist`. Logs brutos e código de saída preservados nesta pasta de evidências.
+
+| Suíte | Comando | Testes | Aprovados | Falhas | Ignorados | Duração | Observações |
+|---|---|---:|---:|---:|---:|---:|---|
+| Integral Node/navegador/integração | `CHOKIDAR_USEPOLLING=true ORQUESTRA_TEST_DIST=$DIST $NODE --test --test-concurrency=4 --test-reporter=tap tests/*.test.mjs` |507|507|0|0|295,585s|49 arquivos; zero cancelados; [TAP](evidencias/final-validation-2026-10-23/full.tap)|
+| Importação histórica Python | `$PY -B tests/importacao-dados.test.py` |9|9|0|0|2,216s|Tempo total do processo; unittest2,071s|
+| Importação Feira Python | `$PY -B tests/importacao-feira.test.py` |8|8|0|0|3,870s|Tempo total do processo; unittest3,658s|
+| Integrado nativo1× | `ORQUESTRA_NATIVE_ENDURANCE=1 ORQUESTRA_CONTINUITY_EVIDENCE=/tmp/orquestra-final-validation/native ORQUESTRA_TEST_DIST=$DIST $NODE tests/feira-continuity-endurance.mjs` |1 ensaio|1 ensaio|0|0|335.996s|Não somado aos524 casos; ciclo realT00–T11→T00|
+| Build produção | `npm run build -- --outDir /tmp/orquestra-final-validation/dist` |—|OK|0|—|0,367s|Aviso preexistente de chunk>500kB; maior chunk1046,48kB, gzip72,31kB; não bloqueante|
+| Histórico --check | `$PY -B scripts/import_orquestra.py --check` |—|OK|0|—|0,266s|Sem regenerar/alterar dados|
+| Feira --check | `$PY -B scripts/import_feira_estendida.py --check` |—|OK|0|—|0,297s|12 estados/417 registros/55 IDs/189 eventos|
+| Integridade protegida | comparação SHA256 com `git show HEAD:<arquivo>` |170 arquivos|170|0|0|—|Supervisor/cenas/plataforma/dados/importadores/package; [lista e resultado](evidencias/final-validation-2026-10-23/integrity.json)|
+
+Cobertura integral inclui apresentação padrão, BackOffice/menus/rotas/refresh/ESM, Supervisor original/dez cenas/teclado/timers, SLA/TA/TB/criticidade, dados históricos/estendidos, motor/1000 ciclos/T00–T11, HTTPPOST/SSE, exclusividade ADMIN, continuidade/foco/fechamento/lease, múltiplos visitantes/carga40, sessões6h/revogação, reconexão/recuperação, consultas locais sem pausa, destaques/motion/reduced-motion, percentuais/denominadores/sem fechamento/empate/futuro, linguagem condicional, pertinência/privacidade, botão/ARIA/teclado e remoção do link nas entradas. Sem exclusões por name-pattern, skip ou testes agrupados como arquivos.
+
+### Teste integrado real
+
+Serviço autoritativo próprio em porta efêmera e perfis/janelas próprios; serviços ativos do usuário não encerrados/reiniciados. ADMIN e dois visitantes confirmaram mesma sessão/estado e avanço sincronizado por todo o ciclo. Na suíte browser, consulta/evidências mantiveram fotografia local enquanto operação avançava, sem lock/pausa. No ensaio nativo: troca para xmessage, minimização X11 comprovada por IsUnMapped emT01, restauraçãoT02, foco no EdgeT03, ADMIN fechadoT05, visitantes avançandoT06/T07 sem controlador, ADMIN reaberto/controle reassumidoT07, interrupção intencional somente do contexto ADMIN T08, lease realmente expiradoT09, reconexão/controleT10 e retornoT00/ciclo1 com motor running. Zero erros JavaScript e zero pausas inesperadas; a desconexão ADMIN de teste é deliberada, visitantes permaneceram sincronizados. [Journal](evidencias/final-validation-2026-10-23/native/journal.json), [log](evidencias/final-validation-2026-10-23/native.log). Não é ensaio físico na Arena nem teste de suspensão real do Ubuntu/seis horas de funcionamento contínuo; expiração6h é validada por relógio injetado nos testes.
+
+Os outros harnesses endurance standalone/sincronizado permanecem disponíveis, sem exclusão. O ensaio nativo atual cobre o ciclo sincronizado real e as operações requeridas; standalone,1×/2× e ciclos repetidos estão na suíte integral. Não há necessidade técnica de somar novamente casos sobrepostos como distintos.
+
+### Git, arquivos pendentes e riscos
+
+Estado antes das novas evidências/documentação: 33 arquivos rastreados modificados e92 arquivos não rastreados, listados integralmente em [git-after.txt](evidencias/final-validation-2026-10-23/git-after.txt). Incluem alterações locais aprovadas de servidor/Feira/testes/documentação e evidências NEXT/continuidade/evidências técnicas. Nesta validação somente relatório específico, backlog, continuidade e tests/README recebem atualização documental; novas evidências em final-validation-2026-10-23. Nenhum arquivo foi staged. HEAD e branch inalterados. Códigos/credenciais não incluídos nos logs/relatório. Arquivos.log são ignorados pelo Git: selecionar evidências necessárias ao versionamento deliberadamente, sem adicionar indiscriminadamente /tmp ou credenciais.
+
+Sem impedimento técnico identificado para versionar a feature. Riscos/limites restantes: chunk grande não bloqueante; conectividade física/client isolation/DHCP/firewall/celulares e operação prolongada na Arena ainda dependem do ensaio local autorizado. Futuro PR exige atualizar análise de main e conferir CSS Feira sobrepostos, além de regressão do resultado integrado; nenhuma integração foi feita agora. Não afirmar Arena homologada.
+
+Próxima ação: aguardar autorização final para preparar commits e push somente feature/modo-feira. A homologação funcional está aprovada e a validação técnica integral está satisfeita; autorização de commit/push continua ausente nesta etapa.
+
+
+## Evidências técnicas e percentuais — 23/10/2026
+
+Revisão atual, posterior à continuidade já homologada pelo usuário. AGENTS.md e continuidade lidos antes das edições; branch `feature/modo-feira`, HEAD `13d315aa7539637b22a782bb2744e67c3ae54451`, trabalho local anterior preservado. Sem commit, merge, rebase, push ou deploy. Não houve nova consulta remota nesta etapa. A análise de conflitos anterior continua sendo referência histórica para um futuro PR; revalidar contra main antes da integração.
+
+### Alterações e dependências verificadas
+
+- `src/feira/historyAdvice.js`: frequência histórica = casos do fechamento predominante / atendimentos elegíveis com fechamento conhecido ×100. Casos sem fechamento são informados separadamente; filtros, preferência por mesmo equipamento e mínimo de dois casos/predominância única preservados. Apresentação pt-BR com até uma decimal; somente numerador igual ao denominador mostra100%; extremos arredondados usam >99,9% ou <0,1%. Base insuficiente/empate não gera percentual. O percentual descreve ocorrência histórica, sem probabilidade de diagnóstico ou garantia de solução.
+- `src/feira/HistoryEvidence.jsx` e novo `HistoryEvidence.module.css`: botão real inicialmente recolhido, “Ver evidências técnicas”/“Ocultar evidências técnicas”, seta, foco, Enter/Espaço e aria-expanded/aria-controls. Detalhes abaixo da recomendação, recolhidos quando muda o chamado. Estilos isolados. Componente atende somente Feira conectada/standalone e Supervisor Feira.
+- `src/feira/supervisor/SupervisorParts.jsx`: orientação condicional conforme fechamento; inspeção não afirma ajuste necessário. FeiraPanel e detalhes usam a mesma apresentação histórica. Exemplo: “Em100% dos atendimentos semelhantes, foi registrado ajuste desse componente.”, com orientação para verificar e confirmar a necessidade.
+- Evidências mostram falha/componente, critérios reais de semelhança (Problema, Componente Principal, Tipo de Unidade, com preferência por equipamento), intervenção, resultado somente quando explicitamente registrado, contagens/denominador, período e origem rastreável por arquivo/aba/ID/hash. Falha/Defeito contextualizam, sem serem falsamente descritos como filtros. Concluído não comprova resolução. Fonte identificada como histórico sintético de manutenção; documentação técnica/medições/procedimentos ausentes não são inventados. Campos pessoais não entram na projeção pública; fechamentos livres desconhecidos são omitidos da interface, mantendo o registro original intacto.
+- `src/feira/SyncedFeiraApp.jsx` e `FeiraPanel.jsx`: somente remoção do link normal “Apresentação original” e import sem uso. A rota `?modo=legado#/3` continua disponível; link Plataforma histórica preservado. A recuperação de erro não foi alterada. Ausência do link normal validada em acesso/pareado/standalone, BackOffice e Supervisor, desktop1366×768 e mobile390×844.
+- Testes novos: `tests/feira-evidence.test.mjs` (7) e `tests/feira-evidence-browser.test.mjs` (5). Ajustadas expectativas de `tests/feira-continuity.test.mjs` e `tests/feira-continuity-browser.test.mjs` para percentual/botão.
+
+Não foram alterados motor Node, serviço, sessão/lease, transporte, controle ADMIN, relógio, datasets, importadores, componentes/estilos globais ou Supervisor original. Comparação SHA256 dos850 arquivos existentes no início: nenhum removido; somente os sete arquivos de fonte/testes acima modificados antes da atualização documental. Novos CSS/testes adicionados. Alterações anteriores do motor permanecem byte a byte iguais ao início desta etapa. [Registro da preservação](evidencias/evidence-2026-10-23/preservation.json).
+
+### Validação executada nesta revisão
+
+**113 testes pertinentes aprovados, zero falhas/cancelamentos/skip** (63,10s). Cobrem cálculo66,7%/100%/arredondamento, base insuficiente/empate/futuro, ausência de resultado, pertinência por falha/componente, supressão de dados pessoais, teclado/expansão/recolhimento, Light/Dark, navegação original, continuidade por foco/fechamento/lease, controle exclusivo ADMIN, sessão/revogação e carga1/5/20/40 visitantes. [TAP](evidencias/evidence-2026-10-23/regression.tap). Os512 testes e ciclo nativo336s da seção anterior são históricos, não foram recontados nesta revisão.
+
+Comando: `ORQUESTRA_TEST_DIST=/tmp/orquestra-evidence-final/dist node --test --test-concurrency=4 --test-reporter=tap tests/feira-evidence.test.mjs tests/feira-evidence-browser.test.mjs tests/feira-history.test.mjs tests/feira-continuity.test.mjs tests/feira-continuity-browser.test.mjs tests/feira-supervisor-browser.test.mjs tests/feira-supervisor-theme-browser.test.mjs tests/feira-supervisor-motion-browser.test.mjs tests/feira-supervisor.test.mjs tests/feira-sync-service.test.mjs tests/feira-next-transport.test.mjs tests/feira-next.test.mjs tests/feira-next-http.test.mjs tests/navegador-regressao.test.mjs`.
+
+Build aprovado: `npm run build -- --outDir /tmp/orquestra-evidence-final/dist`; permanece aviso conhecido de chunk>500kB. Importadores `scripts/import_orquestra.py --check` e `scripts/import_feira_estendida.py --check` aprovados. Evidências em [summary.json](evidencias/evidence-2026-10-23/summary.json) e capturas em `evidencias/evidence-2026-10-23/visual`. Captura mobile Light inspecionada visualmente, sem sobreposição/estouro; verificações automatizadas cobrem as demais dimensões/temas.
+
+### Homologação desta revisão
+
+Instância nova anunciada na porta5200, sem substituir5196/5198. [ADMIN](http://192.168.0.3:5200/OrquestraNEXT/?modo=feira) e [Supervisor](http://192.168.0.3:5200/OrquestraNEXT/?modo=supervisor-feira). PID103805; metadados em `/tmp/orquestra-evidence-final/service.json`; códigos somente `/tmp/orquestra-evidence-final/private/pairing.json` (0700/0600), nunca em URL/chat/Git. Código inicial30min, sessão visitante6h. Cookie por IP não isola portas: usar perfis separados se comparar instâncias. HTTP/pareamento dos dois papéis, T00 pausado e asset igual ao build conferidos. /tmp é efêmero; verificar processo antes de reutilizar.
+
+1. Parear ADMIN e dois celulares; conferir ausência de “Apresentação original” nas entradas desktop/mobile. Abrir a rota original diretamente para confirmar preservação.
+2. Iniciar pelo ADMIN. Abrir recomendação com histórico: conferir percentual e orientação condicional, botão inicialmente recolhido, expandir/recolher por clique/Enter/Espaço. Em evidências, conferir numerador/denominador/período e origem do chamado, sem dados pessoais.
+3. Conferir caso de inspeção, caso sem resultado documentado e caso sem base suficiente: nenhum diagnóstico/resultado inventado nem percentual sem suporte. Alternar Light/Dark.
+4. Manter dois visitantes lendo; minimizar/perder foco/fechar a aba ADMIN. Confirmar avanço do motor e fotografia de leitura preservada. Reabrir/assumir ADMIN; segundo ADMIN e visitantes não devem comandar simultaneamente. Pausa manual permanece explícita.
+
+Homologação visual em aparelhos físicos/rede da Arena permanece com o operador. A continuidade do motor já foi homologada pelo usuário; esta revisão não altera sua implementação e acrescenta regressão automatizada.
+
+
+## Continuidade independente de foco e linguagem operacional — 23/10/2026
+
+Escopo específico autorizado sobre a solução múltiplos visitantes já existente. Alterações locais anteriores e evidências preservadas; nenhuma mudança de branch, commit, merge, rebase, push ou deploy. Esta seção substitui a política anterior de pausa por foco/lease/release do modo conectado. Aguardando homologação antes de versionar/publicar.
+
+### Causa confirmada e dependências
+
+`SyncedFeiraApp.jsx` registrava blur, visibilitychange e hashchange que enviavam pause; pagehide enviava release. No serviço, maintain expirava o controller lease após6 s e despachava pause/controller-lost; release também pausava. Portanto trocar de aplicativo ou suspender callbacks da aba disparava comandos/política de controle, mesmo com Node operacional. A reprodução não dependia tecnicamente do foco: essa dependência era imposta por esses handlers e pelo contrato anterior.
+
+Inspeção prévia: AGENTS.md/continuidade/backlog/contrato e implementação efetiva. Branchfeature/modo-feira/HEAD13d315aa7539637b22a782bb2744e67c3ae54451; feature remota conferida no mesmoSHA. Árvore inicialmente já alterada pela adequação NEXT,sem staged;manifestações locais preservadas. Nada foi limpo/resetado/stashed. `historyAdvice` é consumido por FeiraPanel,HistoryEvidence,SupervisorParts e testes;HistoryEvidence atende detalhes da Feira conectada e independente,sem uso no Supervisor original. `temporalState` atende somente Feira/serviço/testes; standalone conserva o comportamento anterior quando não recebe wallNow/maxElapsed finito. Primitivos e estilos globais não foram modificados.
+
+### Política vigente de continuidade
+
+- Motor único no Node mantém a reprodução em blur,aba oculta,minimização,hashchange,desconexão de visitante,consulta e fechamento da aba ADMIN.
+- Pagehide continua liberando a posse dos comandos,sem pausar o motor. Lease de6 s continua limitando o controle administrativo;expiração elimina o dono,sem alterar playback,ciclo,fotografia ou velocidade. Expiração também é conferida ao receber comandos,antes de permitir operação por dono obsoleto.
+- Somente ADMIN autenticado,detentor do controle,com sessão/origem/CSRF/revisão/idempotência válidos pode comandar a reprodução. Outro ADMIN só assume após release/expiração,sem reiniciar ou retomar automaticamente uma pausa existente. Dois controladores não comandam simultaneamente. Visitantes não adquirem controle.
+- Nova instância continua T00 pausada,exigindo Iniciar explícito. Pausa manual persiste mesmo sem controlador;assumir controle não a remove. Retomar exige ação ADMIN. Reinício segue comando ADMIN.
+- Proteção de interrupção real permanece:gap>5 s no relógio monotônico ou civil pausa com motivo interruption,sem consumir o intervalo nem atravessar snapshots. Tempo civil é somente detector de interrupção,não avança a simulação. Isso cobre suspensão Linux mesmo quando o monotônico não inclui o tempo suspenso;ajuste grande do relógio civil pode provocar pausa de proteção conservadora. Relógios injetados nos testes permanecem determinísticos. Nenhum motor foi introduzido no cliente.
+- Continuidade exige notebook acordado e processo Node ativo. Encerrar o serviço,reboot,suspensão ou interrupção real não são equivalentes a minimizar o navegador. A Feira independente continua com sua política anterior de foco/pausa:ela não possui serviço Node.
+
+Sessão Supervisor6 h,pareamento30 min,revogação ADMIN,reconexão completa,consultas locais fixadas,12 estados/417 registros/55 IDs/189 eventos,destaques limitados e fila SSE anteriores preservados.
+
+### Linguagem histórica e rastreabilidade
+
+Título **“O que o histórico sugere”**. Ação curta derivada exclusivamente do fechamento predominante existente;complemento “Em X dos Y atendimentos semelhantes…” ou “atendimentos deste equipamento”,conforme o agrupamento já escolhido. X conta o fechamento exato líder e Y inclui todos os casos compatíveis elegíveis,inclusive fechamento ausente. Preservados compatibilidade de problema/componente/tipo,preferência pelo mesmo cliente/unidade,IDs únicos,concluídos,criação/saída válidas,corte temporal e regra de liderança sem empate com pelo menos dois registros. Não foi criada exigência percentual nem novo agrupamento.
+
+As12 formas de Fechamento existentes receberam redação editorial explícita,sem modificar a fonte:ajuste continua ajuste;substituição continua substituição;“ajustado/substituído” não vira apenas ajuste. Vocabulário desconhecido conserva a citação original e orienta consultar o fechamento predominante,sem inventar intervenção. Sem suporte: **“Não foi identificada indicação histórica consistente.”** A recomendação operacional existente permanece como ação principal quando não há indicação histórica ou há emergência.
+
+Resumo móvel mostra apenas ação,suporte curto e ressalva de avaliação técnica. **Consultar evidências** começa recolhido e permite ver N,quantos com/sem fechamento,período,corte,critério,fonte e casos individuais com Fechamento original. Detalhe completo reaproveita o mesmo componente. Não há promessa causal,diagnóstico comprovado ou garantia de resolução. Datasets/documentação de origem intactos.
+
+| Chamado / fotografia | Ação | Suporte calculado |
+| --- | --- | --- |
+| CH-20260908-003 / T00 | Verificar o sensor de porta. | Em 16 dos 16 atendimentos semelhantes, foi registrado ajuste desse componente. |
+| CH-20260908-002 / T00 | Verificar o sensor. | Em 14 dos 14 atendimentos semelhantes, foi registrado ajuste ou substituição do sensor. |
+| CH-20260908-005 / T00 | Verificar os parâmetros do inversor. | Em 11 dos 11 atendimentos semelhantes, foi registrada correção desses parâmetros. |
+
+[Exemplos estruturados com período e fonte](evidencias/continuity-2026-10-23/language-examples.json). [Resumo Light](evidencias/continuity-2026-10-23/history-light-390x844.png),[Dark](evidencias/continuity-2026-10-23/history-dark-390x844.png),[evidências abertas](evidencias/continuity-2026-10-23/evidence-light-390x844.png). Exemplos referentes à fonte real sintética;nenhum denominador20 foi introduzido para imitar o exemplo do pedido.
+
+### Verificação nesta sessão
+
+**512 testes distintos aprovados nesta sessão=495 Node/navegador+17 Python,zero falhas/cancelamentos/skip.** Suíte integral final295,55 s;14 novos casos sobre os498 anteriores,sem contar reexecuções novamente. Build e dois importadores --check aprovados novamente;aviso preexistente de chunks>500kB. [TAP final](evidencias/continuity-2026-10-23/final.tap). **Ciclo real1× aprovado em335.997 s,T00–T11→T00,dois visitantes sincronizados,zero pausas inesperadas/errosJS.** Aplicativo xmessage e Edge em janelas próprias;BackOffice efetivamente minimizado/restaurado (X11 IsUnMapped);aba ADMIN fechada emT05,reaberta emT07,comunicação interrompida emT08,lease vencido emT09 e reassumido emT10,sem reset. [Journal completo](evidencias/continuity-2026-10-23/journal.json),[log](evidencias/continuity-2026-10-23/native-final.log). Firefox não abriu perfil isolado;Edge instalado foi a alternativa testada. Um ensaio anterior foi interrompido/corrigido porque o congelamento solicitado pelo protocolo não interrompeu os heartbeats;resultado final usa perda de comunicação no contexto ADMIN e verifica lease nulo de fato. O nome legado do evento de reassunção no log contém after-freeze,mas a etapa efetivamente executada foi ac.setOffline e está registrada como admin-connection-interrupted. Novos casos:lease/release/reassunção,negação a ex-dono/visitante,pausa manual persistente,interrupções monotônica/civil antes da troca de snapshot,linguagem X/Y,casos sem indicação,similares versus mesmo equipamento,fechamento desconhecido e elegibilidade real nos12 estados;UI com aba congelada,reabertura ADMIN,Light/Dark/evidências recolhidas e dois visitantes atéT11. Critérios antigos de pausa por perda de foco/lease foram substituídos somente no modo conectado. 170 arquivos protegidos iguais ao HEAD;nenhum arquivo prévio removido e módulos de múltiplos visitantes preservados por hash. [Conferência](evidencias/continuity-2026-10-23/preservation.json). Build e17 Python/dois --check desta sessão aprovados;nenhuma dependência instalada.
+
+Comandos: build em `/tmp/orquestra-continuity-final/dist`; `CHOKIDAR_USEPOLLING=true ORQUESTRA_TEST_DIST=/tmp/orquestra-continuity-final/dist node-do-runtime --test --test-concurrency=4 --test-reporter=tap tests/*.test.mjs`; Python -B nos dois testes/importadores. Ensaio nativo separado: `ORQUESTRA_NATIVE_ENDURANCE=1 ORQUESTRA_TEST_DIST=/tmp/orquestra-continuity-final/dist node-do-runtime tests/feira-continuity-endurance.mjs`. Usa somente processos/perfis/janelas próprios,com ID/título exclusivos,sem operar janelas do usuário. Registro de X11 confirma minimização;document.visibilityState do Chrome automatizado pode permanecer visible e não é usado isoladamente como prova. Não é teste de suspensão física do Ubuntu nem de celulares reais.
+
+### Energia do Ubuntu — somente leitura
+
+[Configuração efetivamente lida](evidencias/continuity-2026-10-23/power-settings.json):GNOME `sleep-inactive-ac-type='suspend'`,`sleep-inactive-ac-timeout=1200`;bateria também suspend/1200;idle-delay=300 s. Portanto o sistema está configurado para suspender após20 min inativo,inclusive na tomada. Apagar a tela após5 min é uma configuração distinta.
+
+Recomendação para a Arena:manter alimentação externa,tampa aberta e processo Node ativo;ajustar manualmente Configurações→Energia→Suspensão automática para evitar suspensão durante a demonstração. Verificar separadamente política de tampa/botão e a configuração de bateria. Bloqueio/apagamento de tela não devem ser confundidos com suspensão do notebook. Após qualquer suspensão real,conferir a pausa de proteção e retomar por ADMIN. Nenhuma configuração permanente,firewall ou rede foi alterada;nenhuma suspensão real do computador foi provocada pelo ensaio.
+
+### Git e homologação
+
+MesmoHEAD/branch,alterações locais anteriores mais esta revisão,sem staged/commit/push/merge/rebase/deploy. Futuro PR continua pendente de homologação;análise de CSS com main da adequação anterior permanece válida,sem integração executada. Homologação física de celulares/rede Arena e suspensão real permanece pendente. Nova homologação [BackOffice](http://192.168.0.3:5198/OrquestraNEXT/?modo=feira) e [Supervisor](http://192.168.0.3:5198/OrquestraNEXT/?modo=supervisor-feira),PID85718,sessão1345a7f0-7410-4bf1-b943-3825b8e071fc,T00pausada;entry asset conferido igual ao build validado. Códigos somente em `/tmp/orquestra-continuity-final/private/pairing.json` (dir0700/arquivo0600),fora de URLs/logs/Git. [Conferência](evidencias/continuity-2026-10-23/service-check.json). Instância anterior5196 não foi encerrada nem alterada silenciosamente.
+
+
+## Histórico da adequação NEXT anterior a estes ajustes
+
+## Adequação final para o NEXT — 23/10/2026
+
+Estado vigente da US14.6–14.14 e US15. Substitui a pausa por consulta dos registros anteriores; esses registros permanecem como histórico. Implementação local para homologação, sem commit/push/PR/merge/rebase/force-push/deploy. A condição do pedido anexado exige homologação antes de commit ou publicação; quando autorizados, commit e push serão exclusivamente em `feature/modo-feira`.
+
+### Inspeção e isolamento antes das alterações
+
+Raiz real `OrquestraNEXT` dentro do diretório de trabalho. AGENTS.md e continuidade lidos antes de editar; árvore inicialmente limpa, sem staged/untracked; branch `feature/modo-feira`, HEAD `13d315aa7539637b22a782bb2744e67c3ae54451`. O repositório pai está em main e contém diretórios não rastreados: não foi alterado. `git ls-remote` confirmou feature remota no mesmo SHA; fetch somente de main confirmou `3518e37bdc3f05c2b605a83ef78ad394dc4eb98c`. Nenhuma troca de branch.
+
+| Arquivos/área | Dependências verificadas | Decisão |
+| --- | --- | --- |
+| server/feira-session.mjs, feira-server.mjs | Clientes Feira, SSE/POST, testes C9.1/C9.2 | Mudança restrita ao serviço Feira; mantém DTO v1 e motor único |
+| src/feira/sync/transport.js | Somente useSyncedFeira/SyncedFeiraApp e testes | Recuperação e autenticação existentes adaptadas |
+| SyncedFeiraApp, SupervisorFeira, supervisor/* | Supervisor Feira; ícones puros do original e Dialog/StatusBadge reutilizados | Não editar dependências globais/originais |
+| FeiraPanel, FeiraDetail, FeiraApp.module.css | Feira conectada e independente | Consulta local somente no conectado; pausa independente preservada |
+| SyncFeira.module.css, ReadingSnapshot, highlights, useTransitionHighlights | Somente Feira | Estilos e seleção isolados; sem tokens globais |
+| Testes Feira existentes e novos | Contrato anterior de pausa e animações ilimitadas | Atualizar critérios expressamente substituídos e acrescentar regressão |
+| Documentação oficial | Backlog, contrato técnico/Supervisor, modos e continuidade | Atualizar documentos existentes, sem documento concorrente |
+
+Motor temporal, planilhas, importadores, JSON gerado, primitivas compartilhadas, Supervisor original e dez cenas não alterados. Nenhuma dependência instalada. A política de perda de foco do ADMIN permanece: desfocar/ocultar notebook pausa; retornar não retoma.
+
+### Sessão, autorização e leitura
+
+Supervisor: seis horas absolutas desde o pareamento, verificadas pelo relógio monotônico do serviço. Heartbeat, refresh e reconexão não renovam o vencimento. Cookie HttpOnly/SameSite=Strict/path API com Max-Age=21600, validado também no servidor e antes de publicar SSE. Pareamento permanece 30 min desde início do serviço. ADMIN conserva sessão de navegador e validade ligada ao processo, sem extensão automática. Reiniciar processo invalida todos os cookies.
+
+`revoke-session` exige ADMIN detentor do controle, CSRF, origem, sessão, revisão e commandId; argumento `clientId` identifica o visitante, sem transmitir tokens. Revogar fecha apenas seu SSE e invalida comandos futuros. Testado via API administrativa, sem novo painel de visitantes. O ID do visitante está no bootstrap autenticado desse dispositivo; não há listagem pública de credenciais. Sessões/cookies separados por perfil de navegador/dispositivo; abas do mesmo perfil compartilham cookie, como antes. Portas do mesmo IP não isolam cookies: usar perfil separado para outra bancada.
+
+Abrir resumo/completo fixa cópia local de row/metadados/sessão/ciclo/snapshot/revisão do último estado confirmado; não envia POST de consulta. Não cria lock, não publica revisão, não pausa nem retoma. “Consultar versão mais recente” troca a fotografia somente por ação explícita, quando o mesmo ID existe na fonte atual. Ciclo novo mantém a leitura anterior identificada; processo novo encerra seleção incompatível. BackOffice conectado também conserva leitura; filtros e consultas conectadas não pausam por captura de clique. ADMIN continua único para reprodução. Endpoints antigos open-detail/close-detail aceitam ACK autenticado/idempotente para compatibilidade, sem lock/pausa; estado obsoleto continua rejeitado. Campo locks mantido vazio no DTO para preservar consumidores.
+
+### Conectividade
+
+SSE com erro ou ausência de heartbeat por mais de 3,5 s é detectado pelo watchdog de 2 s; portanto detecção normalmente até cerca de 5,5 s (não garantia em navegador suspenso). Conectando, online e offline são distintos. Banner: **SEM CONEXÃO COM O ORQUESTRA**; complemento: “Aguardando reconexão. As informações podem estar desatualizadas.” Nenhum avanço local. Retry automático com backoff e jitter, bootstrap completo e SSE; revisões antigas/duplicadas descartadas. Reconexão mostra por quatro segundos “Conexão restabelecida — operação sincronizada.” Expiração/revogação exige novo pareamento com aviso claro. Falha técnica fica no diagnóstico, sem segundo banner concorrente sobre o aviso de rede.
+
+### Seleção visual e eventos reais
+
+No máximo dois sinais por transição consecutiva da mesma sessão/ciclo, apenas com correspondência em FEIRA_EVENTOS. Dados completos são atualizados sem esse limite. Ordenação: condição Vermelha ativa, elevação Laranja, agravamento relevante ativo, status importante ativo, novo prioritário, conclusão relevante. Criticidade continua BASE; SLA não recalcula cores.
+
+Ajuste de apresentação justificado pelos dados: somente um representante por classe de prioridade evita dois sinais vermelhos equivalentes e abre espaço para uma mudança diferente. Entre condições vermelhas equivalentes, novo chamado precede ID; demais empates por ID. “Relevante” exige Laranja/Vermelho; avanço Verde→Amarelo continua atualizado, sem pulso prioritário. Status importante é mudança em ativo Laranja/Vermelho; conclusão relevante encerra chamado Laranja/Vermelho (incluindo cor anterior auditada). Não se usa roteiro fixo de IDs ou snapshots. Isso permite observar todas as categorias sem inventar fatos nem impor 24 destaques.
+
+| Transição para | Seleção determinística real |
+| --- | --- |
+| T01 | 005: Amarelo→Vermelho |
+| T02 | 011: Amarelo→Vermelho; 014: Verde→Laranja e status |
+| T03 | 014: Laranja→Vermelho; 016: Amarelo→Laranja |
+| T04 | 020: Laranja→Vermelho; 027: Amarelo→Laranja e status |
+| T05 | 024: Laranja→Vermelho; 028: Verde→Laranja |
+| T06 | 028: Laranja→Vermelho; 027: concluído |
+| T07 | 034: Amarelo→Vermelho e status; 038: novo Laranja |
+| T08 | 035: Amarelo→Vermelho; 038: somente status |
+| T09 | 045: novo Vermelho; 046: novo Laranja |
+| T10 | 049: novo Vermelho; 042: Amarelo→Laranja |
+| T11 | 042: Laranja→Vermelho; 054: novo Laranja |
+
+IDs na tabela são sufixos de CH-20260908-. Total 21 chamados destacados em 11 transições, sem destaque em T00/retorno de ciclo. Evidência estruturada com revisões e eventos auditados: [selected-events.json](evidencias/next-2026-10-23/selected-events.json).
+
+Destaques textuais duram cinco segundos. Até dois pulsos de 700 ms por elevação; status isolado não recebe pulso de criticidade. FLIP mantém ordenação autoritativa e cleanup cancela animações anteriores; conclusão selecionada tem saída não interativa de 1,4 s e permanece no histórico. Novo recebe fade suave. Sem som, pop-up automático ou rolagem automática. Um único indicador realmente alterado recebe destaque por transição. `prefers-reduced-motion` remove animações mantendo texto/cores. Heartbeat, refresh, reconexão, entrada tardia, navegação, salto de snapshots e T11→T00 não reapresentam mudanças. O contador de revisão não serve como identificador de evento.
+
+### Validação desta sessão
+
+**498 testes distintos aprovados nesta sessão:481 Node/navegador+17 Python,zero falhas/cancelamentos/skip.** Suíte completa final em295,68 s; [TAP final](evidencias/next-2026-10-23/final.tap).18 casos novos somados aos480 anteriores,sem dupla contagem de reexecuções. Build e os dois importadores --check aprovados. Ensaio separado com relógio real1× percorreu T00–T11 e retornou T00 em336 s,dois clientes,sem pausa inesperada/errosJS; [registro](evidencias/next-2026-10-23/endurance.log). Ciclos2× também cobertos pela suíte integral (inclui20 ciclos sincronizados controlados).170 arquivos protegidos iguais ao HEAD; [conferência](evidencias/next-2026-10-23/protection.json).
+
+Comandos: `npm run build -- --outDir /tmp/orquestra-next-final/dist`; `CHOKIDAR_USEPOLLING=true ORQUESTRA_TEST_DIST=/tmp/orquestra-next-final/dist node-do-runtime --test --test-concurrency=4 --test-reporter=tap tests/*.test.mjs`; Python do runtime com `-B tests/importacao-dados.test.py`, `-B tests/importacao-feira.test.py`, ambos scripts importadores `--check`. Runtime completo na continuidade. Logs finais/capturas em [evidências](evidencias/next-2026-10-23/).
+
+Casos antigos que exigiam pausa/ACK/lock por leitura foram substituídos por critérios de consulta local sem pausa; autenticação, revisão e idempotência da API permanecem testadas. Novos testes `feira-next*`: vencimento exato, revogação/isolamento, cookie/refresh/SSE, heartbeat ausente/retry, duas leituras históricas simultâneas, atualização explícita, 1/5/20/40 visitantes, cliente lento, não repetição e seleção auditada. Sem flags/relógio de teste expostos no produto.
+
+Build aprovado com aviso preexistente de chunks >500 kB. Importadores aprovados: 12 snapshots/417 registros/55 IDs finais/189 eventos; histórico e série original preservados. Python 9+8 casos aprovados. Testes não homologam a entrega.
+
+### Desempenho observado e limites
+
+Ensaio HTTP/SSE em loopback, 11 transições, 70 heartbeats por visitante em rajada, 150 publicações adicionais, reconexão e um leitor deliberadamente lento. Limites configurados: 48 sessões/processo e 48 streams globais, até quatro por sessão. Limite anterior de 16 streams/32 sessões não comportava 40 clientes. Rate limit de comandos autenticados continua 200/min por sessão; pareamento continua limitado por IP (200/min e cinco falhas/min). Isso impede que visitantes atrás do mesmo IP consumam o orçamento de heartbeat uns dos outros.
+
+| Visitantes (+1 leitor lento) | Maior convergência observada | RSS antes→depois, processo de teste |
+| --- | --- | --- |
+| 1 | 8.14 ms | 102→140 MiB |
+| 5 | 21.89 ms | 140→205 MiB |
+| 20 | 61.47 ms | 206→299 MiB |
+| 40 | 118.67 ms | 299→394 MiB |
+
+Payload do estado final ≈238 kB sem compressão. Fila limitada a um DTO completo pendente por stream, substituído pelo mais recente; serialização reutilizada entre leitores do mesmo estado. Zero erros de autorização nos ensaios de carga. Medidas de RSS incluem servidor E clientes simulados no mesmo processo, execuções sequenciais e buffers, não isolam memória do servidor nem comprovam estabilidade por seis horas. Latência medida até todos os leitores ativos convergirem, não inclui renderização de 40 navegadores. [performance.json](evidencias/next-2026-10-23/performance.json). Não inferir capacidade ilimitada ou garantia no Wi-Fi real.
+
+### Evidências visuais e ensaio físico
+
+Exemplos diretos: [novo Laranja](evidencias/next-2026-10-23/selected-t7-038.png), [elevação Laranja](evidencias/next-2026-10-23/selected-t2-014.png), [elevação Vermelho](evidencias/next-2026-10-23/selected-t1-005.png), [status](evidencias/next-2026-10-23/selected-t8-038.png), [conclusão](evidencias/next-2026-10-23/conclusion-t06.png), [consulta histórica](evidencias/next-2026-10-23/reading-t03-operation-t04-390x844.png), [segundo visitante](evidencias/next-2026-10-23/visitor-two-768x1024.png), [BackOffice](evidencias/next-2026-10-23/backoffice-t04-1366x768.png), [offline Light](evidencias/next-2026-10-23/offline-light-390x844.png), [offline Dark](evidencias/next-2026-10-23/offline-dark-390x844.png), [reconexão](evidencias/next-2026-10-23/reconnected-390x844.png).
+
+Capturas de browser real: Light/Dark 390×844; visitante adicional Dark 768×1024; BackOffice 1366×768. Novo/elevação Laranja/Vermelho/status/conclusão e leitura T03 enquanto operação T04 nos arquivos `selected-*`, `conclusion-t06`, `reading-*`, `visitor-two-*`, `backoffice-*`, `offline-*`, `reconnected-*`. Inspeção visual realizada; contextos no PC não comprovam uso físico. Layout/foco/overflow e regressão das dez cenas/nova apresentação verificados pelos testes, sem mudar o legado.
+
+Roteiro físico pendente: notebook ADMIN + dois celulares em rede dedicada, um Light e outro Dark. Percorrer T00–T11 em 1× e 2×; abrir chamados diferentes em T03 e manter leitura até T05; atualizar somente um visitante e comparar referências; desligar Wi-Fi de um celular durante duas transições e reconectar sem refresh; recarregar com cookie válido; verificar aviso de expiração/revogação com sessão controlada de teste (sem reduzir TTL do produto). Confirmar rolagem/foco e entrada tardia. Registrar aparelho/OS/navegador/IP/horário e resultados; não declarar homologado por emulação.
+
+### Rede e operação local
+
+Notebook/celulares precisam de comunicação direta no mesmo SSID/VLAN, endereço estável e porta TCP5196 acessível. Rede pública pode ter client isolation, captive portal, firewall/portas bloqueadas e DHCP variável: validar com a organização. Alternativa: roteador dedicado sem isolamento de clientes, notebook por cabo quando possível, SSID restrito, IP reservado e somente acesso local. Não foi alterada rede/firewall/roteador e não há exposição pública intencional. HTTP local não cifra cookies/tráfego: usar rede confiável dedicada; não tratar como autenticação corporativa nem transmitir dados reais. Host/Origin/CSRF/roles e path traversal permanecem protegidos.
+
+Homologação: [BackOffice](http://192.168.0.3:5196/OrquestraNEXT/?modo=feira) e [Supervisor](http://192.168.0.3:5196/OrquestraNEXT/?modo=supervisor-feira). Processo/metadados em `/tmp/orquestra-next-final/service.json`; códigos somente em `/tmp/orquestra-next-final/private/pairing.json` (dir0700/arquivo0600). Não copiar valores ao Git/chat/URLs. Processo inicia T00 pausado; ADMIN deve parear, assumir controle e iniciar. Sem autostart após reboot; /tmp é efêmero. Após janela de pareamento expirar, reinício deliberado da instância exige conferir PID/uso e avisar operador; sessões ainda válidas não exigem reinício.
+
+### Preparação do futuro Pull Request
+
+Base remota main3518e37 contém esta feature13d315a como ancestral. A feature local/remota estava 0/0 no início; trabalho atual permanece sem commit. Main local não foi atualizada. Há sobreposição de caminhos entre esta revisão e main em **FeiraApp.module.css e SyncFeira.module.css**: ambos receberam acréscimos no fim em main e nesta revisão. Integração deve conservar os acabamentos de main e acrescentar regras de desconexão/leitura/métrica, revisando especificidade/cascata e movimento reduzido. Componentes globais/estilos de plataforma alterados em main não foram tocados nesta revisão. Nenhum teste de merge executado; conflito textual futuro não é descartado por análise estática. Não foi executado merge, rebase ou force-push.
+
+PR futuro, após homologação e autorização de registro: título **“feat: prepara Feira NEXT para consultas simultâneas e sessões de seis horas”**; origem `feature/modo-feira`, destino `main`. Descrição: consultas deixam de pausar a operação, fotografia histórica é explícita, Supervisor expira/revoga em seis horas, conectividade se recupera e até dois fatos auditados recebem destaque; anexar resultados finais/evidências e destacar os dois CSS de sobreposição. Gate: repetir regressão e build sobre o resultado integrado em trabalho futuro autorizado, especialmente estilos de main, BackOffice, Supervisor original/dez cenas e nova apresentação. PR ainda não criado; homologação precede commit/publicação. Estado final:mesma branch/HEAD,alterações locais de implementação/testes/docs/evidências,sem staged; remoto feature não recebeu alterações. Instância5196 conferida com entry asset idêntico ao build validado e permissões privadas corretas. [Conferência](evidencias/next-2026-10-23/service-check.json).
+
+
+## Histórico anterior à adequação NEXT
+
 15/10/2026. Implementação autorizada; homologação visual e física pendentes. Sem commit, merge, push ou deploy. Continuidade oficial registra o estado consolidado.
 
 ## Base e preservação

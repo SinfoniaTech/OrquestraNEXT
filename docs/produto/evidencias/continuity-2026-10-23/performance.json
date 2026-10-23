@@ -1,0 +1,70 @@
+[
+  {
+    "clients": 1,
+    "transitions": 11,
+    "maxConvergenceMs": 8.18,
+    "rssBefore": 105189376,
+    "rssAfter": 147099648,
+    "diagnostics": {
+      "frames": 26,
+      "payloadBytes": 237791,
+      "slowReplacements": 300,
+      "maxPendingPerStream": 1,
+      "authorizationErrors": 0,
+      "streams": 2,
+      "pending": 1
+    },
+    "reconnect": true
+  },
+  {
+    "clients": 5,
+    "transitions": 11,
+    "maxConvergenceMs": 25.95,
+    "rssBefore": 143450112,
+    "rssAfter": 214654976,
+    "diagnostics": {
+      "frames": 26,
+      "payloadBytes": 237791,
+      "slowReplacements": 892,
+      "maxPendingPerStream": 1,
+      "authorizationErrors": 0,
+      "streams": 6,
+      "pending": 1
+    },
+    "reconnect": true
+  },
+  {
+    "clients": 20,
+    "transitions": 11,
+    "maxConvergenceMs": 63.33,
+    "rssBefore": 215146496,
+    "rssAfter": 383963136,
+    "diagnostics": {
+      "frames": 26,
+      "payloadBytes": 237791,
+      "slowReplacements": 3112,
+      "maxPendingPerStream": 1,
+      "authorizationErrors": 0,
+      "streams": 21,
+      "pending": 1
+    },
+    "reconnect": true
+  },
+  {
+    "clients": 40,
+    "transitions": 11,
+    "maxConvergenceMs": 114.03,
+    "rssBefore": 384651264,
+    "rssAfter": 346910720,
+    "diagnostics": {
+      "frames": 26,
+      "payloadBytes": 237791,
+      "slowReplacements": 6072,
+      "maxPendingPerStream": 1,
+      "authorizationErrors": 0,
+      "streams": 41,
+      "pending": 1
+    },
+    "reconnect": true
+  }
+]

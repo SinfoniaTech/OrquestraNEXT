@@ -81,3 +81,5 @@ button.call .changes,button.call .open{grid-column:1/-1}.call .changes{margin-to
 .call[data-tone=green]{--motion-color:var(--green-edge)}.call[data-tone=yellow]{--motion-color:var(--yellow-edge)}.call[data-tone=orange]{--motion-color:var(--orange-edge)}.call[data-tone=red]{--motion-color:var(--red-edge)}
 .status[data-call-status]{display:inline-block;border-radius:4px}.changeNotice{font-size:11px;color:var(--muted);margin:8px}.departures{position:fixed;inset:0;z-index:4;pointer-events:none}.departures>*{pointer-events:none!important}.departures .call{cursor:default}
 @media(prefers-reduced-motion:reduce){.departures{display:none}}
+
+.compactBody [data-testid="history-evidence"]{font-size:12px;color:var(--muted)}.compactBody [data-testid="history-evidence"] summary{display:flex;align-items:center;min-height:44px;color:var(--link);cursor:pointer}.compactBody [data-testid="history-evidence"] details[open] summary{font-weight:600}.compactBody [data-testid="history-evidence"] code{overflow-wrap:anywhere}

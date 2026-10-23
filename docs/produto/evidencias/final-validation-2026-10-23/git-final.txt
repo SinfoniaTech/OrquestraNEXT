@@ -1,0 +1,136 @@
+## feature/modo-feira...origin/feature/modo-feira
+ M docs/CONTINUIDADE_CODEX.md
+ M docs/produto/backlog.md
+ M docs/produto/entrega-c92-feira-estendida.md
+ M docs/produto/modos.md
+ M docs/tecnica/pontos-integracao-supervisor.md
+ M server/feira-server.mjs
+ M server/feira-session.mjs
+ M src/feira/FeiraApp.module.css
+ M src/feira/FeiraDetail.jsx
+ M src/feira/FeiraPanel.jsx
+ M src/feira/HistoryEvidence.jsx
+ M src/feira/SupervisorFeira.jsx
+ M src/feira/SyncFeira.module.css
+ M src/feira/SyncedFeiraApp.jsx
+ M src/feira/historyAdvice.js
+ M src/feira/supervisor/Supervisor.module.css
+ M src/feira/supervisor/SupervisorDetail.jsx
+ M src/feira/supervisor/SupervisorParts.jsx
+ M src/feira/supervisor/presentation.js
+ M src/feira/supervisor/useSnapshotMotion.js
+ M src/feira/sync/transport.js
+ M src/feira/temporalState.js
+ M tests/README.md
+ M tests/feira-extended-browser.test.mjs
+ M tests/feira-extended.test.mjs
+ M tests/feira-history.test.mjs
+ M tests/feira-supervisor-browser.test.mjs
+ M tests/feira-supervisor-motion-browser.test.mjs
+ M tests/feira-supervisor-theme-browser.test.mjs
+ M tests/feira-supervisor.test.mjs
+ M tests/feira-sync-browser.test.mjs
+ M tests/feira-sync-http.test.mjs
+ M tests/feira-sync-service.test.mjs
+?? docs/produto/evidencias/continuity-2026-10-23/evidence-dark-390x844.png
+?? docs/produto/evidencias/continuity-2026-10-23/evidence-light-390x844.png
+?? docs/produto/evidencias/continuity-2026-10-23/final.tap
+?? docs/produto/evidencias/continuity-2026-10-23/history-dark-390x844.png
+?? docs/produto/evidencias/continuity-2026-10-23/history-light-390x844.png
+?? docs/produto/evidencias/continuity-2026-10-23/journal.json
+?? docs/produto/evidencias/continuity-2026-10-23/language-examples.json
+?? docs/produto/evidencias/continuity-2026-10-23/performance.json
+?? docs/produto/evidencias/continuity-2026-10-23/power-settings.json
+?? docs/produto/evidencias/continuity-2026-10-23/preservation.json
+?? docs/produto/evidencias/continuity-2026-10-23/service-check.json
+?? docs/produto/evidencias/continuity-2026-10-23/summary.json
+?? docs/produto/evidencias/continuity-2026-10-23/visitor-1-after-cycle.png
+?? docs/produto/evidencias/continuity-2026-10-23/visitor-2-after-cycle.png
+?? docs/produto/evidencias/evidence-2026-10-23/preservation.json
+?? docs/produto/evidencias/evidence-2026-10-23/regression.tap
+?? docs/produto/evidencias/evidence-2026-10-23/service-check.json
+?? docs/produto/evidencias/evidence-2026-10-23/summary.json
+?? docs/produto/evidencias/evidence-2026-10-23/visual/access-feira-1366.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/access-feira-390.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/access-supervisor-feira-1366.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/access-supervisor-feira-390.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/backoffice-technical-1366x768.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/recommendation-dark-390x844.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/recommendation-light-390x844.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/standalone-1366.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/standalone-390.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/technical-dark-390x844.png
+?? docs/produto/evidencias/evidence-2026-10-23/visual/technical-light-390x844.png
+?? docs/produto/evidencias/final-validation-2026-10-23/full.tap
+?? docs/produto/evidencias/final-validation-2026-10-23/git-after.txt
+?? docs/produto/evidencias/final-validation-2026-10-23/git-before.txt
+?? docs/produto/evidencias/final-validation-2026-10-23/integrity.json
+?? docs/produto/evidencias/final-validation-2026-10-23/inventory.json
+?? docs/produto/evidencias/final-validation-2026-10-23/native/journal.json
+?? docs/produto/evidencias/final-validation-2026-10-23/native/visitor-1-after-cycle.png
+?? docs/produto/evidencias/final-validation-2026-10-23/native/visitor-2-after-cycle.png
+?? docs/produto/evidencias/final-validation-2026-10-23/preservation.json
+?? docs/produto/evidencias/final-validation-2026-10-23/python-results.json
+?? docs/produto/evidencias/next-2026-10-23/backoffice-t04-1366x768.png
+?? docs/produto/evidencias/next-2026-10-23/conclusion-t06.png
+?? docs/produto/evidencias/next-2026-10-23/contrast.json
+?? docs/produto/evidencias/next-2026-10-23/final.tap
+?? docs/produto/evidencias/next-2026-10-23/offline-dark-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/offline-light-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/performance.json
+?? docs/produto/evidencias/next-2026-10-23/protection.json
+?? docs/produto/evidencias/next-2026-10-23/pulsos.json
+?? docs/produto/evidencias/next-2026-10-23/reading-t03-operation-t04-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/reconnected-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/selected-events.json
+?? docs/produto/evidencias/next-2026-10-23/selected-t1-005.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t10-042.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t10-049.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t11-042.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t11-054.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t2-011.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t2-014.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t3-014.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t3-016.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t4-020.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t4-027.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t5-024.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t5-028.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t6-028.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t7-034.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t7-038.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t8-035.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t8-038.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t9-045.png
+?? docs/produto/evidencias/next-2026-10-23/selected-t9-046.png
+?? docs/produto/evidencias/next-2026-10-23/service-check.json
+?? docs/produto/evidencias/next-2026-10-23/summary.json
+?? docs/produto/evidencias/next-2026-10-23/t1-dark-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t1-light-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t2-dark-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t2-light-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t6-dark-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t6-light-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t7-dark-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t7-light-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t8-dark-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t8-light-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t9-dark-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/t9-light-390x844.png
+?? docs/produto/evidencias/next-2026-10-23/visitor-two-768x1024.png
+?? docs/produto/evidencias/next-2026-10-23/visual-final.tap
+?? src/feira/HistoryEvidence.module.css
+?? src/feira/ReadingSnapshot.jsx
+?? src/feira/highlights.js
+?? src/feira/useTransitionHighlights.js
+?? tests/feira-browser-switch.mjs
+?? tests/feira-continuity-browser.test.mjs
+?? tests/feira-continuity-endurance.mjs
+?? tests/feira-continuity.test.mjs
+?? tests/feira-evidence-browser.test.mjs
+?? tests/feira-evidence.test.mjs
+?? tests/feira-native-window.py
+?? tests/feira-next-browser.test.mjs
+?? tests/feira-next-http.test.mjs
+?? tests/feira-next-transport.test.mjs
+?? tests/feira-next.test.mjs

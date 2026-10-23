@@ -1,5 +1,14 @@
 # Modos de acesso e experiências
 
+## Entradas Feira — 23/10/2026
+
+BackOffice/simulador e Supervisor Feira não exibem o link normal Apresentação original, inclusive mobile. A rota modo=legado permanece acessível diretamente. Plataforma histórica e navegação restante preservadas. Confirmado em acesso, conectado e standalone;1366×768 e390×844.
+
+
+## Política atual do Modo Feira conectado — 23/10/2026
+
+[Contrato vigente NEXT](../tecnica/pontos-integracao-supervisor.md#contrato-vigente-next--23102026): Supervisor de consulta com sessão de seis horas; consultas fixam fotografia local sem pausar a simulação; atualização explícita para versão atual e referência histórica visível. Conectividade com aviso/retry automático e destaques de até dois eventos auditados por transição. Notebook ADMIN mantém controle exclusivo;perda de foco/lease ou fechamento da aba não pausa o motor Node. Reassumir não reinicia o ciclo nem retoma pausa manual;interrupção real mantém pausa de proteção. [Ajuste vigente](../tecnica/pontos-integracao-supervisor.md#continuidade-e-linguagem-operacional-vigentes--23102026). Feira independente mantém política anterior de pausa ao analisar. Dados,12 snapshots e dez cenas preservados. Textos abaixo sobre pausa/lock da Feira conectada são históricos e foram substituídos por esta autorização. [Relatório e homologação](entrega-c92-feira-estendida.md#adequação-final-para-o-next--23102026).
+
 | Experiência | Comportamento | Fonte |
 | --- | --- | --- |
 | Plataforma | Navegação livre no novo BackOffice, filtros, indicadores e detalhes | HIST_60_DIAS normalizado e referência explícita |

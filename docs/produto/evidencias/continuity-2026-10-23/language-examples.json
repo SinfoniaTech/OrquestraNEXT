@@ -1,0 +1,44 @@
+[
+  {
+    "snapshot": "T00",
+    "reference": "2026-09-08T08:00:00-03:00",
+    "id": "CH-20260908-003",
+    "solution": "Sensor de porta ajustado",
+    "action": "Verificar o sensor de porta.",
+    "support": "Em 16 dos 16 atendimentos semelhantes, foi registrado ajuste desse componente.",
+    "count": 16,
+    "total": 16,
+    "scope": "similar-equipment",
+    "source": "HIST_60_DIAS",
+    "from": "2026-08-13T14:47:00-03:00",
+    "to": "2026-09-07T09:17:00-03:00"
+  },
+  {
+    "snapshot": "T00",
+    "reference": "2026-09-08T08:00:00-03:00",
+    "id": "CH-20260908-002",
+    "solution": "Sensor ajustado/substituído",
+    "action": "Verificar o sensor.",
+    "support": "Em 14 dos 14 atendimentos semelhantes, foi registrado ajuste ou substituição do sensor.",
+    "count": 14,
+    "total": 14,
+    "scope": "similar-equipment",
+    "source": "HIST_60_DIAS",
+    "from": "2026-08-08T18:55:00-03:00",
+    "to": "2026-09-07T16:16:00-03:00"
+  },
+  {
+    "snapshot": "T00",
+    "reference": "2026-09-08T08:00:00-03:00",
+    "id": "CH-20260908-005",
+    "solution": "Parâmetros do inversor corrigidos",
+    "action": "Verificar os parâmetros do inversor.",
+    "support": "Em 11 dos 11 atendimentos semelhantes, foi registrada correção desses parâmetros.",
+    "count": 11,
+    "total": 11,
+    "scope": "similar-equipment",
+    "source": "HIST_60_DIAS",
+    "from": "2026-08-10T10:54:00-03:00",
+    "to": "2026-09-01T14:56:00-03:00"
+  }
+]
