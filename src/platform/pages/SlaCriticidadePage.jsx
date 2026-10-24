@@ -5,6 +5,7 @@ import {TEMPORAL_DEFINITIONS,SYNTHETIC_TIME_NOTICE} from '../services/temporalDe
 import {SOURCE,civilLabel,etaLabel,slaRemainingLabel} from '../services/chamados.js';
 import {FilterBar,KpiCard,IndicatorInfo,CriticalityBadge,StatusBadge,Dialog,Pagination} from '../components/ConsultationUI.jsx';
 import DataTable from '../components/DataTable.jsx';
+import ShowMore from '../components/ShowMore.jsx';
 import ChamadoDetail from './ChamadoDetail.jsx';
 import shared from '../components/Consultation.module.css';
 import styles from './SlaCriticidadePage.module.css';
@@ -37,7 +38,7 @@ export default function SlaCriticidadePage(){
  ];
  return <div className={shared.consultation}>
   <div className={shared.referenceLine}><span>HISTÓRICO · {SOURCE}</span><span>{civilLabel(view.period.from)}–{civilLabel(view.period.to)} · referência 06/10/2026, 22h (São Paulo)</span></div>
-  <div className={styles.cards}>{cards.map(card=><div key={card.title}><KpiCard {...card}/>{card.rows&&<span className={styles.kpiAction}><button onClick={()=>openList(card.title,card.rows)}>Ver {card.rows.length} registros</button></span>}</div>)}</div>
+  <div className={styles.cards}>{cards.map(card=><KpiCard key={card.title} {...card} accent action={card.rows?{label:'Ver '+card.rows.length+' registros',onClick:()=>openList(card.title,card.rows)}:undefined}/>)}</div>
   <FilterBar state={state} dispatch={dispatch} total={view.summary.total}/>
   <p className={styles.note} role="status"><strong data-testid="sla-total">{analysis.total}</strong> chamados no recorte. Todos os painéis respeitam os mesmos filtros; cada indicador informa seus elegíveis.</p>
   <div className={styles.grid}>
@@ -56,18 +57,18 @@ export default function SlaCriticidadePage(){
    <section className={styles.panel} aria-label="Tempos por agrupamento">
     <div className={styles.title}><div><h2>TA e TB por agrupamento</h2><p>Médias em minutos da massa sintética. N válido por campo.</p></div><IndicatorInfo definition={explain({title:'TA e TB por agrupamento',fields:['TA','TB',group],definition:'Agrupamento dos valores materializados em minutos: TA até chegada, TB resolução simulada. Encerramento técnico não persistido. Definições sintéticas, sem validade oficial OTIS.',calculation:'Para cada grupo: soma de TA/TB válido ÷ N válido do respectivo campo. Nulos excluídos independentemente.',unit:'minutos'})}/></div>
     <label>Agrupar por <select className={styles.select} aria-label="Agrupar tempos por" value={group} onChange={e=>setGroup(e.target.value)}>{['Área','Categoria do Chamado','Cliente','Tipo de Unidade'].map(field=><option key={field}>{field}</option>)}</select></label>
-    <div className={styles.tableWrap}><table className={styles.miniTable}><thead><tr><th>{group}</th><th>TA médio (min) · N</th><th>TB médio (min) · N</th></tr></thead><tbody>{groups.map(item=><tr key={item.label}><td><button onClick={()=>openList(group+': '+item.label,item.rows)}>{item.label}</button></td><td>{numberLabel(item.ta.value)} · {item.ta.count}</td><td>{numberLabel(item.tb.value)} · {item.tb.count}</td></tr>)}</tbody></table></div>
+    <div className={styles.tableWrap}><ShowMore total={groups.length} limit={5}>{count=><table className={styles.miniTable}><thead><tr><th>{group}</th><th>TA médio (min) · N</th><th>TB médio (min) · N</th></tr></thead><tbody>{groups.slice(0,count).map(item=><tr key={item.label}><td><button onClick={()=>openList(group+': '+item.label,item.rows)}>{item.label}</button></td><td>{numberLabel(item.ta.value)} · {item.ta.count}</td><td>{numberLabel(item.tb.value)} · {item.tb.count}</td></tr>)}</tbody></table>}</ShowMore></div>
     {!groups.length&&<p>Nenhum grupo no recorte.</p>}
    </section>
    <section className={styles.panel} aria-label="Motivos de criticidade">
     <div className={styles.title}><div><h2>Principais motivos informados</h2><p>Textos completos de Motivo_Criticidade, sem inferir causalidade.</p></div><IndicatorInfo definition={explain({title:'Principais motivos informados',fields:['Motivo_Criticidade'],definition:'Frequência de justificativas completas fornecidas, em todos os status. Motivos compostos não são separados em eventos.',calculation:'Agrupar IDs pelo texto exato de Motivo_Criticidade, ordenar por contagem decrescente. Barra = contagem ÷ total filtrado.',missing:'Ausente aparece como Não informado, não é descartado.'})}/></div>
-    <ul className={styles.list+' '+styles.scroll}>{analysis.reasons.map(item=><li key={item.label}><button className={styles.row} onClick={()=>openList('Motivo: '+item.label,item.rows)}><span>{item.label}</span><strong>{item.count}</strong><span className={styles.track} aria-hidden="true"><span className={styles.fill} style={{width:(analysis.total?item.count/analysis.total*100:0)+'%'}}/></span></button></li>)}</ul>
+    <ShowMore total={analysis.reasons.length} limit={5}>{count=><ul className={styles.list}>{analysis.reasons.slice(0,count).map(item=><li key={item.label}><button className={styles.row} onClick={()=>openList('Motivo: '+item.label,item.rows)}><span>{item.label}</span><strong>{item.count}</strong><span className={styles.track} aria-hidden="true"><span className={styles.fill} style={{width:(analysis.total?item.count/analysis.total*100:0)+'%'}}/></span></button></li>)}</ul>}</ShowMore>
     {!analysis.reasons.length&&<p>Nenhum motivo no recorte.</p>}
    </section>
   </div>
   <section className={shared.resultsCard} aria-label="Ocorrências prioritárias">
    <div className={shared.resultsHeading}><div><h2>Atenção operacional na referência <span className={shared.resultCount} data-testid="sla-active">{analysis.priority.length}</span></h2><p>De {analysis.active} não concluídos · Laranja ou Vermelho. Históricos concluídos não são alertas ativos.</p></div><IndicatorInfo definition={priorityDefinition}/></div>
-   {analysis.priority.length?<DataTable label="Chamados prioritários" columns={columns} rows={analysis.priority}/>:<p className={styles.note}>Nenhuma ocorrência ativa Laranja ou Vermelho no recorte.</p>}
+   {analysis.priority.length?<DataTable label="Chamados prioritários" columns={columns} rows={analysis.priority} limit={5}/>:<p className={styles.note}>Nenhuma ocorrência ativa Laranja ou Vermelho no recorte.</p>}
   </section>
   <p className={shared.sourceFooter}>Resultados de SLA da simulação, sem validade contratual oficial OTIS. {SYNTHETIC_TIME_NOTICE} Dados sintéticos HIST_60_DIAS. Snapshots T0/T1/T2 separados. SLA restante continua em validação contratual; não calculado.</p>
   {drill&&!selected&&<Dialog title={drill.title} wide onClose={()=>setDrill(null)}><p>{drill.rows.length} chamados deste aprofundamento · filtros da página preservados.</p>{drill.rows.length?<DataTable label="Chamados do aprofundamento" columns={columns} rows={drill.rows.slice((drillPage-1)*drillSize,drillPage*drillSize)}/>:<p>Nenhum registro neste grupo.</p>}<Pagination page={drillPage} pages={Math.max(1,Math.ceil(drill.rows.length/drillSize))} total={drill.rows.length} pageSize={drillSize} onPage={setDrillPage} onPageSize={value=>{setDrillSize(Number(value));setDrillPage(1);}}/></Dialog>}

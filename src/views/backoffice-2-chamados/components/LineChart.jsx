@@ -99,7 +99,7 @@ export default function LineChart({ labels, series, line = null, formatValue = (
 
         {line ? (
           <g>
-            <polyline points={linePoints} fill="none" stroke={LINE_COLOR} strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+            <polyline points={linePoints} fill="none" stroke={LINE_COLOR} strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
             {linePoints.split(' ').map((pt) => {
               const [cx, cy] = pt.split(',');
               return <circle key={pt} cx={cx} cy={cy} r="2.5" fill={LINE_COLOR} />;
