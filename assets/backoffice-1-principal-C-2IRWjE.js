@@ -1,0 +1,1 @@
+import{t as e}from"./BackofficeView-uxyBGsVG.js";export{e as default};

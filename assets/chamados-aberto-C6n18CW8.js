@@ -1,0 +1,1 @@
+import{i as e}from"./index-B5j6onas.js";import{t}from"./BackofficeView-uxyBGsVG.js";var n=e();function r(){return(0,n.jsx)(t,{telaInicial:`chamadas`,stageChamados:`aberto`})}export{r as default};
