@@ -1,4 +1,33 @@
-@import './EquipamentosPage.module.css';
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:15px}.cards article{min-height:125px}.cards article strong{font-size:25px}.externalCard{min-height:125px}.panel td details{min-width:85px;max-width:180px}.panel td details small{white-space:normal}.panel td summary{cursor:pointer;color:#315577}.typeNotes{max-height:190px;overflow:auto}.groupLinks{max-height:260px;overflow:auto}.cards>div{min-width:0}@media(max-width:1100px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:640px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.cards article strong{font-size:22px}}
 
-.tableViewport{min-width:0}.tableViewport>div{max-height:440px;overflow:auto;scrollbar-width:thin}.tableViewport table{min-width:1040px;table-layout:fixed}.tableViewport th{white-space:normal;position:sticky;top:0;z-index:1}.tableViewport td{overflow-wrap:anywhere}.tableViewport th:nth-child(1){width:9%}.tableViewport th:nth-child(2){width:6%}.tableViewport th:nth-child(3),.tableViewport th:nth-child(4){width:8%}.tableViewport th:nth-child(5),.tableViewport th:nth-child(6){width:6%}.tableViewport th:nth-child(7),.tableViewport th:nth-child(8),.tableViewport th:nth-child(9){width:10%}.tableViewport th:nth-child(10){width:12%}.tableViewport th:nth-child(11){width:5%}
+@import './EquipamentosPage.module.css';
+
+
+.tableViewport th:nth-child(1) { width: 9%; }
+.tableViewport th:nth-child(2) { width: 6%; }
+.tableViewport th:nth-child(3),
+.tableViewport th:nth-child(4) { width: 8%; }
+.tableViewport th:nth-child(5),
+.tableViewport th:nth-child(6) { width: 6%; }
+.tableViewport th:nth-child(7),
+.tableViewport th:nth-child(8),
+.tableViewport th:nth-child(9) { width: 10%; }
+.tableViewport th:nth-child(10) { width: 12%; }
+.tableViewport th:nth-child(11) { width: 5%; }
+
+
+.cardsSix { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 640px) {
+  .cardsSix { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.grid > section:nth-child(4n+1) { --panel-dot: var(--bo-chart-1); }
+.grid > section:nth-child(4n+2) { --panel-dot: var(--bo-chart-2); }
+.grid > section:nth-child(4n+3) { --panel-dot: var(--bo-accent-green); }
+.grid > section:nth-child(4n+4) { --panel-dot: var(--bo-chart-3); }
+
+
+.coverageList {
+  max-height: 120px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
