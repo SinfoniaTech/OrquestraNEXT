@@ -1,5 +1,37 @@
 # Pontos de integração futura — observados e propostos
 
+## Contrato atual de evidências — 23/10/2026
+
+HistoryEvidence/historyAdvice são exclusivos da Feira e compartilhados por suas variantes conectada/standalone. Frequência usa fechamento predominante/fechamentos conhecidos elegíveis; ausentes informados separadamente, mínimo/predominância preservados. Botão real aria-expanded/aria-controls inicia recolhido. Dados públicos por lista permitida, fechamentos livres desconhecidos ocultos; histórico não é diagnóstico. Nenhuma alteração no DTO, sessão, serviço, motor, lease ou controle ADMIN nesta revisão.113 testes pertinentes aprovados.
+
+
+## Continuidade e linguagem operacional vigentes — 23/10/2026
+
+Esta autorização substitui todas as decisões abaixo de pausa por blur/visibilidade/hashchange,lease vencido ou release no **modo conectado**. [Causa,implementação,testes e limites](../produto/entrega-c92-feira-estendida.md#continuidade-independente-de-foco-e-linguagem-operacional--23102026).
+
+Motor Node executa enquanto serviço/notebook operacionais,independentemente da aba ADMIN. Pagehide libera controle sem pausar;lease6 s libera posse sem mudar reprodução. Comandos verificam expiração antes de admitir o dono. ADMIN autorizado reassume sem reset;acquire não retoma pausa manual. Exclusividade,CSRF/origem/sessão/revisões/idempotência preservados. Apenas comandos explícitos ADMIN mudam reprodução normal;início após reboot continua pausado. Visitantes e consultas não controlam o motor.
+
+Interrupção real>5 s monotônica OU civil provoca pausa de proteção sem consumir o gap;tempo civil não serve para avançar snapshots. Cobre suspensão em Linux com monotônico parado;grande salto civil também pausa conservadoramente. Somente ADMIN retoma. Standalone não recebe essa política de continuidade e preserva seus handlers anteriores. Não existem relógios operacionais nos clientes conectados.
+
+Histórico mantém elegibilidade,agrupamento,denominador e predominância existentes. Título “O que o histórico sugere”,ação curta fiel ao fechamento líder,apoio X/Y da população exata e “Consultar evidências” recolhido com fonte/período/N/casos originais. Sem predominância,não afirmar solução histórica consistente. Emergências preservam prioridade operacional. Nenhuma mudança de dados,Fechamento original ou regras BASE.
+
+Configuração Ubuntu lida:suspensão automática20 min na tomada e bateria;apagamento de tela5 min. Recomendar alimentação externa,tampa aberta,processo ativo e ajuste manual de suspensão para a exposição. Não alterar permanentemente o sistema nem provocar suspensão física durante testes automatizados.
+
+
+## Contrato vigente NEXT — 23/10/2026
+
+Esta seção substitui a política A/ACK/pausa/locks de consulta dos registros abaixo, mantidos como histórico. Escopo restrito Feira; não muda Supervisor original, dez cenas, regras BASE ou o motor temporal. [Implementação, matriz de dependências, testes e limites](../produto/entrega-c92-feira-estendida.md#adequação-final-para-o-next--23102026).
+
+- Sessão Supervisor: seis horas absolutas desde pareamento, sem renovação; cookie HttpOnly/SameSite=Strict/Max-Age21600/path API, validado no servidor por monotonicidade e no envio SSE. ADMIN conserva política anterior. Código de pareamento permanece 30 minutos do início do serviço. Revogação ADMIN por `revoke-session {clientId}`, somente detentor do controle, com CSRF/revisão/idempotência/origem. Visitante sem comandos administrativos.
+- Leitura: resumo/completo recebe cópia local do último estado confirmado com sessão/ciclo/snapshot/revisão. Sem POST/ACK obrigatório, lock ou pausa global. Endpoints antigos open-detail/close-detail continuam autenticados e idempotentes, sem efeitos na reprodução. Campo locks vazio permanece no protocolo v1. Atualização do detalhe somente por botão explícito; referência histórica e estado atual visíveis. Processo novo invalida seleção; novo ciclo é distinguido na leitura.
+- ADMIN continua único para iniciar, pausar, retomar, reiniciar e velocidade. Perda de foco/visibilidade/lease do notebook conserva a pausa de proteção anterior. Feira independente conserva pausa ao analisar.
+- Erro SSE/heartbeat ausente (>3,5 s, watchdog2 s) exibe SEM CONEXÃO COM O ORQUESTRA e texto de espera/desatualização. Retry com backoff/jitter e bootstrap completo; estado não avança no celular. Após reconexão, aviso de quatro segundos. Dados obsoletos/duplicatas rejeitados. Expiração/revogação exige novo pareamento, sem escalada de papel.
+- Mudanças: até dois representantes de classes prioritárias distintas, com correspondência nos eventos auditados existentes, empates por novidade Vermelha e ID. Só transições consecutivas da mesma sessão/ciclo/conexão/contexto. Prioridade de criticidade ativa Laranja/Vermelho; conclusão não mantém alerta ativo. Texto5 s, pulso700 ms×2, saída1,4 s, FLIP cancelável e reduced-motion. Sem replay por heartbeat/refresh/reconexão/entrada tardia/abas/saltos/reinício. BackOffice usa mesma seleção e destaca somente um indicador realmente alterado. Regras completas e IDs por transição no relatório.
+- Limites de bancada: 48 sessões e 48 streams/processo, quatro streams/sessão; teste até40 visitantes mais leitor lento. Fila por SSE de um estado pendente mais recente, sem consenso/ACK de leitores. Comandos200/min por sessão autenticada; pareamento200/min/IP e cinco falhas/min/IP. Métricas locais do harness não são endpoint público. Resultados loopback não substituem Wi-Fi/hardware real.
+- Preservados T00–T11,417 registros,55 IDs finais,189 eventos,336 s1×/168 s2×. Nenhuma alteração do importador, contratos globais ou datasets.
+
+## Contratos e decisões anteriores (histórico)
+
 A ponte contextual ao Supervisor legado permanece pendente. A sincronização do Supervisor Feira está implementada localmente na C9.1 e adaptada à C9.2. As seções iniciais registram a análise original; evolução vigente na seção final.
 
 ## Fronteiras atuais

@@ -25,12 +25,12 @@ export function control(state, action) {
 }
 export const snapshotIndex = state => Math.min(state.phase,(state.sequence?.sources.length??3)-1);
 // Um único scheduler; relógio e funções de agendamento injetáveis para testes.
-export function createFeiraClock({now=()=>performance.now(),schedule=(f,ms)=>setTimeout(f,ms),cancel=id=>clearTimeout(id),maxElapsed=Infinity,sequence}={}) {
- let state=initialState(sequence), last=0, timer=null, active=false, generation=0;
+export function createFeiraClock({now=()=>performance.now(),schedule=(f,ms)=>setTimeout(f,ms),cancel=id=>clearTimeout(id),maxElapsed=Infinity,wallNow=null,sequence}={}) {
+ let state=initialState(sequence), last=0,lastWall=0, timer=null, active=false, generation=0;
  const listeners=new Set();
  const notify=()=>listeners.forEach(fn=>fn());
  function clear(){generation++;if(timer!==null)cancel(timer);timer=null;}
- function settle(){const current=now(),elapsed=Math.max(0,current-last);state=elapsed>maxElapsed?control(state,{type:"pause",reason:"interruption"}):advance(state,elapsed);last=current;}
+ function settle(){const current=now(),elapsed=Math.max(0,current-last),wall=wallNow?.(),interrupted=elapsed>maxElapsed||(wallNow&&wall-lastWall>maxElapsed);state=interrupted?control(state,{type:"pause",reason:"interruption"}):advance(state,elapsed);last=current;if(wallNow)lastWall=wall;}
  function queue(){
   clear();if(!active||state.pauses.length)return;
   const token=generation;
@@ -39,7 +39,7 @@ export function createFeiraClock({now=()=>performance.now(),schedule=(f,ms)=>set
  return {
   getState:()=>state,
   subscribe(fn){listeners.add(fn);return ()=>listeners.delete(fn);},
-  start(){if(active)return;active=true;last=now();queue();},
+  start(){if(active)return;active=true;last=now();if(wallNow)lastWall=wallNow();queue();},
   stop(){active=false;clear();},
   dispatch(action){if(active)settle();state=control(state,action);notify();queue();},
  };

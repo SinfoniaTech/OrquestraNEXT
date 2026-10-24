@@ -10,14 +10,14 @@ export function useSnapshotMotion(ref,stamp,changes,context,departuresRef){
   const sameRun=value=>value.slice(0,value.lastIndexOf(':'));
   const changed=previousStamp.current!==stamp&&sameRun(previousStamp.current)===sameRun(stamp);
   const animate=(node,frames,options)=>{const animation=node.animate(frames,options);animations.push(animation);return animation;};
-  if(changed&&previousContext.current===context&&!media.matches){
+  if(changed&&changes.length&&previousContext.current===context&&!media.matches){
    const byId=new Map(changes.map(change=>[change.id,change]));
    for(const node of nodes){
     const old=previous.current.get(node.dataset.callId),delta=old?old.rect.top-next.get(node.dataset.callId).rect.top:0,change=byId.get(node.dataset.callId);
     if(delta)animate(node,[{transform:`translateY(${delta}px)`},{transform:'translateY(0)'}],{id:'feira-move',duration:450,easing:'ease-out'});
-    if(change?.criticality)animate(node,[{boxShadow:'0 0 0 0 transparent'},{boxShadow:'0 0 0 4px var(--motion-color)'},{boxShadow:'0 0 0 0 transparent'}],{id:'feira-criticality',duration:700,iterations:2,easing:'ease-in-out'});
+    if(change?.criticality&&['Verde','Amarelo','Laranja','Vermelho'].indexOf(change.criticality.to)>['Verde','Amarelo','Laranja','Vermelho'].indexOf(change.criticality.from))animate(node,[{boxShadow:'0 0 0 0 transparent'},{boxShadow:'0 0 0 4px var(--motion-color)'},{boxShadow:'0 0 0 0 transparent'}],{id:'feira-criticality',duration:700,iterations:2,easing:'ease-in-out'});
     else if(change?.isNew)animate(node,[{opacity:.6},{opacity:1}],{id:'feira-new',duration:500,easing:'ease-out'});
-    if(change?.status){const badge=node.querySelector('[data-call-status]');if(badge)animate(badge,[{boxShadow:'0 0 0 0 transparent'},{boxShadow:'0 0 0 3px var(--focus)'},{boxShadow:'0 0 0 0 transparent'}],{id:'feira-status',duration:700,iterations:2,easing:'ease-in-out'});}
+    if(change?.status&&!change?.criticality){const badge=node.querySelector('[data-call-status]');if(badge)animate(badge,[{boxShadow:'0 0 0 0 transparent'},{boxShadow:'0 0 0 3px var(--focus)'},{boxShadow:'0 0 0 0 transparent'}],{id:'feira-status',duration:700,iterations:2,easing:'ease-in-out'});}
    }
    for(const change of changes){
     const old=previous.current.get(change.id);

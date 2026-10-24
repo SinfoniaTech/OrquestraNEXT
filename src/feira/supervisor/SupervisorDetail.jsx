@@ -4,12 +4,12 @@ import {TEMPORAL_DEFINITIONS,SYNTHETIC_TIME_NOTICE} from '../../platform/service
 import {EVENT_FIELDS,fieldValue} from './presentation.js';
 import {FeiraPriority} from './SupervisorParts.jsx';
 import styles from './Supervisor.module.css';
-export default function SupervisorDetail({row,metadata,onClose,online,returnToAlert=false}) {
+export default function SupervisorDetail({row,metadata,onClose,online,returnToAlert=false,reading}) {
  const group = (title, fields) => <section className={styles.detailSection}><h3>{title}</h3><dl>{fields.map(field=><div key={field}><dt>{field}</dt><dd>{fieldValue(row,field)}{['TA','TB','SLA_min','ETA_min'].includes(field)&&row[field]!=null?' min':''}</dd></div>)}</dl></section>;
  return <Dialog title={'Chamado '+row.ID_Chamado} onClose={onClose} wide><div className={styles.detail}>
   {returnToAlert&&<button type="button" className={styles.backToAlert} onClick={onClose}>← Voltar ao alerta</button>}
   {!online&&<p role="alert" className={styles.warning}>Sem sincronização. Último estado confirmado; as informações podem estar desatualizadas.</p>}
-  <p className={styles.warning}>Pausa global confirmada. Fechar mantém a pausa; somente o notebook autorizado pode retomar.</p>
+  {reading}
   <div className={styles.badges}><FeiraPriority value={row.Criticidade_ORQUESTRA}/><span className={styles.status}><StatusBadge value={row.Status}/></span></div>
   {group('Evento e local',['Cliente','Unidade','Tipo de Unidade','Contrato','Endereço','Categoria do Chamado','Problema','Descrição do Problema'])}
   {group('Contexto técnico',['Componente Principal','Subcomponente','Defeito','Falha','Técnico','Supervisor'])}

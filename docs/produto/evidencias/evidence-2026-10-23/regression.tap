@@ -1,0 +1,688 @@
+TAP version 13
+# Subtest: Continuidade UI: foco, visibilidade, hash e outra janela não enviam pausa
+ok 1 - Continuidade UI: foco, visibilidade, hash e outra janela não enviam pausa
+  ---
+  duration_ms: 3272.124281
+  type: 'test'
+  ...
+# Subtest: Continuidade UI: aba congelada perde lease, outro ADMIN assume e fechamento mantém motor
+ok 2 - Continuidade UI: aba congelada perde lease, outro ADMIN assume e fechamento mantém motor
+  ---
+  duration_ms: 1202.427495
+  type: 'test'
+  ...
+# Subtest: Linguagem UI: ação natural Light/Dark, evidências recolhidas e X/Y auditáveis
+ok 3 - Linguagem UI: ação natural Light/Dark, evidências recolhidas e X/Y auditáveis
+  ---
+  duration_ms: 462.995988
+  type: 'test'
+  ...
+# Subtest: Continuidade UI: visitantes sincronizados até T11, perda de rede não pausa e recuperação
+ok 4 - Continuidade UI: visitantes sincronizados até T11, perda de rede não pausa e recuperação
+  ---
+  duration_ms: 2251.841275
+  type: 'test'
+  ...
+# Subtest: Continuidade: lease expirado libera controles sem pausar T00–T11 e loop
+ok 5 - Continuidade: lease expirado libera controles sem pausar T00–T11 e loop
+  ---
+  duration_ms: 25.441276
+  type: 'test'
+  ...
+# Subtest: Continuidade: release e reassunção não reiniciam nem retomam pausa explícita
+ok 6 - Continuidade: release e reassunção não reiniciam nem retomam pausa explícita
+  ---
+  duration_ms: 1.186359
+  type: 'test'
+  ...
+# Subtest: Continuidade: proprietário vencido não comanda antes da manutenção e não há dois ADMINs
+ok 7 - Continuidade: proprietário vencido não comanda antes da manutenção e não há dois ADMINs
+  ---
+  duration_ms: 0.894188
+  type: 'test'
+  ...
+# Subtest: Continuidade: perda do controlador e visitante não vence a pausa manual
+ok 8 - Continuidade: perda do controlador e visitante não vence a pausa manual
+  ---
+  duration_ms: 1.15914
+  type: 'test'
+  ...
+# Subtest: Continuidade: interrupção real pelo relógio monotonic preserva fotografia e tempo
+ok 9 - Continuidade: interrupção real pelo relógio monotonic preserva fotografia e tempo
+  ---
+  duration_ms: 0.164231
+  type: 'test'
+  ...
+# Subtest: Continuidade: interrupção real pelo relógio wall preserva fotografia e tempo
+ok 10 - Continuidade: interrupção real pelo relógio wall preserva fotografia e tempo
+  ---
+  duration_ms: 0.068609
+  type: 'test'
+  ...
+# Subtest: Linguagem: ação curta sustentada e denominador inclui fechamentos ausentes
+ok 11 - Linguagem: ação curta sustentada e denominador inclui fechamentos ausentes
+  ---
+  duration_ms: 3.762357
+  type: 'test'
+  ...
+# Subtest: Linguagem: similares explícitos e desconhecido conserva fechamento original
+ok 12 - Linguagem: similares explícitos e desconhecido conserva fechamento original
+  ---
+  duration_ms: 0.184501
+  type: 'test'
+  ...
+# Subtest: Linguagem: ausência de predominância sem ação histórica e sem mudar elegibilidade
+ok 13 - Linguagem: ausência de predominância sem ação histórica e sem mudar elegibilidade
+  ---
+  duration_ms: 0.210891
+  type: 'test'
+  ...
+# Subtest: Linguagem real: cada ação mantém X/Y, solução e casos auditáveis nos 12 estados
+ok 14 - Linguagem real: cada ação mantém X/Y, solução e casos auditáveis nos 12 estados
+  ---
+  duration_ms: 94.474779
+  type: 'test'
+  ...
+# Subtest: Evidências UI: entradas BackOffice/Supervisor sem link legado em desktop e mobile
+ok 15 - Evidências UI: entradas BackOffice/Supervisor sem link legado em desktop e mobile
+  ---
+  duration_ms: 6094.37662
+  type: 'test'
+  ...
+# Subtest: Evidências UI: botão real, teclado, percentual e suporte pertinente Light/Dark
+ok 16 - Evidências UI: botão real, teclado, percentual e suporte pertinente Light/Dark
+  ---
+  duration_ms: 360.298913
+  type: 'test'
+  ...
+# Subtest: Evidências UI: expandir é local, leitura permanece fixada e ADMIN exclusivo
+ok 17 - Evidências UI: expandir é local, leitura permanece fixada e ADMIN exclusivo
+  ---
+  duration_ms: 107.975332
+  type: 'test'
+  ...
+# Subtest: Evidências UI: BackOffice mostra evidência técnica e preserva navegação restante
+ok 18 - Evidências UI: BackOffice mostra evidência técnica e preserva navegação restante
+  ---
+  duration_ms: 287.493405
+  type: 'test'
+  ...
+# Subtest: Evidências UI: simulador independente sem link e apresentação original acessível diretamente
+ok 19 - Evidências UI: simulador independente sem link e apresentação original acessível diretamente
+  ---
+  duration_ms: 2688.686153
+  type: 'test'
+  ...
+# Subtest: Evidências: percentual real inclui registros sem intervenção no denominador
+ok 20 - Evidências: percentual real inclui registros sem intervenção no denominador
+  ---
+  duration_ms: 8.517807
+  type: 'test'
+  ...
+# Subtest: Evidências: 100% somente para contagem completa; limites de arredondamento explícitos
+ok 21 - Evidências: 100% somente para contagem completa; limites de arredondamento explícitos
+  ---
+  duration_ms: 0.115835
+  type: 'test'
+  ...
+# Subtest: Evidências: base ausente, caso único, empate e datas futuras não geram percentual
+ok 22 - Evidências: base ausente, caso único, empate e datas futuras não geram percentual
+  ---
+  duration_ms: 0.605591
+  type: 'test'
+  ...
+# Subtest: Evidências: orientação de inspeção não afirma necessidade de ajuste
+ok 23 - Evidências: orientação de inspeção não afirma necessidade de ajuste
+  ---
+  duration_ms: 0.353461
+  type: 'test'
+  ...
+# Subtest: Evidências: falha/componente e referência rastreável sem identidade pessoal
+ok 24 - Evidências: falha/componente e referência rastreável sem identidade pessoal
+  ---
+  duration_ms: 0.281269
+  type: 'test'
+  ...
+# Subtest: Evidências: Concluído e teste funcional não são resultado positivo presumido
+ok 25 - Evidências: Concluído e teste funcional não são resultado positivo presumido
+  ---
+  duration_ms: 0.163811
+  type: 'test'
+  ...
+# Subtest: Evidências: texto livre não reconhecido não expõe dados pessoais na Feira
+ok 26 - Evidências: texto livre não reconhecido não expõe dados pessoais na Feira
+  ---
+  duration_ms: 0.209666
+  type: 'test'
+  ...
+# Subtest: Histórico: conta solução documentada, N e nulos sem alterar entradas
+ok 27 - Histórico: conta solução documentada, N e nulos sem alterar entradas
+  ---
+  duration_ms: 8.347962
+  type: 'test'
+  ...
+# Subtest: Histórico: exclui futuros, ativos, IDs repetidos/próprio e datas inválidas
+ok 28 - Histórico: exclui futuros, ativos, IDs repetidos/próprio e datas inválidas
+  ---
+  duration_ms: 0.520874
+  type: 'test'
+  ...
+# Subtest: Histórico: não confunde equipamento semelhante com o mesmo equipamento
+ok 29 - Histórico: não confunde equipamento semelhante com o mesmo equipamento
+  ---
+  duration_ms: 0.177716
+  type: 'test'
+  ...
+# Subtest: Histórico: prioriza mesmo cliente/unidade sem inflar com similares
+ok 30 - Histórico: prioriza mesmo cliente/unidade sem inflar com similares
+  ---
+  duration_ms: 0.114411
+  type: 'test'
+  ...
+# Subtest: Histórico: exige compatibilidade de problema, componente e tipo
+ok 31 - Histórico: exige compatibilidade de problema, componente e tipo
+  ---
+  duration_ms: 0.172181
+  type: 'test'
+  ...
+# Subtest: Histórico: um único caso, empate e fechamentos ausentes não viram solução
+ok 32 - Histórico: um único caso, empate e fechamentos ausentes não viram solução
+  ---
+  duration_ms: 0.558892
+  type: 'test'
+  ...
+# Subtest: Histórico: referência inválida não revela fechamentos
+ok 33 - Histórico: referência inválida não revela fechamentos
+  ---
+  duration_ms: 0.092665
+  type: 'test'
+  ...
+# Subtest: Histórico real: 12 estados sem resultados futuros e sem inventar vínculo de equipamento
+ok 34 - Histórico real: 12 estados sem resultados futuros e sem inventar vínculo de equipamento
+  ---
+  duration_ms: 92.853201
+  type: 'test'
+  ...
+# Subtest: NEXT HTTP: cookie seis horas, refresh, SSE válido e corte após expiração
+ok 35 - NEXT HTTP: cookie seis horas, refresh, SSE válido e corte após expiração
+  ---
+  duration_ms: 42.343808
+  type: 'test'
+  ...
+# Subtest: NEXT HTTP: revogar um visitante encerra somente seu stream
+ok 36 - NEXT HTTP: revogar um visitante encerra somente seu stream
+  ---
+  duration_ms: 27.815622
+  type: 'test'
+  ...
+# Subtest: NEXT carga HTTP/SSE: 1 visitantes e cliente lento isolado
+ok 37 - NEXT carga HTTP/SSE: 1 visitantes e cliente lento isolado
+  ---
+  duration_ms: 487.326608
+  type: 'test'
+  ...
+# Subtest: NEXT carga HTTP/SSE: 5 visitantes e cliente lento isolado
+ok 38 - NEXT carga HTTP/SSE: 5 visitantes e cliente lento isolado
+  ---
+  duration_ms: 1462.965735
+  type: 'test'
+  ...
+# Subtest: NEXT carga HTTP/SSE: 20 visitantes e cliente lento isolado
+ok 39 - NEXT carga HTTP/SSE: 20 visitantes e cliente lento isolado
+  ---
+  duration_ms: 5072.396128
+  type: 'test'
+  ...
+# Subtest: NEXT carga HTTP/SSE: 40 visitantes e cliente lento isolado
+ok 40 - NEXT carga HTTP/SSE: 40 visitantes e cliente lento isolado
+  ---
+  duration_ms: 9925.201876
+  type: 'test'
+  ...
+# Subtest: NEXT transporte: heartbeat ausente, retry automático, bootstrap completo e duplicatas
+ok 41 - NEXT transporte: heartbeat ausente, retry automático, bootstrap completo e duplicatas
+  ---
+  duration_ms: 10.056697
+  type: 'test'
+  ...
+# Subtest: NEXT transporte: expiração não tenta comando nem autenticação privilegiada
+ok 42 - NEXT transporte: expiração não tenta comando nem autenticação privilegiada
+  ---
+  duration_ms: 1.096939
+  type: 'test'
+  ...
+# Subtest: NEXT sessão: seis horas exatas, sem renovação por autenticação/heartbeat
+ok 43 - NEXT sessão: seis horas exatas, sem renovação por autenticação/heartbeat
+  ---
+  duration_ms: 7.859089
+  type: 'test'
+  ...
+# Subtest: NEXT sessão: pareamento curto independente da sessão já autenticada
+ok 44 - NEXT sessão: pareamento curto independente da sessão já autenticada
+  ---
+  duration_ms: 0.817431
+  type: 'test'
+  ...
+# Subtest: NEXT sessão: revogação por ADMIN, isolamento e negação de elevação
+ok 45 - NEXT sessão: revogação por ADMIN, isolamento e negação de elevação
+  ---
+  duration_ms: 2.077899
+  type: 'test'
+  ...
+# Subtest: NEXT consultas: quarenta visitantes sem locks ou pausa e ADMIN preservado
+ok 46 - NEXT consultas: quarenta visitantes sem locks ou pausa e ADMIN preservado
+  ---
+  duration_ms: 5.068279
+  type: 'test'
+  ...
+# Subtest: NEXT destaques: até dois eventos auditados determinísticos em cada transição
+ok 47 - NEXT destaques: até dois eventos auditados determinísticos em cada transição
+  ---
+  duration_ms: 9.98514
+  type: 'test'
+  ...
+# Subtest: NEXT destaques: nenhuma mudança sem evento auditado, redução não vira elevação
+ok 48 - NEXT destaques: nenhuma mudança sem evento auditado, redução não vira elevação
+  ---
+  duration_ms: 0.729429
+  type: 'test'
+  ...
+# Subtest: NEXT destaques: sem replay por heartbeat, salto, ciclo, reconexão ou navegação
+ok 49 - NEXT destaques: sem replay por heartbeat, salto, ciclo, reconexão ou navegação
+  ---
+  duration_ms: 0.201507
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: header, três indicadores e navegação funcionais T00
+ok 50 - Supervisor visual UI: header, três indicadores e navegação funcionais T00
+  ---
+  duration_ms: 2069.395289
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+ok 51 - Supervisor visual UI: alertas válidos, vazios e aba Mais com fonte/limites
+  ---
+  duration_ms: 102.833013
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+ok 52 - Supervisor visual UI: cards/ordenação e mudanças coerentes nos 12 snapshots
+  ---
+  duration_ms: 391.930448
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+ok 53 - Supervisor visual UI: heartbeat não repete animações e movimento reduzido é respeitado
+  ---
+  duration_ms: 43.224712
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+ok 54 - Supervisor visual UI: alertas só ativos, explicáveis, sem pop-up automático
+  ---
+  duration_ms: 141.289027
+  type: 'test'
+  ...
+# Subtest: Alertas UI: lista compacta abre resumo confirmado, Laranja/Vermelho e SLA acessível
+ok 55 - Alertas UI: lista compacta abre resumo confirmado, Laranja/Vermelho e SLA acessível
+  ---
+  duration_ms: 383.091682
+  type: 'test'
+  ...
+# Subtest: Alertas UI: lista → resumo → completo → resumo → lista mantém pausa e foco
+ok 56 - Alertas UI: lista → resumo → completo → resumo → lista mantém pausa e foco
+  ---
+  duration_ms: 233.318959
+  type: 'test'
+  ...
+# Subtest: Alertas fluxo: resumo e completo locais não enviam comandos globais
+ok 57 - Alertas fluxo: resumo e completo locais não enviam comandos globais
+  ---
+  duration_ms: 151.506421
+  type: 'test'
+  ...
+# Subtest: Alertas fluxo: abertura desabilitada sem conexão confirmada
+ok 58 - Alertas fluxo: abertura desabilitada sem conexão confirmada
+  ---
+  duration_ms: 3131.9495
+  type: 'test'
+  ...
+# Subtest: Alertas fluxo: reinício preserva leitura histórica identificada
+ok 59 - Alertas fluxo: reinício preserva leitura histórica identificada
+  ---
+  duration_ms: 136.776619
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: detalhe fixado e retorno com foco sem pausa
+ok 60 - Supervisor visual UI: detalhe fixado e retorno com foco sem pausa
+  ---
+  duration_ms: 98.946041
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: reconexão reabilita consulta confirmada
+ok 61 - Supervisor visual UI: reconexão reabilita consulta confirmada
+  ---
+  duration_ms: 2079.511728
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+ok 62 - Supervisor visual UI: filtro concluídos preservado, eventos futuros ocultos
+  ---
+  duration_ms: 194.268992
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+ok 63 - Supervisor visual UI: 390×844, 768×1024 e 1366×768 sem overflow e toques adequados
+  ---
+  duration_ms: 494.519161
+  type: 'test'
+  ...
+# Subtest: Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+ok 64 - Supervisor visual UI: refresh e reconexão preservam fotografia sem recursos externos
+  ---
+  duration_ms: 3953.310294
+  type: 'test'
+  ...
+# Subtest: Pulsos: Supervisor inicia em Alertas sem popup ou animação de entrada tardia
+ok 65 - Pulsos: Supervisor inicia em Alertas sem popup ou animação de entrada tardia
+  ---
+  duration_ms: 1972.989903
+  type: 'test'
+  ...
+# Subtest: Pulsos: criticidade usa exatamente a nova cor BASE e dois pulsos limitados
+ok 66 - Pulsos: criticidade usa exatamente a nova cor BASE e dois pulsos limitados
+  ---
+  duration_ms: 135.945432
+  type: 'test'
+  ...
+# Subtest: Pulsos: heartbeat e troca de abas não repetem destaques nem roubam navegação
+ok 67 - Pulsos: heartbeat e troca de abas não repetem destaques nem roubam navegação
+  ---
+  duration_ms: 74.811591
+  type: 'test'
+  ...
+# Subtest: Pulsos: novo alerta tem entrada destacada e status sem mudança de cor só destaca o rótulo
+ok 68 - Pulsos: novo alerta tem entrada destacada e status sem mudança de cor só destaca o rótulo
+  ---
+  duration_ms: 156.092023
+  type: 'test'
+  ...
+# Subtest: Pulsos: concluído tem saída breve não interativa, não entra no contador ativo e é removido
+ok 69 - Pulsos: concluído tem saída breve não interativa, não entra no contador ativo e é removido
+  ---
+  duration_ms: 4794.341326
+  type: 'test'
+  ...
+# Subtest: Pulsos: movimento reduzido cancela efeitos e preserva indicação textual
+ok 70 - Pulsos: movimento reduzido cancela efeitos e preserva indicação textual
+  ---
+  duration_ms: 92.295319
+  type: 'test'
+  ...
+# Subtest: Pulsos: reconexão e entrada tardia não reapresentam mudança já recebida
+ok 71 - Pulsos: reconexão e entrada tardia não reapresentam mudança já recebida
+  ---
+  duration_ms: 2531.128969
+  type: 'test'
+  ...
+# Subtest: Pulsos: abrir resumo mantém Alertas e leitura independente e retorno sem replay
+ok 72 - Pulsos: abrir resumo mantém Alertas e leitura independente e retorno sem replay
+  ---
+  duration_ms: 164.34554
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: acesso Light e fallback sem preferência, sem dependências externas
+ok 73 - Supervisor temas: acesso Light e fallback sem preferência, sem dependências externas
+  ---
+  duration_ms: 2872.169015
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: mudança dinâmica mantém DOM, sessão, snapshot, POST e SSE
+ok 74 - Supervisor temas: mudança dinâmica mantém DOM, sessão, snapshot, POST e SSE
+  ---
+  duration_ms: 59.053017
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: chamados compactos Light/Dark em T03, cores BASE e contraste AA
+ok 75 - Supervisor temas: chamados compactos Light/Dark em T03, cores BASE e contraste AA
+  ---
+  duration_ms: 185.274454
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: resumo Light/Dark com quatro respostas e um botão após seleção
+ok 76 - Supervisor temas: resumo Light/Dark com quatro respostas e um botão após seleção
+  ---
+  duration_ms: 646.61674
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: completo acompanha tema sem remontagem; retorno ao resumo mantém fotografia e reprodução
+ok 77 - Supervisor temas: completo acompanha tema sem remontagem; retorno ao resumo mantém fotografia e reprodução
+  ---
+  duration_ms: 209.751228
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: Vermelho por impacto usa emergência e SLA secundário, sem barra principal
+ok 78 - Supervisor temas: Vermelho por impacto usa emergência e SLA secundário, sem barra principal
+  ---
+  duration_ms: 231.537689
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: BackOffice e legado mantêm estilos, sem tokens móveis
+ok 79 - Supervisor temas: BackOffice e legado mantêm estilos, sem tokens móveis
+  ---
+  duration_ms: 922.062022
+  type: 'test'
+  ...
+# Subtest: Supervisor temas: Dark offline/reconexão e entrada tardia preservam fotografia
+ok 80 - Supervisor temas: Dark offline/reconexão e entrada tardia preservam fotografia
+  ---
+  duration_ms: 3645.109876
+  type: 'test'
+  ...
+# Subtest: Supervisor temas:390×844/768×1024, foco, vazio e filtros nos dois temas
+ok 81 - Supervisor temas:390×844/768×1024, foco, vazio e filtros nos dois temas
+  ---
+  duration_ms: 310.701913
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: cores materializadas não recebem nomenclatura do tutorial
+ok 82 - Supervisor visual: cores materializadas não recebem nomenclatura do tutorial
+  ---
+  duration_ms: 0.842118
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: nulos, vazio, zero e eventos futuros tratados sem inferência
+ok 83 - Supervisor visual: nulos, vazio, zero e eventos futuros tratados sem inferência
+  ---
+  duration_ms: 0.141443
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: tempo de abertura não calcula SLA/TA/TB ou usa relógio local
+ok 84 - Supervisor visual: tempo de abertura não calcula SLA/TA/TB ou usa relógio local
+  ---
+  duration_ms: 0.12238
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: alterações explicam novo, cor, status e conclusão
+ok 85 - Supervisor visual: alterações explicam novo, cor, status e conclusão
+  ---
+  duration_ms: 0.138808
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: alertas excluem concluídos e preservam ordem autoritativa
+ok 86 - Supervisor visual: alertas excluem concluídos e preservam ordem autoritativa
+  ---
+  duration_ms: 0.1657
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: dados T00 até T11 mantêm cores, prioridade e alertas exatos
+ok 87 - Supervisor visual: dados T00 até T11 mantêm cores, prioridade e alertas exatos
+  ---
+  duration_ms: 27.183966
+  type: 'test'
+  ...
+# Subtest: Supervisor visual: UI sem fixture, motor temporal, Google Fonts ou protocolos próprios
+ok 88 - Supervisor visual: UI sem fixture, motor temporal, Google Fonts ou protocolos próprios
+  ---
+  duration_ms: 0.560126
+  type: 'test'
+  ...
+# Subtest: C9.1: serviço nasce T0 pausado e sem agendamento temporal ativo
+ok 89 - C9.1: serviço nasce T0 pausado e sem agendamento temporal ativo
+  ---
+  duration_ms: 7.022459
+  type: 'test'
+  ...
+# Subtest: C9.1: um motor com dois clientes e avanço/loop 10/16/24
+ok 90 - C9.1: um motor com dois clientes e avanço/loop 10/16/24
+  ---
+  duration_ms: 4.21787
+  type: 'test'
+  ...
+# Subtest: C9.1: leitor não pode executar comandos administrativos
+ok 91 - C9.1: leitor não pode executar comandos administrativos
+  ---
+  duration_ms: 0.699682
+  type: 'test'
+  ...
+# Subtest: C9.1: consulta não pausa, não cria lock e fechar não muda reprodução
+ok 92 - C9.1: consulta não pausa, não cria lock e fechar não muda reprodução
+  ---
+  duration_ms: 1.534849
+  type: 'test'
+  ...
+# Subtest: C9.1: comando repetido é idempotente e ID não pode mudar de intenção
+ok 93 - C9.1: comando repetido é idempotente e ID não pode mudar de intenção
+  ---
+  duration_ms: 0.707684
+  type: 'test'
+  ...
+# Subtest: C9.1: sessão/CSRF inválidos e operação desconhecida rejeitados
+ok 94 - C9.1: sessão/CSRF inválidos e operação desconhecida rejeitados
+  ---
+  duration_ms: 0.479581
+  type: 'test'
+  ...
+# Subtest: C9.1: estado obsoleto após transição exige nova intenção
+ok 95 - C9.1: estado obsoleto após transição exige nova intenção
+  ---
+  duration_ms: 1.349645
+  type: 'test'
+  ...
+# Subtest: C9.1: velocidade, reinício e 1000 ciclos sem timer duplicado
+ok 96 - C9.1: velocidade, reinício e 1000 ciclos sem timer duplicado
+  ---
+  duration_ms: 855.491694
+  type: 'test'
+  ...
+# Subtest: C9.1: lease expira sem pausa e segunda aba reassume controle exclusivo
+ok 97 - C9.1: lease expira sem pausa e segunda aba reassume controle exclusivo
+  ---
+  duration_ms: 0.634032
+  type: 'test'
+  ...
+# Subtest: C9.1: leitores independentes sem locks nem comandos de pausa
+ok 98 - C9.1: leitores independentes sem locks nem comandos de pausa
+  ---
+  duration_ms: 0.620623
+  type: 'test'
+  ...
+# Subtest: C9.1: suspensão não atravessa snapshots ao acordar
+ok 99 - C9.1: suspensão não atravessa snapshots ao acordar
+  ---
+  duration_ms: 0.55177
+  type: 'test'
+  ...
+# Subtest: C9.1: projeção mantém saídas futuras ocultas e alertas só ativos
+ok 100 - C9.1: projeção mantém saídas futuras ocultas e alertas só ativos
+  ---
+  duration_ms: 0.849484
+  type: 'test'
+  ...
+# Subtest: C9.1: payload não contém códigos, CSRF ou tokens
+ok 101 - C9.1: payload não contém códigos, CSRF ou tokens
+  ---
+  duration_ms: 0.283487
+  type: 'test'
+  ...
+# Subtest: C9.1: duplicatas/atrasos descartados e sessão/versão diferente rejeitadas
+ok 102 - C9.1: duplicatas/atrasos descartados e sessão/versão diferente rejeitadas
+  ---
+  duration_ms: 0.383431
+  type: 'test'
+  ...
+# Subtest: C9.1: reinício do processo invalida sessão e credenciais anteriores
+ok 103 - C9.1: reinício do processo invalida sessão e credenciais anteriores
+  ---
+  duration_ms: 0.441042
+  type: 'test'
+  ...
+# Subtest: dez hashes diretos carregam e mantêm posição após refresh
+ok 104 - dez hashes diretos carregam e mantêm posição após refresh
+  ---
+  duration_ms: 12569.500579
+  type: 'test'
+  ...
+# Subtest: teclado, extremos, H, foco editável, hash inválido
+ok 105 - teclado, extremos, H, foco editável, hash inválido
+  ---
+  duration_ms: 596.856207
+  type: 'test'
+  ...
+# Subtest: posição 2: três chegadas, contagem final e detalhe
+ok 106 - posição 2: três chegadas, contagem final e detalhe
+  ---
+  duration_ms: 12163.99379
+  type: 'test'
+  ...
+# Subtest: normal→média sem subida; detalhe segue etapa durante roteiro
+ok 107 - normal→média sem subida; detalhe segue etapa durante roteiro
+  ---
+  duration_ms: 2661.851133
+  type: 'test'
+  ...
+# Subtest: média sobe com Web Animation; alta mantém topo
+ok 108 - média sobe com Web Animation; alta mantém topo
+  ---
+  duration_ms: 4239.402277
+  type: 'test'
+  ...
+# Subtest: hospital entra no fim, sobe e exibe tempo decorrido sem SLA
+ok 109 - hospital entra no fim, sobe e exibe tempo decorrido sem SLA
+  ---
+  duration_ms: 2882.623832
+  type: 'test'
+  ...
+# Subtest: alertas alta/crítico, notificações, expandir, fechar, reabrir e detalhe
+ok 110 - alertas alta/crítico, notificações, expandir, fechar, reabrir e detalhe
+  ---
+  duration_ms: 8901.120862
+  type: 'test'
+  ...
+# Subtest: saída antes dos timers e revisita reinicia sem modal residual
+ok 111 - saída antes dos timers e revisita reinicia sem modal residual
+  ---
+  duration_ms: 1858.601345
+  type: 'test'
+  ...
+# Subtest: movimento reduzido mantém conteúdo e evolução; sem FLIP
+ok 112 - movimento reduzido mantém conteúdo e evolução; sem FLIP
+  ---
+  duration_ms: 1256.172772
+  type: 'test'
+  ...
+# Subtest: nenhum erro JS/console/chunk observado
+ok 113 - nenhum erro JS/console/chunk observado
+  ---
+  duration_ms: 1.179949
+  type: 'test'
+  ...
+1..113
+# tests 113
+# suites 0
+# pass 113
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 63100.592587

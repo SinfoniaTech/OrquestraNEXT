@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-23",
+  "branch": "feature/modo-feira",
+  "head": "13d315aa7539637b22a782bb2744e67c3ae54451",
+  "nodeBrowserTests": 481,
+  "pythonTests": 17,
+  "distinctPassed": 498,
+  "failed": 0,
+  "build": "passed; existing >500kB chunk warning",
+  "importers": "both --check passed",
+  "realTimeCycle": "1x 336s T00-T11-T00 passed, two clients",
+  "physicalDevices": "pending",
+  "protectedFiles": 170,
+  "protectedChanges": 0,
+  "maxLoopbackConvergenceMs": 118.67,
+  "limits": "48 sessions and 48 streams, 4 streams/session; tested 40 visitors plus slow reader",
+  "commitPushDeploy": false
+}

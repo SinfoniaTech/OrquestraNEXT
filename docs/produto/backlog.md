@@ -1,10 +1,43 @@
 # Product Backlog — Plataforma C8 e evolução Feira C9.2
 
-Atualizado em 23/10/2026, America/Sao_Paulo. Nove páginas funcionais/três destinos pendentes. C7 e rotina homologadas e registradas em a5aea32, após nova revalidação 262 testes/build. C8 — Peças / Inteligência de Componentes e Ocorrências homologada visualmente para continuidade; 292 testes novamente aprovados, build/importador --check aprovados. Commit 8134059 criado e enviado; feature local/remota sincronizadas 0/0. Publicação C8 autorizada e concluída em gh-pages 547db4d; workflow success e navegação pública aprovados. C9/Modo Feira/US14 implementada localmente com início automático, 322 testes/build/importador aprovados; aguarda homologação visual, sem commit/publicação. C9.1 sincronização Notebook/Mobile implementada localmente, 360 testes/build/importador aprovados; homologação física/conjunta obrigatória ainda pendente. C9.2 integra série estendida aprovada T00–T11 e correção de identificação de fonte/acesso;400 testes/build/dois importadores aprovados. Usuário confirmou controles/avanço físico conjunto; homologação completa pendente, conforme relatório. Atualização visual de Equipamentos registrada abaixo em C6. P0 fundamento/liberação, P1 MVP, P2 expansão. Supervisor protegido; testes não substituem homologação e documentos não autorizam novas ações.
+## Publicação autorizada na feature — 23/10/2026
 
-**Escopo atual autorizado:** correção dos alertas Supervisor Feira/US14.13/US15 conforme cenas3/7/10;lista→resumo→completo→resumo→lista,Light/Dark e pausa preservados. Implementação/validação concluídas:464 testes/build/dois importadores aprovados;aguardar homologação. Sem commit/merge/push/deploy,nova história ou alterações de datasets/motor/SSE/POST/legado.
+Usuário autorizou explicitamente commit/push. Commit `b8aa92eb96bb34ca33b711e8391254eac6ba9d32` publicado com sucesso exclusivamente em `feature/modo-feira`, remoto13d315a→b8aa92e. Atualização final registrada em commit documental subsequente `docs(feira): registra publicação autorizada da entrega`, para a mesma feature. Sem merge/rebase/force-push/deploy, sem alteração em main ou branches dos demais integrantes. Código e testes correspondem aos524 casos aprovados; sem repetição desnecessária da bateria.170 arquivos protegidos preservados. Diff revisado e credenciais ausentes dos arquivos selecionados; logs de validação explicitamente incluídos, somente espaços finais normalizados. Árvore limpa após primeiro commit/push, com esta atualização documental como único complemento. Resultado final do segundo push/HEAD remoto conferido ao encerrar; consultar git log -2 para identificação do commit documental.
 
-IDs US01–18 mantidos com escopo revisado; US19 acrescentada para ponte explícita. US07 deixa de exigir consolidação das duas cópias; US06 expande entrada/login; US18 separa shell EXT obrigatório (A) de integração real (B).
+Permanecem pendentes rede/aparelhos físicos/operação prolongada na Arena; não há homologação da Arena. Aviso de bundle>500kB não bloqueante. Futuro PR exige análise atualizada de conflitos/CSS e regressão integrada, sob autorização própria. Relatórios anteriores abaixo preservam estados e evidências históricos.
+
+
+> Estado atual: commit e push autorizados e executados somente em `feature/modo-feira`; detalhes de publicação abaixo. Gates de autorização anteriores são históricos. Arena permanece pendente.
+
+## Gate técnico integral — 23/10/2026
+
+US14.13/US15/US16: homologação funcional dos seis critérios aprovada pelo usuário; regressão integral524/524 (507 Node/navegador+17 Python), build/dois --check e170 arquivos protegidos aprovados. Ciclo nativo real com minimização/fechamento/recuperação ADMIN aprovado. APTO PARA COMMIT E PUSH, aguardando autorização final explícita; nenhuma operação Git de publicação realizada. Arena ainda não homologada. Relatório vigente: entrega-c92-feira-estendida.md, seção Validação integral pré-versionamento.
+
+
+## Atualização das US14.13/US15/US16 — 23/10/2026
+
+Percentuais históricos reais, orientação condicional, botão técnico acessível, evidências pertinentes sem dados pessoais e remoção do link normal nas duas entradas implementados localmente. Continuidade já homologada preservada.113 testes pertinentes/build/2 importadores aprovados;512 anteriores são históricos. Homologação desta interface pendente; sem commit/push/PR/merge/deploy.
+
+
+## Ajuste vigente — continuidade e linguagem operacional,23/10/2026
+
+US14.6–14.14/US15/US16 existentes:autorizada e implementada continuidade do motor Node independente do foco,aba ADMIN e lease,com controle exclusivo/reassunção segura e proteção de interrupções reais;linguagem histórica curta com X/Y e evidências recolhidas,sem alterar critérios/dados. Solução múltiplos visitantes anterior preservada. [Relatório vigente](entrega-c92-feira-estendida.md#continuidade-independente-de-foco-e-linguagem-operacional--23102026),[contrato vigente](../tecnica/pontos-integracao-supervisor.md#continuidade-e-linguagem-operacional-vigentes--23102026). 512 testes distintos/build/dois importadores --check aprovados nesta sessão;ciclo real1× T00–T11→T00 com aplicativo/Edge/minimização/fechamento/reabertura ADMIN/lease aprovado,dois visitantes;homologação pendente,sem versionamento/publicação. Política anterior de pausa por foco/lease conectados foi expressamente substituída;standalone preservado.
+
+
+Atualizado em **23/10/2026**, America/Sao_Paulo. Escopo atual: adequação NEXT nas histórias existentes US14.6–14.14/US15/US16, sem duplicação. Implementados localmente: sessão Supervisor6 h/revogação, conectividade explícita, consultas independentes com fotografia fixada e destaques auditados limitados. Política anterior de pausa por consulta conectada substituída; continuidade conectada independente de foco/lease implementada na revisão vigente;standalone preservado. Dados/importadores/legado intactos. [Contrato vigente](../tecnica/pontos-integracao-supervisor.md#contrato-vigente-next--23102026) e [relatório atual](entrega-c92-feira-estendida.md#adequação-final-para-o-next--23102026).
+
+| História existente | Critério atualizado | Estado atual |
+| --- | --- | --- |
+| US14.6/14.7 | Supervisor6 h, pareamento30 min independente, revogação ADMIN, SSE/POST/autorização | Implementado;512 testes distintos/build/dois --check aprovados nesta sessão |
+| US14.8/14.9/14.13 | Leitura sem pausa/locks, fotografia/revisão fixada, atualização explícita, conexão/retry | Implementado e ensaiado em dois contextos de navegador |
+| US14.13/US15 | Até2 sinais auditados, texto temporário, FLIP/pulsos canceláveis, reduced-motion, Light/Dark | Implementado; evidências reais de navegador |
+| US14.14 | 1/5/20/40 visitantes, fila limitada e cliente lento isolado | Ensaio loopback aprovado; rede/hardware físico pendentes |
+| US01/US04/US14.11/12 | Supervisor/dez cenas, datasets/importadores,12 estados/417/55/189 e336 s | Preservados;regressão integral aprovada e170 arquivos protegidos iguais ao HEAD |
+| US14.10/US16 | Homologação e preparação futura de PR | Aguardam homologação; sem commit/push/PR/merge/rebase/deploy |
+
+Git inicial limpo em feature/modo-feira/13d315a; remoto feature igual; main remota3518e37 contém base e tem estilos adicionais. Dois CSS Feira sobrepostos exigem revisão na integração futura. O anexo condiciona commit/publicação à homologação; eventual commit/push exclusivamente na feature. Resultados antigos abaixo são histórico, não prova de nova execução. Etapas/autorizações antigas não substituem o escopo vigente.
+
+## Histórico anterior à adequação NEXT
 
 ## Épicos
 

@@ -14,7 +14,7 @@ export function visibleRows(view, tab, scope) {
 }
 export function changeLabels(change) {
  if (!change) return [];
- return [change.isNew && 'Novo chamado', change.criticality && `Cor: ${change.criticality.from} → ${change.criticality.to}`,
+ return [change.isNew && 'Novo chamado', change.criticality && `${['Verde','Amarelo','Laranja','Vermelho'].indexOf(change.criticality.to)>['Verde','Amarelo','Laranja','Vermelho'].indexOf(change.criticality.from)?'Criticidade elevada':'Cor'}: ${change.criticality.from} → ${change.criticality.to}`,
  change.status && `Status: ${change.status.from} → ${change.status.to}`, change.concluded && 'Chamado concluído'].filter(Boolean);
 }
 export function temporalSummary(row) {

@@ -105,3 +105,7 @@
 @media(max-width:900px){.app{padding:14px}.header{align-items:flex-start}.moment{margin-left:auto}.grid,.bottom{grid-template-columns:1fr}.panel{padding:15px}.metrics{gap:10px}}
 @media(max-width:600px){.app{padding:12px}.header,.brand,.moment,.playback,.footer{flex-wrap:wrap}.brand{gap:10px}.brand img{width:112px;height:42px}.header h1{font-size:19px}.moment{margin-left:0;width:100%;justify-content:space-between}.playback{gap:8px;padding:12px}.playback>div{width:100%}.progress{align-items:flex-start;gap:8px}.progress strong{width:100%}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metrics article{min-height:108px;padding:13px 12px}.grid,.bottom{grid-template-columns:minmax(0,1fr)}.sectionHead{align-items:flex-start;flex-wrap:wrap}.alerts{grid-template-columns:1fr}.footer{align-items:flex-start}.footer nav{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.app:before,.playback:before,.playback>div>strong:before,.metrics>div,.header,.playback,.panel,.changed,.transition{animation:none!important}.brand img,.metrics article,.alerts button,.pagination button,.bottom section>button{transition:none!important}}
+
+
+/* Classes funcionais do modo feira (feature b8aa92e) — união com o acabamento visual da main */
+.metricChanged{outline:2px solid #3778ad;outline-offset:3px;border-radius:12px;animation:feiraMetric 1.2s ease-out} @keyframes feiraMetric{from{background:#dcebf7}to{background:transparent}} @media(prefers-reduced-motion:reduce){.metricChanged{animation:none}}

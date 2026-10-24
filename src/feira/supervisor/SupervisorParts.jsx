@@ -3,6 +3,7 @@ import {Dialog} from '../../platform/components/OperationalUI.jsx';
 import {StatusBadge} from '../../platform/components/OperationalUI.jsx';
 import {CRITICALITY,fieldValue,changeLabels} from './presentation.js';
 import styles from './Supervisor.module.css';
+import HistoryEvidence from '../HistoryEvidence.jsx';
 import {historyAdvice} from '../historyAdvice.js';
 import {alertPresentation} from './alertPresentation.js';
 export function FeiraPriority({value}) {
@@ -21,19 +22,22 @@ export function SupervisorCall({row,change,reference,onOpen,disabled,busy,alertE
   </div>
   <div className={styles.callSla}><span>{alert.slaRelated?alert.nature:'SLA consumido'}</span><strong>{alert.sla.valid?`${alert.sla.percent}%`:'Indisponível'}</strong></div>
   {labels.length>0&&<div className={styles.changes} data-call-changes>{labels.map(label=><span key={label}>{label}</span>)}</div>}
-  <span className={styles.open} data-call-action>{busy?'Confirmando pausa global…':alertEntry?'Ver alerta →':'Consultar ocorrência →'}</span>
+  <span className={styles.open} data-call-action>{busy?'Abrindo fotografia…':alertEntry?'Ver alerta →':'Consultar ocorrência →'}</span>
  </button>;
 }
 
-// Compact notice adapted from the original alerts; the existing ACK/lock flow owns it.
+// Compact notice for the locally pinned operational snapshot.
 export function SupervisorAlert({row,reference,onOpen,onClose,disabled}) {
  const alert=alertPresentation(row,reference),advice=historyAdvice(row,reference),emergency=row['Passageiro Preso']==='Sim';
 
  return <article className={styles.compactAlert} data-alert-summary="true" data-alert-id={row.ID_Chamado} data-tone={CRITICALITY[row.Criticidade_ORQUESTRA]?.tone}>
   <div className={styles.compactBody}>
    <p className={styles.compactProblem}>{fieldValue(row,'Problema')}</p>
-   <p className={styles.compactActionLabel}>{!emergency&&advice.available?'Possível solução · histórico':'Ação sugerida'}</p>
-   {!emergency&&advice.available?<><p className={styles.historySummary} data-testid="history-summary">{advice.summary}</p><p className={styles.compactFactor}>Validar essa hipótese no diagnóstico.</p></>:<ul><li>{alert.recommendation}</li></ul>}
+   <p className={styles.compactFactor}>{row.Criticidade_ORQUESTRA} · {alert.factor.text}</p>
+   <p className={styles.compactActionLabel}>{!emergency?'O que o histórico sugere':'Ação sugerida'}</p>
+   {!emergency&&advice.available?<><p className={styles.historySummary} data-testid="history-summary">{advice.action}</p><p className={styles.compactFactor}>{advice.support}</p><p className={styles.compactFactor}>{advice.guidance}</p></>:<ul><li>{alert.recommendation}</li></ul>}
+   {!emergency&&!advice.available&&<p className={styles.compactFactor}>{advice.noIndication}</p>}
+   {!emergency&&<HistoryEvidence row={row} reference={reference} compact/>}
 
   </div>
   <footer className={styles.compactFooter}>
@@ -43,7 +47,7 @@ export function SupervisorAlert({row,reference,onOpen,onClose,disabled}) {
  </article>;
 }
 
-export function SupervisorAlertDialog({row,metadata,online,onFull,onClose}) {
+export function SupervisorAlertDialog({row,metadata,online,onFull,onClose,reading}) {
  const alert=alertPresentation(row,metadata.reference),red=row.Criticidade_ORQUESTRA==='Vermelho';
  const title=red?'Alerta — Demanda crítica':alert.slaRelated?'Alerta — Risco de SLA':'Alerta operacional';
  let message=alert.urgency;
@@ -51,5 +55,5 @@ export function SupervisorAlertDialog({row,metadata,online,onFull,onClose}) {
  else if(alert.slaRelated&&alert.sla.valid){
   message=alert.sla.exceeded?`SLA excedido — ${alert.sla.percent}% consumido.`:alert.sla.remaining!==null?`Risco de SLA: aproximadamente ${new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1}).format(alert.sla.remaining)} minutos para o limite.`:`Risco de SLA: ${alert.sla.percent}% consumido; prazo restante não calculável.`;
  }
- return <Dialog title={<><AlertTriangleIcon size={24}/><span className={styles.compactHeading}><span>{title}</span><span className={styles.compactIntro}><strong>#{row.ID_Chamado}</strong><br/>{message}</span></span></>} onClose={onClose}><SupervisorAlert row={row} reference={metadata.reference} onOpen={onFull} onClose={onClose} disabled={!online}/>{!online&&<p role="alert" className={styles.warning}>Sem sincronização. Último estado confirmado.</p>}</Dialog>;
+ return <Dialog title={<><AlertTriangleIcon size={24}/><span className={styles.compactHeading}><span>{title}</span><span className={styles.compactIntro}><strong>#{row.ID_Chamado}</strong><br/>{message}</span></span></>} onClose={onClose}>{reading}<SupervisorAlert row={row} reference={metadata.reference} onOpen={onFull} onClose={onClose} disabled={!online}/>{!online&&<p role="alert" className={styles.warning}>Sem sincronização. Último estado confirmado.</p>}</Dialog>;
 }

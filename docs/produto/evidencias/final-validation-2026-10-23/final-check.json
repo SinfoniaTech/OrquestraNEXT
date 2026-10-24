@@ -1,0 +1,19 @@
+{
+  "branch": "feature/modo-feira",
+  "head": "13d315aa7539637b22a782bb2744e67c3ae54451",
+  "changedExistingFilesThisValidation": [
+    "docs/CONTINUIDADE_CODEX.md",
+    "docs/produto/backlog.md",
+    "docs/produto/entrega-c92-feira-estendida.md",
+    "tests/README.md"
+  ],
+  "missingBaselineFiles": [],
+  "staged": false,
+  "pairingValuesAbsent": true,
+  "distinctTests": 524,
+  "node": 507,
+  "python": 17,
+  "nativeCycleSeconds": 335.996,
+  "readyForVersioning": true,
+  "awaitingUserAuthorization": true
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "command": "/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B tests/importacao-dados.test.py",
+    "exit": 0,
+    "seconds": 2.216324867000367
+  },
+  {
+    "command": "/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B tests/importacao-feira.test.py",
+    "exit": 0,
+    "seconds": 3.8701964239990048
+  },
+  {
+    "command": "/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B scripts/import_orquestra.py --check",
+    "exit": 0,
+    "seconds": 0.26597783500074
+  },
+  {
+    "command": "/home/p2dutra/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B scripts/import_feira_estendida.py --check",
+    "exit": 0,
+    "seconds": 0.2968495419991086
+  }
+]
