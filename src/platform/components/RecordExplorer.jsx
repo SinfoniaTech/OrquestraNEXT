@@ -4,7 +4,7 @@ import {sortRecords,SORT_FIELDS,percentageLabel} from '../services/chamados.js';
 import DataTable from './DataTable.jsx';
 import {Pagination,StatusBadge,CriticalityBadge} from './ConsultationUI.jsx';
 import styles from './Consultation.module.css';
-export default function RecordExplorer({rows,onDetail,label='Registros de risco'}){
+export default function RecordExplorer({rows,onDetail,label='Registros de risco',limit}){
  const {state,dispatch}=useConsultation(),[page,setPage]=useState(1),[size,setSize]=useState(10);
  const ordered=useMemo(()=>sortRecords(rows,state.sortField,state.sortDirection),[rows,state.sortField,state.sortDirection]);
  useEffect(()=>setPage(1),[rows,state.sortField,state.sortDirection,size]);
@@ -20,7 +20,7 @@ export default function RecordExplorer({rows,onDetail,label='Registros de risco'
  ];
  return <div>
   <div className={styles.resultsHeading}><p><strong>{rows.length}</strong> chamados · ordem antes da paginação</p><div className={styles.sortControls}><label>Ordenar por <select aria-label="Ordenar registros de risco" value={state.sortField} onChange={e=>dispatch({type:'sort',field:e.target.value,direction:state.sortDirection})}>{SORT_FIELDS.map(f=><option key={f}>{f}</option>)}</select></label><button className={styles.outlineButton} aria-label="Inverter ordem dos riscos" onClick={()=>dispatch({type:'sort',field:state.sortField,direction:state.sortDirection==='asc'?'desc':'asc'})}>{state.sortDirection==='asc'?'↑':'↓'}</button></div></div>
-  {rows.length?<DataTable label={label} columns={columns} rows={ordered.slice((current-1)*size,current*size)} sortField={state.sortField} sortDirection={state.sortDirection} onSort={field=>dispatch({type:'sort',field})}/>:<p>Nenhum registro neste recorte.</p>}
+  {rows.length?<DataTable label={label} columns={columns} rows={ordered.slice((current-1)*size,current*size)} sortField={state.sortField} sortDirection={state.sortDirection} onSort={field=>dispatch({type:'sort',field})} limit={limit}/>:<p>Nenhum registro neste recorte.</p>}
   <Pagination page={current} pages={pages} total={rows.length} pageSize={size} onPage={setPage} onPageSize={value=>setSize(Number(value))}/>
  </div>;
 }
