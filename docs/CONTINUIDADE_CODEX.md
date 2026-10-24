@@ -2,6 +2,12 @@
 
 Único ponto de retomada. Leia [AGENTS.md](../AGENTS.md), A–I e somente as referências da tarefa. Relatórios guardam evidências/histórico; não reproduzir transcrições aqui.
 
+## Atualização de retomada — 23/10/2026
+
+Pedido atendido: alinhar a página Equipamentos à base visual de Contratos e Custos, sem alterar estrutura ou conteúdo. Alterado somente `src/platform/pages/EquipamentosPage.module.css`; JSX, dados, regras e comportamento não foram modificados. `npm run build` aprovado; aviso já conhecido de chunk acima de 500 kB. Equipamentos e Contratos foram comparadas visualmente no Vite local em 1366×768 na revisão anterior; para esta complementação não houve nova comparação em navegador. Homologação do usuário e testes funcionais não realizados.
+
+Checkout observado: raiz `C:\\Users\\maria\\OrquestraNEXT`, HEAD `58802adcaf2ee520b56da2c3bb38d2d02a26e4a5`, sem branch ativa. Permanecem modificações locais em EquipamentosPage.module.css, PecasPage.module.css, SlaCriticidadePage.module.css e TecnicosPage.module.css; apenas a primeira foi alterada nesta tarefa, sem limpar ou substituir as demais. Sem autorização de commit, push ou deploy. Próxima ação: aguardar avaliação do usuário sobre o alinhamento visual.
+
 ## Atualização documental — 20/10/2026
 
 Pedido atual: documentar todo o projeto, publicar a documentação no GitHub e indicar onde ajustar cards/espaçamentos. README revisado e guias [técnico](tecnica/guia-projeto.md) e [visual](tecnica/guia-estilos.md) adicionados; índice/backlog atualizados. Base verificada `0063467`, branch `feature/modo-feira`, árvore inicialmente limpa. Escopo autoriza commit/push destes documentos para a mesma branch, sem merge ou deploy do site. Verificação: links locais, diff e coerência; sem nova execução de testes/build por não haver alteração funcional. Próxima ação autorizada: publicar os documentos e confirmar o SHA remoto; demais homologações permanecem pendentes. O registro Git comprova o resultado da publicação.
@@ -91,11 +97,11 @@ Marcos anteriores450/439/417/400 e diagnósticos permanecem nos relatórios C9.2
 
 ## H. Próxima ação
 
-Homologar foco inicial em Alertas e pulsos Light/Dark,novo/status/criticidade/concluído,movimento reduzido e leitura durante mudanças. Instância nova5194,mesmo endereço na rede atual;novo pareamento privado. Janela de alerta anterior recebeu avaliação positiva;esta revisão visual/física aguarda aceite. Sem commit/merge/push/deploy ou nova história sem orientação. QRCode/acesso contínuo e resumo também na aba Chamados não implementados.
+A comparação visual da página Equipamentos com Contratos foi concluída em navegador, em 1366×768; a presente complementação incorporou também a tipografia e os cards de sugestões de Custos, sem nova comparação em navegador. Aguardar avaliação do usuário. A árvore segue com modificações locais nas folhas de estilo de Equipamentos, Peças, SLA/Criticidade e Técnicos. Sem commit/merge/push/deploy ou nova história sem orientação. A homologação visual/física da revisão Supervisor Feira descrita abaixo também continua pendente; veja o relatório C9.2 antes de retomá-la.
 
 Prompt compacto:
 
-> Retome ORQUESTRA na raiz habitual. Leia AGENTS.md/continuidade,confira feature/modo-feira/HEAD64703c6/Git e preserve alterações. Foco inicial em Alertas e pulsos por mudança implementados localmente;consulte relatório C9.2 e contrato. Homologação em5194,build /tmp/orquestra-pulsos/dist,serviço novo20/10. Pulsos não são relógio/reclassificação BASE;status é independente. Histórico/pausa/SSE/POST/12estados/originais preservados. Aguarde homologação;sem commit/push/deploy ou autenticação/QRCode fora do escopo.
+> Retome ORQUESTRA em C:\Users\maria\OrquestraNEXT. Checkout observado em HEAD 58802adc, sem branch ativa; preserve alterações locais. EquipamentosPage.module.css recebeu alinhamento visual com Contratos e Custos, sem mudanças de JSX/conteúdo; build aprovado, complemento sem revisão de navegador. Não faça commit/push/deploy. Supervisor Feira C9.2 também aguarda homologação; consulte relatório correspondente antes de retomar esse escopo.
 
 ## I. Ambiente e comandos
 

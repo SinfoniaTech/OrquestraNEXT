@@ -127,3 +127,9 @@ Limites: massa sintética, presença no histórico não prova parque ativo/insta
 Próxima prioridade planejada pelo usuário: **Modo Feira (US14)**, com evolução temporal automática, pausa, retomada e reinício, preservando apresentação manual e Supervisor. Início depende de homologação C6 e autorização de escopo próprio: relógio/fontes/merge/completude/velocidade/loop e fronteiras ainda precisam de definição. Infraestrutura temporal anterior não equivale a modo implementado.
 
 C6 encerrada e aguardando homologação. Sem commit C6, push ou deploy; nenhuma próxima implementação iniciada.
+
+## Atualização visual — 23/10/2026
+
+Por solicitação do usuário, a apresentação de Equipamentos foi alinhada visualmente às páginas Contratos e Custos, sem alterações no JSX, na estrutura ou no conteúdo. A revisão ficou restrita a EquipamentosPage.module.css: tokens de cartões e tipografia, espaçamentos de tabela, painéis de insight e detalhes, além dos ajustes responsivos já específicos da página. Neste complemento, a tipografia dos títulos de painel e a densidade dos cards de sugestões foram aproximadas de Custos; o restante conserva a base comum de Contratos.
+
+Validação executada em 23/10/2026: `npm run build` aprovado (Vite 8.3.0; 215 módulos) e `git diff --check` passou nos quatro arquivos desta revisão. Comparação visual da página Equipamentos com Contratos concluída no Vite local, em 1366×768, na revisão inicial; esta complementação de tipografia/cards não foi revisada novamente em navegador. Permanece o aviso de chunk acima de 500 kB. Não foram executados testes funcionais nem homologação pelo usuário. A verificação global anterior apontou espaços finais preexistentes em SlaCriticidadePage.module.css, não alterado nesta tarefa. Sem commit, push ou deploy.
