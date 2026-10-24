@@ -13,6 +13,8 @@ import ExternalMetric from '../components/ExternalMetric.jsx';
 import ChamadoDetail from './ChamadoDetail.jsx';
 import shared from '../components/Consultation.module.css';
 import styles from './EquipamentosPage.module.css';
+const CHART_LIMIT=5; // barras visíveis nos gráficos antes de "Ver mais itens…"
+const COLLAPSED_ROWS=5; // linhas visíveis da tabela antes de "Ver mais itens…"
 function Panel({title,definition,description,children}){return <section className={styles.panel} aria-label={title}><div className={styles.heading}><div><h2>{title}</h2>{description&&<p>{description}</p>}</div><IndicatorInfo definition={definition}/></div>{children}</section>;}
 function UnitTable({rows,ui,onSort,onUnit,label='Tabela de equipamentos'}){
  const columns=[
@@ -34,7 +36,8 @@ export default function EquipamentosPage(){
  const {state,dispatch,view,equipmentUi,setEquipmentUi}=useConsultation();
  const data=useMemo(()=>equipmentAnalysis(view.records,view.period),[view.records,view.period]);
  const table=equipmentPage(data.units,equipmentUi);
- const [typeGroup,setTypeGroup]=useState(null),[unit,setUnit]=useState(null),[drill,setDrill]=useState(null),[insight,setInsight]=useState(null),[selected,setSelected]=useState(null);
+ const [typeGroup,setTypeGroup]=useState(null),[unit,setUnit]=useState(null),[drill,setDrill]=useState(null),[insight,setInsight]=useState(null),[selected,setSelected]=useState(null),[tableOpen,setTableOpen]=useState(false);
+ const canCollapse=table.rows.length>COLLAPSED_ROWS,collapsed=canCollapse&&!tableOpen;
  const typeData=useMemo(()=>typeGroup?equipmentAnalysis(typeGroup.rows,view.period):null,[typeGroup,view.period]);
  const explain=(config,rows=view.records)=>{
   const scope={...state,filters:{...state.filters}};
@@ -56,17 +59,35 @@ export default function EquipamentosPage(){
  const insightDefinition=rows=>explain({title:'Investigação de padrões e recorrências',fields:['Unidade','Componente Principal','Recorrencia_30d','Motivo_Criticidade','Insight_ORQUESTRA'],definition:'Sugestões demonstrativas com suporte histórico, sem diagnóstico probabilístico, causa comprovada ou ML treinado.',calculation:'Recorrência elevada =registros >=3 (C2). Agrupar componentes por contagem e insights pelo texto completo. Recomendar investigação do contexto, sem estimar probabilidade, intervenção automática ou economia. Grupos podem se sobrepor.'},rows);
  return <div className={shared.consultation}>
   <div className={shared.referenceLine}><span>HISTÓRICO · {SOURCE}</span><span>{civilLabel(view.period.from)}–{civilLabel(view.period.to)} · referência: 06/10/2026, 22h (São Paulo)</span></div>
-  <div className={styles.cards}>{cards.map(card=><div key={card.title}><KpiCard {...card} definition={explain(card)}/><button className={styles.cardLink} onClick={()=>open(card.title,card.rows)}>Ver {card.rows.length} registros</button></div>)}<div className={styles.externalCard}><ExternalMetric definition={externalDefinition(EQUIPMENT_AVAILABILITY,state,view)}/><p>Uptime indisponível. Integração de telemetria e calendário operacional necessária.</p></div></div>
+
+  {/* Indicadores: o link "Ver N registros" é a prop `action` do KpiCard (renderizado dentro do card) */}
+  <div className={styles.cards}>
+   {cards.map(card=>
+    <KpiCard key={card.title} {...card} accent definition={explain(card)} action={{label:'Ver '+card.rows.length+' registros',onClick:()=>open(card.title,card.rows)}}/>
+   )}
+  </div>
+
+  {/* Card externo em linha própria, como em Contratos & Margem */}
+  <div className={styles.external}>
+   <div className={styles.externalCard}>
+    <ExternalMetric definition={externalDefinition(EQUIPMENT_AVAILABILITY,state,view)}/>
+    <p>Uptime indisponível. Integração de telemetria e calendário operacional necessária.</p>
+   </div>
+  </div>
+
   <FilterBar state={state} dispatch={dispatch} total={data.total}/>
   <p className={styles.note}><strong data-testid="equipment-total">{data.total}</strong> chamados filtrados · {data.unitCount} unidades · {data.withoutUnit} registros sem unidade. Em “Mais filtros”: Unidade, Categoria, Componente Principal e Recorrência.</p>
   <Panel title="Equipamentos com maior recorrência" definition={tableDefinition} description="Quantidade de chamados ≠ recorrência registrada. Máximo e último valor materializado são explicitados.">
    <div className={styles.columnInfo}>{['registered','last'].map(key=><span key={key}>{TERMS[key].title}<IndicatorInfo definition={info(key)}/></span>)}</div>
-   {table.total?<UnitTable rows={table.rows} ui={equipmentUi} onSort={sort} onUnit={setUnit}/>:<EmptyState onClear={()=>dispatch({type:'reset'})}/>}
-   <Pagination {...table} pageSize={equipmentUi.size} onPage={page=>setEquipmentUi(ui=>({...ui,page}))} onPageSize={size=>setEquipmentUi(ui=>({...ui,size:Number(size),page:1}))}/>
+   {table.total?<div className={styles.collapsible+(collapsed?' '+styles.collapsed:'')}>
+    <UnitTable rows={collapsed?table.rows.slice(0,COLLAPSED_ROWS):table.rows} ui={equipmentUi} onSort={sort} onUnit={setUnit}/>
+    {canCollapse&&<button type="button" className={styles.moreButton} aria-expanded={tableOpen} onClick={()=>setTableOpen(v=>!v)}>{tableOpen?'Ver menos':'Ver mais itens…'}</button>}
+   </div>:<EmptyState onClear={()=>dispatch({type:'reset'})}/>}
+   {!collapsed&&<Pagination {...table} pageSize={equipmentUi.size} onPage={page=>setEquipmentUi(ui=>({...ui,page}))} onPageSize={size=>setEquipmentUi(ui=>({...ui,size:Number(size),page:1}))}/>}
   </Panel>
   <div className={styles.grid}>
-   <Panel title="Ocorrências por componente principal" definition={componentDefinition}><GroupChart groups={data.components} value={g=>g.count} valueLabel={numberLabel} label="Ocorrências por componente" onGroup={g=>open('Componente '+g.label,g.rows)}/></Panel>
-   <Panel title={TERMS.typeRecurrence.title} definition={info('typeRecurrence')} description="Numerador e denominador: unidades distintas dentro do mesmo tipo."><GroupChart groups={data.types} value={g=>g.value} valueLabel={percentLabel} label="Recorrência positiva por tipo" onGroup={setTypeGroup}/><ul className={styles.typeNotes}>{data.types.map(g=><li key={g.label}>{g.label}: {g.positiveUnits}/{g.units} unidades · cobertura de recorrência {g.knownUnits}/{g.units} unidades</li>)}</ul></Panel>
+   <Panel title="Ocorrências por componente principal" definition={componentDefinition}><GroupChart groups={data.components} value={g=>g.count} valueLabel={numberLabel} label="Ocorrências por componente" limit={CHART_LIMIT} scrollOnExpand onGroup={g=>open('Componente '+g.label,g.rows)}/></Panel>
+   <Panel title={TERMS.typeRecurrence.title} definition={info('typeRecurrence')} description="Numerador e denominador: unidades distintas dentro do mesmo tipo."><GroupChart groups={data.types} value={g=>g.value} valueLabel={percentLabel} label="Recorrência positiva por tipo" limit={CHART_LIMIT} scrollOnExpand tone="teal" onGroup={setTypeGroup}/><ul className={styles.typeNotes}>{data.types.map(g=><li key={g.label}>{g.label}: {g.positiveUnits}/{g.units} unidades · cobertura de recorrência {g.knownUnits}/{g.units} unidades</li>)}</ul></Panel>
    <Panel title="Evolução diária das ocorrências" definition={explain({title:'Evolução diária das ocorrências',fields:['Criado em'],definition:'Volume de chamados pela data de criação, não eventos de transição de um mesmo equipamento.',calculation:'Reutilizar dailyEvolution C2 e ExecutiveChart C3: contar chamados por dia civil no recorte. Dias sem chamados =0. Máximo 60 dias, sem extrapolação.',unit:'chamados/dia'})}><ExecutiveChart days={data.days} series={[{label:'Chamados',color:'#1973db',value:d=>d.total}]} valueLabel={numberLabel} label="Ocorrências de equipamentos" onDay={d=>open('Ocorrências em '+civilLabel(d.date),d.rows)}/></Panel>
    <Panel title="Criticidade histórica por tipo" definition={colorsDefinition}><div className={styles.legend}>{CRITICALITY_ORDER.map(c=><CriticalityBadge value={c} key={c}/>)}</div>{data.types.map(g=><div className={styles.colorRow} key={g.label}><strong>{g.label} · {g.count} chamados</strong><div className={styles.stack} role="img" aria-label={g.label+': '+g.colors.map(c=>c.label+' '+c.rows.length).join(', ')}>{g.colors.map((c,i)=><i key={c.label} className={styles['color'+i]} style={{width:(g.count?c.rows.length/g.count*100:0)+'%'}}/>)}</div><div className={styles.colorButtons}>{g.colors.map(c=><button key={c.label} className={styles.link} aria-label={g.label+' · '+c.label+': '+c.rows.length+' chamados'} onClick={()=>open(g.label+' · '+c.label,c.rows)}>{c.label}: {c.rows.length}</button>)}</div></div>)}</Panel>
   </div>
@@ -80,7 +101,7 @@ export default function EquipamentosPage(){
     ['occurrences',unit.count,unit.count+' registros'],['ta',numberLabel(unit.ta.value),unit.ta.count+'/'+unit.count+' válidos'],['tb',numberLabel(unit.tb.value),unit.tb.count+'/'+unit.count+' válidos'],['sla',percentLabel(unit.adherence.value),unit.adherence.within.length+'/'+unit.adherence.count+' elegíveis'],['cost',currencyLabel(unit.cost.value),unit.cost.count+'/'+unit.count+' custos válidos'],['registered',numberLabel(unit.maxRecurrence),'Máximo observado · '+unit.recurrenceCoverage+'/'+unit.count+' válidos']
    ].map(([key,value,subtitle])=><KpiCard key={key} title={TERMS[key].title} value={value} subtitle={subtitle} definition={info(key,unit.rows)}/>)}</div>
    <Panel title="Criticidade histórica da unidade" definition={info('colors',unit.rows)}><div className={styles.colorButtons}>{unit.risk.colors.map(c=><button key={c.label} className={styles.link} onClick={()=>open(unit.label+' · '+c.label,c.rows)}><CriticalityBadge value={c.label}/> {c.rows.length}</button>)}</div></Panel>
-   <Panel title="Recorrências e componentes da unidade" definition={insightDefinition(unit.rows)}><p>{unit.recurrence.count}/{unit.count} chamados com recorrência positiva; {unit.risk.recurrent.length} registros ≥3. Cobertura de recorrência: {unit.recurrenceCoverage}/{unit.count}.</p><p>Recomendação demonstrativa: examinar contexto, componente e registros de repetição antes de decidir manutenção; sem diagnóstico de causa.</p><button className={styles.link} onClick={()=>open('Recorrências da unidade '+unit.label,unit.recurrence.rows)}>Examinar recorrências e insights da unidade</button><GroupChart groups={unit.components} value={g=>g.count} valueLabel={numberLabel} label="Componentes da unidade" onGroup={g=>open(unit.label+' · '+g.label,g.rows)}/></Panel>
+   <Panel title="Recorrências e componentes da unidade" definition={insightDefinition(unit.rows)}><p>{unit.recurrence.count}/{unit.count} chamados com recorrência positiva; {unit.risk.recurrent.length} registros ≥3. Cobertura de recorrência: {unit.recurrenceCoverage}/{unit.count}.</p><p>Recomendação demonstrativa: examinar contexto, componente e registros de repetição antes de decidir manutenção; sem diagnóstico de causa.</p><button className={styles.link} onClick={()=>open('Recorrências da unidade '+unit.label,unit.recurrence.rows)}>Examinar recorrências e insights da unidade</button><GroupChart groups={unit.components} value={g=>g.count} valueLabel={numberLabel} label="Componentes da unidade" limit={CHART_LIMIT} scrollOnExpand onGroup={g=>open(unit.label+' · '+g.label,g.rows)}/></Panel>
    <details open><summary>Histórico cronológico — criação descendente</summary><p className={styles.note}>Somente o recorte filtrado, incluindo todos os status. Empate por ID crescente.</p><ol className={styles.history}>{unit.history.map(row=><li key={row.ID_Chamado}><div><time>{dateLabel(row['Criado em'])}</time><button className={styles.link} aria-label={'Abrir histórico '+row.ID_Chamado} onClick={()=>setSelected(row)}>{row.ID_Chamado}</button><strong>{row['Categoria do Chamado']??'Categoria não informada'}</strong></div><p>{row['Componente Principal']??'Componente não informado'} · Recorrência BASE: {validNumber(row.Recorrencia_30d)?row.Recorrencia_30d:'Não informada'} · <CriticalityBadge value={row.Criticidade_ORQUESTRA??'Não informado'}/></p><details><summary>Contexto técnico BASE</summary>{['Subcomponente','Defeito','Falha','Fechamento','Status'].map(field=><p key={field}><strong>{field}:</strong> {row[field]??'Não informado'}</p>)}</details></li>)}</ol></details>
    <details><summary>Categorias, defeitos, falhas e fechamentos</summary><IndicatorInfo definition={explain({title:'Agrupamentos técnicos da unidade',fields:['Categoria do Chamado','Componente Principal','Subcomponente','Defeito','Falha','Fechamento'],definition:'Campos BASE agrupados com contagem CALC de chamados; associação não comprova causa.',calculation:'Agrupar pelo texto completo de cada campo e contar chamados do contexto; frequências desc, texto asc no empate. Nulos em Não informado; grupos de campos diferentes podem se sobrepor e não são somados.'},unit.rows)}/>{['Categoria do Chamado','Componente Principal','Subcomponente','Defeito','Falha','Fechamento'].map(field=><div key={field}><h3>{field} · campo BASE, contagem CALC</h3><div className={styles.groupLinks}>{groupRecords(unit.rows,field).map(g=><button key={g.label} className={styles.link} onClick={()=>open(field+' · '+g.label,g.rows)}>{g.label} ({g.count})</button>)}</div></div>)}</details>
    <details><summary>Insights sintéticos fornecidos · BASE</summary><IndicatorInfo definition={insightDefinition(unit.rows)}/><Insights groups={unit.insights} onInsight={setInsight}/></details>

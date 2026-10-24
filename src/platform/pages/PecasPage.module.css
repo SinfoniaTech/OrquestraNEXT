@@ -1,2 +1,186 @@
 @import './EquipamentosPage.module.css';
-.cards{grid-template-columns:repeat(5,minmax(0,1fr))}.cards article{min-height:138px}.cards article strong{font-size:25px}.tableViewport{min-width:0}.tableViewport>div{max-height:440px;overflow:auto;scrollbar-width:thin}.tableViewport table{min-width:1040px;table-layout:fixed}.tableViewport th{white-space:normal;position:sticky;top:0;z-index:1}.tableViewport td{overflow-wrap:anywhere}.tableViewport th:nth-child(1){width:14%}.tableViewport th:nth-child(2){width:13%}.tableViewport th:nth-child(3),.tableViewport th:nth-child(4),.tableViewport th:nth-child(5){width:8%}.tableViewport th:nth-child(6){width:15%}.tableViewport th:nth-child(7){width:11%}.tableViewport th:nth-child(8){width:16%}.tableViewport th:nth-child(9){width:7%}.unitList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-height:280px;overflow:auto}.unitList article{background:#f5f8fd;border-radius:6px;padding:10px;font-size:11px;line-height:1.6}.groupLinks{max-height:260px;overflow:auto}.detailCards>div{min-width:0}@media(max-width:1100px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:640px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.cards article strong{font-size:23px}.unitList{grid-template-columns:1fr}}
+
+/* ==========================================================
+   CARDS (KPIs)
+   ========================================================== */
+.cards {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.cards article {
+  min-height: 138px;
+}
+
+.cards article strong {
+  font-size: 25px;
+}
+
+.detailCards > div {
+  min-width: 0;
+}
+
+/* ==========================================================
+   TABELA PRINCIPAL
+   ========================================================== */
+.tableViewport {
+  min-width: 0;
+}
+
+.tableViewport > div {
+  max-height: 440px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.tableViewport table {
+  min-width: 1040px;
+  table-layout: fixed;
+}
+
+.tableViewport th {
+  white-space: normal;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.tableViewport td {
+  overflow-wrap: anywhere;
+}
+
+/* Largura das colunas (soma = 100%) */
+.tableViewport th:nth-child(1) {
+  width: 14%;
+}
+
+.tableViewport th:nth-child(2) {
+  width: 13%;
+}
+
+.tableViewport th:nth-child(3),
+.tableViewport th:nth-child(4),
+.tableViewport th:nth-child(5) {
+  width: 8%;
+}
+
+.tableViewport th:nth-child(6) {
+  width: 15%;
+}
+
+.tableViewport th:nth-child(7) {
+  width: 11%;
+}
+
+.tableViewport th:nth-child(8) {
+  width: 16%;
+}
+
+.tableViewport th:nth-child(9) {
+  width: 7%;
+}
+
+/* ==========================================================
+   LISTA DE UNIDADES
+   ========================================================== */
+.unitList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-height: 280px;
+  overflow: auto;
+}
+
+.unitList article {
+  background: #f5f8fd;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   ÁREAS COM ROLAGEM
+   ========================================================== */
+.groupLinks {
+  max-height: 260px;
+  overflow: auto;
+}
+
+/* ==========================================================
+   PADRONIZAÇÃO VISUAL (Contratos / Visão Geral)
+   ========================================================== */
+.panel {
+  --panel-dot: var(--bo-accent-blue);
+  min-width: 0;
+  margin-bottom: var(--bo-space-3);
+  padding: var(--bo-space-3) 14px;
+  background: var(--bo-card);
+  border: var(--bo-border-card);
+  border-radius: var(--bo-radius-lg);
+  box-shadow: var(--bo-shadow-sm);
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--bo-space-3);
+  margin-bottom: 6px;
+}
+
+.heading h2 {
+  margin: 0;
+  font-size: var(--bo-fs-base);
+}
+
+.heading h2::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 7px;
+  vertical-align: 1px;
+  border-radius: 50%;
+  background: var(--panel-dot);
+}
+
+.grid > section:nth-child(1)  { --panel-dot: var(--bo-chart-1); }
+.grid > section:nth-child(2)  { --panel-dot: var(--bo-chart-2); }
+.grid > section:nth-child(3)  { --panel-dot: var(--bo-chart-2); }
+.grid > section:nth-child(4)  { --panel-dot: var(--bo-accent-green); }
+.grid > section:nth-child(5)  { --panel-dot: var(--bo-chart-3); }
+.grid > section:nth-child(6)  { --panel-dot: var(--bo-chart-4); }
+.grid > section:nth-child(7)  { --panel-dot: var(--bo-chart-5); }
+.grid > section:nth-child(8)  { --panel-dot: var(--bo-chart-1); }
+.grid > section:nth-child(9)  { --panel-dot: var(--bo-chart-3); }
+.grid > section:nth-child(10) { --panel-dot: var(--bo-chart-4); }
+
+/* Barras dos gráficos por seção (mesmo padrão de Contratos) */
+.grid > section:nth-child(3) i { background: linear-gradient(90deg, #0a8791, #4cc7d0); }
+.grid > section:nth-child(4) i { background: linear-gradient(90deg, #06775a, #4cc9a4); }
+.grid > section:nth-child(5) i { background: linear-gradient(90deg, #5a3fc0, #a58cf5); }
+.grid > section:nth-child(6) i { background: linear-gradient(90deg, #b07404, #efc45a); }
+.grid > section:nth-child(7) i { background: linear-gradient(90deg, #a8245a, #f08ab0); }
+
+/* ==========================================================
+   RESPONSIVO
+   ========================================================== */
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards article strong {
+    font-size: 23px;
+  }
+
+  .unitList {
+    grid-template-columns: 1fr;
+  }
+}

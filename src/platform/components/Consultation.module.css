@@ -2,3 +2,31 @@
 @media(max-width:1160px){.kpiGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.filterToolbar{align-items:flex-start;flex-direction:column}.filterActions{width:100%}.search{flex:1;max-width:none;width:auto}.filterGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.analysisGrid{grid-template-columns:1fr 1fr}.attentionCard{grid-column:1/-1}}
 @media(max-width:640px){.kpiGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.referenceLine{font-size:9px;line-height:1.7}.filterActions{flex-wrap:wrap}.search{min-width:100%;flex-basis:100%;max-width:100%}.filterGrid,.advancedGrid{grid-template-columns:1fr 1fr}.advancedNote{grid-column:1/-1;margin:0}.options{min-width:180px;max-width:240px}.filterGrid>.multiSelect:nth-child(odd) .options{left:auto;right:0}.filterCard{padding:14px 12px}.resultsHeading{flex-direction:column;align-items:flex-start;padding:14px}.sortControls{width:100%}.sortControls label{flex:1}.sortControls select{max-width:160px}.pagination{flex-wrap:wrap;font-size:9px}.pagination>div{flex-wrap:wrap;gap:7px}.analysisGrid{grid-template-columns:1fr}.attentionCard{grid-column:auto}.detailGrid{grid-template-columns:1fr}.dialogHeader,.dialogBody{padding:16px}.dialogHeader h2{font-size:16px}.detailDialog{margin:8px;min-height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);width:calc(100vw - 16px)}}
 @media(prefers-reduced-motion:reduce){.consultation *{transition:none!important}}
+
+/* ───── Card de filtros recolhível (ícone de filtro no cabeçalho da página) ───── */
+.filterCardSlot{margin-bottom:0}
+.filterCollapse{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;margin-bottom:0;transition:grid-template-rows var(--bo-dur,.26s) var(--bo-ease,ease),opacity var(--bo-dur-fast,.15s) ease,margin-bottom var(--bo-dur,.26s) var(--bo-ease,ease),visibility 0s linear var(--bo-dur,.26s)}
+.filterCollapseInner{min-height:0;overflow:hidden}
+.filterOpen{grid-template-rows:1fr;opacity:1;visibility:visible;margin-bottom:20px;transition:grid-template-rows var(--bo-dur,.26s) var(--bo-ease,ease),opacity var(--bo-dur,.26s) ease,margin-bottom var(--bo-dur,.26s) var(--bo-ease,ease),visibility 0s}
+.filterSettled .filterCollapseInner{overflow:visible}
+.filterOpen .filterCard{animation:filterCardIn var(--bo-dur,.26s) var(--bo-ease,ease)}
+@keyframes filterCardIn{from{transform:translateY(-8px)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.filterCollapse,.filterOpen{transition:none}.filterOpen .filterCard{animation:none}}
+
+/* ───── KpiCard: tons de acento, variante accent e ação interna ───── */
+.blue{--kpi-accent:var(--bo-accent-blue,#1973db);--kpi-soft:var(--bo-accent-blue-soft,#e8f1fd)}
+.green{--kpi-accent:var(--bo-accent-green,#07916d);--kpi-soft:var(--bo-accent-green-soft,#e5f6ef)}
+.orange{--kpi-accent:var(--bo-accent-orange,#e47e16);--kpi-soft:var(--bo-accent-orange-soft,#fff1e0)}
+.violet{--kpi-accent:var(--bo-accent-violet,#6d4fd8);--kpi-soft:var(--bo-accent-violet-soft,#f0ebfd)}
+.teal{--kpi-accent:var(--bo-accent-teal,#0c9aa6);--kpi-soft:var(--bo-accent-teal-soft,#e2f6f7)}
+.rose{--kpi-accent:var(--bo-accent-rose,#d9376e);--kpi-soft:var(--bo-accent-rose-soft,#ffe9f0)}
+.amber{--kpi-accent:var(--bo-accent-amber,#c98a05);--kpi-soft:var(--bo-accent-amber-soft,#fff4d6)}
+.violet .kpiNumber{color:var(--bo-accent-violet,#6d4fd8)}
+.teal .kpiNumber{color:var(--bo-accent-teal,#0c9aa6)}
+.rose .kpiNumber{color:var(--bo-accent-rose,#d9376e)}
+.amber .kpiNumber{color:var(--bo-accent-amber,#c98a05)}
+.kpiAccent{border-top:3px solid var(--kpi-accent);background:linear-gradient(180deg,var(--kpi-soft) 0,#fff 64%)}
+.kpiWithAction{display:flex;flex-direction:column}
+.kpiAction{align-self:flex-end;margin-top:auto;padding:4px 0 0!important;font:inherit;font-size:10px!important;font-weight:600;color:var(--kpi-accent,#0965ce);background:none;border:0!important;cursor:pointer;text-align:right}
+.kpiAction:hover{text-decoration:underline}
+.kpiAction:focus-visible{outline:2px solid var(--kpi-accent,#0965ce);outline-offset:2px;border-radius:3px}

@@ -244,6 +244,8 @@ Critérios verificados: 54 unidades/19 elevadas/736 ocorrências/4 tipos; dispon
 
 Limitações: massa sintética, sem cadastro mestre/uptime/parque ativo; recorrência materializada não soma eventos, último campo não indica estado atual; sem causalidade/ML validado. C6 sem commit, aguardando homologação. Próxima prioridade planejada pelo usuário: Modo Feira/US14, somente após homologação e autorização de escopo. Nenhum motor Feira ou outra página iniciado.
 
+Adendo visual de 23/10/2026: por solicitação do usuário, EquipamentosPage.module.css foi alinhado aos tokens e padrões visuais de Contratos e Custos, incluindo a hierarquia tipográfica dos painéis e os cards de sugestões. JSX, estrutura, conteúdo, regras e comportamento permanecem intocados. `npm run build` aprovado; a comparação em navegador de 1366×768 refere-se à revisão inicial baseada em Contratos, sem nova comparação após este complemento. Testes funcionais e homologação pelo usuário permanecem pendentes. Ver [relatório C6](entrega-c6-equipamentos.md).
+
 ## C7 — Técnicos — registro anterior à homologação
 
 C6 aprovada para continuidade e registrada em 05ec7d5 após nova validação 225 testes/build e staging dos 34 arquivos. C7 implementada na US12 existente, sem história duplicada: carteira por técnico, todos vínculos Área/Supervisor/Rota observados, atendimentos/concluídos, TA/TB/SLA/custos estimados, recorrência/criticidade, suporte e equipamentos/histórico/insight. Disponibilidade/skills/escala/localização/custo real/avaliações EXT. Análise da operação sem avaliação automatizada individual.

@@ -9,6 +9,7 @@ import logo from '../assets/orquestra-logo13.png';
 import {MENU_GROUPS,PAGES,pageFromHash} from './navigation.js';
 import styles from './BackofficePlatform.module.css';
 import {ConsultationProvider,useConsultation} from './filters/ConsultationContext.jsx';
+import {FilterPanelProvider,useFilterPanelState,countActiveFilters} from './filters/FilterPanelContext.jsx';
 import EquipamentosPage from './pages/EquipamentosPage.jsx';
 import CustosPage from './pages/CustosPage.jsx';
 import ContratosPage from './pages/ContratosPage.jsx';
@@ -33,7 +34,8 @@ function Icon({name='home',size=20,...props}){
  arrow:'M4 12h16m-6-6 6 6-6 6',
  menu:'M3 6h18M3 12h18M3 18h18',
  close:'m6 6 12 12M6 18 18 6',
- shield:'m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Zm-4 10 3 3 5-6'
+ shield:'m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Zm-4 10 3 3 5-6',
+ filter:'M3 4h18l-7 8.5V20l-4-2v-5.5L3 4Z'
  };
  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}><path d={paths[name]??paths.home}/></svg>;
 }
@@ -41,31 +43,27 @@ const SESSION_KEY='orquestra.platform.demo';
 function readSession(){try{return sessionStorage.getItem(SESSION_KEY)==='active';}catch{return false;}}
 function saveSession(active){try{active?sessionStorage.setItem(SESSION_KEY,'active'):sessionStorage.removeItem(SESSION_KEY);}catch{/* Demo também funciona sem storage. */}}
 
-function DemoLogin({onEnter,legacyUrl}){
+function DemoLogin({onEnter}){
  return <div className={styles.login}>
   <section className={styles.loginBrand} aria-label="ORQUESTRA">
    <img src={logo} alt="Orquestra" className={styles.loginLogo}/>
-   <p className={styles.eyebrow}>INTELIGÊNCIA OPERACIONAL</p>
-   <h1>Informação que orienta.<br/><span>Decisões que transformam.</span></h1>
+   <h1>Dados que orientam.<br/><span>Decisões que transformam.</span></h1>
    <p className={styles.loginIntro}>Conecte o histórico da operação a uma visão clara de contexto, prioridades e oportunidades.</p>
    <div className={styles.brandFeatures}>
     <div><Icon name="database"/><span><strong>Dados com contexto</strong>Origem e referência de cada informação.</span></div>
     <div><Icon name="chart"/><span><strong>Uma operação, várias perspectivas</strong>Do histórico de chamados à visão executiva.</span></div>
     <div><Icon name="shield"/><span><strong>Inteligência explicável</strong>Critérios claros para apoiar decisões.</span></div>
    </div>
-   <p className={styles.brandFooter}>ORQUESTRA <span>Antecipar o crítico. Aprender com o histórico.</span></p>
   </section>
   <main className={styles.loginMain}>
-   <span className={styles.loginTag}>PROJETO ACADÊMICO · NEXT FIAP</span>
    <div className={styles.loginCard}>
-    <span className={styles.demoLabel}>AMBIENTE DE DEMONSTRAÇÃO</span>
     <h2>Acesse o Orquestra</h2>
     <p>Explore a nova estrutura do BackOffice.</p>
     <div className={styles.demoNotice}><Icon name="shield" size={22}/><p><strong>Acesso demonstrativo</strong>Sem senha ou autenticação corporativa. Os dados do projeto são sintéticos e não representam registros reais ou oficiais da OTIS.</p></div>
     <button className={styles.primaryButton} onClick={onEnter}>Acessar demonstração <Icon name="arrow"/></button>
-    <a className={styles.legacyLink} href={legacyUrl}>Abrir apresentação original <span aria-hidden="true">↗</span></a><ModeMenu/>
+    <div className={styles.loginModes}><ModeMenu/></div>
    </div>
-   <p className={styles.loginFooter}>Inteligência operacional e executiva</p>
+   <p className={styles.loginFooter}>Orquestra: Antecipar o crítico. Aprender com o histórico.</p>
   </main>
  </div>;
 }
@@ -73,10 +71,12 @@ function DemoLogin({onEnter,legacyUrl}){
 export default function BackofficePlatform({presentation=false}){return <ConsultationProvider><PlatformShell presentation={presentation}/></ConsultationProvider>;}
 
 function PlatformShell({presentation}){
- const {dispatch}=useConsultation();
+ const {state:consultation,dispatch}=useConsultation();
  const [active,setActive]=useState(readSession);
  const [route,setRoute]=useState(()=>pageFromHash(window.location.hash));
  const [menuOpen,setMenuOpen]=useState(false);
+ const filterPanel=useFilterPanelState(route);
+ const activeFilters=countActiveFilters(consultation);
  const heading=useRef(null);
  const menuButton=useRef(null);
  const sidebarRef=useRef(null);
@@ -110,8 +110,8 @@ function PlatformShell({presentation}){
  },[menuOpen]);
  const enter=()=>{saveSession(true);setActive(true);window.location.hash='/visao-geral';};
  const exit=()=>{dispatch({type:'reset'});saveSession(false);setActive(false);window.location.hash='/login';};
- if(login)return <div className={styles.root}><DemoLogin onEnter={enter} legacyUrl={legacyUrl}/></div>;
- return <div className={styles.root}>
+ if(login)return <div className={styles.root}><DemoLogin onEnter={enter}/></div>;
+ return <FilterPanelProvider value={filterPanel}><div className={styles.root}>
   <a className={styles.skipLink} href="#platform-content" onClick={e=>{e.preventDefault();document.getElementById('platform-content')?.focus();}}>Ir para o conteúdo</a>
   <div className={styles.shell}>
    {menuOpen&&<button className={styles.backdrop} aria-label="Fechar navegação" onClick={()=>setMenuOpen(false)}/>}
@@ -141,8 +141,12 @@ function PlatformShell({presentation}){
      <div className={styles.breadcrumb}>BACKOFFICE <span>/</span> {page?.title??page?.label??'Página não encontrada'}</div>
      <div className={styles.pageHeading}>
       <div><span className={styles.headingLine}/><h1 ref={heading} tabIndex={-1}>{page?.title??page?.label??'Página não encontrada'}</h1><p>{page?.description??'Este endereço não corresponde a uma página da plataforma.'}</p></div>
-      <span className={styles.phaseBadge}>{['visao-geral','contratos-margem','custos-tco','tecnicos','equipamentos','pecas','chamados','sla-criticidade','riscos-tendencias'].includes(route)?'Histórico consultável':'Estrutura inicial'}</span>
+      <div className={styles.headingActions}>
+       {filterPanel.available>0&&<button type="button" className={styles.filterToggle+(filterPanel.open?' '+styles.filterToggleOn:'')} aria-expanded={filterPanel.open} aria-controls="filter-panel" aria-label={(filterPanel.open?'Fechar':'Abrir')+' filtros do histórico'+(activeFilters?' · '+activeFilters+' ativo(s)':'')} title="Filtros do histórico" onClick={filterPanel.toggle}><Icon name="filter" size={17}/>{activeFilters>0&&<span className={styles.filterCount} aria-hidden="true">{activeFilters}</span>}</button>}
+       <span className={styles.phaseBadge}>{['visao-geral','contratos-margem','custos-tco','tecnicos','equipamentos','pecas','chamados','sla-criticidade','riscos-tendencias'].includes(route)?'Histórico consultável':'Estrutura inicial'}</span>
+      </div>
      </div>
+     <div ref={filterPanel.setSlot} className={styles.filterSlot}/>
      {route==='pecas'?<PecasPage/>:route==='tecnicos'?<TecnicosPage/>:route==='equipamentos'?<EquipamentosPage/>:route==='custos-tco'?<CustosPage/>:route==='contratos-margem'?<ContratosPage/>:route==='visao-geral'?<PerformancePage/>:route==='chamados'?<ChamadosPage/>:route==='sla-criticidade'?<SlaCriticidadePage/>:route==='riscos-tendencias'?<RiscosPage/>:page?<section className={styles.pendingCard} aria-label="Estado da página">
       <div className={styles.pendingGraphic}><Icon name={page.icon} size={36}/><span className={styles.graphicLine}/><span className={styles.graphicDot}/></div>
       <span className={styles.sectionEyebrow}>CONSTRUINDO O NOVO BACKOFFICE</span>
@@ -156,5 +160,5 @@ function PlatformShell({presentation}){
     </main>
    </div>
   </div>
- </div>;
+ </div></FilterPanelProvider>;
 }

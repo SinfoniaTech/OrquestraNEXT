@@ -6,10 +6,12 @@ import {percentLabel} from '../services/sla.js';
 import {FilterBar,KpiCard,IndicatorInfo,Dialog} from '../components/ConsultationUI.jsx';
 import ExternalMetric from '../components/ExternalMetric.jsx';
 import ExecutiveChart from '../components/ExecutiveChart.jsx';
+import ShowMore from '../components/ShowMore.jsx';
 import RecordExplorer from '../components/RecordExplorer.jsx';
 import ChamadoDetail from './ChamadoDetail.jsx';
 import styles from './PerformancePage.module.css';
 import shared from '../components/Consultation.module.css';
+const CARD_TONES=['blue','blue','blue','blue','blue','blue'];
 function ContractsTable({groups,onRecords}){
  return <div className={styles.tableWrap}><table className={styles.table} aria-label="Contratos sob pressão operacional"><thead><tr><th>Contrato / Cliente</th><th>Impacto Alto</th><th>Total no contrato</th><th>Custo estimado</th><th>SLA simulado</th><th>Vermelhos históricos</th><th>Fatores nos eventos Alto</th></tr></thead>
  <tbody>{groups.map(g=><tr key={g.label}><td><button aria-label={'Abrir contrato '+g.label} onClick={()=>onRecords('Contrato '+g.label+' · todos os chamados filtrados',g.rows)}>{g.label}</button><small>{g.clients.join(' · ')||'Cliente não informado'}</small></td>
@@ -25,7 +27,7 @@ function AnalysisPanel({title,description,definition,children}){
 export default function PerformancePage(){
  const {state,dispatch,view}=useConsultation();
  const data=useMemo(()=>executiveAnalysis(view.records,view.period),[view.records,view.period.from,view.period.to]);
- const [allContracts,setAllContracts]=useState(false),[drill,setDrill]=useState(null),[selected,setSelected]=useState(null);
+ const [drill,setDrill]=useState(null),[selected,setSelected]=useState(null);
  const explain=config=>performanceDefinition(config,state,view);
  const open=(title,rows)=>setDrill({title,rows});
  const coverage=data.cost.count+'/'+data.total;
@@ -42,24 +44,24 @@ export default function PerformancePage(){
  const days=data.days;
  return <div className={shared.consultation}>
   <div className={shared.referenceLine}><span>HISTÓRICO · {SOURCE}</span><span>{civilLabel(view.period.from)}–{civilLabel(view.period.to)} · referência: 06/10/2026, 22h (São Paulo)</span></div>
-  <div className={styles.cards}>{cards.map((card,i)=><div key={card.title} className={i===2?styles.money:i===5?styles.active:undefined}><KpiCard {...card} definition={explain(card)}/><button className={styles.cardLink} onClick={()=>open(card.title,card.rows)}>Ver {card.rows.length} registros</button></div>)}</div>
+  <div className={styles.cards}>{cards.map((card,i)=><KpiCard key={card.title} {...card} tone={CARD_TONES[i]} accent className={i===2?styles.money:undefined} definition={explain(card)} action={{label:'Ver '+card.rows.length+' registros',onClick:()=>open(card.title,card.rows)}}/>)}</div>
   <FilterBar state={state} dispatch={dispatch} total={data.total}/>
   <p className={styles.context}><strong data-testid="performance-total">{data.total}</strong> chamados no recorte · custo com cobertura {coverage} · {data.risk.nonConcluded} não concluídos na referência. Histórico e operação na referência têm populações distintas.</p>
   <div className={styles.external} aria-label="Informações financeiras externas">{FINANCIAL_EXTERNAL.map(metric=><ExternalMetric key={metric.title} definition={externalDefinition(metric,state,view)}/>)}</div>
   <section className={styles.panel} aria-label="Contratos em destaque">
-   <div className={styles.heading}><div><h2>Contratos sob pressão operacional</h2><p>Até 5 destaques de {data.contracts.length}. Ordem: quantidade Alto ↓, identificador ↑. Não é ranking de margem.</p></div><div className={styles.controls}><button className={styles.topButton} onClick={()=>setAllContracts(true)}>Lista completa ({data.contracts.length})</button><IndicatorInfo definition={contractDefinition}/></div></div>
-   <ContractsTable groups={data.contracts.slice(0,5)} onRecords={open}/>
+   <div className={styles.heading}><div><h2>Contratos sob pressão operacional</h2><p>Até 5 destaques de {data.contracts.length}. Ordem: quantidade Alto ↓, identificador ↑. Não é ranking de margem.</p></div><div className={styles.controls}><IndicatorInfo definition={contractDefinition}/></div></div>
+   <ShowMore total={data.contracts.length} limit={5}>{count=><ContractsTable groups={data.contracts.slice(0,count)} onRecords={open}/>}</ShowMore>
    <p className={styles.note}>Total, custo, SLA e Vermelhos: todos os chamados filtrados do contrato. Eventos Alto e seus fatores: apenas registros com impacto Alto. Sem receita ou margem inferidas.</p>
   </section>
   <div className={styles.charts}>
    <AnalysisPanel title="Evolução do custo estimado" description="Custo sintético em R$ por data de criação" definition={dailyDefinition('Evolução do custo estimado',['Custo_Estimado_R$'],'Custo estimado dos registros de cada dia de criação; não fluxo de caixa ou competência contábil.','Reutilizar dias da C2; somar custos válidos de cada dia e informar N válido/total. Sem custo válido, lacuna, não zero.','R$')}>
-    <ExecutiveChart days={days} series={[{label:'Estimativa',color:'#1973db',value:d=>d.cost.value}]} valueLabel={(v,axis)=>v===null?'—':axis?(v/1000).toLocaleString('pt-BR',{maximumFractionDigits:1})+'k':currencyLabel(v)} label="Custo diário" onDay={d=>open('Custo em '+civilLabel(d.date)+' · '+d.cost.count+'/'+d.total+' com custo',d.cost.rows)}/>
+    <ExecutiveChart days={days} series={[{label:'Estimativa',color:'var(--bo-chart-1)',value:d=>d.cost.value}]} valueLabel={(v,axis)=>v===null?'—':axis?(v/1000).toLocaleString('pt-BR',{maximumFractionDigits:1})+'k':currencyLabel(v)} label="Custo diário" onDay={d=>open('Custo em '+civilLabel(d.date)+' · '+d.cost.count+'/'+d.total+' com custo',d.cost.rows)}/>
    </AnalysisPanel>
    <AnalysisPanel title="Evolução da aderência simulada" description="Concluídos elegíveis por data de criação" definition={dailyDefinition('Evolução da aderência simulada',['Status','SLA_min','Percentual_SLA'],'Aplicar a mesma aderência da C1 à coorte de chamados criados em cada dia; não mede resolução no dia.','Por dia: concluídos elegíveis cumpridos ÷ concluídos elegíveis ×100. Não calcular média de percentuais diários. Sem elegíveis, lacuna, não 0%.','%')}>
-    <ExecutiveChart days={days} series={[{label:'Aderência',color:'#07916d',value:d=>d.adherence.value===null?null:d.adherence.value*100}]} valueLabel={(v)=>v===null?'—':v.toLocaleString('pt-BR',{maximumFractionDigits:1})+'%'} label="SLA diário" onDay={d=>open('SLA em '+civilLabel(d.date)+' · '+d.adherence.within.length+'/'+d.adherence.count+' elegíveis',d.adherence.rows)}/>
+    <ExecutiveChart days={days} series={[{label:'Aderência',color:'var(--bo-accent-green)',value:d=>d.adherence.value===null?null:d.adherence.value*100}]} valueLabel={(v)=>v===null?'—':v.toLocaleString('pt-BR',{maximumFractionDigits:1})+'%'} label="SLA diário" onDay={d=>open('SLA em '+civilLabel(d.date)+' · '+d.adherence.within.length+'/'+d.adherence.count+' elegíveis',d.adherence.rows)}/>
    </AnalysisPanel>
    <AnalysisPanel title="Evolução da criticidade histórica" description="Cores registradas por data de criação" definition={dailyDefinition('Evolução da criticidade histórica',['Criticidade_ORQUESTRA'],'Classificação materializada por dia de criação, incluindo concluídos; não evolução de cor de um mesmo chamado.','Reutilizar dailyEvolution da C2: contar por dia e cor. Dias sem chamados têm contagem zero. Sem extrapolação ou recálculo.','chamados')}>
-    <ExecutiveChart days={days} series={CRITICALITY_ORDER.map((label,i)=>({label,color:['#07916d','#d8ad14','#ed7c15','#df2347'][i],value:d=>d.colors[i].count}))} valueLabel={v=>v.toLocaleString('pt-BR',{maximumFractionDigits:1})} label="Criticidade diária" onDay={d=>open('Criticidade em '+civilLabel(d.date),d.rows)}/>
+    <ExecutiveChart days={days} series={CRITICALITY_ORDER.map((label,i)=>({label,color:['var(--bo-status-verde)','var(--bo-status-amarelo)','var(--bo-status-laranja)','var(--bo-status-vermelho)'][i],value:d=>d.colors[i].count}))} valueLabel={v=>v.toLocaleString('pt-BR',{maximumFractionDigits:1})} label="Criticidade diária" onDay={d=>open('Criticidade em '+civilLabel(d.date),d.rows)}/>
    </AnalysisPanel>
   </div>
   <AnalysisPanel title="Fatores operacionais e aprofundamento" description="Observações do recorte, sem meta, causa ou comparação inventadas" definition={explain({title:'Fatores operacionais e aprofundamento',fields:['Status','Criticidade_ORQUESTRA','Motivo_Criticidade','Recorrencia_30d','Componente Principal','Categoria do Chamado','Insight_ORQUESTRA'],definition:'Síntese descritiva com suporte, sem causalidade ou predição. Campos originais disponíveis no detalhe.',calculation:'Reutilizar C2: não concluídos Laranja/Vermelho; registros com Recorrencia_30d >=3; motivos completos por frequência. Grupos podem se sobrepor; não somar.'})}>
@@ -71,7 +73,6 @@ export default function PerformancePage(){
    <p className={styles.note}><a href="#/chamados">Chamados</a> · <a href="#/sla-criticidade">SLA & Criticidade</a> · <a href="#/riscos-tendencias">Riscos & Tendências</a> — os filtros permanecem na navegação.</p>
   </AnalysisPanel>
   <p className={shared.sourceFooter}>Dados sintéticos acadêmicos. Custo estimado não é TCO contábil. SLA da simulação sem validade contratual oficial. Sem meta/plano ou base comparável aprovada, não se afirma desvio. Snapshots e Supervisor separados.</p>
-  {allContracts&&<Dialog wide title="Todos os contratos sob pressão operacional" onClose={()=>setAllContracts(false)}><ContractsTable groups={data.contracts} onRecords={open}/><p className={styles.note}>Mesmas regras e filtros da lista inicial; contratos com algum evento Alto.</p></Dialog>}
   {drill&&<Dialog wide title={drill.title} onClose={()=>setDrill(null)}><RecordExplorer label="Chamados da visão executiva" rows={drill.rows} onDetail={setSelected}/></Dialog>}
   {selected&&<ChamadoDetail row={selected} onClose={()=>setSelected(null)}/>}
  </div>;
