@@ -13,6 +13,8 @@ import ExternalMetric from '../components/ExternalMetric.jsx';
 import ChamadoDetail from './ChamadoDetail.jsx';
 import shared from '../components/Consultation.module.css';
 import styles from './TecnicosPage.module.css';
+const COLLAPSED_ROWS=5; // linhas visíveis da tabela antes de "Ver mais itens…"
+const CHART_LIMIT=5; // barras visíveis nos gráficos antes de "Ver mais itens…"
 function Panel({title,definition,children,description}){return <section className={styles.panel} aria-label={title}><div className={styles.heading}><div><h2>{title}</h2>{description&&<p>{description}</p>}</div><IndicatorInfo definition={definition}/></div>{children}</section>;}
 function TechnicianTable({rows,ui,onSort,onTechnician,label='Tabela de técnicos'}){
  const columns=[{key:'name',label:'Técnico',sortKey:'name',render:g=><button className={styles.link} onClick={()=>onTechnician(g)} aria-label={'Abrir técnico '+g.label}>{g.label}</button>},
@@ -27,7 +29,8 @@ function TechnicianTable({rows,ui,onSort,onTechnician,label='Tabela de técnicos
 export default function TecnicosPage(){
  const {state,dispatch,view,technicianUi,setTechnicianUi}=useConsultation();
  const data=useMemo(()=>technicianAnalysis(view.records),[view.records]),table=technicianPage(data.technicians,technicianUi);
- const [area,setArea]=useState(null),[technician,setTechnician]=useState(null),[unit,setUnit]=useState(null),[drill,setDrill]=useState(null),[selected,setSelected]=useState(null),[insight,setInsight]=useState(null);
+ const [area,setArea]=useState(null),[technician,setTechnician]=useState(null),[unit,setUnit]=useState(null),[drill,setDrill]=useState(null),[selected,setSelected]=useState(null),[insight,setInsight]=useState(null),[tableOpen,setTableOpen]=useState(false);
+ const canCollapse=table.rows.length>COLLAPSED_ROWS,collapsed=canCollapse&&!tableOpen;
  const scopeView=rows=>({...view,records:rows,summary:{...view.summary,total:rows.length}});
  const explain=(config,rows=view.records)=>{
   const scoped={...state,filters:{...state.filters}};
@@ -48,35 +51,50 @@ export default function TecnicosPage(){
  ['tb',numberLabel(g.tb.value),g.tb.count+'/'+g.count+' válidos · '+g.tb.excluded+' ausentes/inválidos',g.tb.rows],
  ['cost',currencyLabel(g.cost.value),g.cost.count+'/'+g.count+' válidos · '+g.cost.excluded+' ausentes/inválidos',g.cost.rows]
  ];
- const metricCards=(entries,rows)=>entries.map(([key,value,subtitle,support])=><div key={key}><KpiCard title={TERMS[key].title} value={value} subtitle={subtitle} definition={explain({...TERMS[key],eligible:support.length},rows)}/><button className={styles.cardLink} onClick={()=>open(TERMS[key].title,support)}>Ver {support.length} registros</button></div>);
- const chart=(title,groups,value,format,definition,onGroup,label=title)=><Panel title={title} definition={definition}><GroupChart groups={groups} value={value} valueLabel={format} label={label} onGroup={onGroup}/></Panel>;
+ // O link "Ver N registros" é a prop `action` do KpiCard (renderizado dentro do card). `accent` = barra azul no topo (cards da página).
+ const metricCards=(entries,rows,accent=false)=>entries.map(([key,value,subtitle,support])=><KpiCard key={key} title={TERMS[key].title} value={value} subtitle={subtitle} accent={accent} definition={explain({...TERMS[key],eligible:support.length},rows)} action={{label:'Ver '+support.length+' registros',onClick:()=>open(TERMS[key].title,support)}}/>);
+ // tone acompanha a cor do ponto do título (ciclo azul · turquesa · verde · violeta pela posição no grid)
+ const chart=(title,groups,value,format,definition,onGroup,tone,label=title)=><Panel title={title} definition={definition}><GroupChart groups={groups} value={value} valueLabel={format} label={label} limit={CHART_LIMIT} scrollOnExpand tone={tone} onGroup={onGroup}/></Panel>;
  const chartDefinition=(title,fields,calculation)=>explain({title,fields,definition:'Análise dos atendimentos vinculados no contexto filtrado. Comparação descritiva; volume/tempo não classifica produtividade ou eficiência individual. Considerar complexidade, área, rota e categoria.',calculation,unit:'chamados, minutos ou R$ conforme indicador'});
  const groupTime=(key)=>[...data.technicians].filter(g=>g[key].count).sort((a,b)=>b[key].value-a[key].value||a.label.localeCompare(b.label,'pt-BR'));
  const patterns=rows=><><IndicatorInfo definition={info('patterns',rows)}/>{['Categoria do Chamado','Componente Principal','Falha','Insight_ORQUESTRA'].map(field=><details key={field}><summary>{field} · BASE / contagem CALC</summary><div className={styles.groupLinks}>{groupRecords(rows,field).map(g=><button key={g.label} className={styles.link} onClick={()=>field==='Insight_ORQUESTRA'?setInsight(g):open(field+' · '+g.label,g.rows)}>{g.label} ({g.count})</button>)}</div></details>)}</>;
  return <div className={shared.consultation}>
   <div className={shared.referenceLine}><span>HISTÓRICO · {SOURCE}</span><span>{civilLabel(view.period.from)}–{civilLabel(view.period.to)} · referência 06/10/2026 às 22h (São Paulo)</span></div>
-  <div className={styles.cards}>
-   {metricCards([['technicians',data.technicians.length,'Nomes identificados · não quadro ativo',data.rows],...metrics(data).map(e=>e[0]==='assigned'?[e[0],e[1],data.count+'/'+data.total+' vinculados · '+data.unassigned+' sem técnico',e[3]]:e)],view.records)}
-   <div className={styles.externalCard}><ExternalMetric definition={externalInfo(TECHNICIAN_EXTERNAL[0])}/><p>Informação não disponibilizada. Sem inferência de capacidade por chamados em andamento.</p></div>
+
+  {/* Indicadores: 6 cards (3 × 2), link dentro do card */}
+  <div className={styles.cards+' '+styles.cardsSix}>
+   {metricCards([['technicians',data.technicians.length,'Nomes identificados · não quadro ativo',data.rows],...metrics(data).map(e=>e[0]==='assigned'?[e[0],e[1],data.count+'/'+data.total+' vinculados · '+data.unassigned+' sem técnico',e[3]]:e)],view.records,true)}
   </div>
+
+  {/* Card externo em linha própria, como nas demais páginas */}
+  <div className={styles.external}>
+   <div className={styles.externalCard}>
+    <ExternalMetric definition={externalInfo(TECHNICIAN_EXTERNAL[0])}/>
+    <p>Informação não disponibilizada. Sem inferência de capacidade por chamados em andamento.</p>
+   </div>
+  </div>
+
   <FilterBar state={state} dispatch={dispatch} total={data.total}/>
   <p className={styles.note}><strong data-testid="technicians-total">{data.total}</strong> chamados filtrados · {data.count} vinculados · {data.unassigned} sem técnico. Análise da operação, sem avaliação automatizada de trabalhadores. Tempos e custos referem-se aos vinculados.</p>
   <Panel title="Técnicos — Capacidade e Performance Operacional" definition={info('links')} description="Vínculos observados nos atendimentos; não cadastro permanente. Explore Área → Técnico → Atendimentos → Equipamento → Chamado → Insight.">
-   {table.total?<TechnicianTable rows={table.rows} ui={technicianUi} onSort={sort} onTechnician={setTechnician}/>:<EmptyState onClear={()=>dispatch({type:'reset'})}/>}
-   <Pagination {...table} pageSize={technicianUi.size} onPage={page=>setTechnicianUi(ui=>({...ui,page}))} onPageSize={size=>setTechnicianUi(ui=>({...ui,size:Number(size),page:1}))}/>
+   {table.total?<div className={styles.collapsible+(collapsed?' '+styles.collapsed:'')}>
+    <TechnicianTable rows={collapsed?table.rows.slice(0,COLLAPSED_ROWS):table.rows} ui={technicianUi} onSort={sort} onTechnician={setTechnician}/>
+    {canCollapse&&<button type="button" className={styles.moreButton} aria-expanded={tableOpen} onClick={()=>setTableOpen(v=>!v)}>{tableOpen?'Ver menos':'Ver mais itens…'}</button>}
+   </div>:<EmptyState onClear={()=>dispatch({type:'reset'})}/>}
+   {!collapsed&&<Pagination {...table} pageSize={technicianUi.size} onPage={page=>setTechnicianUi(ui=>({...ui,page}))} onPageSize={size=>setTechnicianUi(ui=>({...ui,size:Number(size),page:1}))}/>}
   </Panel>
   <div className={styles.grid}>
    {chart('Distribuição histórica por status',data.statuses,g=>g.count,numberLabel,info('status',data.rows),g=>open(g.label,g.rows))}
    <Panel title="Operação na referência temporal" definition={info('status',data.rows)} description="06/10/2026 às 22h · não representa disponibilidade atual da força de trabalho."><p>{data.active.length} chamados vinculados não concluídos · {data.active.filter(r=>['Laranja','Vermelho'].includes(r.Criticidade_ORQUESTRA)).length} Laranja/Vermelho não concluídos.</p><button className={styles.link} onClick={()=>open('Não concluídos na referência',data.active)}>Examinar operação na referência</button></Panel>
-   {chart('Chamados por técnico',data.technicians,g=>g.count,numberLabel,chartDefinition('Chamados por técnico',['Técnico'],'Agrupar Técnico e contar chamados; contagem desc, nome asc no empate; não ranking de produtividade.'),setTechnician)}
-   {chart('TA médio por técnico',groupTime('ta'),g=>g.ta.value,numberLabel,info('ta',data.rows),setTechnician)}
+   {chart('Chamados por técnico',data.technicians,g=>g.count,numberLabel,chartDefinition('Chamados por técnico',['Técnico'],'Agrupar Técnico e contar chamados; contagem desc, nome asc no empate; não ranking de produtividade.'),setTechnician,'green')}
+   {chart('TA médio por técnico',groupTime('ta'),g=>g.ta.value,numberLabel,info('ta',data.rows),setTechnician,'violet')}
    {chart('TB médio por técnico',groupTime('tb'),g=>g.tb.value,numberLabel,info('tb',data.rows),setTechnician)}
-   <Panel title="Cobertura das médias por técnico" definition={info('ta',data.rows)}><p>Valores em minutos. Complexidade, área, categoria e rota devem contextualizar a comparação. Menor TB não comprova melhor desempenho.</p><ul className={styles.typeNotes}>{data.technicians.map(g=><li key={g.label}>{g.label}: TA N {g.ta.count}/{g.count} · TB N {g.tb.count}/{g.count}</li>)}</ul></Panel>
-   {chart('Chamados por área',data.areas,g=>g.count,numberLabel,chartDefinition('Chamados por área',['Área','Técnico'],'Agrupar Área dos chamados vinculados, contar registros e aprofundar até técnico.'),g=>setArea({...g,field:'Área'}))}
-   {chart('Chamados por rota',data.routes,g=>g.count,numberLabel,chartDefinition('Chamados por rota',['Rota','Técnico'],'Agrupar Rota dos chamados vinculados, contar registros. Rota é declarada, não trajeto calculado.'),g=>setArea({...g,field:'Rota'}))}
+   <Panel title="Cobertura das médias por técnico" definition={info('ta',data.rows)}><p>Valores em minutos. Complexidade, área, categoria e rota devem contextualizar a comparação. Menor TB não comprova melhor desempenho.</p><ul className={styles.typeNotes+' '+styles.coverageList}>{data.technicians.map(g=><li key={g.label}>{g.label}: TA N {g.ta.count}/{g.count} · TB N {g.tb.count}/{g.count}</li>)}</ul></Panel>
+   {chart('Chamados por área',data.areas,g=>g.count,numberLabel,chartDefinition('Chamados por área',['Área','Técnico'],'Agrupar Área dos chamados vinculados, contar registros e aprofundar até técnico.'),g=>setArea({...g,field:'Área'}),'green')}
+   {chart('Chamados por rota',data.routes,g=>g.count,numberLabel,chartDefinition('Chamados por rota',['Rota','Técnico'],'Agrupar Rota dos chamados vinculados, contar registros. Rota é declarada, não trajeto calculado.'),g=>setArea({...g,field:'Rota'}),'violet')}
    {chart('Chamados por supervisor',data.supervisors,g=>g.count,numberLabel,chartDefinition('Chamados por supervisor',['Supervisor','Técnico'],'Agrupar Supervisor observado no chamado, preservar vínculos múltiplos e contar registros.'),g=>setArea({...g,field:'Supervisor'}))}
-   <Panel title="Criticidade dos atendimentos" definition={info('elevated',data.rows)}><GroupChart groups={data.colors} value={g=>g.count} valueLabel={numberLabel} label="Criticidade histórica" onGroup={g=>open(g.label,g.rows)}/><div className={styles.legend}>{data.colors.map(g=><CriticalityBadge key={g.label} value={g.label}/>)}</div><p className={styles.note}>Inclui concluídos. Cores BASE, sem classificação do profissional.</p></Panel>
-   {chart('Custos dos atendimentos vinculados ao técnico',[...data.technicians].sort((a,b)=>(b.cost.value??-1)-(a.cost.value??-1)||a.label.localeCompare(b.label,'pt-BR')),g=>g.cost.value,currencyLabel,info('cost',data.rows),setTechnician)}
+   <Panel title="Criticidade dos atendimentos" definition={info('elevated',data.rows)}><GroupChart groups={data.colors} value={g=>g.count} valueLabel={numberLabel} label="Criticidade histórica" limit={CHART_LIMIT} scrollOnExpand tone="teal" onGroup={g=>open(g.label,g.rows)}/><div className={styles.legend}>{data.colors.map(g=><CriticalityBadge key={g.label} value={g.label}/>)}</div><p className={styles.note}>Inclui concluídos. Cores BASE, sem classificação do profissional.</p></Panel>
+   {chart('Custos dos atendimentos vinculados ao técnico',[...data.technicians].sort((a,b)=>(b.cost.value??-1)-(a.cost.value??-1)||a.label.localeCompare(b.label,'pt-BR')),g=>g.cost.value,currencyLabel,info('cost',data.rows),setTechnician,'green')}
    <Panel title="Investigar desvios e recorrências" definition={info('patterns',data.rows)}><p>{data.adherence.over.length} chamados com SLA simulado excedido · {data.recurrence.count} com recorrência positiva. Associação não comprova causa nem responsabilidade do técnico.</p><button className={styles.link} onClick={()=>open('SLA simulado excedido',data.adherence.over)}>Investigar SLA excedido</button><p><button className={styles.link} onClick={()=>open('Recorrências dos atendimentos',data.recurrence.rows)}>Examinar recorrências e insights</button></p></Panel>
   </div>
   <Panel title="Dependências de integrações externas" definition={externalInfo(TECHNICIAN_EXTERNAL[0])}><div className={styles.grid}>{TECHNICIAN_EXTERNAL.slice(1).map(metric=><ExternalMetric key={metric.title} definition={externalInfo(metric)}/>)}</div></Panel>
